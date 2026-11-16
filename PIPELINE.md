@@ -80,7 +80,7 @@ Descrição:
 (Confira com `vidiq_social_account_list`; se o id mudou, use o novo. NÃO usar a @ranaitech: ela é só de programação.)
 
 1. Vídeo: `vidiq_video_upload` com url `https://raw.githubusercontent.com/Sahlokneto/quintal-do-pipoca-videos/main/videos/video-N/<nome>.mp4` (depois do push).
-2. Thumbnail: `vidiq_upload_image` sem imagem → PUT do PNG no uploadUrl (curl) → `vidiq_upload_image` com transferId.
+2. Thumbnail (tentar 1 vez; se o YouTube recusar ou limitar, siga sem ela — o dono não se importa, NÃO insista nem gaste créditos com vidiq_update_video_thumbnail): `vidiq_upload_image` sem imagem → PUT do PNG no uploadUrl (curl) → `vidiq_upload_image` com transferId.
 3. `vidiq_social_post_draft_create` com UM rascunho por vídeo, media = o vídeo, publishAt (Brasília -03:00) e 3 destinos:
    - YOUTUBE: title, text = descrição, privacyStatus public, thumbnailImageId, categoryId 1, tags.
    - INSTAGRAM: text = título + descrição (legenda, até 2200 caracteres).
