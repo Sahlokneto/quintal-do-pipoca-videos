@@ -73,10 +73,20 @@ Descrição:
 - Repositório: `videos/video-N/` com `<nome>.mp4`, `thumb-<nome>.png`, `descricao.txt` (N continua a numeração; último = 7).
 - Computador do dono (se a sessão estiver ligada ao PC): `D:\Neto\Videos_Claude_RanaiTech\Youtube_AuAuBrincadeiras\video-N\` (mesmos arquivos).
 
-## Publicação (vidIQ, canal Quintal do Pipoca, platformAccountId UC-odYbtOPKQS1k_ypSZlSAQ)
+## Publicação (vidIQ) — o mesmo vídeo vai para 3 contas, num único rascunho
+- YouTube "Quintal do Pipoca": platformAccountId `UC-odYbtOPKQS1k_ypSZlSAQ`
+- Instagram @quintaldopipocaoficial: platformAccountId `30161432880112305`
+- TikTok quintaldopipocaoficial ("Pipoca"): platformAccountId `_000l9fRRNknjJYv_W3QWe_f6vOSTbUGUS8w`
+(Confira com `vidiq_social_account_list`; se o id mudou, use o novo. NÃO usar a @ranaitech: ela é só de programação.)
+
 1. Vídeo: `vidiq_video_upload` com url `https://raw.githubusercontent.com/Sahlokneto/quintal-do-pipoca-videos/main/videos/video-N/<nome>.mp4` (depois do push).
 2. Thumbnail: `vidiq_upload_image` sem imagem → PUT do PNG no uploadUrl (curl) → `vidiq_upload_image` com transferId.
-3. `vidiq_social_post_draft_create`: YouTube, title, text = descrição, privacyStatus public, publishAt (horário de Brasília -03:00),
-   thumbnailImageId, categoryId 1, tags.
+3. `vidiq_social_post_draft_create` com UM rascunho por vídeo, media = o vídeo, publishAt (Brasília -03:00) e 3 destinos:
+   - YOUTUBE: title, text = descrição, privacyStatus public, thumbnailImageId, categoryId 1, tags.
+   - INSTAGRAM: text = título + descrição (legenda, até 2200 caracteres).
+   - TIKTOK: text = título + 3-5 hashtags (curto), privacyLevel PUBLIC_TO_EVERYONE, allowComment true,
+     musicUsageConfirmed true, isAiGenerated true (escolhas do dono, confirmadas em 16/11/2026).
+   Se algum destino voltar recusado, corrija com `vidiq_social_post_draft_update` (nunca crie um segundo rascunho).
 4. **Horários**: 09:00, 12:00 e 18:00 (Brasília). Se um horário já passou, usar o próximo livre.
 5. **Só chamar `vidiq_social_post_publish` depois que o dono aprovar** (ele responde "pode publicar"/"pode agendar" na conversa).
+   Depois confira cada destino com `vidiq_social_post_status`.
