@@ -15,7 +15,7 @@ depois: classes, arquivos, try/except, módulos, APIs… (continue a lista se ac
 
 ## Personagens e vozes (ElevenLabs, conector do usuário — plano Creator, ~121 mil caracteres/mês)
 - Professor: voz **Will - Deep, Smooth and Affectionate** `CstacWqMhJQlnfLPxRG4`, modelo `eleven_v4`.
-- Cubinho: voz definida em `VOZES.md` (se não existir, use **Stitchu - Ohana Storyweaver** `IGmfzACCDHYu8YfQJuVi`).
+- Cubinho: voz **Lotus - Educational & Engaging** `hzcQtaL2e6Qrqg03np6e`, modelo `eleven_v4` (ver VOZES.md).
 - Orçamento: 2 aulas/dia ≈ 850 caracteres cada ≈ 51 mil/mês. Mantenha o roteiro entre 700 e 900 caracteres.
 - Gere **1 take** por fala (`generations_count: 1`), nunca repita a geração para "tentar de novo" (cobra de novo).
 
