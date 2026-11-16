@@ -26,6 +26,11 @@ Atualize esta lista a cada vídeo novo.
 5. **Variedade**: cada vídeo com falas, piadas e final diferentes (não repetir sempre "Empate!", "De novo!", "Tchau, turma!").
 6. Balões de fala curtos, posicionados para não sair da tela (desloque com `kp(nome, altura, dx)`).
 7. Final alegre com aceno/comemoração + confete; frase final diferente a cada vídeo.
+8. **Chamada para seguir (obrigatório)**: nos últimos ~4,5 s, enquanto a turma acena, entra no topo da tela o card
+   "Gostou da brincadeira? Siga o canal!" com joinha, botão SEGUIR (o dedinho clica e vira SEGUINDO!), sininho e coraçõezinhos.
+   É aplicado no MP4 pronto com `python3 tools/cta.py x.mp4 x_final.mp4` (o arquivo final é o x_final, renomeie para <nome>.mp4).
+   Para não cobrir nada: o plano final deixa ~35% de cima da tela livre (céu/fundo, personagens da metade para baixo)
+   e o último balão de fala termina pelo menos 4,5 s antes do fim do vídeo. Confira 1 quadro do fim com o card.
 
 ## Estrutura de um vídeo (ver `engine/examples/bolhas` — o exemplo mais recente e completo)
 Página HTML = `danca_head.js` + `<seu>_map.js` + `pique2_kid.js` + `<seu>_logic.js`, onde
@@ -46,6 +51,7 @@ nohup sh -c 'node tools/render.js x.html xf 0 3 & node tools/render.js x.html xf
 node tools/dumptl.js x.html x_tl.json ; python3 x_music.py        # música sintetizada (numpy) sincronizada com TL
 ffmpeg -y -framerate 24 -i xf/f%05d.jpg -i x.wav -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -c:a aac -b:a 160k -shortest -movflags +faststart x.mp4
 # conferir 1 quadro a cada 60 numa folha; corrigir trechos com tools/part.js
+python3 tools/cta.py x.mp4 x_cta.mp4 && mv x_cta.mp4 x.mp4   # chamada para seguir no final (regra 8)
 ```
 Render: ~25 min por vídeo de 60 s (3 processos). Cada chamada de comando tem limite de ~10 min: use segundo plano + espera em laço.
 
