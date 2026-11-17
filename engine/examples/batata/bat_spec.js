@@ -130,7 +130,7 @@ function EXTRAfn(t){var p=potPos(t);POT.position.copy(p);var s=seg(t);POT.rotati
  STEAM.forEach(function(m,i){var ph=((t*0.9+i/14)%1);if(h<0.15){m.visible=false;return;}m.visible=true;m.position.set(p.x+0.12*Math.sin(i*2.1+ph*4),p.y+0.15+ph*0.9,p.z+0.12*Math.cos(i*1.3+ph*3));m.scale.setScalar((0.5+ph*1.4)*(0.3+h));m.material.opacity=0.65*(1-ph)*h;});}
 EXTRA=EXTRAfn;
 BURST=[[T.CATCH,[0,2.45],1.2],[T.ROW+0.2,[0,0.8]],[T.ROW+2.6,[0,0.8]]];
-BW=[['Batata quente!',3.3,4.7,kp('duda',2.2,-0.4),1],['QUEIMOU!',T.Q1,T.Q1+1.3,dp(1.25),0.9],['Ai, ai, ai!',T.Q1+0.5,T.Q1+1.9,kp('teo',2.6,0.8),1],['QUEIMOU!',T.Q2,T.Q2+1.2,dp(1.25),0.9],['Ah, não!',T.Q2+0.4,23.0,kp('leo',2.0,0.2),1],
+BW=[['Batata quente!',3.3,4.7,kp('duda',2.2,-0.4),1],['QUEIMOU!',T.Q1,T.Q1+1.3,dp(1.25),0.9],['Ai, ai, ai!',T.Q1+0.5,T.Q1+1.9,kp('teo',2.6,0.8),1],['QUEIMOU!',T.Q2,T.Q2+1.0,dp(1.25),0.9],['Ah, não!',T.Q2+1.05,24.2,kp('leo',2.0,0.2),1],
  ['QUEIMOU!',T.Q3,T.Q3+1.0,dp(1.25),0.9],['O Pipoca pegou!',T.CATCH+0.3,T.CATCH+1.6,kp('teo',2.6,0.4),1],['Pipoca campeão!',46.4,47.9,kp('duda',2.6,-0.3),1],['Quem quer batata?',51.6,55.0,function(){return [0,2.6,0.6];},1]];
 var EXT=[[-2.3,0.9],[2.3,0.9],[0,-0.8],[0,2.6]];
 SH=[[0,T.SIT,function(t){return frameOn(ALL,lerp(-20,0,ez(lin(t,0,3))),lerp(45,32,ez(lin(t,0,3))),50,0.1);}],
@@ -145,4 +145,4 @@ SH=[[0,T.SIT,function(t){return frameOn(ALL,lerp(-20,0,ez(lin(t,0,3))),lerp(45,3
  [T.CH1,T.ROW+0.3,function(t){return mixCam(frameOn(ALL,0,42,50,0.06,EXT),frameLow(ALL,0,16,50,0.06),ez(lin(t,T.CH1,T.ROW+0.3)));}],
  [T.ROW+0.3,END+2,function(){return frameLow(ALL,0,16,50,0.06);}]];
 EV=[];PASSES.forEach(function(p){EV.push([p[0],'toss'],[p[0]+p[3],'catch']);});BARK.forEach(function(b){EV.push([b,'bark']);});
-EV.push([T.Q1,'queimou'],[T.Q2,'queimou'],[T.Q3,'queimou'],[20.4,'toss'],[T.BONK,'bonk'],[21.4,'catch'],[33.75,'toss'],[T.CATCH,'gulp'],[T.ROW+0.2,'confetti'],[T.Q1+0.5,'ai'],[T.Q2+0.4,'ah']);
+EV.push([T.Q1,'queimou'],[T.Q2,'queimou'],[T.Q3,'queimou'],[20.4,'toss'],[T.BONK,'bonk'],[21.4,'catch'],[33.75,'toss'],[T.CATCH,'gulp'],[T.ROW+0.2,'confetti'],[T.Q1+0.5,'ai'],[T.Q2+1.05,'ah']);
