@@ -10,9 +10,10 @@ Cada vídeo é **uma brincadeira infantil nova**, simples, engraçada, sem viol�
 
 ## Brincadeiras já feitas (NÃO repetir)
 1. Dança das Cadeiras · 2. Cabo de Guerra na Lama · 3. Corrida de Saco · 4. Pula Corda · 5. Amarelinha · 6. Boliche no Quintal · 7. Bolhas de Sabão
+· 8. Estátua · 9. Batata Quente · 10. Ovo na Colher
 (Também já existiu um Pique-Esconde fora do canal.)
-**Ideias ainda não usadas:** estátua (congela quando a música para), batata quente, pega-pega, morto-vivo, passa anel, telefone sem fio,
-ovo na colher, caça ao tesouro, chute ao gol / pênalti, pipa, cama de gato, cabra-cega, mímica, esconde-esconde de brinquedo, piquenique,
+**Ideias ainda não usadas:** pega-pega, morto-vivo, passa anel, telefone sem fio,
+caça ao tesouro, chute ao gol / pênalti, pipa, cama de gato, cabra-cega, mímica, esconde-esconde de brinquedo, piquenique,
 plantar uma árvore, lavar o Pipoca, castelo de areia, guerra de travesseiro, desfile de fantasias, circo no quintal, trem de caixas, etc.
 Atualize esta lista a cada vídeo novo.
 
@@ -40,6 +41,15 @@ Página HTML = `danca_head.js` + `<seu>_map.js` + `pique2_kid.js` + `<seu>_logic
 A página expõe `window.frame(t)`, `window.TOTAL` (segundos) e `window.TL` (tempos para a música).
 Personagens usam "clipes" (`hold`, `mv`, `cust`, `turnTo`) avaliados por `stateOf(n,t)`; tudo determinístico em função de t.
 **Atenção:** `examples/amarelinha/hop_logic.js` tem uma versão antiga do frameOn com um erro de sinal — use sempre `common_frameon.js`.
+
+## Atalho novo (vídeos 8-10): biblioteca comum `qp_lib.js`
+Para não reescrever poses/câmera em cada vídeo: `examples/<nome>/<x>_head.js` (KS, BPM) + `<x>_spec.js` (objetos, T, TL, DG, BW, SH, EXTRA, EV)
+e `sh build.sh <nome> <x>` monta `work/<nome>.html` (danca_head + danca_map + pique2_kid + head + common_faces + qp_lib + spec + common_frameon + qp_tail).
+`qp_lib.js` traz clipes, poses (dance st 0-3, wave, cheer, clap, laugh, hold, sitg; Pipoca: drun, dwalk, sniff, sit, paw, bark, party, hind),
+confete, balões com ajuste automático do texto (`makeBubs`) e `frameLow(...)` = plano final com ~35% do topo livre para o card de seguir.
+`sh shots.sh <nome> t1,t2,... folha.png` gera a folha de contato; `node tools/coll.js work/<nome>.html 0.7` lista personagens perto demais (colisão);
+`python3 mkthumb.py <nome> "frameOn(...)"` cria a página da thumbnail. Música: `qp_music.py` (sintetizador) + `examples/<nome>/<nome>_music.py tl.json saida.wav`.
+Exemplos: `examples/estatua`, `examples/batata`, `examples/ovo`.
 
 ## Passo a passo
 ```
@@ -76,7 +86,7 @@ Descrição:
 ```
 
 ## Onde salvar
-- Repositório: `videos/video-N/` com `<nome>.mp4`, `thumb-<nome>.png`, `descricao.txt` (N continua a numeração; último = 7).
+- Repositório: `videos/video-N/` com `<nome>.mp4`, `thumb-<nome>.png`, `descricao.txt` (N continua a numeração; último = 10).
 - Computador do dono (se a sessão estiver ligada ao PC): `D:\Neto\Videos_Claude_RanaiTech\Youtube_AuAuBrincadeiras\video-N\` (mesmos arquivos).
 
 ## Publicação (vidIQ) — o mesmo vídeo vai para 3 contas, num único rascunho
