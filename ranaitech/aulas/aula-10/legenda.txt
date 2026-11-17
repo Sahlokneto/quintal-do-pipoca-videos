@@ -1,0 +1,10 @@
+Achar erros faz parte de programar: a mensagem de erro diz a linha e o problema, e o print mostra o valor das variáveis. Nesta aula o Cubinho acha que quebrou o computador e quer apagar o programa inteiro por causa de uma letra a mais. 😅
+
+🔎 print(pessoas)  # > 0 ... achei o culpado!
+👉 Leia a mensagem de erro: ela diz a linha e o que deu errado
+👉 Corrija só a linha do erro e rode de novo
+👉 Sem erro, mas resultado estranho? Use print pra ver o valor das variáveis
+
+Próxima aula: comentários no código! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #debug #aprenderprogramação #python #lógicadeprogramação

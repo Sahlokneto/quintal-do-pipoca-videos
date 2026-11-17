@@ -5,10 +5,10 @@ erra de um jeito engraçado e é corrigido (às vezes é o Cubinho quem corrige 
 na frente da lousa ilustram o exemplo. Legenda (fala atual) embaixo. Música lo-fi de fundo.
 
 ## Aulas feitas (NÃO repetir) — atualize a cada aula
-1 Variáveis · 2 If/else · 3 Loops · 4 Funções · 5 Listas · 6 Objetos · 7 Percorrendo listas · 8 Funções com retorno · 9 Operadores lógicos (and/or)
+1 Variáveis · 2 If/else · 3 Loops · 4 Funções · 5 Listas · 6 Objetos · 7 Percorrendo listas · 8 Funções com retorno · 9 Operadores lógicos (and/or) ·
+10 Como achar erros no código (debug) · 11 Comentários no código
 
 ## Próximas aulas (em ordem; a aula N sempre anuncia a N+1 no fim)
-10 Como achar erros no código (debug: ler a mensagem de erro, print para investigar) · 11 Comentários no código ·
 12 Textos (strings) e juntar textos · 13 While (repetir até uma condição) · 14 Entrada do usuário (input) · 15 Números aleatórios ·
 16 Dicionários na prática · 17 Else if / elif · 18 Operador not · 19 Escopo de variável · 20 Arredondar e operações com números ·
 depois: classes, arquivos, try/except, módulos, APIs… (continue a lista se acabar).

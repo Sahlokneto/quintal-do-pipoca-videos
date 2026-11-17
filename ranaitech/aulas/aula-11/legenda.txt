@@ -1,0 +1,10 @@
+Comentários são recados no código pra quem vai ler o programa. Em Python, começam com # e o computador pula essa linha. Nesta aula o Cubinho escreve um comentário pedindo pro computador fazer o dever de casa dele. 😅
+
+📝 # desconto do lanche
+👉 Comentário começa com # e não é executado
+👉 Serve pra explicar o código pra pessoas (inclusive você do futuro)
+👉 Escreva o porquê, não repita o que o código já diz
+
+Próxima aula: textos (strings) e como juntar textos! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #comentários #aprenderprogramação #python #lógicadeprogramação
