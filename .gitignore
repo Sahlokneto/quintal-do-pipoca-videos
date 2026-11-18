@@ -2,3 +2,13 @@ engine/work/
 __pycache__/
 engine/*.png
 engine/*.jpg
+# arquivos de trabalho das aulas RanaiTech (não vão pro repositório)
+ranaitech/aulas/*/aud/
+ranaitech/aulas/*/mp3/
+ranaitech/aulas/*/frames/
+ranaitech/aulas/*/shots/
+ranaitech/aulas/*/audio.wav
+ranaitech/aulas/*/done
+ranaitech/aulas/*/render.html
+ranaitech/aulas/*/render.log
+ranaitech/aulas/*/timeline.json
