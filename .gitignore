@@ -1,2 +1,4 @@
 engine/work/
 __pycache__/
+engine/*.png
+engine/*.jpg
