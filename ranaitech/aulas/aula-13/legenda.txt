@@ -1,0 +1,10 @@
+O while repete um bloco de código enquanto uma condição for verdadeira. Nesta aula o Cubinho esquece de tirar a fatia da pizza e cria um loop infinito. 😅
+
+🍕 while fatias > 0:
+👉 O while repete enquanto a condição for verdadeira
+👉 Algo dentro do loop precisa mudar (fatias = fatias - 1)
+👉 Se nada muda, vira loop infinito e o programa trava
+
+Próxima aula: entrada do usuário (input)! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #while #aprenderprogramação #python #lógicadeprogramação

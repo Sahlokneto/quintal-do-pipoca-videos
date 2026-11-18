@@ -1,0 +1,10 @@
+Textos em Python se chamam strings e ficam sempre entre aspas. Com o sinal de + dá pra juntar textos. Nesta aula o Cubinho tenta juntar o nome dele com um número e o computador dá erro. 😅
+
+💬 print("Olá, " + nome)
+👉 Texto (string) fica entre aspas: "oi"
+👉 O + junta textos: "Olá, " + "Cubinho"
+👉 Pra juntar número com texto, use str(): nome + str(10)
+
+Próxima aula: while (repetir até uma condição)! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #strings #aprenderprogramação #python #lógicadeprogramação
