@@ -11,9 +11,10 @@ Cada vídeo é **uma brincadeira infantil nova**, simples, engraçada, sem viol�
 ## Brincadeiras já feitas (NÃO repetir)
 1. Dança das Cadeiras · 2. Cabo de Guerra na Lama · 3. Corrida de Saco · 4. Pula Corda · 5. Amarelinha · 6. Boliche no Quintal · 7. Bolhas de Sabão
 · 8. Estátua · 9. Batata Quente · 10. Ovo na Colher
+· 11. Morto-Vivo · 12. Telefone sem Fio · 13. Pênalti (chute ao gol)
 (Também já existiu um Pique-Esconde fora do canal.)
-**Ideias ainda não usadas:** pega-pega, morto-vivo, passa anel, telefone sem fio,
-caça ao tesouro, chute ao gol / pênalti, pipa, cama de gato, cabra-cega, mímica, esconde-esconde de brinquedo, piquenique,
+**Ideias ainda não usadas:** pega-pega, passa anel,
+caça ao tesouro, pipa, cama de gato, cabra-cega, mímica, esconde-esconde de brinquedo, piquenique,
 plantar uma árvore, lavar o Pipoca, castelo de areia, guerra de travesseiro, desfile de fantasias, circo no quintal, trem de caixas, etc.
 Atualize esta lista a cada vídeo novo.
 
@@ -49,7 +50,9 @@ e `sh build.sh <nome> <x>` monta `work/<nome>.html` (danca_head + danca_map + pi
 confete, balões com ajuste automático do texto (`makeBubs`) e `frameLow(...)` = plano final com ~35% do topo livre para o card de seguir.
 `sh shots.sh <nome> t1,t2,... folha.png` gera a folha de contato; `node tools/coll.js work/<nome>.html 0.7` lista personagens perto demais (colisão);
 `python3 mkthumb.py <nome> "frameOn(...)"` cria a página da thumbnail. Música: `qp_music.py` (sintetizador) + `examples/<nome>/<nome>_music.py tl.json saida.wav`.
-Exemplos: `examples/estatua`, `examples/batata`, `examples/ovo`.
+Exemplos: `examples/estatua`, `examples/batata`, `examples/ovo`, `examples/mortovivo`, `examples/telefone`, `examples/penalti`.
+`node tools/ev.js work/<nome>.html "expr"` avalia uma expressão na página (útil para depurar estados).
+Obs.: `work/h` precisa ser um link para `../h` (three.js): `ln -sf ../h engine/work/h`.
 
 ## Passo a passo
 ```
@@ -86,7 +89,7 @@ Descrição:
 ```
 
 ## Onde salvar
-- Repositório: `videos/video-N/` com `<nome>.mp4`, `thumb-<nome>.png`, `descricao.txt` (N continua a numeração; último = 10).
+- Repositório: `videos/video-N/` com `<nome>.mp4`, `thumb-<nome>.png`, `descricao.txt` (N continua a numeração; último = 13).
 - Computador do dono (se a sessão estiver ligada ao PC): `D:\Neto\Videos_Claude_RanaiTech\Youtube_AuAuBrincadeiras\video-N\` (mesmos arquivos).
 
 ## Publicação (vidIQ) — o mesmo vídeo vai para 3 contas, num único rascunho
