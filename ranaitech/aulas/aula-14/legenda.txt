@@ -1,0 +1,10 @@
+Com o input, o programa faz uma pergunta e espera o usuário digitar a resposta. Nesta aula o Cubinho tenta somar a idade digitada e descobre que o input sempre devolve texto. 😅
+
+⌨️ idade = int(input("Idade? "))
+👉 O input mostra a pergunta e espera você digitar
+👉 A resposta sempre chega como texto ("12")
+👉 Para fazer contas, converta com int()
+
+Próxima aula: números aleatórios! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #input #aprenderprogramação #python #lógicadeprogramação
