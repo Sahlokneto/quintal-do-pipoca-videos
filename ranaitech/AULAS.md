@@ -6,10 +6,10 @@ na frente da lousa ilustram o exemplo. Legenda (fala atual) embaixo. Música lo-
 
 ## Aulas feitas (NÃO repetir) — atualize a cada aula
 1 Variáveis · 2 If/else · 3 Loops · 4 Funções · 5 Listas · 6 Objetos · 7 Percorrendo listas · 8 Funções com retorno · 9 Operadores lógicos (and/or) ·
-10 Como achar erros no código (debug) · 11 Comentários no código · 12 Textos (strings) e juntar textos · 13 While (repetir até uma condição)
+10 Como achar erros no código (debug) · 11 Comentários no código · 12 Textos (strings) e juntar textos · 13 While (repetir até uma condição) ·
+14 Entrada do usuário (input) · 15 Números aleatórios (random)
 
 ## Próximas aulas (em ordem; a aula N sempre anuncia a N+1 no fim)
-14 Entrada do usuário (input) · 15 Números aleatórios ·
 16 Dicionários na prática · 17 Else if / elif · 18 Operador not · 19 Escopo de variável · 20 Arredondar e operações com números ·
 depois: classes, arquivos, try/except, módulos, APIs… (continue a lista se acabar).
 
@@ -23,7 +23,7 @@ depois: classes, arquivos, try/except, módulos, APIs… (continue a lista se ac
 1. **Roteiro**: 10–11 falas alternando P/C (IDs P1, C1, P2, C2…; termina com P5 "Na próxima aula: <tema>. Tchau, turma!",
    C5 despedida curta e diferente a cada aula, P6 "curte/compartilha/segue" com frase variada). Uma piada/erro do Cubinho por aula.
    Exemplo de código simples e visual (pizza, jogo, escola…), sem marcas.
-2. **Página**: copie a última aula (`base/aula9.html` ou `aulas/aula-<N-1>/aulaN-1.html`) para `aulas/aula-N/aulaN.html` e adapte
+2. **Página**: copie a última aula (`base/aula9.html` ou `aulas/aula-<N-1>/aulaN-1.html`; desde a aula 14 há ícones `chat`, `keyb`, `dice`) para `aulas/aula-N/aulaN.html` e adapte
    como nos `patches/patchK.py` (eles mostram como cada aula trocou SCRIPT, SPEC de expressões, gestos GP/GC, desenho da lousa
    `drawBoard`, ícones/placas e eventos). Mantenha `window.__retime`, `__timeline`, `__seek`.
    Grave também `aulas/aula-N/script.json` = {ID: texto da fala}.

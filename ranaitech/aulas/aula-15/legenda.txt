@@ -1,0 +1,10 @@
+Com o módulo random, o computador sorteia números, como se jogasse um dado. Nesta aula o Cubinho "trapaceia" escrevendo dado = 6 e é pego no flagra. 😅
+
+🎲 dado = random.randint(1, 6)
+👉 Primeiro faça import random
+👉 randint(1, 6) sorteia um número inteiro de 1 a 6 (incluindo os dois)
+👉 Cada execução pode dar um resultado diferente
+
+Próxima aula: dicionários na prática! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #random #aprenderprogramação #python #lógicadeprogramação
