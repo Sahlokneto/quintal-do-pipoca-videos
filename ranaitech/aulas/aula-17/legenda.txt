@@ -1,0 +1,10 @@
+O elif (else if) testa várias condições em sequência e para na primeira que for verdadeira. Nesta aula o Cubinho usa dois ifs separados e fica aprovado e de recuperação ao mesmo tempo. 😅
+
+📝 if nota >= 7: ... elif nota >= 5: ... else: ...
+👉 O Python testa de cima para baixo
+👉 Só o primeiro bloco verdadeiro roda; os outros são pulados
+👉 O else pega tudo o que sobrou
+
+Próxima aula: o operador not! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #elif #aprenderprogramação #python #lógicadeprogramação

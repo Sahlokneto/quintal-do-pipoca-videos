@@ -1,0 +1,10 @@
+Dicionário guarda pares de chave e valor, igual a um cardápio: você procura pelo nome e recebe o preço. Nesta aula o Cubinho pede um pastel que não está no cardápio e toma um KeyError. 😅
+
+🍰 precos = {'suco': 5, 'bolo': 7}
+👉 Para ler um valor, use a chave: precos['bolo'] dá 7
+👉 Chave que não existe dá KeyError
+👉 Para adicionar, é só atribuir: precos['pastel'] = 6
+
+Próxima aula: else if (elif)! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #dicionários #aprenderprogramação #python #lógicadeprogramação
