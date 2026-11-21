@@ -1,0 +1,202 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:P;src:url(Poppins-Light.ttf);font-weight:300}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#gl,#ov{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+#brand{top:46px;font-size:22px;letter-spacing:6px;font-weight:700;color:#ffd78a;opacity:.85}
+#brand small{display:block;font-size:15px;letter-spacing:3px;color:#cfd8ff;font-weight:400;margin-top:2px}
+#card{top:170px;left:90px;width:540px;padding:22px 0 26px;border-radius:30px;background:rgba(10,14,40,.72);
+ border:3px solid rgba(255,255,255,.18);box-shadow:0 10px 40px rgba(0,0,0,.5)}
+#card .t{font-size:30px;font-weight:700;letter-spacing:4px}
+#card .v{font-size:96px;font-weight:700;line-height:1.05}
+#card .s{font-size:26px;font-weight:400;color:#dfe6ff;margin-top:6px}
+#dist{top:300px;font-size:64px;font-weight:700;text-shadow:0 0 20px rgba(80,160,255,.8)}
+#dist small{display:block;font-size:26px;font-weight:400;color:#cfe0ff;letter-spacing:2px}
+#cmp{top:150px;left:60px;width:600px;opacity:0}
+.th{display:inline-block;width:180px;vertical-align:bottom}
+.th .tube{position:relative;margin:0 auto;width:46px;height:300px;border-radius:23px;background:rgba(255,255,255,.12);border:3px solid rgba(255,255,255,.35);overflow:hidden}
+.th .fill{position:absolute;bottom:0;left:0;width:100%;border-radius:0 0 20px 20px}
+.th .n{font-size:22px;font-weight:700;letter-spacing:3px;margin-top:14px}
+.th .d{font-size:40px;font-weight:700}
+#hz{top:210px;font-size:46px;font-weight:700;color:#7dffb0;text-shadow:0 0 18px rgba(60,255,140,.7)}
+#hz small{display:block;font-size:26px;font-weight:400;color:#d8ffe6}
+#tilt{top:190px;font-size:88px;font-weight:700;color:#9fd2ff;text-shadow:0 0 18px rgba(80,170,255,.8)}
+#tilt small{display:block;font-size:28px;font-weight:400;color:#e2eeff}
+#verse{top:250px;left:70px;width:580px;font-size:50px;font-weight:700;line-height:1.2;text-shadow:0 0 24px rgba(255,210,120,.7)}
+#verse small{display:block;font-size:28px;font-weight:400;color:#ffe2a8;margin-top:14px;letter-spacing:2px}
+#cap{top:1010px;left:50px;width:620px;font-size:36px;font-weight:700;line-height:1.25;opacity:1;
+ text-shadow:0 3px 0 #000,0 0 14px rgba(0,0,0,.9)}
+#cap b{color:#ffd166}
+#end{top:470px;opacity:0}
+#end .btn{display:inline-block;margin-top:26px;padding:18px 46px;border-radius:50px;background:#e8344e;font-size:40px;font-weight:700;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#end .nm{font-size:44px;font-weight:700;color:#ffd78a}
+</style></head><body>
+<div id="stage">
+<canvas id="gl" width="720" height="1280"></canvas>
+<canvas id="ov" width="720" height="1280"></canvas>
+<div id="brand" class="lay">MATEMÁTICA DA CRIAÇÃO<small>a precisão por trás de tudo</small></div>
+<div id="dist" class="lay"><span id="dv">0</span> km<small>DA TERRA ATÉ O SOL</small></div>
+<div id="card" class="lay"><div class="t" id="ct"></div><div class="v" id="cv"></div><div class="s" id="cs"></div></div>
+<div id="cmp" class="lay"></div>
+<div id="hz" class="lay">ZONA HABITÁVEL<small>onde a água pode ficar líquida</small></div>
+<div id="tilt" class="lay">23,4°<small>inclinação estável graças à Lua</small></div>
+<div id="verse" class="lay">“Os céus declaram a glória de Deus.”<small>SALMO 19:1</small></div>
+<div id="end" class="lay"><div class="nm">Matemática da Criação</div><div class="btn">+ SEGUIR</div></div>
+<div id="cap" class="lay"></div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function(){
+var W=720,H=1280;
+var gl=document.getElementById('gl'),ov=document.getElementById('ov'),ox=ov.getContext('2d');
+var renderer=new THREE.WebGLRenderer({canvas:gl,antialias:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(1);renderer.setSize(W,H,false);
+var scene=new THREE.Scene();scene.background=new THREE.Color(0x02030a);
+var camera=new THREE.PerspectiveCamera(45,W/H,0.05,800);
+// ---------- util
+function clamp(x,a,b){return Math.max(a,Math.min(b,x));}
+function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}
+function ez(u){return u*u*(3-2*u);}
+function lerp(a,b,u){return a+(b-a)*u;}
+function V(x,y,z){return new THREE.Vector3(x,y,z);}
+var seed=7;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+// 3D value noise
+var P=[];for(var i=0;i<512;i++)P.push(Math.floor(rnd()*256));
+function h(x,y,z){return P[(P[(P[x&255]+y)&255]+z)&255]/255;}
+function vn(x,y,z){var xi=Math.floor(x),yi=Math.floor(y),zi=Math.floor(z),xf=x-xi,yf=y-yi,zf=z-zi;
+ var u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf),w=zf*zf*(3-2*zf);
+ function L(a,b,t){return a+(b-a)*t;}
+ return L(L(L(h(xi,yi,zi),h(xi+1,yi,zi),u),L(h(xi,yi+1,zi),h(xi+1,yi+1,zi),u),v),L(L(h(xi,yi,zi+1),h(xi+1,yi,zi+1),u),L(h(xi,yi+1,zi+1),h(xi+1,yi+1,zi+1),u),v),w);}
+function fbm(x,y,z,o){var s=0,a=.5,f=1;for(var i=0;i<o;i++){s+=a*vn(x*f,y*f,z*f);a*=.5;f*=2;}return s;}
+function planetTex(fn,w,hgt){var c=document.createElement('canvas');c.width=w;c.height=hgt;var x=c.getContext('2d'),im=x.createImageData(w,hgt);
+ for(var j=0;j<hgt;j++){var lat=(j/hgt-.5)*Math.PI;for(var i=0;i<w;i++){var lon=i/w*2*Math.PI;
+  var px=Math.cos(lat)*Math.cos(lon),py=Math.sin(lat),pz=Math.cos(lat)*Math.sin(lon);var col=fn(px,py,pz,lat);var k=(j*w+i)*4;
+  im.data[k]=col[0];im.data[k+1]=col[1];im.data[k+2]=col[2];im.data[k+3]=col[3]===undefined?255:col[3];}}
+ x.putImageData(im,0,0);var t=new THREE.CanvasTexture(c);return t;}
+function mix3(a,b,u){return [lerp(a[0],b[0],u),lerp(a[1],b[1],u),lerp(a[2],b[2],u)];}
+// ---------- stars
+var sg=new THREE.BufferGeometry(),sp=[],sc=[];
+for(var i=0;i<2600;i++){var r=300+rnd()*150,th=rnd()*Math.PI*2,ph=Math.acos(2*rnd()-1);sp.push(r*Math.sin(ph)*Math.cos(th),r*Math.cos(ph),r*Math.sin(ph)*Math.sin(th));
+ var b=.5+rnd()*.5;sc.push(b,b,b*(.9+rnd()*.2));}
+sg.setAttribute('position',new THREE.Float32BufferAttribute(sp,3));sg.setAttribute('color',new THREE.Float32BufferAttribute(sc,3));
+scene.add(new THREE.Points(sg,new THREE.PointsMaterial({size:1.6,vertexColors:true,sizeAttenuation:false})));
+// ---------- sun
+function glowTex(c1,c2){var c=document.createElement('canvas');c.width=c.height=256;var x=c.getContext('2d');var g=x.createRadialGradient(128,128,0,128,128,128);
+ g.addColorStop(0,c1);g.addColorStop(.25,c2);g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.fillRect(0,0,256,256);return new THREE.CanvasTexture(c);}
+var sunTex=planetTex(function(x,y,z){var n=fbm(x*6+3,y*6,z*6,4);return [255,lerp(150,235,n),lerp(30,120,n)];},256,128);
+var sun=new THREE.Mesh(new THREE.SphereGeometry(1.6,48,32),new THREE.MeshBasicMaterial({map:sunTex}));scene.add(sun);
+var g1=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex('rgba(255,240,180,1)','rgba(255,170,40,.55)'),blending:THREE.AdditiveBlending,depthWrite:false}));g1.scale.set(9,9,1);scene.add(g1);
+var g2=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex('rgba(255,200,120,.5)','rgba(255,120,30,.18)'),blending:THREE.AdditiveBlending,depthWrite:false}));g2.scale.set(22,22,1);scene.add(g2);
+scene.add(new THREE.PointLight(0xfff2dd,2.2,0,0));scene.add(new THREE.AmbientLight(0x223355,.35));
+// ---------- planets (raio orbital = UA*7, não está em escala)
+var AU=7;
+function planet(rad,tex,opts){var g=new THREE.Group();var m=new THREE.Mesh(new THREE.SphereGeometry(rad,64,48),new THREE.MeshStandardMaterial({map:tex,roughness:.9,metalness:0}));g.add(m);
+ var atm=new THREE.Sprite(new THREE.SpriteMaterial({map:glowTex(opts.atm,opts.atm2),blending:THREE.AdditiveBlending,depthWrite:false,transparent:true}));atm.scale.set(rad*3.2,rad*3.2,1);g.add(atm);
+ g.userData={mesh:m,atm:atm,rad:rad};scene.add(g);return g;}
+var venus=planet(.62,planetTex(function(x,y,z){var n=fbm(x*3+y*6,y*9,z*3,5);return mix3([200,140,60],[245,215,150],n);},512,256),{atm:'rgba(255,200,120,.5)',atm2:'rgba(255,160,60,.15)'});
+var earthTex=planetTex(function(x,y,z,lat){var n=fbm(x*2.2+11,y*2.2,z*2.2,6);var ice=Math.abs(lat)>1.22;
+ if(ice)return [235,242,250];if(n>.53){var m=fbm(x*7,y*7,z*7,3);return mix3([60,130,55],[160,135,80],clamp((m-.35)*2,0,1));}
+ return mix3([12,40,110],[28,90,170],clamp(n*1.6,0,1));},512,256);
+var earth=planet(.7,earthTex,{atm:'rgba(110,180,255,.6)',atm2:'rgba(60,130,255,.2)'});
+var cloudTex=planetTex(function(x,y,z){var n=fbm(x*4+40,y*4,z*4,5);var a=clamp((n-.5)*4,0,1)*230;return [255,255,255,a];},512,256);
+var clouds=new THREE.Mesh(new THREE.SphereGeometry(.72,64,48),new THREE.MeshStandardMaterial({map:cloudTex,transparent:true,depthWrite:false}));earth.add(clouds);
+var mars=planet(.42,planetTex(function(x,y,z,lat){if(Math.abs(lat)>1.3)return [240,235,230];var n=fbm(x*3+5,y*3,z*3,6);return mix3([120,50,25],[215,115,60],n);},512,256),{atm:'rgba(255,140,90,.35)',atm2:'rgba(255,100,60,.1)'});
+var moon=new THREE.Mesh(new THREE.SphereGeometry(.19,40,30),new THREE.MeshStandardMaterial({map:planetTex(function(x,y,z){var n=fbm(x*5,y*5,z*5,5);var c=lerp(90,200,n);return [c,c,c];},256,128),roughness:1}));scene.add(moon);
+// eixo da Terra (inclinação 23,4°)
+var axisG=new THREE.Group();earth.add(axisG);
+var axis=new THREE.Mesh(new THREE.CylinderGeometry(.012,.012,2.3,8),new THREE.MeshBasicMaterial({color:0x9fd2ff,transparent:true,opacity:0}));axisG.add(axis);
+var TILT=23.4*Math.PI/180;earth.userData.mesh.rotation.z=TILT;clouds.rotation.z=TILT;axisG.rotation.z=TILT;
+// órbitas e zona habitável
+function ring(r,col,op){var pts=[];for(var i=0;i<=200;i++){var a=i/200*Math.PI*2;pts.push(V(Math.cos(a)*r,0,Math.sin(a)*r));}
+ var l=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:col,transparent:true,opacity:op}));scene.add(l);return l;}
+var oV=ring(.72*AU,0xffc27a,.25),oE=ring(1*AU,0x8cc8ff,.3),oM=ring(1.52*AU,0xff9a7a,.25);
+var hzM=new THREE.Mesh(new THREE.RingGeometry(.95*AU,1.4*AU,160,1),new THREE.MeshBasicMaterial({color:0x2dff8a,transparent:true,opacity:0,side:THREE.DoubleSide,depthWrite:false}));
+hzM.rotation.x=-Math.PI/2;scene.add(hzM);
+// ---------- linha do tempo (gerada a partir das durações das falas)
+var LINES=[['L1','A Terra está a <b>150 milhões de km</b> do Sol. E essa distância não é um detalhe qualquer.'],
+ ['L2','Olha <b>Vênus</b>, um pouco mais perto do Sol. A superfície passa de <b>460 °C</b>. Quente o bastante pra derreter chumbo.'],
+ ['L3','Agora <b>Marte</b>, um pouco mais longe. A média fica perto de <b>60 °C abaixo de zero</b>.'],
+ ['L4','E a <b>Terra</b>? Média de <b>15 °C</b>. Na faixa em que a água fica líquida. Sem ela, não existe vida como a conhecemos.'],
+ ['L5','Os cientistas chamam essa faixa de <b>zona habitável</b>. E a Terra está bem dentro dela.'],
+ ['L6','E a <b>Lua</b>, grande do jeito certo, ajuda a segurar a inclinação da Terra. Isso mantém as estações estáveis.'],
+ ['L7','Para muitos cristãos, tanta precisão não é acaso. <b>É assinatura.</b> “Os céus declaram a glória de Deus.” Siga o canal!']];
+var T={},TL={lines:[]};
+window.__retime=function(d){var t=.6;LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.5;});T.END=t+1.3;TL.end=T.END;window.TOTAL=T.END;};
+window.__timeline=function(){return TL;};
+// posições orbitais (giram devagar)
+function opos(r,a0,sp,t){var a=a0+sp*t;return V(Math.cos(a)*r,0,Math.sin(a)*r);}
+function place(t){
+ var e=opos(AU,2.2,.010,t),v=opos(.72*AU,1.55,.016,t),m=opos(1.52*AU,2.75,.0065,t);
+ earth.position.copy(e);venus.position.copy(v);mars.position.copy(m);
+ var ma=t*.55;moon.position.set(e.x+Math.cos(ma)*1.35,Math.sin(ma)*.35,e.z+Math.sin(ma)*1.35);
+ earth.userData.mesh.rotation.y=t*.35;clouds.rotation.y=t*.42;venus.userData.mesh.rotation.y=t*.05;mars.userData.mesh.rotation.y=t*.3;sun.rotation.y=t*.03;
+ [venus,earth,mars].forEach(function(p){p.userData.atm.position.set(0,0,0);});
+ return {e:e,v:v,m:m};}
+// câmera: olha para um alvo a partir de uma direção (azimute, elevação) e distância
+function view(target,az,el,dist,fov){var a=az*Math.PI/180,b=el*Math.PI/180;
+ return {pos:V(target.x+Math.cos(b)*Math.sin(a)*dist,target.y+Math.sin(b)*dist,target.z+Math.cos(b)*Math.cos(a)*dist),look:target.clone(),fov:fov||45};}
+function mixV(A,B,u){return {pos:A.pos.clone().lerp(B.pos,u),look:A.look.clone().lerp(B.look,u),fov:lerp(A.fov,B.fov,u)};}
+function off(p,dy){return V(p.x,p.y+dy,p.z);}
+function shots(t,P){
+ var sunDir=function(p,deg){var a=Math.atan2(p.x,p.z)*180/Math.PI;return a+deg;};var lit=function(p,deg){return sunDir(p,180+deg);};
+ var S0=view(off(P.e,.35),lit(P.e,-40),8,3.6,40);
+ var S1=view(V(P.e.x*.5,0,P.e.z*.5),sunDir(P.e,-90)+180,24,11.5,45);
+ var SV=view(off(P.v,.3),lit(P.v,-38),5,4.6,40);
+ var SM=view(off(P.m,.18),lit(P.m,-38),5,3.2,40);
+ var SE=view(off(P.e,.4),lit(P.e,40),5,5.0,40);
+ var SC=view(V(P.e.x*.55,0,P.e.z*.55),sunDir(P.e,-90)+180,30,13,48);
+ var ST=view(off(P.e,.55),lit(P.e,-65),8,5.6,40);
+ var SH=view(V(0,0,-2.5),0,62,54,42);
+ var SW=view(V(0,0,0),20,28,30,45);
+ var K=[[0,S0],[T.L1+1.6,S0],[T.L1e-1.2,S1],[T.L2-.2,S1],[T.L2+1.3,SV],[T.L2e,SV],[T.L3+1.0,SM],[T.L3e,SM],[T.L4+1.0,SE],[T.L4+5.4,SE],[T.L4+6.6,SC],
+  [T.L4e,SC],[T.L5+1.3,SH],[T.L5e,SH],[T.L6+1.3,ST],[T.L6e,ST],[T.L7+2.2,SW],[T.END,view(V(0,0,0),34,24,24,45)]];
+ for(var i=0;i<K.length-1;i++){if(t<=K[i+1][0])return mixV(K[i][1],K[i+1][1],ez(lin(t,K[i][0],K[i+1][0])));}
+ return K[K.length-1][1];}
+// ---------- overlay helpers
+var $=function(id){return document.getElementById(id);};
+function fade(t,a,b,f){f=f||.45;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o,y){el.style.opacity=o;el.style.transform='translateY('+((1-o)*(y||30))+'px) scale('+(.92+.08*o)+')';}
+var cmpBuilt=false;
+function buildCmp(){var d=[['VÊNUS','465 °C',1.0,'#ff7a3d'],['TERRA','15 °C',.42,'#3fb6ff'],['MARTE','−63 °C',.12,'#9bc7ff']];
+ $('cmp').innerHTML=d.map(function(x){return '<div class="th"><div class="tube"><div class="fill" data-h="'+x[2]+'" style="background:'+x[3]+'"></div></div><div class="n">'+x[0]+'</div><div class="d" style="color:'+x[3]+'">'+x[1]+'</div></div>';}).join('');cmpBuilt=true;}
+function setCard(t,v,s,col){$('ct').textContent=t;$('cv').textContent=v;$('cs').innerHTML=s;$('ct').style.color=col;$('cv').style.color=col;$('card').style.borderColor=col;}
+function proj(p){var q=p.clone().project(camera);return [(q.x+1)/2*W,(1-q.y)/2*H,q.z];}
+function overlay(t,P){
+ ox.clearRect(0,0,W,H);
+ // linha Terra–Sol com distância
+ var a=fade(t,T.L1+.9,T.L1e+.3);
+ if(a>0){var s=proj(V(0,0,0)),e=proj(P.e);var u=ez(lin(t,T.L1+.9,T.L1+3.2));ox.save();ox.globalAlpha=a;ox.strokeStyle='#8fd0ff';ox.lineWidth=4;ox.setLineDash([14,12]);
+  ox.beginPath();ox.moveTo(e[0],e[1]);ox.lineTo(lerp(e[0],s[0],u),lerp(e[1],s[1],u));ox.stroke();ox.restore();}
+ pop($('dist'),a);$('dv').textContent=Math.round(150000000*ez(lin(t,T.L1+.9,T.L1+3.4))).toLocaleString('pt-BR');
+ // cartões
+ var cv=fade(t,T.L2+1.0,T.L2e+.2),cm=fade(t,T.L3+.7,T.L3e+.2),ce=fade(t,T.L4+.7,T.L4+5.6);
+ if(cv>0)setCard('VÊNUS','465 °C','chumbo derrete a 327 °C 🔥','#ff8a4a');
+ else if(cm>0)setCard('MARTE','−63 °C','média da superfície ❄️','#ff9a7a');
+ else if(ce>0)setCard('TERRA','15 °C','água líquida: entre 0 °C e 100 °C 💧','#5cc4ff');
+ pop($('card'),Math.max(cv,cm,ce));
+ // comparação de termômetros
+ var cc=fade(t,T.L4+5.9,T.L4e+.6);if(!cmpBuilt)buildCmp();pop($('cmp'),cc);
+ Array.prototype.forEach.call(document.querySelectorAll('.fill'),function(f,i){f.style.height=(+f.dataset.h*100*ez(lin(t,T.L4+6.1+i*.25,T.L4+7.4+i*.25)))+'%';});
+ // zona habitável
+ var hz=fade(t,T.L5+.6,T.L6+.8,.6);hzM.material.opacity=.16*hz*(0.85+.15*Math.sin(t*3));pop($('hz'),fade(t,T.L5+1.4,T.L5e+.4));
+ var lb=Math.max(fade(t,T.L5+.8,T.L6+.6),fade(t,T.L7+.5,T.L7+5));
+ if(lb>0){[[P.v,'Vênus','#ffb070'],[P.e,'Terra','#7cc8ff'],[P.m,'Marte','#ff9a7a']].forEach(function(x){var q=proj(x[0]);if(q[2]<1){ox.save();ox.globalAlpha=lb;ox.font='700 26px P';ox.textAlign='center';ox.fillStyle=x[2];ox.shadowColor='#000';ox.shadowBlur=8;ox.fillText(x[1],q[0],q[1]-26);ox.beginPath();ox.arc(q[0],q[1],14,0,7);ox.strokeStyle=x[2];ox.lineWidth=3;ox.stroke();ox.restore();}});}
+ // inclinação + Lua
+ var ti=fade(t,T.L6+1.4,T.L6e+.2);axis.material.opacity=.9*ti;pop($('tilt'),ti);
+ // versículo e final
+ pop($('verse'),fade(t,T.L7+5.2,T.L7+10.4));
+ pop($('end'),fade(t,T.L7+10.6,T.END+1));
+ $('brand').style.opacity=.85*fade(t,.3,T.L1+3,.6);
+ // legenda da fala atual
+ var cap='',co=0;TL.lines.forEach(function(l,i){if(t>=l.t0-.1&&t<l.t0+l.dur+.35){cap=LINES[i][1];co=fade(t,l.t0-.1,l.t0+l.dur+.35,.2);}});
+ $('cap').innerHTML=cap;$('cap').style.opacity=co;
+}
+function frame(t){var P=place(t);var c=window.CO||shots(t,P);camera.fov=c.fov;camera.updateProjectionMatrix();camera.position.copy(c.pos);camera.lookAt(c.look);camera.updateMatrixWorld();
+ g1.position.set(0,0,0);g2.position.set(0,0,0);overlay(t,P);renderer.render(scene,camera);}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>

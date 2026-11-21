@@ -1,0 +1,114 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(Poppins-Regular.ttf);font-weight:400}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff;background:#05070f}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+#top{top:40px;opacity:1}
+#top .tag{display:inline-block;background:#e8243c;padding:6px 18px;border-radius:8px;font-size:22px;font-weight:700;letter-spacing:3px}
+#top .dt{display:inline-block;margin-left:10px;font-size:20px;color:#b8c3e8;letter-spacing:2px}
+#cap{top:1020px;left:44px;width:632px;font-size:36px;font-weight:700;line-height:1.25;opacity:1;text-shadow:0 3px 0 #000,0 0 14px rgba(0,0,0,.95)}
+#cap b{color:#ffd166}
+.big{font-weight:700}
+#yrs{top:380px}
+#yrs .n{font-size:190px;line-height:1;font-weight:700;text-shadow:0 0 40px rgba(255,80,90,.6)}
+#yrs .u{font-size:44px;letter-spacing:10px;color:#ff8a94}
+#yrs .r{font-size:30px;color:#c9d2f2;margin-top:10px}
+#ttl{top:150px;font-size:46px;font-weight:700;color:#ffd166}
+#ttl small{display:block;font-size:26px;color:#c9d2f2;font-weight:400;letter-spacing:2px}
+#prize{top:360px}
+.card{display:inline-block;margin:12px;width:560px;padding:20px 0;border-radius:26px;background:rgba(14,20,48,.85);border:3px solid rgba(255,255,255,.2)}
+.card .v{font-size:76px;font-weight:700;line-height:1.1}
+.card .s{font-size:26px;color:#d6defa}
+#who{top:200px}
+#who .a{font-size:40px;font-weight:700}
+#who .a b{color:#ffb35c}
+#who .s{font-size:26px;color:#c9d2f2}
+#lines{top:520px;font-size:30px;color:#9cf7b8;font-weight:700}
+#stamp{top:330px}
+#stamp .s1{display:inline-block;border:8px solid #ff9a2e;color:#ff9a2e;border-radius:18px;padding:14px 30px;font-size:62px;font-weight:700;line-height:1.05;letter-spacing:2px}
+#stamp .s2{font-size:28px;color:#ffe0bd;margin-top:22px}
+#q{top:360px;left:60px;width:600px;font-size:54px;font-weight:700;line-height:1.2}
+#q .c{display:block;margin-top:30px;font-size:34px;color:#ffd166}
+#q .btn{display:inline-block;margin-top:26px;padding:16px 44px;border-radius:50px;background:#e8344e;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+</style></head><body>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="top" class="lay"><span class="tag">⚡ NOTÍCIA DO DIA</span><span class="dt">21 NOV 2026</span></div>
+<div id="yrs" class="lay"><div class="n" id="yn">0</div><div class="u">ANOS</div><div class="r" id="yr">1859 → 2026</div></div>
+<div id="ttl" class="lay">HIPÓTESE DE RIEMANN<small>proposta em 1859 · números primos</small></div>
+<div id="prize" class="lay"><div class="card"><div class="v" style="color:#7dffb0">US$ 1 milhão</div><div class="s">prêmio do Clay Institute 🏆</div></div><div class="card"><div class="v" style="color:#8fd0ff;font-size:64px">🔒 primos</div><div class="s">base da criptografia da internet</div></div></div>
+<div id="who" class="lay"><div class="a">Levent Alpöge <b>+ IA Claude</b></div><div class="s">matemático da Anthropic · anúncio em 20/11</div></div>
+<div id="lines" class="lay">≈ 17 milhões de linhas em Lean ✓<div style="position:absolute;top:478px;width:720px;font-size:18px;color:#8090b8;font-weight:400">ilustração do código</div></div>
+<div id="stamp" class="lay"><div class="s1">AINDA NÃO<br>VERIFICADA</div><div class="s2">especialistas estão conferindo a prova</div></div>
+<div id="q" class="lay">A IA vai resolver o que a gente nunca conseguiu?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),x=cv.getContext('2d');
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}
+function ez(u){return u*u*(3-2*u);}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var LINES=[['L1','Um problema de matemática ficou <b>167 anos</b> sem solução. E pode ter acabado de cair, com a ajuda de uma <b>IA</b>.'],
+['L2','É a <b>Hipótese de Riemann</b>, de 1859. Ela mexe com o maior mistério dos <b>números primos</b>: eles parecem aparecer ao acaso.'],
+['L3','Riemann desconfiou de uma <b>ordem escondida</b>: os zeros da <b>função zeta</b> cairiam todos numa única linha reta.'],
+['L4','Ninguém nunca provou. Vale <b>US$ 1 milhão</b>. E a criptografia que protege a internet depende dos <b>primos</b>.'],
+['L5','Agora, o matemático <b>Levent Alpöge</b>, da Anthropic, diz ter achado uma prova com a IA <b>Claude</b>, escrita num programa que confere cada passo.'],
+['L6','Mas calma: <b>ninguém ainda conferiu a prova inteira</b>. Especialistas estão analisando.'],
+['L7','Se estiver certa, uma máquina ajudou a resolver um dos maiores mistérios da matemática. <b>E você, o que acha?</b> Comenta e segue!']];
+var T={},TL={lines:[]};
+window.__retime=function(d){var t=.4;TL.lines=[];LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.35;});T.END=t+1.6;TL.end=T.END;window.TOTAL=T.END;};
+window.__timeline=function(){return TL;};
+var PR=[];for(var n=2;n<=100;n++){var p=true;for(var k=2;k*k<=n;k++)if(n%k==0){p=false;break;}if(p)PR.push(n);}
+var ZEROS=[14.13,21.02,25.01,30.42,32.94,37.59,40.92,43.33,48.01,49.77];
+var seed=3;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var DOTS=[];for(var i=0;i<140;i++)DOTS.push([rnd()*W,rnd()*H,rnd()*1.5+.3,rnd()*6]);
+var CODE=['theorem riemann_hypothesis :','  ∀ s : ℂ, riemannZeta s = 0 →','  (¬ trivial s) → s.re = 1/2 := by','  intro s hs hnt','  have h1 := theta_lift_bound s','  rw [functional_eq] at hs','  apply critical_line_of_bound','  · exact h1.mono le_sqrt_X','  · simpa using hnt','  linarith [zeta_nonvanish s]','lemma theta_lift_bound (s : ℂ) :','  ‖Θ s‖ ≤ C * √X := by','  calc ‖Θ s‖ ≤ ∑ n, ‖a n‖ := norm_sum','  _ ≤ C * √X := by positivity'];
+function bg(t){var g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#070a1a');g.addColorStop(1,'#0b0618');x.fillStyle=g;x.fillRect(0,0,W,H);
+ DOTS.forEach(function(d){var a=.35+.35*Math.sin(t*1.3+d[3]);x.fillStyle='rgba(170,190,255,'+a+')';x.beginPath();x.arc(d[0],(d[1]+t*6)%H,d[2],0,7);x.fill();});
+ x.strokeStyle='rgba(90,120,255,.07)';x.lineWidth=1;for(var gx=0;gx<W;gx+=48){x.beginPath();x.moveTo(gx,0);x.lineTo(gx,H);x.stroke();}for(var gy=(t*12)%48;gy<H;gy+=48){x.beginPath();x.moveTo(0,gy);x.lineTo(W,gy);x.stroke();}}
+function glowText(s,X,Y,size,col,a){x.save();x.globalAlpha=a;x.font='700 '+size+'px P';x.textAlign='center';x.textBaseline='middle';x.shadowColor=col;x.shadowBlur=18;x.fillStyle=col;x.fillText(s,X,Y);x.restore();}
+function primes(t,a){if(a<=0)return;var t0=T.L2+1.2,cs=60,ox=(W-cs*10)/2,oy=330;
+ for(var n=1;n<=100;n++){var i=(n-1)%10,j=Math.floor((n-1)/10),X=ox+i*cs+cs/2,Y=oy+j*cs+cs/2;var isP=PR.indexOf(n)>=0;
+  var on=isP?lin(t,t0+PR.indexOf(n)*.17,t0+PR.indexOf(n)*.17+.3):0;
+  x.save();x.globalAlpha=a*(isP?1:.55);x.fillStyle=isP?'rgba(255,209,102,'+(.12+.25*on)+')':'rgba(255,255,255,.04)';x.fillRect(X-cs/2+3,Y-cs/2+3,cs-6,cs-6);x.restore();
+  glowText(String(n),X,Y,isP?24:20,isP&&on>0?'#ffd166':'#5b6488',a*(isP?(.45+.55*on):.8));}}
+function plane(t,a){if(a<=0)return;var cx=W/2+40,top=300,bot=940,sc=(bot-top)/52;x.save();x.globalAlpha=a;
+ x.strokeStyle='rgba(255,255,255,.35)';x.lineWidth=2;x.beginPath();x.moveTo(90,bot);x.lineTo(W-60,bot);x.stroke();x.beginPath();x.moveTo(cx-170,top-20);x.lineTo(cx-170,bot);x.stroke();
+ glowText('Re = 0',cx-170,bot+32,20,'#9aa6d8',a);glowText('Re = 1',cx+170,bot+32,20,'#9aa6d8',a);
+ var u=ez(lin(t,T.L3+.6,T.L3+2.6));x.strokeStyle='#ffd166';x.lineWidth=5;x.shadowColor='#ffd166';x.shadowBlur=20;x.beginPath();x.moveTo(cx,bot);x.lineTo(cx,bot-(bot-top)*u);x.stroke();x.shadowBlur=0;
+ glowText('Re(s) = ½',cx,top-40,30,'#ffd166',a*u);
+ ZEROS.forEach(function(z,i){var k=back(lin(t,T.L3+2.4+i*.35,T.L3+2.75+i*.35));if(k<=0)return;var Y=bot-z*sc;x.fillStyle='#7dffb0';x.shadowColor='#7dffb0';x.shadowBlur=16;x.beginPath();x.arc(cx,Y,9*k,0,7);x.fill();x.shadowBlur=0;
+  x.globalAlpha=a*clamp(k,0,1);x.font='400 18px P';x.fillStyle='#bfeacc';x.textAlign='left';x.fillText('ζ = 0',cx+18,Y+6);x.globalAlpha=a;});
+ x.restore();}
+function code(t,a){if(a<=0)return;x.save();x.globalAlpha=a;var X=60,Y=620,w=600,h=360;x.fillStyle='rgba(10,16,30,.92)';x.strokeStyle='rgba(125,255,176,.5)';x.lineWidth=3;
+ x.beginPath();x.roundRect?x.roundRect(X,Y,w,h,18):x.rect(X,Y,w,h);x.fill();x.stroke();x.save();x.beginPath();x.rect(X+6,Y+6,w-12,h-12);x.clip();
+ var off=(t-T.L5)*38;x.font='400 19px monospace';x.textAlign='left';
+ for(var i=0;i<40;i++){var ln=CODE[i%CODE.length],y=Y+34+i*28-off%(CODE.length*28)+ (Math.floor(off/(CODE.length*28)))*0;
+  var yy=Y+34+((i*28-off)%(40*28)+40*28)%(40*28);if(yy>Y+h+20)continue;x.fillStyle=ln.indexOf('theorem')==0||ln.indexOf('lemma')==0?'#ff9ad5':'#cfe3ff';x.fillText(ln,X+22,yy);x.fillStyle='#7dffb0';x.fillText('✓',X+w-40,yy);}
+ x.restore();x.restore();}
+function scan(t,a){if(a<=0)return;var cx=W/2,cy=700+Math.sin(t*1.6)*60,r=70;x.save();x.globalAlpha=a;x.strokeStyle='#ff9a2e';x.lineWidth=10;
+ var X=cx+Math.sin(t*1.1)*150;x.beginPath();x.arc(X,cy,r,0,7);x.stroke();x.lineWidth=16;x.beginPath();x.moveTo(X+r*.7,cy+r*.7);x.lineTo(X+r*1.5,cy+r*1.5);x.stroke();
+ x.globalAlpha=a*.25;x.fillStyle='#ffb35c';for(var i=0;i<10;i++){x.fillRect(80,560+i*36,560*(.4+.6*((i*37)%10)/10),12);}x.restore();}
+function crack(t,a){if(a<=0)return;var u=ez(lin(t,T.L1+3.2,T.L1+4.2));if(u<=0)return;x.save();x.globalAlpha=a*u;x.strokeStyle='#fff';x.lineWidth=3;x.shadowColor='#ff5b6b';x.shadowBlur=14;
+ var pts=[[360,240],[330,330],[385,380],[350,470],[400,540]];x.beginPath();x.moveTo(pts[0][0],pts[0][1]);for(var i=1;i<pts.length;i++)x.lineTo(pts[i][0],pts[i][1]);x.stroke();x.restore();}
+function frame(t){bg(t);
+ var a1=fade(t,0,T.L1e+.2);pop($('yrs'),a1);$('yn').textContent=Math.round(167*ez(lin(t,.3,2.6)));crack(t,a1);
+ var a2=fade(t,T.L2-.1,T.L2e+.25);pop($('ttl'),a2);primes(t,a2);
+ plane(t,Math.max(fade(t,T.L3-.1,T.L3e+.25),fade(t,T.L7-.1,T.L7+5.6)));
+ pop($('prize'),fade(t,T.L4+.2,T.L4e+.2));
+ var a5=fade(t,T.L5-.1,T.L5e+.2);pop($('who'),a5);pop($('lines'),fade(t,T.L5+2.5,T.L5e+.2));code(t,a5);
+ var a6=fade(t,T.L6-.1,T.L6e+.25);pop($('stamp'),back(lin(t,T.L6+.2,T.L6+.7))*a6);scan(t,a6);
+ pop($('q'),fade(t,T.L7+5.5,T.END+2));
+ var cap='',co=0;TL.lines.forEach(function(l,i){if(t>=l.t0-.1&&t<l.t0+l.dur+.25){cap=LINES[i][1];co=fade(t,l.t0-.1,l.t0+l.dur+.25,.15);}});
+ $('cap').innerHTML=cap;$('cap').style.opacity=co;}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>
