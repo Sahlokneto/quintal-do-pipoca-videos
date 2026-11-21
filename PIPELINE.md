@@ -110,6 +110,7 @@ Descrição:
    - TIKTOK: text = título + 3-5 hashtags (curto), privacyLevel PUBLIC_TO_EVERYONE, allowComment true,
      musicUsageConfirmed true, isAiGenerated true (escolhas do dono, confirmadas em 16/11/2026).
    Se algum destino voltar recusado, corrija com `vidiq_social_post_draft_update` (nunca crie um segundo rascunho).
-4. **Horários**: 09:00, 12:00 e 18:00 (Brasília). Se um horário já passou, usar o próximo livre.
+4. **Horários**: 09:00, 12:00 e 18:00 (Brasília). Os 3 vídeos do dia saem SEMPRE no mesmo dia (decisão do dono, 21/11/2026): se um horário já passou
+   (ex.: o dono aprovou às 10h), esse vídeo sai atrasado, na hora da aprovação (sem publishAt); nunca empurrar para o dia seguinte.
 5. **Só chamar `vidiq_social_post_publish` depois que o dono aprovar** (ele responde "pode publicar"/"pode agendar" na conversa).
    Depois confira cada destino com `vidiq_social_post_status`.
