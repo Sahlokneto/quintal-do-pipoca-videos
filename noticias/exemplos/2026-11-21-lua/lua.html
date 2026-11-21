@@ -1,0 +1,150 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(Poppins-Regular.ttf);font-weight:400}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#gl,#ov{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.card{display:inline-block;padding:20px 34px;border-radius:28px;background:rgba(10,14,34,.78);border:3px solid rgba(255,255,255,.22);box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.card .v{font-size:58px;font-weight:700;line-height:1.1}
+.card .s{font-size:28px;color:#dfe6ff;margin-top:6px}
+#c1{top:190px}#c2{top:170px}#c2b{top:330px}#c3{top:180px}#c4{top:170px}#c5{top:180px}#c6{top:200px}
+#q{top:180px;left:60px;width:600px;font-size:52px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:22px;font-size:34px;color:#ffd166}
+#q .btn{display:inline-block;margin-top:22px;padding:16px 44px;border-radius:50px;background:#e8344e;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:1020px;left:44px;width:632px;font-size:38px;font-weight:700;line-height:1.25;opacity:1;text-shadow:0 3px 0 #000,0 0 14px rgba(0,0,0,.95)}
+#cap b{color:#ffd166}
+</style></head><body>
+<div id="stage">
+<canvas id="gl" width="720" height="1280"></canvas>
+<canvas id="ov" width="720" height="1280"></canvas>
+<div id="c1" class="lay"><div class="card"><div class="v">🧱 Tijolos de<br>poeira da Lua</div></div></div>
+<div id="c2" class="lay"><div class="card"><div class="v" style="color:#ff8a8a">💸 Levar da Terra<br>custa muito caro</div></div></div>
+<div id="c2b" class="lay"><div class="card"><div class="v" style="color:#7dffb0;font-size:48px">✅ Usar o chão da Lua</div></div></div>
+<div id="c3" class="lay"><div class="card"><div class="v" style="font-size:50px">🧪 Poeira de laboratório</div><div class="s">igual à que os astronautas trouxeram</div></div></div>
+<div id="c4" class="lay"><div class="card"><div class="v" style="color:#ff6b6b;font-size:50px">🔥 Laser + camadas</div><div class="s">vira um bloco firme, sem cola</div></div></div>
+<div id="c5" class="lay"><div class="card"><div class="v" style="color:#ffd166;font-size:50px">✚ e H se encaixam</div><div class="s">igual brinquedo de montar</div></div></div>
+<div id="c6" class="lay"><div class="card" style="border-color:#ff9a2e"><div class="v" style="color:#ff9a2e;font-size:50px">⚠️ Ainda é teste</div><div class="s">blocos fracos · não testados no espaço</div></div></div>
+<div id="q" class="lay">Você moraria numa casa na Lua feita de blocos de montar?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function(){
+var W=720,H=1280;
+var gl=document.getElementById('gl'),ov=document.getElementById('ov'),ox=ov.getContext('2d');
+var renderer=new THREE.WebGLRenderer({canvas:gl,antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(1);renderer.setSize(W,H,false);
+var scene=new THREE.Scene();scene.background=new THREE.Color(0x020309);
+var camera=new THREE.PerspectiveCamera(45,W/H,0.05,900);
+function clamp(x,a,b){return Math.max(a,Math.min(b,x));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+function V(x,y,z){return new THREE.Vector3(x,y,z);}
+var seed=11;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var PP=[];for(var i=0;i<512;i++)PP.push(Math.floor(rnd()*256));
+function hh(x,y,z){return PP[(PP[(PP[x&255]+y)&255]+z)&255]/255;}
+function vn(x,y,z){var xi=Math.floor(x),yi=Math.floor(y),zi=Math.floor(z),xf=x-xi,yf=y-yi,zf=z-zi,u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf),w=zf*zf*(3-2*zf);function L(a,b,t){return a+(b-a)*t;}
+ return L(L(L(hh(xi,yi,zi),hh(xi+1,yi,zi),u),L(hh(xi,yi+1,zi),hh(xi+1,yi+1,zi),u),v),L(L(hh(xi,yi,zi+1),hh(xi+1,yi,zi+1),u),L(hh(xi,yi+1,zi+1),hh(xi+1,yi+1,zi+1),u),v),w);}
+function fbm(x,y,z,o){var s=0,a=.5,f=1;for(var i=0;i<o;i++){s+=a*vn(x*f,y*f,z*f);a*=.5;f*=2;}return s;}
+function tex(fn,w,h){var c=document.createElement('canvas');c.width=w;c.height=h;var x=c.getContext('2d'),im=x.createImageData(w,h);
+ for(var j=0;j<h;j++){var lat=(j/h-.5)*Math.PI;for(var i=0;i<w;i++){var lon=i/w*2*Math.PI,px=Math.cos(lat)*Math.cos(lon),py=Math.sin(lat),pz=Math.cos(lat)*Math.sin(lon),c3=fn(px,py,pz,lat),k=(j*w+i)*4;
+ im.data[k]=c3[0];im.data[k+1]=c3[1];im.data[k+2]=c3[2];im.data[k+3]=255;}}x.putImageData(im,0,0);return new THREE.CanvasTexture(c);}
+function glow(c1,c2){var c=document.createElement('canvas');c.width=c.height=256;var x=c.getContext('2d'),g=x.createRadialGradient(128,128,0,128,128,128);g.addColorStop(0,c1);g.addColorStop(.3,c2);g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.fillRect(0,0,256,256);return new THREE.CanvasTexture(c);}
+// estrelas
+var sg=new THREE.BufferGeometry(),sp=[];for(var i=0;i<2400;i++){var r=400+rnd()*200,th=rnd()*Math.PI*2,ph=Math.acos(2*rnd()-1);sp.push(r*Math.sin(ph)*Math.cos(th),r*Math.cos(ph),r*Math.sin(ph)*Math.sin(th));}
+sg.setAttribute('position',new THREE.Float32BufferAttribute(sp,3));scene.add(new THREE.Points(sg,new THREE.PointsMaterial({color:0xdde4ff,size:1.6,sizeAttenuation:false})));
+// luz do Sol
+var sunL=new THREE.DirectionalLight(0xfff4e6,1.5);sunL.position.set(-40,30,25);scene.add(sunL);scene.add(new THREE.AmbientLight(0x334466,.45));
+// Lua (chão): esfera grande; topo em y=0
+var MR=40;var moonTex=tex(function(x,y,z){var n=fbm(x*5+2,y*5,z*5,6),c=fbm(x*22,y*22,z*22,2);var v=lerp(95,190,n)-(c>.62?40:0);return [v,v,v*1.02];},1024,512);
+var moon=new THREE.Mesh(new THREE.SphereGeometry(MR,128,96),new THREE.MeshStandardMaterial({map:moonTex,roughness:1}));moon.position.set(0,-MR,0);scene.add(moon);
+// Terra no céu
+var earthTex=tex(function(x,y,z,lat){if(Math.abs(lat)>1.2)return [235,242,250];var n=fbm(x*2.2+11,y*2.2,z*2.2,5);return n>.53?[70,140,70]:[20,70,160];},256,128);
+var earth=new THREE.Mesh(new THREE.SphereGeometry(4.5,48,32),new THREE.MeshStandardMaterial({map:earthTex,roughness:.8}));earth.position.set(-16,26,-55);scene.add(earth);
+var eg=new THREE.Sprite(new THREE.SpriteMaterial({map:glow('rgba(110,180,255,.6)','rgba(60,130,255,.2)'),blending:THREE.AdditiveBlending,depthWrite:false}));eg.scale.set(20,20,1);earth.add(eg);
+// foguete
+var rocket=new THREE.Group();var rb=new THREE.Mesh(new THREE.CylinderGeometry(.8,.8,3.6,20),new THREE.MeshStandardMaterial({color:0xf2f2f2}));rocket.add(rb);
+var rn=new THREE.Mesh(new THREE.ConeGeometry(.8,1.6,20),new THREE.MeshStandardMaterial({color:0xe8344e}));rn.position.y=2.6;rocket.add(rn);
+var fl=new THREE.Sprite(new THREE.SpriteMaterial({map:glow('rgba(255,230,150,1)','rgba(255,120,30,.6)'),blending:THREE.AdditiveBlending,depthWrite:false}));fl.scale.set(3,3,1);fl.position.y=-2.6;rocket.add(fl);scene.add(rocket);
+// monte de poeira (partículas)
+var dg=new THREE.BufferGeometry(),dp=[];for(var i=0;i<2600;i++){var a=rnd()*Math.PI*2,rr=Math.sqrt(rnd())*1.3,hgt=(1-rr/1.3)*0.9*rnd();dp.push(Math.cos(a)*rr,hgt,Math.sin(a)*rr);}
+dg.setAttribute('position',new THREE.Float32BufferAttribute(dp,3));var dust=new THREE.Points(dg,new THREE.PointsMaterial({color:0xb9b4aa,size:.045}));dust.position.set(-1.6,0,0);scene.add(dust);
+// impressora: base + laser + bloco crescendo
+var bed=new THREE.Mesh(new THREE.BoxGeometry(2.2,.12,2.2),new THREE.MeshStandardMaterial({color:0x40465a,metalness:.4,roughness:.5}));bed.position.set(1.6,.06,0);scene.add(bed);
+var grow=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshStandardMaterial({color:0xa8a297,roughness:.95}));grow.position.set(1.6,.12,0);scene.add(grow);
+var beam=new THREE.Mesh(new THREE.CylinderGeometry(.025,.025,1,8),new THREE.MeshBasicMaterial({color:0xff3b3b,transparent:true,opacity:.9}));scene.add(beam);
+var hot=new THREE.Sprite(new THREE.SpriteMaterial({map:glow('rgba(255,240,200,1)','rgba(255,60,40,.7)'),blending:THREE.AdditiveBlending,depthWrite:false}));hot.scale.set(.9,.9,1);scene.add(hot);
+var head=new THREE.Mesh(new THREE.BoxGeometry(.5,.3,.5),new THREE.MeshStandardMaterial({color:0x2b2f3d,metalness:.6}));scene.add(head);
+// tijolos em cruz e em H (feitos de cubinhos)
+var bmat=new THREE.MeshStandardMaterial({color:0xb3ada2,roughness:.95});
+function brick(kind){var g=new THREE.Group(),u=.32,cells=kind=='x'?[[0,0],[1,0],[-1,0],[0,1],[0,-1]]:[[-1,1],[-1,0],[-1,-1],[0,0],[1,1],[1,0],[1,-1]];
+ cells.forEach(function(c){var m=new THREE.Mesh(new THREE.BoxGeometry(u*.96,u*.96,u*.96),bmat);m.position.set(c[0]*u,c[1]*u,0);g.add(m);
+  var s=new THREE.Mesh(new THREE.CylinderGeometry(u*.18,u*.18,u*.12,12),bmat);s.rotation.x=Math.PI/2;s.position.set(c[0]*u,c[1]*u,u*.52);g.add(s);});scene.add(g);return g;}
+var BR=[];for(var i=0;i<14;i++)BR.push(brick(i%2?'h':'x'));
+// alvos da parede (fileiras alternadas)
+var WALL=[];for(var row=0;row<3;row++)for(var col=0;col<4;col++){WALL.push(V(-1.8+col*1.2+(row%2)*.6,.55+row*1.1,-1.2));}
+WALL.push(V(-.6,3.85,-1.2),V(.6,3.85,-1.2));
+// cúpula (casa) do final
+var dome=new THREE.Mesh(new THREE.SphereGeometry(3.2,40,20,0,Math.PI*2,0,Math.PI/2),new THREE.MeshStandardMaterial({color:0xa9a398,roughness:1,flatShading:true}));dome.position.set(4.5,0,-6);scene.add(dome);
+var door=new THREE.Mesh(new THREE.BoxGeometry(1,1.6,.3),new THREE.MeshStandardMaterial({color:0xffd166,emissive:0xffb020,emissiveIntensity:.25}));door.position.set(4.5,.8,-2.9);scene.add(door);
+// linha do tempo
+var LINES=[['L1','Cientistas fizeram <b>tijolinhos de montar</b>, tipo LEGO, com <b>poeira da Lua</b>.'],
+['L2','Levar coisas da Terra até a Lua <b>custa muito caro</b>. Então a ideia é construir lá, com o <b>próprio chão da Lua</b>.'],
+['L3','Eles usaram uma <b>poeira de laboratório</b> que imita a que os astronautas trouxeram da Lua.'],
+['L4','Um <b>laser</b> esquenta a poeira, <b>camada por camada</b>, como uma impressora 3D. Sai um bloco firme, <b>sem cola</b>.'],
+['L5','Os blocos têm formato de <b>cruz</b> e de <b>H</b>, e se <b>encaixam</b> igual brinquedo de montar.'],
+['L6','Mas atenção: os blocos <b>ainda são fracos</b> e <b>ninguém testou no espaço</b>.'],
+['L7','A ideia saiu de um <b>estudante</b> dos Estados Unidos. Você moraria numa <b>casa na Lua</b> assim? Comenta e segue!']];
+var T={},TL={lines:[]};
+window.__retime=function(d){var t=.4;TL.lines=[];LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.35;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;};
+window.__timeline=function(){return TL;};
+function view(look,pos,fov){return {pos:pos,look:look,fov:fov||45};}
+function mixV(A,B,u){return {pos:A.pos.clone().lerp(B.pos,u),look:A.look.clone().lerp(B.look,u),fov:lerp(A.fov,B.fov,u)};}
+function cam(t){
+ var FAR=view(V(-10,-8,-40),V(18,30,95),45), HERO=view(V(0,1.5,-1),V(.6,3.2,6.5),45),
+  SPACE=view(V(-8,13,-28),V(16,14,22),45), DUST=view(V(-1.6,.6,0),V(-.6,2.2,3.6),42), PRINT=view(V(1.6,1.1,0),V(3.4,3.0,5.0),40),
+  WALLV=view(V(.4,1.9,-1.2),V(1.2,3.4,9.5),45), CRACK=view(V(.4,1.9,-1.2),V(-.4,2.8,7.2),42), HOME=view(V(2.6,1.6,-3.5),V(10,4.2,7),45);
+ var K=[[0,FAR],[T.L1+.6,FAR],[T.L1+2.6,HERO],[T.L1e,HERO],[T.L2+.3,SPACE],[T.L2e-1.8,SPACE],[T.L3+.6,DUST],[T.L3e,DUST],[T.L4+.6,PRINT],[T.L4e,PRINT],[T.L5+.8,WALLV],[T.L5e,WALLV],
+  [T.L6+.6,CRACK],[T.L6e,CRACK],[T.L7+1.2,HOME],[T.END+2,view(V(2.6,1.9,-3.5),V(12,5.2,9),45)]];
+ for(var i=0;i<K.length-1;i++)if(t<=K[i+1][0])return mixV(K[i][1],K[i+1][1],ez(lin(t,K[i][0],K[i+1][0])));return K[K.length-1][1];}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+function frame(t){
+ earth.rotation.y=t*.1;moon.rotation.y=0;
+ // foguete Terra -> Lua (cena 2)
+ var ru=ez(lin(t,T.L2+.6,T.L2+6.5));var p0=earth.position,p1=V(-2,6,-6);var mid=V(-4,26,-24);
+ var a=p0.clone().lerp(mid,ru),b=mid.clone().lerp(p1,ru),rp=a.lerp(b,ru);rocket.position.copy(rp);rocket.visible=t>T.L2-.2&&t<T.L3;
+ var nx=p0.clone().lerp(mid,Math.min(1,ru+.02)).lerp(mid.clone().lerp(p1,Math.min(1,ru+.02)),Math.min(1,ru+.02));rocket.lookAt(nx);rocket.rotateX(Math.PI/2);rocket.scale.setScalar(1.6);
+ // poeira aparece na cena 3
+ dust.visible=t>T.L3-.5&&t<T.L5;
+ // impressão (cena 4)
+ var pu=lin(t,T.L4+.8,T.L4e-.5),layers=Math.floor(pu*10)/10,hgt=Math.max(.02,layers*.9);grow.scale.set(1,hgt,1);grow.position.y=.12+hgt/2;
+ var printing=t>T.L4+.5&&t<T.L4e;grow.visible=t>T.L4-.4&&t<T.L5+.5;bed.visible=grow.visible;head.visible=grow.visible;
+ var sx=1.6+Math.sin(t*9)*.45,sz=Math.cos(t*6.3)*.45,topY=.12+hgt;head.position.set(sx,topY+1.4,sz);
+ beam.visible=printing;hot.visible=printing;beam.scale.y=1.25;beam.position.set(sx,topY+.7,sz);hot.position.set(sx,topY+.02,sz);hot.scale.setScalar(.7+.25*Math.sin(t*40));
+ // tijolos
+ BR.forEach(function(br,i){var w=WALL[i];var st=T.L5+.6+i*.42;var u=back(lin(t,st,st+.55));
+  var flyFrom=V(w.x+(i%2?3:-3),w.y+5,w.z+3);
+  if(t<T.L1e+.2){ // cena 1: dois tijolos herói girando
+   br.visible=i<2&&t>.6;var k=back(lin(t,T.L1+.8+i*.4,T.L1+1.6+i*.4));br.position.set(i?.9:-.9,1.6+Math.sin(t*1.3+i)*.1,-.5);br.rotation.set(.3,t*.8+i,.2);br.scale.setScalar(k*1.4);return;}
+  br.scale.setScalar(1);br.visible=t>=st&&t<T.END+3;br.position.copy(flyFrom.clone().lerp(w,u));br.rotation.set((1-u)*2,(1-u)*3,0);
+  if(t>T.L6&&i==6){br.position.x+=Math.sin(t*50)*.03*fade(t,T.L6+.5,T.L6e);} });
+ if(t<T.L5){BR.forEach(function(br,i){if(t>T.L1e+.2)br.visible=false;});}
+ dome.visible=t>T.L7-.2;door.visible=dome.visible;dome.scale.setScalar(back(lin(t,T.L7,T.L7+1.2)));
+ var c=cam(t);camera.fov=c.fov;camera.updateProjectionMatrix();camera.position.copy(c.pos);camera.lookAt(c.look);camera.updateMatrixWorld();
+ // overlay: rachadura no tijolo (cena 6)
+ ox.clearRect(0,0,W,H);var ca=fade(t,T.L6+1,T.L6e+.2);
+ if(ca>0){var q=WALL[6].clone().project(camera),X=(q.x+1)/2*W,Y=(1-q.y)/2*H;ox.save();ox.globalAlpha=ca;ox.strokeStyle='#ffb35c';ox.lineWidth=5;ox.shadowColor='#ff7a00';ox.shadowBlur=12;
+  ox.beginPath();ox.moveTo(X-40,Y-60);ox.lineTo(X-10,Y-15);ox.lineTo(X-30,Y+10);ox.lineTo(X+5,Y+60);ox.stroke();ox.restore();}
+ if(t>T.L2&&t<T.L3){var e=earth.position.clone().project(camera),m=V(-2,0,-6).project(camera),la=fade(t,T.L2+.3,T.L3);ox.save();ox.globalAlpha=la*.8;ox.setLineDash([14,12]);ox.strokeStyle='#8fd0ff';ox.lineWidth=4;
+  ox.beginPath();ox.moveTo((e.x+1)/2*W,(1-e.y)/2*H);ox.quadraticCurveTo(W*.4,H*.05,(m.x+1)/2*W,(1-m.y)/2*H);ox.stroke();ox.restore();}
+ // cartões
+ pop($('c1'),fade(t,T.L1+1.6,T.L1e+.2));pop($('c2'),fade(t,T.L2+.6,T.L2e+.2));pop($('c2b'),fade(t,T.L2+5.6,T.L2e+.2));
+ pop($('c3'),fade(t,T.L3+.8,T.L3e+.2));pop($('c4'),fade(t,T.L4+.8,T.L4e+.2));pop($('c5'),fade(t,T.L5+.6,T.L5e+.2));pop($('c6'),fade(t,T.L6+.4,T.L6e+.2));
+ pop($('q'),fade(t,T.L7+3.6,T.END+2));
+ var cap='',co=0;TL.lines.forEach(function(l,i){if(t>=l.t0-.1&&t<l.t0+l.dur+.25){cap=LINES[i][1];co=fade(t,l.t0-.1,l.t0+l.dur+.25,.15);}});$('cap').innerHTML=cap;$('cap').style.opacity=co;
+ renderer.render(scene,camera);}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>

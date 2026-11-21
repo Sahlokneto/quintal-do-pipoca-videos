@@ -32,7 +32,11 @@ explorada ou tema que dependa de foto de pessoa real.
 - Geopolítica: neutro, só fatos, sem opinião nem lado.
 - Sem foto de pessoa real e sem logotipos; usar gráficos, ícones e animação. Código/telas "de exemplo" levam a etiqueta "ilustração".
 
-## 4. Roteiro (700–1.000 caracteres, 6–8 falas, ~65–85 s)
+## 4. Roteiro (500–850 caracteres, 6–8 falas, ~55–75 s) — PARA LEIGO TOTAL
+**Regra de ouro (pedido do dono):** explicar como se fosse para alguém que não sabe nada do assunto.
+Sem termos técnicos (nada de "função zeta", "regolito", "sinterização"); quando não tiver jeito, explique na mesma frase
+com algo do dia a dia ("como uma impressora 3D", "igual brinquedo de montar"). Frases curtas. Um conceito por fala.
+Sempre diga por que aquilo importa para a vida da pessoa. Cartões na tela com no máximo 4–5 palavras.
 1. Gancho (1 frase, número/mistério). 2. O que é (contexto simples). 3. Por que importa. 4. A novidade de hoje
 (quem, o quê). 5. A ressalva honesta. 6. Fechamento com pergunta para comentários + "segue o canal".
 Linguagem de conversa, frases curtas, números escritos por extenso na fala (o ElevenLabs lê melhor).
@@ -43,7 +47,7 @@ Linguagem de conversa, frases curtas, números escritos por extenso na fala (o E
   `content_url` (curl) para `mp3/L1.mp3…`. Confira antes o saldo com `account_get_usage`.
 - `python3 ../ranaitech/tools/prep_audio.py <pasta>` → `aud/*.wav` + `durs.json`.
 - Página: copie `exemplos/2026-11-21-riemann/news.html` (2D, rápido) ou `exemplos/piloto-terra/terra.html` (3D, Three.js)
-  e troque LINES (legendas), cenas e cartões pelo tema do dia. Topo: faixa "⚡ NOTÍCIA DO DIA" + data.
+  e troque LINES (legendas). O exemplo mais recente e no estilo certo é `exemplos/2026-11-21-lua/lua.html` (3D, linguagem simples); remova a faixa do topo se usar o de Riemann cenas e cartões pelo tema do dia. **Sem faixa "Notícia do dia" e sem data na tela** (a data e as fontes vão só na legenda do post).
   Legenda da fala embaixo (y ≈ 1020), cartões/gráficos no meio, nada importante nos 15% de baixo.
 - Conferir: `node tools/shots.js t1,t2,...` (≈15 momentos), montar folha e **olhar** (texto sobreposto, áreas vazias, cortes).
 - Render: 3 processos (`node tools/render.js 0 3` …) → `frames/`; música: `python3 tools/music.py` (lê timeline.json e aud/) →
