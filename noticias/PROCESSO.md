@@ -32,13 +32,24 @@ explorada ou tema que dependa de foto de pessoa real.
 - Geopolítica: neutro, só fatos, sem opinião nem lado.
 - Sem foto de pessoa real e sem logotipos; usar gráficos, ícones e animação. Código/telas "de exemplo" levam a etiqueta "ilustração".
 
-## 4. Roteiro (500–850 caracteres, 6–8 falas, ~55–75 s) — PARA LEIGO TOTAL
-**Regra de ouro (pedido do dono):** explicar como se fosse para alguém que não sabe nada do assunto.
-Sem termos técnicos (nada de "função zeta", "regolito", "sinterização"); quando não tiver jeito, explique na mesma frase
-com algo do dia a dia ("como uma impressora 3D", "igual brinquedo de montar"). Frases curtas. Um conceito por fala.
-Sempre diga por que aquilo importa para a vida da pessoa. Cartões na tela com no máximo 4–5 palavras.
-1. Gancho (1 frase, número/mistério). 2. O que é (contexto simples). 3. Por que importa. 4. A novidade de hoje
-(quem, o quê). 5. A ressalva honesta. 6. Fechamento com pergunta para comentários + "segue o canal".
+## 4. Roteiro (600–900 caracteres, 7–8 falas, ~60–80 s): TENSÃO + CIÊNCIA DE VERDADE, EXPLICADA PARA LEIGO
+**Regras do dono (21/11):**
+1. **Tensão/risco ("o perigo escondido").** Todo vídeo precisa de uma ameaça, um perigo ou um mistério que dá um frio na barriga.
+   Pense no "silo de soja que engole gente": coisa simples com risco real. Ex.: "a poeira da Lua corta como vidro",
+   "um erro aqui e a internet inteira fica exposta". Sempre um risco REAL e com fonte, nunca inventado ou exagerado.
+2. **Ciência de verdade, bem explicada.** Use 2 ou 3 termos técnicos reais (ex.: "regolito", "sinterização", "porosidade",
+   "vácuo") e explique cada um NA MESMA FRASE com algo do dia a dia. Mostre o mecanismo por dentro
+   (o que o laser faz nos grãos, o que acontece com as moléculas). O espectador tem que sair se sentindo mais inteligente.
+3. **Leigo entende tudo.** Frases curtas, um conceito por fala, cartões na tela com no máximo 4–5 palavras.
+
+Estrutura:
+1. **Gancho de tensão** (perigo, mistério ou número chocante, em até 2 s).
+2. **O problema e o que está em jogo** (por que isso é difícil ou perigoso).
+3. **A virada:** a novidade de hoje (quem, o quê).
+4. **Como funciona por dentro:** o mecanismo, com 1 ou 2 termos técnicos explicados.
+5. **O resultado.**
+6. **O risco que continua:** a ressalva honesta, contada como suspense ("mas ninguém sabe se…").
+7. **Fechamento** com pergunta provocante + "segue o canal".
 Linguagem de conversa, frases curtas, números escritos por extenso na fala (o ElevenLabs lê melhor).
 
 ## 5. Produção
