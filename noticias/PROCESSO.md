@@ -58,7 +58,7 @@ Linguagem de conversa, frases curtas, números escritos por extenso na fala (o E
   `content_url` (curl) para `mp3/L1.mp3…`. Confira antes o saldo com `account_get_usage`.
 - `python3 ../ranaitech/tools/prep_audio.py <pasta>` → `aud/*.wav` + `durs.json`.
 - Página: copie `exemplos/2026-11-21-riemann/news.html` (2D, rápido) ou `exemplos/piloto-terra/terra.html` (3D, Three.js)
-  e troque LINES (legendas). O exemplo mais recente e no estilo certo é `exemplos/2026-11-21-lua/lua.html` (3D, linguagem simples); remova a faixa do topo se usar o de Riemann cenas e cartões pelo tema do dia. **Sem faixa "Notícia do dia" e sem data na tela** (a data e as fontes vão só na legenda do post).
+  e troque LINES (legendas). O exemplo no estilo certo (tensão + ciência) é `exemplos/2026-11-21-lua-tensao/lua2.html` (vinheta vermelha, batida de coração na música, zoom em grãos) (3D, linguagem simples); remova a faixa do topo se usar o de Riemann cenas e cartões pelo tema do dia. **Sem faixa "Notícia do dia" e sem data na tela** (a data e as fontes vão só na legenda do post).
   Legenda da fala embaixo (y ≈ 1020), cartões/gráficos no meio, nada importante nos 15% de baixo.
 - Conferir: `node tools/shots.js t1,t2,...` (≈15 momentos), montar folha e **olhar** (texto sobreposto, áreas vazias, cortes).
 - Render: 3 processos (`node tools/render.js 0 3` …) → `frames/`; música: `python3 tools/music.py` (lê timeline.json e aud/) →
