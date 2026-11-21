@@ -1,0 +1,10 @@
+O operador not inverte um valor: True vira False e False vira True. Nesta aula o Cubinho inverte a ideia e sai de guarda-chuva num sol de rachar. 😅
+
+☔ if not chovendo: print('Parque!')
+👉 not True é False, e not False é True
+👉 Use o not para testar o contrário de uma condição
+👉 Leia em voz alta: "se NÃO estiver chovendo"
+
+Próxima aula: escopo de variável! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #operadornot #aprenderprogramação #python #lógicadeprogramação

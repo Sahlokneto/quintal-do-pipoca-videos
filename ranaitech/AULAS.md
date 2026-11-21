@@ -7,11 +7,12 @@ na frente da lousa ilustram o exemplo. Legenda (fala atual) embaixo. Música lo-
 ## Aulas feitas (NÃO repetir) — atualize a cada aula
 1 Variáveis · 2 If/else · 3 Loops · 4 Funções · 5 Listas · 6 Objetos · 7 Percorrendo listas · 8 Funções com retorno · 9 Operadores lógicos (and/or) ·
 10 Como achar erros no código (debug) · 11 Comentários no código · 12 Textos (strings) e juntar textos · 13 While (repetir até uma condição) ·
-14 Entrada do usuário (input) · 15 Números aleatórios (random) · 16 Dicionários na prática · 17 Else if / elif
+14 Entrada do usuário (input) · 15 Números aleatórios (random) · 16 Dicionários na prática · 17 Else if / elif ·
+18 Operador not · 19 Escopo de variável
 
 ## Próximas aulas (em ordem; a aula N sempre anuncia a N+1 no fim)
-18 Operador not · 19 Escopo de variável · 20 Arredondar e operações com números · 21 Classes · 22 Arquivos ·
-depois: try/except, módulos, APIs… (continue a lista se acabar).
+20 Arredondar e operações com números · 21 Classes · 22 Arquivos · 23 Try/except (tratar erros) · 24 Módulos (import) ·
+25 Listas: fatiar (slicing) · 26 APIs · depois: continue a lista se acabar.
 
 ## Personagens e vozes (ElevenLabs, conector do usuário — plano Creator, ~121 mil caracteres/mês)
 - Professor: voz **Will - Deep, Smooth and Affectionate** `CstacWqMhJQlnfLPxRG4`, modelo `eleven_v4`.

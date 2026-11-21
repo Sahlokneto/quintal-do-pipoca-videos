@@ -1,0 +1,10 @@
+Escopo é o pedaço do código onde uma variável existe. Nesta aula o Cubinho cria os pontos dentro de uma função e eles somem lá fora. 😅
+
+🎮 def ganhar(): pontos = 10; return pontos
+👉 Variável criada dentro da função é local: só existe lá dentro
+👉 Quando a função termina, a variável local some
+👉 Para levar o valor pra fora, use return e guarde o resultado
+
+Próxima aula: arredondar e fazer contas com números! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #escopo #aprenderprogramação #python #lógicadeprogramação
