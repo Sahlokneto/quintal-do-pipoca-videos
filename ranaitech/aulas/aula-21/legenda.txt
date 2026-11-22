@@ -1,0 +1,10 @@
+Uma classe é um molde para criar vários objetos parecidos, cada um com os seus próprios dados. Nesta aula o Cubinho tenta usar o molde em vez de criar o objeto e dá erro. 😅
+
+🐶 rex = Bichinho('Rex'); print(rex.nome)
+👉 class cria o molde; o objeto é criado chamando a classe
+👉 O __init__ guarda os dados do objeto no self
+👉 Com um molde só você cria quantos objetos quiser
+
+Próxima aula: arquivos! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #classes #aprenderprogramação #python #lógicadeprogramação
