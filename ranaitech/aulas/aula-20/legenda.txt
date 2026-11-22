@@ -1,0 +1,10 @@
+Em Python o computador faz as contas por você, e o round() deixa o resultado com as casas decimais que você quiser. Nesta aula o Cubinho divide a pizza por três e os números não acabam nunca. 😅
+
+🍕 print(round(100 / 3, 2))  # 33.33
+👉 round(valor, casas) arredonda o número
+👉 // faz a divisão inteira: 100 // 3 = 33
+👉 % dá o resto da divisão: 100 % 3 = 1
+
+Próxima aula: classes! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #matemática #aprenderprogramação #python #lógicadeprogramação
