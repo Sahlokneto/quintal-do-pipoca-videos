@@ -16,10 +16,10 @@ Cada vídeo é **uma brincadeira infantil nova**, simples, engraçada, sem viol�
 · 17. Pipa · 18. Guerra de Travesseiro · 19. Castelo de Areia
 · 20. Piquenique · 21. Plantar uma Árvore · 22. Trem de Caixas
 · 23. Mímica · 24. Desfile de Fantasias · 25. Pega-pega
+· 26. Passa Anel · 27. Lava-Carro de brinquedo · 28. Circo no Quintal
 (Também já existiu um Pique-Esconde fora do canal.)
-**Ideias ainda não usadas:** passa anel,
-cama de gato, esconde-esconde de brinquedo,
-circo no quintal, lava-carro de brinquedo, acampamento no quintal, etc.
+**Ideias ainda não usadas:** cama de gato, esconde-esconde de brinquedo,
+acampamento no quintal, corrida de carrinho de mão, bola de gude, peteca, etc.
 Atualize esta lista a cada vídeo novo.
 
 ## Regras de qualidade (o dono do canal cobra isso)
@@ -54,7 +54,7 @@ e `sh build.sh <nome> <x>` monta `work/<nome>.html` (danca_head + danca_map + pi
 confete, balões com ajuste automático do texto (`makeBubs`) e `frameLow(...)` = plano final com ~35% do topo livre para o card de seguir.
 `sh shots.sh <nome> t1,t2,... folha.png` gera a folha de contato; `node tools/coll.js work/<nome>.html 0.7` lista personagens perto demais (colisão);
 `python3 mkthumb.py <nome> "frameOn(...)"` cria a página da thumbnail. Música: `qp_music.py` (sintetizador) + `examples/<nome>/<nome>_music.py tl.json saida.wav`.
-Exemplos: `examples/estatua`, `examples/batata`, `examples/ovo`, `examples/mortovivo`, `examples/telefone`, `examples/penalti`, `examples/cabracega`, `examples/banho`, `examples/tesouro`, `examples/pipa` (objetos no céu: `framePts` com pontos 3D), `examples/travesseiro` (objeto preso no antebraço), `examples/castelo` (caixa de areia, `frameLow2` com pontos do chão), `examples/piquenique` (crianças sentadas `sitg`, objetos na mão com `hands()`), `examples/arvore` (passagem do tempo mudando o céu, `frameLowT` com o topo da árvore), `examples/trem` (personagens seguindo um trilho oval por comprimento de arco, caixas "vestidas"), `examples/mimica` (plateia nos dois lados com o meio livre para a câmera ver o palco), `examples/desfile` (fantasias que seguem cabeça/tronco via matrixWorld e voam do baú), `examples/pegapega` (perseguição no oval + estrela do pegador).
+Exemplos: `examples/estatua`, `examples/batata`, `examples/ovo`, `examples/mortovivo`, `examples/telefone`, `examples/penalti`, `examples/cabracega`, `examples/banho`, `examples/tesouro`, `examples/pipa` (objetos no céu: `framePts` com pontos 3D), `examples/travesseiro` (objeto preso no antebraço), `examples/castelo` (caixa de areia, `frameLow2` com pontos do chão), `examples/piquenique` (crianças sentadas `sitg`, objetos na mão com `hands()`), `examples/arvore` (passagem do tempo mudando o céu, `frameLowT` com o topo da árvore), `examples/trem` (personagens seguindo um trilho oval por comprimento de arco, caixas "vestidas"), `examples/mimica` (plateia nos dois lados com o meio livre para a câmera ver o palco), `examples/desfile` (fantasias que seguem cabeça/tronco via matrixWorld e voam do baú), `examples/pegapega` (perseguição no oval + estrela do pegador), `examples/passaanel` (objeto preso no focinho do Pipoca como filho de dog.head), `examples/lavacarro` (carro que anda com criança sentada dentro, jato de água em partículas, espuma), `examples/circo` (cartola presa na cabeça, malabares, haltere nas mãos, bambolê de frente para a câmera).
 **Atenção:** não use `H` nem `W` como nomes de variáveis no spec (são o tamanho da tela; a câmera vira NaN e o quadro fica só céu).
 Obs.: a máquina da nuvem tem 2 núcleos: renderize com 2 processos (`render.js ... 0 2` e `1 2`), ~12 min por vídeo; não use o nome `L2` para variáveis (é a função de interpolação).
 `node tools/ev.js work/<nome>.html "expr"` avalia uma expressão na página (útil para depurar estados).
@@ -95,7 +95,7 @@ Descrição:
 ```
 
 ## Onde salvar
-- Repositório: `videos/video-N/` com `<nome>.mp4`, `thumb-<nome>.png`, `descricao.txt` (N continua a numeração; último = 25).
+- Repositório: `videos/video-N/` com `<nome>.mp4`, `thumb-<nome>.png`, `descricao.txt` (N continua a numeração; último = 28).
 - Computador do dono (se a sessão estiver ligada ao PC): `D:\Neto\Videos_Claude_RanaiTech\Youtube_AuAuBrincadeiras\video-N\` (mesmos arquivos).
 
 ## Publicação (vidIQ) — o mesmo vídeo vai para 3 contas, num único rascunho
