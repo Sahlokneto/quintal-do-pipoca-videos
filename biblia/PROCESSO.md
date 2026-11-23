@@ -137,6 +137,8 @@ NUNCA usar o conector vidIQ antigo (é do Pipoca/RanaiTech) para este canal.
 | Instagram | @segredosdaescritura | 30023239467279032 |
 | TikTok | Segredos da Escritura Bíblica | _000BrE_LvCDnZf0LdK-00hFq_NtMVunMm0M |
 | YouTube | @segredosescritura | UCquG2Dl9xeQEk5_uvwJaAAg |
+**Limite do vidIQ grátis: 3 envios ao YouTube por dia** (zera à meia-noite do Pacífico = 05:00 de Brasília). A escala já
+usa no máximo 3; nunca agende um 4º vídeo no YouTube no mesmo dia. Instagram e TikTok não têm esse limite.
 Fluxo: `vidiq_video_upload` (URL raw do GitHub) → `vidiq_social_post_draft_create` com os 3 destinos → publicar só após aprovação do dono.
 
 ## 7. Rotina diária (tarefa agendada; escala do dono, 23/11)
