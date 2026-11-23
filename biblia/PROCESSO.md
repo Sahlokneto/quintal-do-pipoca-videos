@@ -1,4 +1,4 @@
-# Curiosidades da Bíblia: processo de pesquisa, análise e produção (Reels/Shorts/TikTok 9:16, 70–100 s)
+# Segredos da Escritura: curiosidades da Bíblia e da fé (Reels/Shorts/TikTok 9:16, 70–100 s)
 
 Objetivo: espalhar o evangelho explicando a Bíblia de um jeito que qualquer pessoa entende, com o "uau" de quem
 descobre algo escondido: palavras em hebraico e grego, costumes da época, parábolas e milagres explicados,
@@ -28,6 +28,35 @@ hebraico/grego mostrada na tela; (3) prova externa (arqueologia, historiadores, 
 - Arqueologia/história: tanque de Siloé ✅ · Pedra de Pilatos · ossário de Caifás · Estela de Tel Dan ("Casa de Davi") · Manuscritos do Mar Morto · Muralha de Jericó · Piscina de Betesda · casa de Pedro em Cafarnaum · selos de Ezequias e Isaías.
 - Mapas: lugares da Bíblia hoje (Babilônia = Iraque, Ninive = Mossul, Éfeso = Turquia…).
 
+### 2.1 Linha editorial ampliada (pedido do dono, 23/11): NÃO só hebraico/grego
+Misture os tipos ao longo da semana (nunca 2 do mesmo tipo no mesmo dia):
+- **Por trás da história** (assunto pouco discutido, com virada): Elias não subiu "na carruagem" (subiu no redemoinho) ✅ ·
+  por que Jesus falava em parábolas (Mt 13:10-17) · a Arca de Noé: leitura literal × leitura simbólica · por que Jonas fugiu
+  para Társis · quem eram os magos · por que Deus mudou o nome de Abrão, Sarai, Jacó · o que era o maná · Enoque "andou com Deus".
+- **Ritos e costumes da Igreja** (de onde veio, quando surgiu, como mudou): por que o padre muda a cor da roupa (cores litúrgicas)
+  · por que se faz o sinal da cruz · água benta na entrada · por que se ajoelha · origem do terço/rosário · o Advento e a coroa ·
+  por que domingo é o dia do Senhor · por que a missa era em latim · origem do Pai-Nosso · como surgiram os sacramentos.
+- **Como viver a fé (prático)**: como se comportar na missa (postura, celular, comunhão) · como rezar melhor (método simples,
+  com base em Mt 6:5-13) · o que significa cada parte da missa · como ler a Bíblia pela primeira vez.
+- **História do cristianismo**: quando e por que surgiu · por que "cristãos" (At 11:26, Antioquia) · o peixe (ΙΧΘΥΣ) como
+  símbolo secreto · catacumbas · como a Bíblia foi montada · por que existem Bíblias católica e protestante com nº de livros diferente.
+- **Palavras originais e arqueologia** (a linha antiga continua, mas no máximo 1 por dia).
+**Fuja do batido:** antes de escolher, pense "isso já é muito postado?" (ex.: Davi e Golias, nascimento de Jesus, 10
+pragas, Sansão). Prefira o detalhe que quase ninguém conhece. Busque também `curiosidades bíblicas pouco conhecidas` e
+o vidIQ outlier search do mês para ver o que está crescendo.
+**Interpretações:** quando houver leituras diferentes (ex.: Arca de Noé literal × simbólica; Gênesis), apresente as duas
+com respeito e diga QUEM pensa assim ("muitos Padres da Igreja liam como símbolo do batismo, 1Pd 3:20-21; outros leem
+como fato histórico"). Nunca afirme como fato uma interpretação. Ritos da missa = "na Igreja Católica"; sem atacar outras
+igrejas. Prática/procedimento: confirme no Catecismo da Igreja Católica, na Instrução Geral do Missal Romano (IGMR) ou
+em fonte oficial (vatican.va, CNBB).
+
+### 2.2 2D ou 3D: você escolhe por tema (pedido do dono)
+- **3D (Three.js)** quando o tema tem cena, movimento, lugar ou objeto: milagres, viagens, fenômenos (redemoinho, mar
+  abrindo), arquitetura (templo, arca, catacumba), igreja por dentro. Modelo: `videos/2026-11-23-elias-redemoinho/bib3d.html`.
+- **2D (canvas)** quando o tema é palavra, texto, lista, linha do tempo, comparação ou passo a passo (como rezar, partes da
+  missa). Modelo: `videos/2026-11-23-camelo-agulha/bib.html`.
+- As regras de legenda em blocos, paleta e área segura valem para os dois.
+
 ## 3. PROMPT DE PESQUISA (use sempre, antes de escrever)
 1. Escolha o tema no banco (ou um tema em alta: datas cristãs, notícia de descoberta arqueológica da semana:
    busque `biblical archaeology discovery <mês ano>` e `descoberta arqueológica bíblia <mês ano>`).
@@ -42,7 +71,9 @@ hebraico/grego mostrada na tela; (3) prova externa (arqueologia, historiadores, 
 5. Respeito: falar com reverência, sem atacar outras religiões ou denominações; sem rosto de Jesus/pessoas reais
    (usar símbolos, pergaminho, letras, mapas, objetos, luz).
 
-## 4. Roteiro (8 falas, 900–1.100 caracteres, ~80–95 s): mistério + palavra original + prova + fé
+## 4. Roteiro (8 falas, 900–1.100 caracteres, ~80–95 s): mistério + chave escondida + prova + fé
+(Para ritos/prática/história da Igreja, a "chave escondida" pode ser a ORIGEM e a DATA do costume, ou o "como fazer" em
+passos curtos; palavra original só se ajudar. O gancho continua sendo uma pergunta ou uma correção: "Você aprendeu X? Não é bem assim".)
 1. **Gancho "Por que…?"/estranheza** (o que parece estranho ou que ninguém percebe).
 2. **Contexto da época** (costume, crença, cultura).
 3. **A chave escondida**: palavra no original, com escrita e pronúncia ("em hebraico, homem é adám, terra é adamá").
@@ -90,11 +121,15 @@ NUNCA usar o conector vidIQ antigo (é do Pipoca/RanaiTech) para este canal.
 | YouTube | @segredosescritura | UCquG2Dl9xeQEk5_uvwJaAAg |
 Fluxo: `vidiq_video_upload` (URL raw do GitHub) → `vidiq_social_post_draft_create` com os 3 destinos → publicar só após aprovação do dono.
 
-## 7. Rotina diária (tarefa agendada, desde 23/11)
-- **2 vídeos por dia**, publicação às **12:00** e **19:00** (Brasília, -03:00), nos 3 destinos da seção 6.
-- Orçamento ElevenLabs (plano Creator, ~121 mil caracteres/mês, dividido com o RanaiTech que usa ~26 mil):
-  cada vídeo entre 900 e 1.100 caracteres. Antes de gerar, confira o saldo (`account_get_usage`); se faltar
-  menos de 3.000 caracteres para o limite, faça só 1 vídeo e avise o dono.
-- Os 2 vídeos do dia: temas diferentes do banco (de categorias diferentes) e **paletas diferentes entre si e do último vídeo**.
-- Arquivos: `biblia/videos/AAAA-MM-DD-<slug>/` com `<slug>.mp4`, `legenda.txt` (com a paleta usada), `fontes.txt`, a página .html.
-  Apague frames/, aud/, mp3/ antes do commit. Marque o tema como ✅ no banco (seção 2).
+## 7. Rotina diária (tarefa agendada; escala do dono, 23/11)
+- **Escala:** rode `python3 tools/escala.py` (na raiz do repositório). Ele diz quantos vídeos fazer HOJE e os horários:
+  - dia do RanaiTech (23/11, 25/11, 27/11… um dia sim, um não) → **2 vídeos: 12:00 e 19:00**;
+  - dia sem RanaiTech → **3 vídeos: 12:00, 15:00 e 19:00** (Brasília, -03:00).
+- Orçamento ElevenLabs (Creator, ~121 mil caracteres/mês; RanaiTech usa ~13 mil/mês em dias alternados): cada vídeo
+  ≈1.000–1.200 caracteres. Confira o saldo (`account_get_usage`) antes; se faltar menos de 1.300 × (vídeos de hoje)
+  até o limite, faça só o que couber e avise o dono.
+- Os vídeos do dia: tipos diferentes (seção 2.1), **paletas diferentes entre si e do último vídeo**, e pelo menos 1 em 3D
+  quando o tema pedir.
+- Arquivos: `biblia/videos/AAAA-MM-DD-<slug>/` com `<slug>.mp4`, `legenda.txt` (com a paleta e "2D"/"3D"), `fontes.txt`,
+  a página .html, durs.json, timeline.json. Apague frames/, aud/, mp3/ e cópias de fontes/ferramentas antes do commit.
+  Marque o tema como ✅ na seção 2/2.1.
