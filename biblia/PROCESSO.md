@@ -74,3 +74,12 @@ Linguagem de leigo, termos explicados na mesma frase, números por extenso na fa
   batida grave só no gancho e no "detalhe proibido"), ffmpeg.
 - Legenda do post: pergunta-gancho + 4 tópicos com 🔹 (palavra original escrita em hebraico/grego) + pergunta +
   5 hashtags (#biblia #curiosidadesbiblicas #jesus + 2 do tema) + "Fontes: …".
+
+## 6. Contas e publicação (conector vidIQ **"VidIQ Segredos Bíblicos"**, ferramentas `mcp__VidIQ_Segredos_B_blicos__*`)
+NUNCA usar o conector vidIQ antigo (é do Pipoca/RanaiTech) para este canal.
+| Rede | Conta | platformAccountId |
+|---|---|---|
+| Instagram | @segredosdaescritura | 30023239467279032 |
+| TikTok | Segredos da Escritura Bíblica | _000BrE_LvCDnZf0LdK-00hFq_NtMVunMm0M |
+| YouTube | @segredosescritura | UCquG2Dl9xeQEk5_uvwJaAAg |
+Fluxo: `vidiq_video_upload` (URL raw do GitHub) → `vidiq_social_post_draft_create` com os 3 destinos → publicar só após aprovação do dono.
