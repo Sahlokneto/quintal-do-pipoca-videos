@@ -58,6 +58,18 @@ Linguagem de leigo, termos explicados na mesma frase, números por extenso na fa
 - `python3 ../ranaitech/tools/prep_audio.py <pasta>` → aud/ + durs.json.
 - Página: copiar `exemplos/01-saliva-cego/bib.html` (2D, pergaminho escuro, poeira dourada, letras hebraicas com a
   fonte FreeSerifBold, títulos em Lora) e trocar LINES, cartões e desenhos de cada cena. Sem faixa/data na tela.
+- **Cores: variar a cada vídeo (pedido do dono, 23/11).** Os vídeos 1 e 2 usaram marrom/pergaminho. Não repetir a
+  paleta do vídeo anterior: escolha uma da lista abaixo que combine com o tema e anote no `legenda.txt` qual foi usada.
+  Troque o gradiente do fundo (`bg`), a cor das letras hebraicas/títulos, a poeira, o brilho e a borda dos cartões.
+  | Paleta | Fundo (gradiente) | Destaque (títulos/hebraico) | Bom para |
+  |---|---|---|---|
+  | Azul noite | #0b1a3a → #03060f | #9fd8ff / branco | água, Siloé, Jordão, céus, criação |
+  | Púrpura real | #2a0f3d → #0c0414 | #e6c3ff / dourado | reis, Davi, realeza, Apocalipse |
+  | Verde oliva | #1f2e14 → #070b04 | #d9f2a2 | parábolas do campo, figueira, semeador, Jardim |
+  | Vermelho carmim | #3a0a10 → #0d0204 | #ffb3a8 / dourado | cruz, sangue, Páscoa, sacrifício |
+  | Areia do deserto | #6b4a24 → #1c1208 | #fff0c9 | Êxodo, Moisés, deserto, Abraão |
+  | Azul-petróleo | #0a3335 → #021012 | #8ff5e6 | mar da Galileia, pesca, Jonas |
+  | Pergaminho/marrom | #3a2615 → #120a05 | #ffd98a | (já usado nos vídeos 1 e 2; usar com moderação) |
 - Conferir com `node tools/shots.js …` + folha de contato (olhar!), render em 3 processos, `music.py` (acordes menores,
   batida grave só no gancho e no "detalhe proibido"), ffmpeg.
 - Legenda do post: pergunta-gancho + 4 tópicos com 🔹 (palavra original escrita em hebraico/grego) + pergunta +
