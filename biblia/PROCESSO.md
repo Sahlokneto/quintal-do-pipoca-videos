@@ -22,7 +22,7 @@ hebraico/grego mostrada na tela; (3) prova externa (arqueologia, historiadores, 
 ## 2. Banco de temas (escolha 1 por vídeo; não repetir; marque os feitos)
 - Milagres/gestos "estranhos": saliva no cego ✅ · "Eli, Eli, lamá sabactâni" ✅ · Jesus escreveu no chão (Jo 8) · figueira amaldiçoada · água em vinho (talhas de purificação) · "Talitá cumi".
 - Palavras originais: Yeshua · Aleluia · Amém · Shalom · Emanuel · "Eli, Eli, lamá sabactâni" · Bereshit (1ª palavra) · YHWH · Maranata · Ágape × Philia (grego).
-- Costumes/objetos: camelo e agulha · véu do templo · INRI · coroa de espinhos · por que 30 moedas · sandália na rua (Rute) · lavar os pés · pão sem fermento.
+- Costumes/objetos: camelo e agulha ✅ · véu do templo · INRI · coroa de espinhos · por que 30 moedas · sandália na rua (Rute) · lavar os pés · pão sem fermento.
 - Parábolas explicadas: filho pródigo (o pai correndo era vergonha) · bom samaritano (quem eram os samaritanos) · dez virgens (lâmpadas e óleo) · semeador · ovelha perdida.
 - Números/padrões: 7 · 40 · 12 · 3 dias · 153 peixes.
 - Arqueologia/história: tanque de Siloé ✅ · Pedra de Pilatos · ossário de Caifás · Estela de Tel Dan ("Casa de Davi") · Manuscritos do Mar Morto · Muralha de Jericó · Piscina de Betesda · casa de Pedro em Cafarnaum · selos de Ezequias e Isaías.
