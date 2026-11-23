@@ -50,30 +50,14 @@ como fato histórico"). Nunca afirme como fato uma interpretação. Ritos da mis
 igrejas. Prática/procedimento: confirme no Catecismo da Igreja Católica, na Instrução Geral do Missal Romano (IGMR) ou
 em fonte oficial (vatican.va, CNBB).
 
-### 2.2 2D ou 3D: você escolhe por tema (pedido do dono)
-- **3D (Three.js)** quando o tema tem cena, movimento, lugar ou objeto: milagres, viagens, fenômenos (redemoinho, mar
-  abrindo), arquitetura (templo, arca, catacumba), igreja por dentro. **Modelo atual: `videos/2026-11-23-elias-redemoinho-v3/bib3d.html`**
-  + bibliotecas `assets/js/bib3d_lib.js` (personagens, cavalos, carros, palmeiras) e `assets/js/bib3d_world.js` (céu, terreno,
-  pedras, arbustos, árvores, casas, jarros, cálices, castiçais).
-  - **TUDO feito por código (decisão do dono, 23/11). NÃO importar modelos, texturas ou céus de sites (Poly Haven etc.).**
-  - Personagens SEMPRE com `B3.person({...})` (boneco com rosto, cabelo/barba, túnica com dobras, cinto, manto, mangas,
-    sandálias; expressões idle/sad/closed/shout; poses walk/stand/scared/shout/reach/pray/strike/lift). Detalhes bíblicos
-    corretos (ex.: Elias com cinto de couro, Eliseu careca). Jesus: só luz/símbolo.
-  - **Cuidado físico (o dono reprovou um vídeo por isso) — conferir nos quadros ANTES de renderizar:**
-    1. Nada flutua: todo objeto apoiado no chão usa a altura do terreno (`W3.y(x,z)`) e tem a base ENTERRADA um pouco
-       (paredes, escadas, colunas e casas começam abaixo do chão; prefira chão plano/platô onde houver construção).
-    2. Nada atravessa nada: personagens com distância mínima de 2 m entre centros; carros/animais só passam por onde há
-       espaço livre (calcule a largura) — se a história diz "passou entre os dois", eles se afastam ANTES.
-    3. Braços nunca entram no corpo: repouso e caminhada com os braços abertos para fora (aLz negativo / aRz positivo).
-    4. Peças encaixadas: pernas da mesa vão do chão até o tampo; objetos em cima da mesa apoiados no tampo; degraus
-       empilhados sem vão.
-    5. Personagem olha para onde anda; nada de andar de costas.
-  - Ferramentas: `node tools/shots3d.js <pasta> bib3d.html t1,t2…` e `node tools/render3d.js <pasta> bib3d.html <i> <N>`
-    (servidor local embutido; esperam `window.READY`). ≈1 s/quadro por processo (2 processos ≈ 20 min para 90 s).
-    Mesmo assim: no máximo 1 vídeo 3D por dia.
-- **2D (canvas)** quando o tema é palavra, texto, lista, linha do tempo, comparação ou passo a passo (como rezar, partes da
-  missa). Modelo: `videos/2026-11-23-camelo-agulha/bib.html`.
-- As regras de legenda em blocos, paleta e área segura valem para os dois.
+### 2.2 Formato: SÓ 2D (decisão do dono, 23/11 — vídeos 3D cancelados)
+- **Modelo atual: `videos/2026-11-23-peixe-ichthys/bib.html`** (2D em canvas, aprovado como padrão de riqueza).
+- **Riqueza e cores vivas (pedido do dono):** cada fala tem uma CENA ilustrada própria e detalhada (céu em degradê, sol,
+  silhuetas, texturas de pedra/areia, água com reflexo, brilhos, partículas, objetos com luz e sombra), cores saturadas
+  (dourado, coral, turquesa, roxo, laranja), luz de água/poeira animada no fundo, bolhas/brilhos. Cenas entram com bordas
+  suaves (máscara), nunca retângulos duros. Objetos apoiados no chão (nada flutua sem motivo), nada atravessa nada.
+- Cartões claros com borda dourada e etiqueta colorida; palavra original grande e colorida quando houver.
+- Os arquivos 3D (`assets/js/bib3d_*.js`, `tools/*3d*.js`) ficam só de referência — NÃO usar.
 
 ## 3. PROMPT DE PESQUISA (use sempre, antes de escrever)
 1. Escolha o tema no banco (ou um tema em alta: datas cristãs, notícia de descoberta arqueológica da semana:
@@ -107,12 +91,12 @@ Linguagem de leigo, termos explicados na mesma frase, números por extenso na fa
 - `python3 ../ranaitech/tools/prep_audio.py <pasta>` → aud/ + durs.json.
 - Página: copiar **`videos/2026-11-23-camelo-agulha/bib.html`** (modelo atual, com a legenda nova) — os antigos `exemplos/01-saliva-cego/bib.html` (2D, pergaminho escuro, poeira dourada, letras hebraicas com a
   fonte FreeSerifBold, títulos em Lora) e trocar LINES, cartões e desenhos de cada cena. Sem faixa/data na tela.
-- **Legenda da fala (pedido do dono, 23/11):** NUNCA o parágrafo inteiro embaixo. No Instagram/TikTok o nome da conta,
-  a descrição e os botões cobrem a parte de baixo e a direita da tela. Use a legenda em **blocos curtos** (≈3–5 palavras,
-  máx. 2 linhas) que trocam **acompanhando a fala** (função `buildChunks` do modelo), em faixa escura arredondada em
-  `top:885px`, `left:40px`, `width:580px` (fora da coluna de ícones da direita). O texto das LINES = **o texto falado**
-  (para sincronizar). Desenhos sobem 130 px (`x.translate(0,-130)`) para não ficar atrás da legenda. Nada importante
-  abaixo de y≈1000 nem nos ~100 px da direita.
+- **Legenda da fala (pedido do dono, 23/11, revisado):** blocos de ATÉ 2 LINHAS (~34 letras), que ficam na tela o tempo da
+  frase e trocam acompanhando a voz; as palavras "acendem" conforme são faladas (karaokê: ainda não faladas a 45% de
+  opacidade, palavras-chave em dourado). Fonte 40px, caixa escura em `top:878px`, `left:36px`, largura 600 (fora da área do
+  nome/descrição e dos ícones do app). O texto das LINES = o texto falado.
+  **Sincronia:** depois de `prep_audio.py`, rode `python3 ../../tools/caps.py . bib.html` (acha as pausas reais da voz e
+  injeta `window.CAPS` na página). Sincronize também as animações com as palavras (use os tempos de `caps.json`).
 - **Cores: variar a cada vídeo (pedido do dono, 23/11).** Os vídeos 1 e 2 usaram marrom/pergaminho. Não repetir a
   paleta do vídeo anterior: escolha uma da lista abaixo que combine com o tema e anote no `legenda.txt` qual foi usada.
   Troque o gradiente do fundo (`bg`), a cor das letras hebraicas/títulos, a poeira, o brilho e a borda dos cartões.
