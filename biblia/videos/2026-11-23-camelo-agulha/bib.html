@@ -24,12 +24,13 @@ html,body{margin:0;background:#000}
 #heb .h{font-family:HB;font-size:130px;color:#9fd8ff;text-shadow:0 0 30px rgba(120,200,255,.6);line-height:1.05}
 #heb .t{font-family:L;font-size:46px;font-weight:700}
 #heb .m{font-size:26px;color:#cfe7ff}
-#stamp{top:560px}
+#stamp{top:440px}
 #stamp span{display:inline-block;border:8px solid #ff5a5a;color:#ff6b6b;border-radius:16px;padding:10px 30px;font-size:58px;font-weight:700;transform:rotate(-8deg);background:rgba(20,0,0,.35)}
 #q{top:190px;left:60px;width:600px;font-family:L;font-size:52px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
 #q .c{display:block;margin-top:20px;font-family:P;font-size:34px;color:#9fd8ff}
 #q .btn{display:inline-block;margin-top:20px;padding:16px 44px;border-radius:50px;background:#e8344e;font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
-#cap{top:1020px;left:44px;width:632px;font-size:37px;font-weight:700;line-height:1.25;opacity:1;text-shadow:0 3px 0 #000,0 0 14px rgba(0,0,0,.95)}
+#cap{top:885px;left:40px;width:580px;text-align:center;opacity:1}
+#cap span{display:inline-block;padding:8px 22px;border-radius:16px;background:rgba(3,8,22,.82);border:2px solid rgba(143,220,255,.35);font-size:44px;font-weight:700;line-height:1.18;text-shadow:0 3px 0 #000}
 #cap b{color:#8fdcff}
 #lbl{top:470px;font-family:P;font-size:34px;font-weight:700;color:#ffd166;letter-spacing:2px}
 </style></head><body>
@@ -63,20 +64,25 @@ var STARS=[];for(var i=0;i<170;i++)STARS.push([rnd()*W,rnd()*H*.62,rnd()*1.6+.3,
 var bg=document.createElement('canvas');bg.width=W;bg.height=H;var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.38,50,W/2,H*.5,H*.85);g.addColorStop(0,'#0b1a3a');g.addColorStop(1,'#03060f');b.fillStyle=g;b.fillRect(0,0,W,H);
 for(var i=0;i<7000;i++){b.fillStyle='rgba('+(rnd()>.5?'160,210,255':'0,0,0')+','+(rnd()*.04)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}
 // dunas
-function dunes(){b.fillStyle='#0a1530';b.beginPath();b.moveTo(0,980);b.bezierCurveTo(180,900,330,960,460,930);b.bezierCurveTo(580,905,650,940,720,920);b.lineTo(720,H);b.lineTo(0,H);b.fill();
- b.fillStyle='#060d20';b.beginPath();b.moveTo(0,1040);b.bezierCurveTo(220,990,420,1060,720,1000);b.lineTo(720,H);b.lineTo(0,H);b.fill();}
+function dunes(){b.fillStyle='#0a1530';b.beginPath();b.moveTo(0,850);b.bezierCurveTo(180,770,330,830,460,800);b.bezierCurveTo(580,775,650,810,720,790);b.lineTo(720,H);b.lineTo(0,H);b.fill();
+ b.fillStyle='#060d20';b.beginPath();b.moveTo(0,910);b.bezierCurveTo(220,860,420,930,720,870);b.lineTo(720,H);b.lineTo(0,H);b.fill();}
 dunes();
-var LINES=[['L1','Por que Jesus disse que é mais fácil um <b>camelo</b> passar pelo <b>buraco de uma agulha</b> do que um rico entrar no Reino de Deus?'],
-['L2','A história famosa: em Jerusalém havia um <b>portão baixinho</b>, o <b>“Buraco da Agulha”</b>, e o camelo passava <b>ajoelhado e sem carga</b>.'],
-['L3','Só que <b>nenhum arqueólogo</b> achou esse portão. A história só aparece <b>mais de mil anos depois</b> de Jesus.'],
-['L4','Outra teoria: <b>erro de cópia</b>. Em grego, camelo é <b>kámelos</b> e corda grossa é <b>kámilos</b>. Uma letra de diferença!'],
-['L5','Mas a maioria dos estudiosos rejeita as duas. Jesus <b>exagerou de propósito</b>: o <b>maior animal</b> e o <b>menor buraco</b>.'],
-['L6','A prova: o <b>Talmude</b>, livro antigo dos judeus, usa a mesma imagem com um <b>elefante</b> para dizer: <b>impossível</b>.'],
-['L7','Os discípulos se espantaram: <b>“então quem pode ser salvo?”</b> E Jesus: <b>para Deus tudo é possível</b>.'],
-['L8','Não é se espremer no portão. É <b>depender de Deus</b>. Você já sabia? <b>Comenta e segue!</b>']];
+var LINES=[['L1','Por que Jesus disse que é mais fácil um <b>camelo</b> passar pelo <b>buraco de uma agulha</b> do que um rico entrar no Reino de Deus? Muita gente aprendeu uma explicação que <b>não é verdade</b>.'],
+['L2','Você já deve ter ouvido: em Jerusalém existia um <b>portão bem baixinho</b>, o <b>Buraco da Agulha</b>, e o camelo só passava <b>ajoelhado e sem carga</b>.'],
+['L3','Só que <b>nenhum arqueólogo</b> encontrou esse portão. Essa história só aparece <b>mais de mil anos depois</b> de Jesus, lá pelo <b>século onze</b>.'],
+['L4','Outra teoria fala em <b>erro de cópia</b>. Em grego, camelo é <b>kámelos</b>, e corda grossa é <b>kámilos</b>. Uma letra de diferença! <b>Cirilo de Alexandria</b> pensava assim.'],
+['L5','Mas a maioria dos estudiosos <b>rejeita as duas ideias</b>. Jesus <b>exagerou de propósito</b>: o camelo, <b>gamal</b> em hebraico, era um dos <b>maiores animais</b> da região. E o buraco da agulha, o <b>menor buraco</b> que se conhecia.'],
+['L6','E tem prova disso. O <b>Talmude</b>, livro antigo dos judeus, usa a mesma imagem, com um <b>elefante</b> passando pelo buraco da agulha, pra dizer: isso é <b>impossível</b>.'],
+['L7','Por isso os discípulos ficaram espantados: então, <b>quem pode ser salvo?</b> E Jesus respondeu: para os homens é impossível, mas <b>para Deus tudo é possível</b>.'],
+['L8','Não é sobre se espremer pra passar no portão. É sobre <b>depender de Deus</b>. Você já sabia disso? <b>Comenta e segue</b> pra mais segredos da Bíblia!']];
 var T={},TL={lines:[]};
-window.__retime=function(d){var t=.3;TL.lines=[];LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;};
+window.__retime=function(d){var t=.3;TL.lines=[];LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;buildChunks();};
 window.__timeline=function(){return TL;};
+// legenda em blocos de poucas palavras, sincronizados com a fala (proporcional ao nº de letras)
+var CH=[];function buildChunks(){CH=[];TL.lines.forEach(function(l,i){var toks=[],bold=false;LINES[i][1].split(/(<b>|<\/b>)/).forEach(function(p){if(p=='<b>'){bold=true;return;}if(p=='</b>'){bold=false;return;}p.split(/\s+/).forEach(function(w){if(!w)return;if(/^[.,!?:;]+$/.test(w)&&toks.length){toks[toks.length-1][0]+=w;return;}toks.push([w,bold]);});});
+ var groups=[],cur=[],len=0;toks.forEach(function(tk,k){cur.push(tk);len+=tk[0].length+1;var end=/[.,!?:]$/.test(tk[0]);if(len>=20||(end&&len>=9)||k==toks.length-1){groups.push(cur);cur=[];len=0;}});
+ var tot=0;groups.forEach(function(g){g.n=g.reduce(function(a,b){return a+b[0].length+1;},0);tot+=g.n;});var t0=l.t0;
+ groups.forEach(function(g){var d=l.dur*g.n/tot;CH.push({t0:t0,t1:t0+d,html:g.map(function(tk){return tk[1]?'<b>'+tk[0]+'</b>':tk[0];}).join(' ')});t0+=d;});});}
 function glowCircle(X,Y,r,col,a){var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
 // camelo (dromedário) de perfil, olhando para a direita; pés em (X,Y); s = escala; kneel 0..1
 function camel(X,Y,s,a,col,step,kneel){if(a<=0)return;kneel=kneel||0;x.save();x.globalAlpha=a;x.translate(X,Y);x.scale(s,s);x.fillStyle=col;x.strokeStyle=col;x.lineCap='round';
@@ -109,10 +115,11 @@ function wall(a,shake){if(a<=0)return;x.save();x.globalAlpha=a;var top=560,bot=9
  x.strokeStyle='#9fd8ff';x.globalAlpha=a*.6;x.lineWidth=4;x.beginPath();x.moveTo(470,bot);x.lineTo(470,820);x.arc(540,820,70,Math.PI,0);x.lineTo(610,bot);x.stroke();x.restore();}
 function rope(a,t){if(a<=0)return;x.save();x.globalAlpha=a;x.strokeStyle='#c9a46a';x.lineWidth=26;x.lineCap='round';x.beginPath();for(var i=0;i<=40;i++){var xx=120+i*12,yy=760+Math.sin(i*.35+t*2)*30;i?x.lineTo(xx,yy):x.moveTo(xx,yy);}x.stroke();
  x.strokeStyle='rgba(90,60,20,.6)';x.lineWidth=4;for(var i=0;i<40;i++){var xx=120+i*12,yy=760+Math.sin(i*.35+t*2)*30;x.beginPath();x.moveTo(xx-8,yy-10);x.lineTo(xx+8,yy+10);x.stroke();}x.restore();}
-function moon(a){if(a<=0)return;x.save();x.globalAlpha=a;glowCircle(590,170,160,'rgba(180,220,255,A)',.35);x.fillStyle='#e6f2ff';x.beginPath();x.arc(590,170,46,0,7);x.fill();x.fillStyle='#0b1a3a';x.beginPath();x.arc(610,158,42,0,7);x.fill();x.restore();}
+function moon(a){if(a<=0)return;x.save();x.globalAlpha=a;glowCircle(590,300,160,'rgba(180,220,255,A)',.35);x.fillStyle='#e6f2ff';x.beginPath();x.arc(590,300,46,0,7);x.fill();x.fillStyle='#0b1a3a';x.beginPath();x.arc(610,288,42,0,7);x.fill();x.restore();}
 function frame(t){x.drawImage(bg,0,0);
  STARS.forEach(function(s){x.fillStyle='rgba(220,240,255,'+(.3+.5*Math.abs(Math.sin(t*.8+s[3])))+')';x.beginPath();x.arc(s[0],s[1],s[2],0,7);x.fill();});
  DUST.forEach(function(d){var yy=(d[1]-t*10*d[4]+H)%H;x.fillStyle='rgba(170,220,255,'+(.18+.2*Math.sin(t*1.5+d[3]))+')';x.beginPath();x.arc(d[0]+Math.sin(t*.5+d[3])*10,yy,d[2],0,7);x.fill();});
+ x.save();x.translate(0,-130);
  // L1: camelo enorme x agulha
  var a1=fade(t,0,T.L1e+.2);pop($('c1'),fade(t,T.L1+.3,T.L1e+.2));moon(a1);
  if(a1>0){var u=ez(lin(t,T.L1,T.L1e));camel(lerp(190,230,u),960,1.0,a1,'#4a7bbf',t*3,0);x.save();x.globalAlpha=a1;x.strokeStyle='rgba(159,216,255,.5)';x.lineWidth=2;x.strokeRect(0,0,0,0);x.restore();needle(600,960,380,a1,lin(t,T.L1+2,T.L1+4));}
@@ -137,9 +144,10 @@ function frame(t){x.drawImage(bg,0,0);
  if(a7>0){var gl=ez(lin(t,T.L7+5,T.L7e));glowCircle(W/2,780,420,'rgba(170,225,255,A)',.55*gl*a7);camel(220,980,.55,a7,'#4a7bbf',0,0);needle(W/2+170,980,260,a7,gl);}
  // L8: raios de luz e chamada
  var a8=fade(t,T.L8-.2,T.END+2);if(a8>0){x.save();x.globalAlpha=a8;for(var i=0;i<9;i++){var an=-Math.PI/2+(i-4)*.17+Math.sin(t*.4)*.03;var gg=x.createLinearGradient(W/2,900,W/2+Math.cos(an)*900,900+Math.sin(an)*900);gg.addColorStop(0,'rgba(190,230,255,.35)');gg.addColorStop(1,'rgba(190,230,255,0)');x.fillStyle=gg;x.beginPath();x.moveTo(W/2,900);x.lineTo(W/2+Math.cos(an-.05)*900,900+Math.sin(an-.05)*900);x.lineTo(W/2+Math.cos(an+.05)*900,900+Math.sin(an+.05)*900);x.fill();}x.restore();needle(W/2,960,320,a8,.9+.1*Math.sin(t*3));}
+ x.restore();
  pop($('q'),fade(t,T.L8+3.5,T.END+2));
  var vg=x.createRadialGradient(W/2,H/2,H*.3,W/2,H/2,H*.75);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.55)');x.fillStyle=vg;x.fillRect(0,0,W,H);
- var cap='',co=0;TL.lines.forEach(function(l,i){if(t>=l.t0-.1&&t<l.t0+l.dur+.2){cap=LINES[i][1];co=fade(t,l.t0-.1,l.t0+l.dur+.2,.15);}});$('cap').innerHTML=cap;$('cap').style.opacity=co;}
+ var cap='',co=0,sc=1;CH.forEach(function(c){if(t>=c.t0-.05&&t<c.t1+.12){cap=c.html;co=1;sc=1+.12*(1-ez(lin(t,c.t0-.05,c.t0+.12)));}});$('cap').innerHTML=cap?'<span>'+cap+'</span>':'';$('cap').style.opacity=co;$('cap').style.transform='scale('+sc+')';}
 window.__seek=frame;window.frame=frame;
 })();
 </script></body></html>

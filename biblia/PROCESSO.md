@@ -56,8 +56,14 @@ Linguagem de leigo, termos explicados na mesma frase, números por extenso na fa
 ## 5. Produção
 - Voz ElevenLabs **O Viajante** `urHXVUOxm0ZDI0ypEYDd`, `eleven_v4`, 1 take por fala; baixar mp3 → `mp3/L1.mp3…`.
 - `python3 ../ranaitech/tools/prep_audio.py <pasta>` → aud/ + durs.json.
-- Página: copiar `exemplos/01-saliva-cego/bib.html` (2D, pergaminho escuro, poeira dourada, letras hebraicas com a
+- Página: copiar **`videos/2026-11-23-camelo-agulha/bib.html`** (modelo atual, com a legenda nova) — os antigos `exemplos/01-saliva-cego/bib.html` (2D, pergaminho escuro, poeira dourada, letras hebraicas com a
   fonte FreeSerifBold, títulos em Lora) e trocar LINES, cartões e desenhos de cada cena. Sem faixa/data na tela.
+- **Legenda da fala (pedido do dono, 23/11):** NUNCA o parágrafo inteiro embaixo. No Instagram/TikTok o nome da conta,
+  a descrição e os botões cobrem a parte de baixo e a direita da tela. Use a legenda em **blocos curtos** (≈3–5 palavras,
+  máx. 2 linhas) que trocam **acompanhando a fala** (função `buildChunks` do modelo), em faixa escura arredondada em
+  `top:885px`, `left:40px`, `width:580px` (fora da coluna de ícones da direita). O texto das LINES = **o texto falado**
+  (para sincronizar). Desenhos sobem 130 px (`x.translate(0,-130)`) para não ficar atrás da legenda. Nada importante
+  abaixo de y≈1000 nem nos ~100 px da direita.
 - **Cores: variar a cada vídeo (pedido do dono, 23/11).** Os vídeos 1 e 2 usaram marrom/pergaminho. Não repetir a
   paleta do vídeo anterior: escolha uma da lista abaixo que combine com o tema e anote no `legenda.txt` qual foi usada.
   Troque o gradiente do fundo (`bg`), a cor das letras hebraicas/títulos, a poeira, o brilho e a borda dos cartões.
