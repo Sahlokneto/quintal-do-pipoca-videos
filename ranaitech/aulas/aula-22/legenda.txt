@@ -1,0 +1,10 @@
+Com arquivos, o seu programa guarda informações que continuam lá mesmo depois de fechar. Nesta aula o Cubinho tenta ler o recorde abrindo com 'w' e acaba apagando tudo. 😅
+
+📄 with open('recorde.txt', 'r') as f: print(f.read())
+👉 'w' escreve (e apaga o que tinha antes)
+👉 'r' lê o que está no arquivo
+👉 'a' adiciona no fim, sem apagar
+
+Próxima aula: try e except! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #arquivos #aprenderprogramação #python #lógicadeprogramação
