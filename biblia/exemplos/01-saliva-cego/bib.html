@@ -1,0 +1,127 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(FreeSerifBold.ttf)}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.sc{display:inline-block;padding:20px 34px;border-radius:18px;background:linear-gradient(#f3e3bf,#e2c993);color:#3b2412;box-shadow:0 12px 40px rgba(0,0,0,.6);border:3px solid #a57a3a}
+.sc .r{font-family:P;font-size:22px;letter-spacing:4px;color:#8a5a22;font-weight:700}
+.sc .v{font-family:L;font-size:46px;font-weight:700;line-height:1.15}
+.sc .s{font-family:P;font-size:25px;color:#5a3a1a;margin-top:6px}
+.cd{top:170px}
+#ttl{top:180px;font-family:L;font-size:64px;font-weight:700;line-height:1.1;color:#ffd98a;text-shadow:0 0 30px rgba(255,190,90,.5)}
+#ttl small{display:block;font-family:P;font-size:26px;color:#e8d2a8;letter-spacing:3px;margin-top:12px}
+#heb{top:250px}
+.hw{display:inline-block;width:300px}
+.hw .h{font-family:HB;font-size:120px;color:#ffd98a;text-shadow:0 0 30px rgba(255,190,90,.6);line-height:1.1}
+.hw .t{font-family:L;font-size:44px;font-weight:700;color:#fff}
+.hw .m{font-family:P;font-size:28px;color:#e8d2a8}
+#sab{top:210px}
+#sab .d{font-family:L;font-size:88px;font-weight:700;color:#ffd98a}
+#sab .st{display:inline-block;margin-top:24px;border:7px solid #e0443a;color:#ff6a5e;border-radius:14px;padding:10px 24px;font-size:40px;font-weight:700;transform:rotate(-6deg)}
+#sab .s{font-size:24px;color:#e8d2a8;margin-top:14px}
+#silo{top:200px}
+#silo .h{font-family:HB;font-size:110px;color:#9fd8ff;text-shadow:0 0 30px rgba(120,200,255,.6)}
+#silo .t{font-family:L;font-size:48px;font-weight:700}
+#silo .s{font-size:26px;color:#cfe7ff}
+#y04{top:180px}
+#y04 .n{font-family:L;font-size:150px;font-weight:700;color:#ffd98a;line-height:1}
+#y04 .s{font-size:28px;color:#e8d2a8}
+#q{top:190px;left:60px;width:600px;font-family:L;font-size:52px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:20px;font-family:P;font-size:34px;color:#ffd166}
+#q .btn{display:inline-block;margin-top:20px;padding:16px 44px;border-radius:50px;background:#e8344e;font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:1020px;left:44px;width:632px;font-size:37px;font-weight:700;line-height:1.25;opacity:1;text-shadow:0 3px 0 #000,0 0 14px rgba(0,0,0,.95)}
+#cap b{color:#ffd166}
+</style></head><body>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="ttl" class="lay">Por que Jesus<br>usou saliva?<small>JOÃO 9:6</small></div>
+<div id="c2" class="lay cd"><div class="sc"><div class="r">TÁCITO · HISTÓRIAS 4.81</div><div class="v">Saliva = remédio<br>na Antiguidade</div><div class="s">até um imperador romano tentou</div></div></div>
+<div id="heb" class="lay"><div class="hw"><div class="h">אָדָם</div><div class="t">adám</div><div class="m">homem</div></div><div class="hw"><div class="h">אֲדָמָה</div><div class="t">adamá</div><div class="m">terra</div></div></div>
+<div id="c4" class="lay cd"><div class="sc"><div class="r">GÊNESIS 2:7</div><div class="v">“Deus formou o homem<br>do pó da terra”</div><div class="s">Irineu de Lyon (séc. II) ligou ao barro de João 9</div></div></div>
+<div id="sab" class="lay"><div class="d">SÁBADO</div><div class="st">⛔ amassar barro</div><div class="s">proibido pela tradição · Mishná, Shabat 7:2 · João 9:14</div></div>
+<div id="silo" class="lay"><div class="h">שִׁלֹחַ</div><div class="t">Siloé = “Enviado”</div><div class="s">João 9:7 · mas onde ficava?</div></div>
+<div id="y04" class="lay"><div class="n">2004</div><div class="s">operários acham degraus em Jerusalém:<br>o tanque de Siloé da época de Jesus</div></div>
+<div id="q" class="lay">Você já sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),x=cv.getContext('2d');
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=9;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var DUST=[];for(var i=0;i<120;i++)DUST.push([rnd()*W,rnd()*H,rnd()*2+.6,rnd()*6,rnd()*.6+.2]);
+// textura de pergaminho escuro
+var bg=document.createElement('canvas');bg.width=W;bg.height=H;var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.42,50,W/2,H*.5,H*.8);g.addColorStop(0,'#3a2615');g.addColorStop(1,'#120a05');b.fillStyle=g;b.fillRect(0,0,W,H);
+for(var i=0;i<9000;i++){b.fillStyle='rgba('+(rnd()>.5?'255,220,160':'0,0,0')+','+(rnd()*.05)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}
+var LINES=[['L1','Jesus <b>cuspiu no chão</b>, fez <b>barro</b> e passou nos olhos de um homem que <b>nasceu cego</b>. Parece estranho… mas tem um motivo profundo.'],
+['L2','Naquela época, a <b>saliva</b> era vista como <b>remédio</b>. O historiador romano <b>Tácito</b> conta que até um imperador tentou curar um cego com cuspe.'],
+['L3','Mas Jesus misturou com <b>terra</b>. E aqui está a chave: em hebraico, homem é <b>adám</b>, e terra é <b>adamá</b>.'],
+['L4','No <b>Gênesis</b>, Deus forma o homem do <b>pó da terra</b>. Aqui, um cego recebe <b>olhos novos</b> do mesmo jeito: com <b>barro</b>, pelas mãos de Jesus.'],
+['L5','Detalhe que quase ninguém percebe: era <b>sábado</b>. Pela tradição, <b>amassar barro no sábado era proibido</b>. Jesus fez de propósito.'],
+['L6','Depois, mandou o homem se lavar no tanque de <b>Siloé</b>, que quer dizer <b>“Enviado”</b>. E por séculos ninguém sabia onde ele ficava.'],
+['L7','Até que, em <b>2004</b>, operários consertando um cano em Jerusalém acharam <b>degraus de pedra</b>: era o tanque de Siloé, da <b>época de Jesus</b>.'],
+['L8','Um cego que recebe olhos novos do barro, num lugar que a <b>arqueologia</b> encontrou. Você já sabia? <b>Comenta e segue!</b>']];
+var T={},TL={lines:[]};
+window.__retime=function(d){var t=.3;TL.lines=[];LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;};
+window.__timeline=function(){return TL;};
+function glowCircle(X,Y,r,col,a){var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
+function eye(X,Y,s,open,a){if(a<=0)return;x.save();x.globalAlpha=a;x.translate(X,Y);x.lineWidth=6*s;x.strokeStyle='#ffd98a';x.shadowColor='#ffb84a';x.shadowBlur=20;
+ var h=lerp(2,60,open)*s;x.beginPath();x.moveTo(-110*s,0);x.quadraticCurveTo(0,-h*1.6,110*s,0);x.quadraticCurveTo(0,h*1.6,-110*s,0);x.stroke();
+ if(open>.15){x.save();x.beginPath();x.moveTo(-110*s,0);x.quadraticCurveTo(0,-h*1.6,110*s,0);x.quadraticCurveTo(0,h*1.6,-110*s,0);x.clip();
+  x.fillStyle='#7a4a1c';x.beginPath();x.arc(0,0,46*s,0,7);x.fill();x.fillStyle='#120a05';x.beginPath();x.arc(0,0,20*s,0,7);x.fill();x.fillStyle='rgba(255,255,255,.9)';x.beginPath();x.arc(14*s,-14*s,8*s,0,7);x.fill();x.restore();}
+ else{for(var i=-3;i<=3;i++){x.beginPath();x.moveTo(i*28*s,4*s);x.lineTo(i*34*s,28*s);x.stroke();}}
+ x.restore();}
+function mud(t,a){if(a<=0)return;var gy=760;x.save();x.globalAlpha=a;
+ x.strokeStyle='rgba(255,217,138,.5)';x.lineWidth=3;x.beginPath();x.moveTo(140,gy);x.lineTo(580,gy);x.stroke();
+ var u=lin(t,T.L1+.6,T.L1+2.0),dy=lerp(420,gy-14,u*u);if(u<1){x.fillStyle='#bfe3ff';x.beginPath();x.ellipse(W/2,dy,18,28,0,0,7);x.fill();}
+ var sp=lin(t,T.L1+2.0,T.L1+2.6);if(sp>0&&sp<1){for(var i=0;i<10;i++){var an=-Math.PI*(i+.5)/10;x.fillStyle='rgba(190,227,255,'+(1-sp)+')';x.beginPath();x.arc(W/2+Math.cos(an)*60*sp,gy-10+Math.sin(an)*50*sp,4,0,7);x.fill();}}
+ var m=ez(lin(t,T.L1+2.2,T.L1+3.4));if(m>0){x.fillStyle='#6b4423';x.beginPath();x.ellipse(W/2,gy,170*m,48*m,0,Math.PI,0);x.fill();x.fillStyle='#8a5a30';x.beginPath();x.ellipse(W/2-25,gy-14,70*m,16*m,0,0,7);x.fill();}
+ x.restore();}
+function figure(t,a){if(a<=0)return;var cx=W/2,cy=720,u=ez(lin(t,T.L4+.6,T.L4+5));x.save();x.globalAlpha=a;
+ // partículas de terra formando a silhueta humana
+ for(var i=0;i<420;i++){var k=i/420,ang;var px,py;
+  if(k<.18){ang=k/.18*6.283;px=cx+Math.cos(ang)*48;py=cy-210+Math.sin(ang)*52;}
+  else if(k<.55){var q=(k-.18)/.37;px=cx+lerp(-70,70,(i*37%100)/100)*(1-q*.25);py=cy-150+q*230;}
+  else if(k<.78){var q2=(k-.55)/.23;px=cx+(i%2?1:-1)*(80+q2*30);py=cy-130+q2*170;}
+  else{var q3=(k-.78)/.22;px=cx+(i%2?1:-1)*(22+q3*12);py=cy+80+q3*160;}
+  var sx=cx+(((i*97)%W)-W/2)*1.1,sy=H+40+((i*53)%200);var X=lerp(sx,px,u),Y=lerp(sy,py,u);
+  x.fillStyle='rgba('+(150+(i%5)*15)+','+(100+(i%7)*10)+',55,.9)';x.fillRect(X,Y,4,4);}
+ if(u>.95){glowCircle(cx,cy-210,140,'rgba(255,217,138,A)',.35*lin(t,T.L4+5,T.L4+6.5));}
+ x.restore();}
+function steps(t,a){if(a<=0)return;var u=ez(lin(t,T.L7+1,T.L7+5));x.save();x.globalAlpha=a;var base=900;
+ for(var i=0;i<7;i++){var k=clamp(u*8-i,0,1);if(k<=0)continue;var w=560-i*50,y=base-i*44;x.fillStyle='rgba('+(170-i*8)+','+(140-i*8)+','+(100-i*6)+','+k+')';x.fillRect(W/2-w/2,y,w,40);
+  x.fillStyle='rgba(0,0,0,'+(.35*k)+')';x.fillRect(W/2-w/2,y+34,w,6);}
+ x.strokeStyle='rgba(120,200,255,.8)';x.lineWidth=12;x.beginPath();x.moveTo(40,base+70);x.lineTo(680,base+70);x.stroke();
+ x.restore();}
+function water(t,a){if(a<=0)return;x.save();x.globalAlpha=a;for(var i=0;i<6;i++){var r=((t*60+i*60)%360);x.strokeStyle='rgba(140,210,255,'+(1-r/360)*.7+')';x.lineWidth=3;x.beginPath();x.ellipse(W/2,800,r,r*.3,0,0,7);x.stroke();}
+ var q=.5+.5*Math.sin(t*4);x.font='700 140px L';x.textAlign='center';x.fillStyle='rgba(159,216,255,'+(.25+.35*q)+')';x.fillText('?',W/2,720);x.restore();}
+function frame(t){x.drawImage(bg,0,0);
+ DUST.forEach(function(d){var yy=(d[1]-t*12*d[4]+H)%H;x.fillStyle='rgba(255,214,140,'+(.25+.25*Math.sin(t*1.5+d[3]))+')';x.beginPath();x.arc(d[0]+Math.sin(t*.5+d[3])*10,yy,d[2],0,7);x.fill();});
+ var a1=fade(t,0,T.L1e+.3);mud(t,a1);eye(W/2,560,1.6,0,a1*lin(t,T.L1+3.2,T.L1+4));pop($('ttl'),fade(t,T.L1+.3,T.L1e+.2));
+ pop($('c2'),fade(t,T.L2+.3,T.L2e+.2));
+ var a2=fade(t,T.L2+.3,T.L2e+.2);if(a2>0){x.save();x.globalAlpha=a2;x.font='170px serif';x.textAlign='center';x.fillText('🏛️',W/2,760);x.restore();}
+ pop($('heb'),fade(t,T.L3+3.5,T.L3e+.2));
+ var a3=fade(t,T.L3+3.6,T.L3e+.2);if(a3>0){x.save();x.globalAlpha=a3*ez(lin(t,T.L3+4.5,T.L3+6));x.strokeStyle='#ffd98a';x.lineWidth=4;x.setLineDash([10,10]);x.beginPath();x.moveTo(210,600);x.quadraticCurveTo(W/2,760,510,600);x.stroke();
+  x.setLineDash([]);x.font='700 34px P';x.fillStyle='#ffd98a';x.textAlign='center';x.fillText('mesma raiz',W/2,740);x.restore();}
+ if(t>T.L3-.3&&t<T.L3+3.8){var am=fade(t,T.L3-.3,T.L3+3.8);x.save();x.globalAlpha=am;x.fillStyle='#6b4423';x.beginPath();x.ellipse(W/2,700,110,34,0,Math.PI,0);x.fill();x.font='120px serif';x.textAlign='center';x.fillText('💧',W/2-140,640);x.fillText('🟫',W/2+140,660);x.restore();}
+ pop($('c4'),fade(t,T.L4+.3,T.L4e+.2));figure(t,fade(t,T.L4+.3,T.L4e+.2));
+ var a5=fade(t,T.L5+.3,T.L5e+.2);pop($('sab'),a5);if(a5>0){x.save();x.globalAlpha=a5;x.fillStyle='#6b4423';x.beginPath();x.ellipse(W/2,800,120,36,0,Math.PI,0);x.fill();
+  x.strokeStyle='#e0443a';x.lineWidth=10;x.beginPath();x.arc(W/2,770,120,0,7);x.stroke();x.beginPath();x.moveTo(W/2-85,770+85);x.lineTo(W/2+85,770-85);x.stroke();x.restore();}
+ var a6=fade(t,T.L6+.3,T.L6e+.2);pop($('silo'),a6);water(t,a6);
+ var a7=fade(t,T.L7+.2,T.L7e+.2);pop($('y04'),a7);steps(t,a7);
+ var a8=fade(t,T.L8-.2,T.END+2);if(a8>0){var op=ez(lin(t,T.L8+.3,T.L8+2.2));glowCircle(W/2,760,320,'rgba(255,217,138,A)',.45*op*a8);eye(W/2,760,1.25,op,a8);}
+ pop($('q'),fade(t,T.L8+4,T.END+2));
+ var va=.55;var vg=x.createRadialGradient(W/2,H/2,H*.3,W/2,H/2,H*.75);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,'+va+')');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ var cap='',co=0;TL.lines.forEach(function(l,i){if(t>=l.t0-.1&&t<l.t0+l.dur+.2){cap=LINES[i][1];co=fade(t,l.t0-.1,l.t0+l.dur+.2,.15);}});$('cap').innerHTML=cap;$('cap').style.opacity=co;}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>
