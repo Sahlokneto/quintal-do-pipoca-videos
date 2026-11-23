@@ -1,0 +1,211 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(FreeSerifBold.ttf)}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.sc{display:inline-block;padding:18px 32px;border-radius:18px;background:linear-gradient(#fff3f0,#f1c7bf);color:#3a0a10;box-shadow:0 12px 40px rgba(0,0,0,.6);border:3px solid #c9505f;max-width:600px}
+.sc .r{font-family:P;font-size:21px;letter-spacing:4px;color:#a3283a;font-weight:700}
+.sc .v{font-family:L;font-size:42px;font-weight:700;line-height:1.15}
+.sc .s{font-family:P;font-size:24px;color:#6e1f2a;margin-top:6px}
+.cd{top:130px}
+#heb{top:120px}
+#heb .h{font-family:HB;font-size:120px;color:#ffb3a8;text-shadow:0 0 30px rgba(255,120,90,.7);line-height:1.05}
+#heb .t{font-family:L;font-size:46px;font-weight:700}
+#heb .m{font-size:25px;color:#ffd9d2}
+#heb .j{display:inline-block;margin-top:10px;font-size:23px;color:#fff;background:rgba(58,10,16,.75);border:2px solid rgba(255,179,168,.5);padding:6px 16px;border-radius:12px}
+.two{display:flex;gap:14px;justify-content:center;margin-top:8px}
+.two div{font-family:P;font-size:26px;font-weight:700;padding:8px 14px;border-radius:12px}
+#q{top:170px;left:60px;width:600px;font-family:L;font-size:52px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:20px;font-family:P;font-size:34px;color:#ffb3a8}
+#q .btn{display:inline-block;margin-top:20px;padding:16px 44px;border-radius:50px;background:#e8344e;font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:885px;left:40px;width:580px;text-align:center;opacity:1}
+#cap span{display:inline-block;padding:8px 22px;border-radius:16px;background:rgba(22,3,6,.84);border:2px solid rgba(255,179,168,.4);font-size:44px;font-weight:700;line-height:1.18;text-shadow:0 3px 0 #000}
+#cap b{color:#ffb3a8}
+</style></head><body>
+<div id="stage">
+<div id="c1" class="lay cd"><div class="sc"><div class="r">2 REIS 2:11</div><div class="v">“…e Elias subiu ao céu<br>num <span style="color:#c0392b">redemoinho</span>”</div><div class="s">leia de novo: não foi na carruagem</div></div></div>
+<div id="c2" class="lay cd"><div class="sc"><div class="r">2 REIS 2:8</div><div class="v">O manto de Elias<br>abriu o Jordão</div></div></div>
+<div id="c3" class="lay cd"><div class="sc"><div class="r">2 REIS 2:11</div><div class="two"><div style="background:#ffd8cf">🔥 carro de fogo<br>→ SEPAROU</div><div style="background:#3a0a10;color:#ffd9d2">🌪️ redemoinho<br>→ LEVOU</div></div></div></div>
+<div id="heb" class="lay"><div class="h">סְעָרָה</div><div class="t">se'ará</div><div class="m">redemoinho · tempestade</div><div class="j">Jó 38:1 — Deus fala “do meio da se'ará”</div></div>
+<div id="c5" class="lay cd"><div class="sc"><div class="r">2 REIS 2:12 → 2 REIS 13:14</div><div class="v" style="font-size:38px">“Meu pai! Carros de Israel<br>e seus cavaleiros!”</div><div class="s">Eliseu para Elias… e o rei Joás para Eliseu</div></div></div>
+<div id="c6" class="lay cd"><div class="sc"><div class="r">COMO MUITOS ESTUDIOSOS LEEM</div><div class="v" style="font-size:38px">A força de Israel<br>era o profeta,<br>não os carros de guerra</div></div></div>
+<div id="c7" class="lay cd"><div class="sc"><div class="r">COLINA DE ELIAS · AL-MAGHTAS (JORDÂNIA)</div><div class="v" style="font-size:38px">Mosteiro do século V</div><div class="s">área Patrimônio da UNESCO desde 2015</div></div></div>
+<div id="c8" class="lay cd"><div class="sc"><div class="r">MALAQUIAS 4:5</div><div class="v" style="font-size:38px">A taça de Elias<br>na Páscoa judaica</div><div class="s">esperando a volta do profeta</div></div></div>
+<div id="q" class="lay">Você já sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script src="three.min.js"></script>
+<script>
+(function(){
+var W=720,H=1280;
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=7;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+// ---------- falas (texto = fala) ----------
+var LINES=[['L1','Você aprendeu que Elias subiu ao céu numa <b>carruagem de fogo</b>, certo? Leia de novo. A Bíblia <b>não diz bem isso</b>.'],
+['L2','Elias e Eliseu andavam juntos perto do <b>rio Jordão</b>. Elias bateu o <b>manto</b> na água, o rio se abriu, e os dois passaram a pé enxuto.'],
+['L3','De repente, um <b>carro de fogo</b> com cavalos de fogo passou entre os dois e os <b>separou</b>. Mas quem levou Elias para o céu foi um <b>redemoinho</b>.'],
+['L4','Em hebraico, redemoinho é <b>se\'ará</b>. É a mesma palavra da tempestade de onde <b>Deus falou com Jó</b>. O fogo separou. A tempestade de Deus levou.'],
+['L5','E tem um detalhe que quase ninguém percebe. Eliseu gritou: <b>meu pai, carros de Israel e seus cavaleiros!</b> Anos depois, um rei diria a <b>mesma frase</b> para o próprio Eliseu, no leito de morte.'],
+['L6','Muitos estudiosos entendem assim: a verdadeira força de Israel <b>não eram os carros de guerra</b>. Era o <b>profeta</b>, que orava e ouvia a Deus.'],
+['L7','E o lugar? A tradição aponta uma colina do outro lado do Jordão, na Jordânia: a <b>Colina de Elias</b>. Lá estão as ruínas de um <b>mosteiro do século quinto</b>, e a área virou <b>Patrimônio da UNESCO</b> em dois mil e quinze.'],
+['L8','Elias não morreu. Por isso, até hoje, muitas famílias judias deixam uma <b>taça para Elias</b> na mesa da Páscoa. Você sabia? <b>Comenta e segue</b> pra mais segredos!']];
+var T={},TL={lines:[]},CH=[];
+function buildChunks(){CH=[];TL.lines.forEach(function(l,i){var toks=[],bold=false;LINES[i][1].split(/(<b>|<\/b>)/).forEach(function(p){if(p=='<b>'){bold=true;return;}if(p=='</b>'){bold=false;return;}p.split(/\s+/).forEach(function(w){if(!w)return;if(/^[.,!?:;]+$/.test(w)&&toks.length){toks[toks.length-1][0]+=w;return;}toks.push([w,bold]);});});
+ var groups=[],cur=[],len=0;toks.forEach(function(tk,k){cur.push(tk);len+=tk[0].length+1;var end=/[.,!?:]$/.test(tk[0]);if(len>=20||(end&&len>=9)||k==toks.length-1){groups.push(cur);cur=[];len=0;}});
+ var tot=0;groups.forEach(function(g){g.n=g.reduce(function(a,b){return a+b[0].length+1;},0);tot+=g.n;});var t0=l.t0;
+ groups.forEach(function(g){var d=l.dur*g.n/tot;CH.push({t0:t0,t1:t0+d,html:g.map(function(tk){return tk[1]?'<b>'+tk[0]+'</b>':tk[0];}).join(' ')});t0+=d;});});}
+window.__retime=function(d){var t=.3;TL.lines=[];LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;buildChunks();};
+window.__timeline=function(){return TL;};
+// ---------- 3D ----------
+var R=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});R.setSize(W,H);R.setPixelRatio(1);R.domElement.id='cv';
+var st=$('stage');st.insertBefore(R.domElement,st.firstChild);
+var S=new THREE.Scene();S.fog=new THREE.Fog(0x1a0508,25,90);
+var cam=new THREE.PerspectiveCamera(50,W/H,.1,400);
+// céu (paleta VERMELHO CARMIM)
+var skyM=new THREE.ShaderMaterial({side:THREE.BackSide,depthWrite:false,fog:false,uniforms:{},vertexShader:'varying vec3 p;void main(){p=normalize(position);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+ fragmentShader:'varying vec3 p;void main(){float h=clamp(p.y*1.6+.15,0.,1.);vec3 a=vec3(.36,.07,.09);vec3 b=vec3(.05,.008,.016);gl_FragColor=vec4(mix(a,b,h),1.);}'});
+var sky=new THREE.Mesh(new THREE.SphereGeometry(200,32,16),skyM);S.add(sky);
+S.add(new THREE.AmbientLight(0xffd0c0,.45));var dl=new THREE.DirectionalLight(0xffc6b0,.55);dl.position.set(-8,14,10);S.add(dl);
+var fireL=new THREE.PointLight(0xff7a2a,0,30,2);S.add(fireL);var holyL=new THREE.PointLight(0xffe2c0,0,40,2);S.add(holyL);
+// estrelas
+var sg=new THREE.BufferGeometry(),sp=[];for(var i=0;i<900;i++){var th=rnd()*6.283,ph=rnd()*1.2+.15;sp.push(150*Math.cos(th)*Math.cos(ph),150*Math.sin(ph),150*Math.sin(th)*Math.cos(ph));}
+sg.setAttribute('position',new THREE.Float32BufferAttribute(sp,3));var stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0xffe6de,size:.6,fog:false,transparent:true,opacity:.8}));S.add(stars);
+// chão com dunas
+var gg=new THREE.PlaneGeometry(220,220,90,90);gg.rotateX(-Math.PI/2);var gp=gg.attributes.position;
+for(var i=0;i<gp.count;i++){var X=gp.getX(i),Z=gp.getZ(i);var y=Math.sin(X*.13)*.5+Math.cos(Z*.09+X*.05)*.6;if(Math.abs(Z)<3.2)y-=.5;gp.setY(i,y-.05);}gg.computeVertexNormals();
+S.add(new THREE.Mesh(gg,new THREE.MeshLambertMaterial({color:0x4a1c16})));
+// rio Jordão (eixo X, z=0), duas metades que se abrem
+var wM=new THREE.MeshLambertMaterial({color:0x3a5f78,emissive:0x0c2233,transparent:true,opacity:.92});
+var wL=new THREE.Mesh(new THREE.BoxGeometry(40,.5,5.2),wM),wR=wL.clone();S.add(wL);S.add(wR);
+var wallM=new THREE.MeshLambertMaterial({color:0x6d9cbf,emissive:0x1d4560,transparent:true,opacity:.55});
+var wwL=new THREE.Mesh(new THREE.BoxGeometry(.35,1,5.2),wallM),wwR=wwL.clone();S.add(wwL);S.add(wwR);
+var ring=new THREE.Mesh(new THREE.TorusGeometry(1,.06,8,48),new THREE.MeshBasicMaterial({color:0xdff2ff,transparent:true}));ring.rotation.x=Math.PI/2;S.add(ring);
+// pessoas (sem rosto)
+function person(robe,cloak,staff){var g=new THREE.Group();var m=new THREE.MeshLambertMaterial({color:robe});
+ var body=new THREE.Mesh(new THREE.CylinderGeometry(.22,.48,1.5,16),m);body.position.y=.75;g.add(body);
+ var cl=new THREE.Mesh(new THREE.CylinderGeometry(.3,.52,1.2,16,1,true,-.4,3.9),new THREE.MeshLambertMaterial({color:cloak,side:THREE.DoubleSide}));cl.position.y=.95;g.add(cl);
+ var head=new THREE.Mesh(new THREE.SphereGeometry(.2,16,12),new THREE.MeshLambertMaterial({color:0x8a5a42}));head.position.y=1.72;g.add(head);
+ var hood=new THREE.Mesh(new THREE.SphereGeometry(.25,16,12,0,6.283,0,1.7),new THREE.MeshLambertMaterial({color:cloak}));hood.position.y=1.74;hood.rotation.x=-.25;g.add(hood);
+ if(staff){var s=new THREE.Mesh(new THREE.CylinderGeometry(.03,.03,2.1,6),new THREE.MeshLambertMaterial({color:0x5a3a1a}));s.position.set(.45,1.05,0);g.add(s);}
+ S.add(g);return g;}
+var eli=person(0x6b4a2e,0xb8862b,true),elish=person(0x4a3a5a,0x7a6a8a,false);
+var mantle=new THREE.Mesh(new THREE.PlaneGeometry(1.4,1),new THREE.MeshLambertMaterial({color:0xb8862b,side:THREE.DoubleSide}));mantle.rotation.x=-Math.PI/2;S.add(mantle);
+// carro e cavalos (de fogo ou de ferro)
+function chariot(fire){var g=new THREE.Group();var c=fire?0xff6a1a:0x3a3a40;
+ var m=fire?new THREE.MeshBasicMaterial({color:c}):new THREE.MeshLambertMaterial({color:c});
+ var box=new THREE.Mesh(new THREE.BoxGeometry(1.4,.8,1.3),m);box.position.set(-1.2,1.1,0);g.add(box);
+ [-.75,.75].forEach(function(z){var w=new THREE.Mesh(new THREE.TorusGeometry(.6,.07,8,24),m);w.position.set(-1.2,.65,z);g.add(w);
+  for(var k=0;k<4;k++){var sp=new THREE.Mesh(new THREE.BoxGeometry(1.15,.05,.05),m);sp.position.copy(w.position);sp.rotation.z=k*Math.PI/4;g.add(sp);w.userData.sp=(w.userData.sp||[]).concat(sp);}});
+ var pole=new THREE.Mesh(new THREE.BoxGeometry(2.2,.08,.08),m);pole.position.set(.5,.9,0);g.add(pole);
+ g.userData.legs=[];
+ [-.5,.5].forEach(function(z){var h=new THREE.Group();h.position.set(1.8,0,z);
+  var b=new THREE.Mesh(new THREE.CylinderGeometry(.28,.3,1.5,10),m);b.rotation.z=Math.PI/2;b.position.y=1.35;h.add(b);
+  var n=new THREE.Mesh(new THREE.CylinderGeometry(.14,.22,.9,8),m);n.position.set(.75,1.75,0);n.rotation.z=-.7;h.add(n);
+  var hd=new THREE.Mesh(new THREE.BoxGeometry(.55,.22,.22),m);hd.position.set(1.12,2.08,0);hd.rotation.z=-.45;h.add(hd);
+  [[-.55,.15],[-.5,-.15],[.55,.15],[.5,-.15]].forEach(function(q,k){var l=new THREE.Mesh(new THREE.CylinderGeometry(.06,.05,1.1,6),m);l.geometry.translate(0,-.55,0);l.position.set(q[0],1.25,q[1]);h.add(l);g.userData.legs.push([l,k]);});
+  g.add(h);});
+ S.add(g);return g;}
+var fc=chariot(true);var iron=[];for(var i=0;i<5;i++){var c=chariot(false);iron.push(c);}
+// partículas de fogo
+var tex=(function(){var c=document.createElement('canvas');c.width=c.height=64;var x=c.getContext('2d');var g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'rgba(255,255,220,1)');g.addColorStop(.3,'rgba(255,170,60,.9)');g.addColorStop(1,'rgba(255,60,0,0)');x.fillStyle=g;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(c);})();
+var NF=900,fg=new THREE.BufferGeometry(),fpos=new Float32Array(NF*3),FB=[];for(var i=0;i<NF;i++)FB.push([rnd()*4.6-1.9,rnd()*2.4,rnd()*1.8-.9,rnd()]);
+fg.setAttribute('position',new THREE.BufferAttribute(fpos,3));var fireP=new THREE.Points(fg,new THREE.PointsMaterial({map:tex,size:.9,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending}));fireP.frustumCulled=false;S.add(fireP);
+// redemoinho
+var NW=1400,wg=new THREE.BufferGeometry(),wpos=new Float32Array(NW*3),WB=[];for(var i=0;i<NW;i++)WB.push([rnd(),rnd()*6.283,rnd()]);
+wg.setAttribute('position',new THREE.BufferAttribute(wpos,3));
+var wtex=(function(){var c=document.createElement('canvas');c.width=c.height=64;var x=c.getContext('2d');var g=x.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'rgba(255,240,230,.9)');g.addColorStop(1,'rgba(255,200,180,0)');x.fillStyle=g;x.fillRect(0,0,64,64);return new THREE.CanvasTexture(c);})();
+var whirl=new THREE.Points(wg,new THREE.PointsMaterial({map:wtex,size:.22,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,opacity:0}));whirl.frustumCulled=false;S.add(whirl);
+var beam=new THREE.Mesh(new THREE.CylinderGeometry(1.2,4,60,32,1,true),new THREE.MeshBasicMaterial({color:0xffd9c0,transparent:true,opacity:0,side:THREE.DoubleSide,depthWrite:false,blending:THREE.AdditiveBlending}));S.add(beam);
+// Colina de Elias + ruínas (x=30,z=-30)
+var HX=30,HZ=-30;var hill=new THREE.Mesh(new THREE.SphereGeometry(7,32,16,0,6.283,0,1.2),new THREE.MeshLambertMaterial({color:0x6a3a2a}));hill.scale.y=.45;hill.position.set(HX,-1.2,HZ);S.add(hill);
+var stoneM=new THREE.MeshLambertMaterial({color:0xcdb59a});
+[[-2,0,1.6],[-1,0,2.4],[0,0,2.0],[1,0,1.1],[2,0,2.6],[-2,2,1.3],[2,2,.9],[0,2,1.8]].forEach(function(q){var c=new THREE.Mesh(new THREE.CylinderGeometry(.22,.25,q[2],10),stoneM);c.userData.grp='hill';c.position.set(HX+q[0]*1.3,1.4+q[2]/2,HZ+q[1]*1.3-1);S.add(c);});
+[[0,-1.4,6,.6],[-3,1.3,.5,3],[3,1.3,.5,3]].forEach(function(q){var b=new THREE.Mesh(new THREE.BoxGeometry(q[2],.7,q[3]),stoneM);b.userData.grp='hill';b.position.set(HX+q[0],1.65,HZ+q[1]);S.add(b);});
+var cross=new THREE.Group();[[.12,1.4,.12,0,.7],[.8,.12,.12,0,1.0]].forEach(function(q){var b=new THREE.Mesh(new THREE.BoxGeometry(q[0],q[1],q[2]),stoneM);b.position.set(q[3],q[4],0);cross.add(b);});cross.position.set(HX,2.1,HZ-2.4);S.add(cross);
+// mesa da Páscoa com a taça de Elias (x=-30,z=-30)
+var TX=-30,TZ=-30;var wood=new THREE.MeshLambertMaterial({color:0x5a2a1a});
+var top=new THREE.Mesh(new THREE.BoxGeometry(5,.2,2.4),wood);top.position.set(TX,1.2,TZ);top.userData.grp='tab';S.add(top);
+[[-2.2,-1],[2.2,-1],[-2.2,1],[2.2,1]].forEach(function(q){var l=new THREE.Mesh(new THREE.BoxGeometry(.15,1.2,.15),wood);l.userData.grp='tab';l.position.set(TX+q[0],.6,TZ+q[1]);S.add(l);});
+var cloth=new THREE.Mesh(new THREE.BoxGeometry(5.2,.03,2.6),new THREE.MeshLambertMaterial({color:0xf3e6d8}));cloth.position.set(TX,1.32,TZ);cloth.userData.grp='tab';S.add(cloth);
+var pts=[];for(var i=0;i<=20;i++){var u=i/20,r=u<.45?(.08+u*.1):(u<.55?.05:(.05+Math.pow((u-.55)/.45,.6)*.38));if(u<.1)r=.32-u*2;pts.push(new THREE.Vector2(Math.max(r,.04),u*1.1));}
+var cup=new THREE.Mesh(new THREE.LatheGeometry(pts,32),new THREE.MeshLambertMaterial({color:0xe8c46a,emissive:0x5a3a08}));cup.position.set(TX,1.34,TZ);cup.userData.grp='tab';S.add(cup);
+var wine=new THREE.Mesh(new THREE.CircleGeometry(.36,24),new THREE.MeshBasicMaterial({color:0x7a0c1c}));wine.rotation.x=-Math.PI/2;wine.position.set(TX,1.34+1.0,TZ);wine.userData.grp='tab';S.add(wine);
+[-1.6,1.6].forEach(function(dx){var c=new THREE.Mesh(new THREE.CylinderGeometry(.08,.08,.7,10),new THREE.MeshLambertMaterial({color:0xfff6e8}));c.userData.grp='tab';c.position.set(TX+dx,1.7,TZ-.4);S.add(c);});
+var door=new THREE.Mesh(new THREE.PlaneGeometry(2.4,4.2),new THREE.MeshBasicMaterial({color:0xffe6c8,transparent:true,opacity:.0}));door.position.set(TX,2.1,TZ-4);door.userData.grp='tab';S.add(door);
+var doorF=new THREE.Mesh(new THREE.BoxGeometry(2.9,4.6,.2),wood);doorF.position.set(TX,2.2,TZ-4.15);doorF.userData.grp='tab';S.add(doorF);
+var candleP=[];[-1.6,1.6].forEach(function(dx){var f=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,blending:THREE.AdditiveBlending,depthWrite:false}));f.scale.set(.5,.8,1);f.userData.grp='tab';f.position.set(TX+dx,2.25,TZ-.4);S.add(f);candleP.push(f);});
+// ---------- câmera por cena ----------
+var V=function(x,y,z){return new THREE.Vector3(x,y,z);};
+function shotsAt(t){ // [pos, alvo]
+ var L=T;var list=[
+  [0,V(0,1.5,15),V(-2,4.5,-4)],[L.L1e,V(1,1.8,14),V(2,6.5,-4)],
+  [L.L2,V(9,6.5,13),V(0,.6,-1)],[L.L2e-.5,V(6,5,10),V(0,.8,-3)],
+  [L.L3,V(9,3.2,3),V(0,1.2,-6)],[L.L3+5,V(8,3,1),V(-1,1.5,-5)],[L.L3e,V(7,2.4,4),V(-2.5,4,-5)],
+  [L.L4,V(7,2,8),V(-2.5,6,-5)],[L.L4e,V(6,1.5,9),V(-2.5,13,-5)],
+  [L.L5,V(5,3,3.5),V(-1.6,1.3,-5)],[L.L5e,V(3.5,2.4,2),V(-1.8,1.5,-5)],
+  [L.L6,V(2,4,6),V(-1,2,-14)],[L.L6e,V(1,3.5,3),V(-1,2.5,-14)],
+  [L.L7,V(HX+14,9,HZ+14),V(HX,1.5,HZ)],[L.L7e,V(HX-8,6,HZ+12),V(HX,1.8,HZ)],
+  [L.L8,V(TX+5,3.2,TZ+6),V(TX,1.8,TZ)],[L.END,V(TX+1.5,2.6,TZ+3.6),V(TX,2,TZ-.5)]];
+ for(var i=0;i<list.length-1;i++){var a=list[i],b=list[i+1];if(t<=b[0]||i==list.length-2){var cut=(b[0]-a[0]);var jump=(i==1||i==3||i==6||i==8||i==10||i==12||i==14);// cortes secos entre cenas
+   var u=ez(clamp((t-a[0])/Math.max(cut,.01),0,1));if(jump){u=t<b[0]?0:1;var a2=list[i+1];return t<b[0]?[a[1].clone().lerp(a[1],0),a[2]]:[a2[1],a2[2]];}
+   return [a[1].clone().lerp(b[1],u),a[2].clone().lerp(b[2],u)];}}
+ return [list[0][1],list[0][2]];}
+// helpers de cena
+function placeChariot(g,pos,yaw,t,show,fire){g.visible=show;if(!show)return;g.position.copy(pos);g.rotation.y=yaw;
+ g.userData.legs.forEach(function(L){L[0].rotation.z=Math.sin(t*14+L[1]*1.7)*.6;});}
+function frame(t){
+ var L=T;
+ // água abre na fala 2 (aos ~4s)
+ var op=ez(lin(t,L.L2+3.6,L.L2+5.5))*(1-ez(lin(t,L.L2e,L.L3+.6)));wL.position.set(-20-op*1.6,-.25,0);wR.position.set(20+op*1.6,-.25,0);
+ wwL.position.set(-op*1.6,0,0);wwR.position.set(op*1.6,0,0);wwL.scale.y=wwR.scale.y=.2+op*1.3;wwL.position.y=wwR.position.y=(.2+op*1.3)/2-.3;wwL.visible=wwR.visible=op>0.01;
+ var rg=lin(t,L.L2+3.4,L.L2+4.6);ring.visible=rg>0&&rg<1;ring.scale.setScalar(.3+rg*4);ring.position.set(0,.05,1.8);ring.material.opacity=1-rg;
+ // pessoas
+ var walk=ez(lin(t,L.L2+5,L.L2e+.2));var zP=lerp(4.5,-5,walk);
+ var sep=ez(lin(t,L.L3+2.2,L.L3+3.4));
+ var lift=ez(lin(t,L.L3e-1,L.L4e-1));
+ eli.position.set(lerp(-.55,-2.5,sep),lift*16,zP);eli.rotation.y=lift*14;eli.visible=t>L.L2-.2&&t<L.L4e;
+ elish.position.set(lerp(.55,2.2,sep),0,zP);elish.rotation.y=0;elish.visible=t>L.L2-.2&&t<L.L6e;
+ if(t>L.L5-.2){elish.position.set(-1.1,0,-5);elish.rotation.y=-.6;}
+ [eli,elish].forEach(function(p){p.position.y+= (walk>0&&walk<1)?Math.abs(Math.sin(t*7))*.06:0;});
+ mantle.visible=t>L.L4&&t<L.L6e;mantle.position.set(-2.5,lerp(5,.04,ez(lin(t,L.L4+1,L.L4+3))),-5);mantle.rotation.z=lin(t,L.L4+1,L.L4+3)*3;
+ // carro de fogo
+ var fireOn=false,cp=V(0,0,0),dir=V(1,0,0);
+ if(t<L.L1e+.2){var u=lin(t,0,L.L1e);cp.set(lerp(-11,9,u),lerp(3.5,8.5,u),-4);dir.set(1,.25,0);placeChariot(fc,cp,0,t,true,1);fc.rotation.z=.2;fireOn=true;}
+ else if(t>L.L3+.8&&t<L.L3+4.6){var u=lin(t,L.L3+.8,L.L3+4.6);cp.set(0,.7,lerp(-16,12,u));dir.set(0,0,1);placeChariot(fc,cp,-Math.PI/2,t,true,1);fc.rotation.z=0;fireOn=true;}
+ else fc.visible=false;
+ fireL.intensity=fireOn?3:0;fireL.position.copy(cp).add(V(0,2,0));
+ fireP.visible=fireOn;if(fireOn){var e=new THREE.Euler(0,fc.rotation.y,fc.rotation.z);
+  for(var i=0;i<NF;i++){var b=FB[i];var ph=(t*2.2+b[3])%1;var v=V(b[0]-ph*2.8,b[1]+ph*1.6,b[2]).applyEuler(e);fpos[i*3]=cp.x+v.x;fpos[i*3+1]=cp.y+v.y+.2;fpos[i*3+2]=cp.z+v.z;}
+  fg.attributes.position.needsUpdate=true;fireP.material.opacity=1;}
+ // redemoinho em Elias
+ var wa=fade(t,L.L3+4.5,L.L4e+1,1.2);whirl.material.opacity=wa*.6;whirl.visible=wa>0;
+ if(wa>0){for(var i=0;i<NW;i++){var b=WB[i];var hgt=((b[0]+t*.12)%1)*18;var r=.5+hgt*.32+b[2]*.4;var an=b[1]+t*(3.2-hgt*.08);wpos[i*3]=-2.5+Math.cos(an)*r;wpos[i*3+1]=hgt;wpos[i*3+2]=-5+Math.sin(an)*r;}wg.attributes.position.needsUpdate=true;}
+ beam.position.set(-2.5,30,-5);beam.material.opacity=.16*fade(t,L.L4+.5,L.L5e,1.5);beam.visible=beam.material.opacity>0;
+ holyL.position.set(-2.5,8,-5);holyL.intensity=2.2*Math.max(fade(t,L.L3+5,L.L5e,1),fade(t,L.L6,L.L6e,1));
+ // carros de ferro (fala 6) somem
+ var ia=fade(t,L.L6-.2,L.L6e+.2);var sink=ez(lin(t,L.L6+4,L.L6e-1));
+ iron.forEach(function(c,k){placeChariot(c,V(-8+k*4,-sink*3.2,-16-(k%2)*2),0,t*.3,ia>0,0);c.rotation.y=Math.PI*.05*k;});
+ if(ia>0){elish.position.set(-1,0,-9);elish.visible=true;}
+ // luz da mesa
+ door.material.opacity=.85*ez(lin(t,L.L8+3,L.L8+6));candleP.forEach(function(f,i){f.scale.set(.45+.08*Math.sin(t*9+i),.75+.1*Math.sin(t*11+i*2),1);});
+ var inHill=t>L.L7-.5&&t<L.L7e+.5,inTab=t>L.L8-.5;hill.visible=inHill;cross.visible=inHill;S.children.forEach(function(o){if(o.userData.grp=='hill')o.visible=inHill;if(o.userData.grp=='tab')o.visible=inTab;});
+ var c=shotsAt(t);cam.position.copy(c[0]);cam.lookAt(c[1]);
+ R.render(S,cam);
+ // DOM
+ pop($('c1'),fade(t,L.L1+3.6,L.L1e+.2));pop($('c2'),fade(t,L.L2+3,L.L2e+.2));pop($('c3'),fade(t,L.L3+5.2,L.L3e+.2));
+ pop($('heb'),fade(t,L.L4+.2,L.L4e+.2));pop($('c5'),fade(t,L.L5+3.5,L.L5e+.2));pop($('c6'),fade(t,L.L6+.3,L.L6e+.2));
+ pop($('c7'),fade(t,L.L7+4.5,L.L7e+.2));pop($('c8'),fade(t,L.L8+1,L.L8+7));pop($('q'),fade(t,L.L8+7.2,L.END+2));
+ var cap='',co=0,sc=1;CH.forEach(function(c){if(t>=c.t0-.05&&t<c.t1+.12){cap=c.html;co=1;sc=1+.12*(1-ez(lin(t,c.t0-.05,c.t0+.12)));}});
+ $('cap').innerHTML=cap?'<span>'+cap+'</span>':'';$('cap').style.opacity=co;$('cap').style.transform='scale('+sc+')';}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>
