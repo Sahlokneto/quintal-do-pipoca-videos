@@ -52,17 +52,25 @@ em fonte oficial (vatican.va, CNBB).
 
 ### 2.2 2D ou 3D: você escolhe por tema (pedido do dono)
 - **3D (Three.js)** quando o tema tem cena, movimento, lugar ou objeto: milagres, viagens, fenômenos (redemoinho, mar
-  abrindo), arquitetura (templo, arca, catacumba), igreja por dentro. **Modelo atual (padrão de qualidade pedido pelo dono em 23/11):
-  `videos/2026-11-23-elias-redemoinho-v2/bib3d.html`** + biblioteca `assets/js/bib3d_lib.js`:
-  - Personagens SEMPRE com `B3.person({...})` (boneco arredondado com rosto, cabelo/barba, túnica com dobras, cinto, manto,
-    mangas, sandálias; expressões idle/sad/closed/shout; poses walk/stand/shout/reach/pray/strike/lift). Nada de cones/caixas.
-    Detalhes bíblicos corretos nas roupas quando houver (ex.: Elias com cinto de couro, Eliseu careca). Jesus: só luz/símbolo.
-  - Cenário SEMPRE rico: terreno com textura (`assets/tex`), céu HDRI (`assets/hdri`), modelos Poly Haven CC0 (`assets/models`,
-    baixar mais com `curl` pela API api.polyhaven.com), palmeiras `B3.palm`, casas de barro `B3.house`, juncos, poeira, sombras.
-    Animais com `B3.horse`; carros `B3.chariot`. Fogo/brilho: pouco e alaranjado (não estourar em branco).
+  abrindo), arquitetura (templo, arca, catacumba), igreja por dentro. **Modelo atual: `videos/2026-11-23-elias-redemoinho-v3/bib3d.html`**
+  + bibliotecas `assets/js/bib3d_lib.js` (personagens, cavalos, carros, palmeiras) e `assets/js/bib3d_world.js` (céu, terreno,
+  pedras, arbustos, árvores, casas, jarros, cálices, castiçais).
+  - **TUDO feito por código (decisão do dono, 23/11). NÃO importar modelos, texturas ou céus de sites (Poly Haven etc.).**
+  - Personagens SEMPRE com `B3.person({...})` (boneco com rosto, cabelo/barba, túnica com dobras, cinto, manto, mangas,
+    sandálias; expressões idle/sad/closed/shout; poses walk/stand/scared/shout/reach/pray/strike/lift). Detalhes bíblicos
+    corretos (ex.: Elias com cinto de couro, Eliseu careca). Jesus: só luz/símbolo.
+  - **Cuidado físico (o dono reprovou um vídeo por isso) — conferir nos quadros ANTES de renderizar:**
+    1. Nada flutua: todo objeto apoiado no chão usa a altura do terreno (`W3.y(x,z)`) e tem a base ENTERRADA um pouco
+       (paredes, escadas, colunas e casas começam abaixo do chão; prefira chão plano/platô onde houver construção).
+    2. Nada atravessa nada: personagens com distância mínima de 2 m entre centros; carros/animais só passam por onde há
+       espaço livre (calcule a largura) — se a história diz "passou entre os dois", eles se afastam ANTES.
+    3. Braços nunca entram no corpo: repouso e caminhada com os braços abertos para fora (aLz negativo / aRz positivo).
+    4. Peças encaixadas: pernas da mesa vão do chão até o tampo; objetos em cima da mesa apoiados no tampo; degraus
+       empilhados sem vão.
+    5. Personagem olha para onde anda; nada de andar de costas.
   - Ferramentas: `node tools/shots3d.js <pasta> bib3d.html t1,t2…` e `node tools/render3d.js <pasta> bib3d.html <i> <N>`
-    (servidor local embutido; esperam `window.READY`). Render ≈ 4 s/quadro por processo (máquina de 2 CPUs: use 2 processos;
-    ~80 min para 90 s de vídeo). Por isso: **no máximo 1 vídeo 3D por dia**; os outros em 2D.
+    (servidor local embutido; esperam `window.READY`). ≈1 s/quadro por processo (2 processos ≈ 20 min para 90 s).
+    Mesmo assim: no máximo 1 vídeo 3D por dia.
 - **2D (canvas)** quando o tema é palavra, texto, lista, linha do tempo, comparação ou passo a passo (como rezar, partes da
   missa). Modelo: `videos/2026-11-23-camelo-agulha/bib.html`.
 - As regras de legenda em blocos, paleta e área segura valem para os dois.

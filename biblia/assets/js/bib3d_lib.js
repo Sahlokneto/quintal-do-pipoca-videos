@@ -1,18 +1,16 @@
 // ===== bib3d_lib.js — biblioteca 3D do canal Segredos da Escritura =====
 // Personagens "boneco" arredondados e detalhados (rosto com olhos brilhantes, cabelo, barba, túnica, cinto, manto,
-// mangas, sandálias), cavalos, carro, palmeiras, casas de barro, ruínas, terreno com textura, céu HDRI, poeira e luz.
+// mangas, sandálias), cavalos, carro e palmeiras. TUDO feito por código (decisão do dono, 23/11: nada importado).
+// Cenário: bib3d_world.js.
 // Regras do canal: Jesus NUNCA aparece com rosto (só luz/símbolo). Profetas e pessoas comuns podem ter rosto de boneco.
 // Uso: carregar three.min.js, GLTFLoader.js, (opcional) EffectComposer/RenderPass/ShaderPass/CopyShader/
 // LuminosityHighPassShader/UnrealBloomPass e este arquivo. Depois: B3.init(W,H,{sky:'...jpg'}) e B3.load([...]).
 var B3 = (function () {
-  var PI = Math.PI, A = {}, S, R, cam, composer, texL = new THREE.TextureLoader(), gl = new THREE.GLTFLoader();
+  var PI = Math.PI, A = {}, S, R, cam, composer, texL = new THREE.TextureLoader();
   var seed = 11; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
   function mat(c, o) { o = o || {}; var m = new THREE.MeshStandardMaterial({ color: c, roughness: o.r == null ? .85 : o.r, metalness: o.m || 0 });
     if (o.e) { m.emissive = new THREE.Color(o.e); m.emissiveIntensity = o.ei == null ? 1 : o.ei; } if (o.map) m.map = o.map; if (o.side) m.side = o.side; return m; }
   function sh(m) { m.castShadow = true; m.receiveShadow = true; return m; }
-  function tex(path, rep) { var t = texL.load(path); t.wrapS = t.wrapT = THREE.RepeatWrapping; if (rep) t.repeat.set(rep, rep); t.anisotropy = 4; return t; }
-  function pbr(base, rep, color) { var m = new THREE.MeshStandardMaterial({ color: color || 0xffffff, roughness: 1 });
-    m.map = tex(base + '_Diffuse.jpg', rep); m.map.encoding = THREE.sRGBEncoding; m.normalMap = tex(base + '_nor_gl.jpg', rep); m.roughnessMap = tex(base + '_Rough.jpg', rep); return m; }
   // ---------- tecido com tramas (dá riqueza às roupas) ----------
   function fabric(c1, c2, stripes) { var c = document.createElement('canvas'); c.width = c.height = 256; var x = c.getContext('2d');
     x.fillStyle = c1; x.fillRect(0, 0, 256, 256);
@@ -66,7 +64,7 @@ var B3 = (function () {
       var so = sh(new THREE.Mesh(new THREE.BoxGeometry(.24, .03, .44), mat('#4a2e18'))); so.position.set(s * .2, .015, .42); body.add(so);
       var st = new THREE.Mesh(new THREE.TorusGeometry(.12, .018, 6, 16, PI), mat('#4a2e18')); st.position.set(s * .2, .06, .46); body.add(st); });
     // braços (manga em sino)
-    function arm(s) { var g = new THREE.Group(); g.position.set(s * .4, 1.42, 0); body.add(g);
+    function arm(s) { var g = new THREE.Group(); g.position.set(s * .47, 1.42, 0); body.add(g);
       var up = sh(new THREE.Mesh(new THREE.CylinderGeometry(.11, .15, .5, 12), robe)); up.position.y = -.25; g.add(up);
       var el = new THREE.Group(); el.position.y = -.48; g.add(el);
       var lo = sh(new THREE.Mesh(new THREE.CylinderGeometry(.15, .23, .46, 14, 1, true), new THREE.MeshStandardMaterial({ color: 0xffffff, map: robeT, roughness: .95, side: THREE.DoubleSide }))); lo.position.y = -.23; el.add(lo);
@@ -98,12 +96,13 @@ var B3 = (function () {
     var P = { root: root, body: body, head: head, hd: hd, aL: aL, aR: aR, FT: FT, hm: hm, face: 'idle' };
     var s = o.h || 1; root.scale.setScalar(s); S.add(root); return P; }
   // poses: walk, stand, shout (braços erguidos), pray (mãos juntas), lift (flutuando)
-  function pose(P, p, t) { var aLx = .08, aRx = .08, aLz = .12, aRz = -.12, eL = -.15, eR = -.15, by = 0, br = 0, hx = 0;
-    if (p === 'walk') { var w = t * 7; aLx = Math.sin(w) * .45; aRx = -Math.sin(w) * .45; by = Math.abs(Math.sin(w)) * .05; br = Math.sin(w) * .03; }
+  function pose(P, p, t) { var aLx = .05, aRx = .05, aLz = -.32, aRz = .32, eL = -.12, eR = -.12, by = 0, br = 0, hx = 0;
+    if (p === 'walk') { var w = t * 7; aLx = Math.sin(w) * .32; aRx = -Math.sin(w) * .32; aLz = -.36; aRz = .36; by = Math.abs(Math.sin(w)) * .05; br = Math.sin(w) * .03; }
+    if (p === 'scared') { aLx = aRx = -1.1; aLz = -.5; aRz = .5; eL = eR = -1.2; hx = -.15; by = .02; }
     if (p === 'shout') { aLx = aRx = -2.6; aLz = -.35; aRz = .35; eL = eR = -.3; hx = -.25; }
     if (p === 'reach') { aLx = -1.6; aRx = -2.3; aLz = -.1; aRz = .2; eL = eR = -.2; hx = -.35; }
     if (p === 'pray') { aLx = aRx = -1.25; aLz = .55; aRz = -.55; eL = eR = -1.25; hx = .18; }
-    if (p === 'strike') { aRx = -1.2 - Math.max(0, Math.sin(t * 3)) * 1.2; eR = -.4; }
+    if (p === 'strike') { aRx = -1.2 - Math.max(0, Math.sin(t * 3)) * 1.2; aRz = .25; eR = -.4; }
     if (p === 'lift') { aLx = aRx = -.6; aLz = -.9; aRz = .9; eL = eR = -.2; hx = -.3; }
     P.aL.s.rotation.set(aLx, 0, aLz); P.aR.s.rotation.set(aRx, 0, aRz); P.aL.e.rotation.x = eL; P.aR.e.rotation.x = eR;
     P.body.position.y = by; P.body.rotation.z = br; P.head.rotation.x = hx; }
@@ -145,34 +144,18 @@ var B3 = (function () {
       var f = sh(new THREE.Mesh(fg, lm)); f.position.copy(top); f.rotation.set(-.6 - rnd() * .5, k / 11 * 2 * PI, 0, 'YXZ'); g.add(f); }
     for (var k = 0; k < 7; k++) { var d = new THREE.Mesh(new THREE.SphereGeometry(.09, 8, 6), mat('#b5651d')); d.position.set(top.x + Math.cos(k) * .2, h - .25 - rnd() * .2, Math.sin(k) * .2); g.add(d); }
     g.position.set(x, y, z); S.add(g); return g; }
-  // ---------- casa de barro ----------
-  var plaster;
-  function house(x, y, z, w, d, h, ry) { var g = new THREE.Group(); plaster = plaster || pbr(B3.base + 'tex/clay_plaster', 1, 0xe7c9a0);
-    var m = plaster.clone(); m.map = plaster.map.clone(); m.map.repeat.set(w / 3, h / 3); m.map.needsUpdate = true;
-    var b = sh(new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m)); b.position.y = h / 2; g.add(b);
-    var pm = mat('#c9a57a'); [[0, h + .15, d / 2, w, .3, .12], [0, h + .15, -d / 2, w, .3, .12], [w / 2, h + .15, 0, .12, .3, d], [-w / 2, h + .15, 0, .12, .3, d]].forEach(function (q) { var p = sh(new THREE.Mesh(new THREE.BoxGeometry(q[3], q[4], q[5]), pm)); p.position.set(q[0], q[1], q[2]); g.add(p); });
-    var dk = mat('#2a1a10'); var door = new THREE.Mesh(new THREE.PlaneGeometry(.8, 1.5), dk); door.position.set(-w * .2, .75, d / 2 + .01); g.add(door);
-    var win = new THREE.Mesh(new THREE.PlaneGeometry(.45, .45), mat('#ffb36a', { e: '#ff9a40', ei: .6 })); win.position.set(w * .25, h * .62, d / 2 + .01); g.add(win);
-    var beam = sh(new THREE.Mesh(new THREE.CylinderGeometry(.05, .05, w + .4, 6), mat('#5a3e26'))); beam.rotation.z = PI / 2; beam.position.set(0, h - .15, d / 2 + .05); g.add(beam);
-    for (var i = 0; i < 3; i++) { var j = sh(new THREE.Mesh(new THREE.SphereGeometry(.18, 10, 8), mat('#b5734a'))); j.scale.set(1, 1.3, 1); j.position.set(w / 2 - .3 - i * .35, .23, d / 2 + .35); g.add(j); }
-    g.position.set(x, y, z); g.rotation.y = ry || 0; S.add(g); return g; }
-  // ---------- modelos glTF (Poly Haven, CC0) ----------
-  function load(names) { return Promise.all(names.map(function (n) { return new Promise(function (ok, bad) { gl.load(B3.base + 'models/' + n + '/' + n + '.gltf', function (g) { g.scene.traverse(function (o) { if (o.isMesh) { o.castShadow = o.receiveShadow = true; } }); A[n] = g.scene; ok(); }, null, bad); }); })); }
-  function put(n, x, y, z, s, ry) { var o = A[n].clone(); o.position.set(x, y, z); o.scale.setScalar(s || 1); o.rotation.y = ry || 0; S.add(o); return o; }
   // ---------- motor ----------
   function init(W, H, o) { o = o || {};
     R = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); R.setSize(W, H); R.setPixelRatio(1);
     R.outputEncoding = THREE.sRGBEncoding; R.toneMapping = THREE.ACESFilmicToneMapping; R.toneMappingExposure = o.exposure || 1.05;
     R.shadowMap.enabled = true; R.shadowMap.type = THREE.PCFShadowMap; R.domElement.id = 'cv';
     S = new THREE.Scene(); cam = new THREE.PerspectiveCamera(o.fov || 46, W / H, .1, 600);
-    if (o.sky) { var sk = texL.load(o.sky, function (t) { t.mapping = THREE.EquirectangularReflectionMapping; t.encoding = THREE.sRGBEncoding; S.background = t;
-        var pm = new THREE.PMREMGenerator(R); S.environment = pm.fromEquirectangular(t).texture; B3.skyReady = true; }); }
     if (o.bloom && THREE.UnrealBloomPass) { composer = new THREE.EffectComposer(R); composer.addPass(new THREE.RenderPass(S, cam));
       composer.addPass(new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), o.bloom, .5, .82)); }
     B3.S = S; B3.R = R; B3.cam = cam; return { S: S, R: R, cam: cam }; }
   function render() { if (composer) composer.render(); else R.render(S, cam); }
   function lerp(a, b, u) { return a + (b - a) * u; }
   function clampU(v) { return Math.max(0, Math.min(1, v)); }
-  return { init: init, render: render, load: load, put: put, person: person, pose: pose, face: face, horse: horse, gallop: gallop, chariot: chariot,
-    palm: palm, house: house, mat: mat, pbr: pbr, tex: tex, sh: sh, rnd: rnd, fabric: fabric, A: A, base: '../../assets/' };
+  return { init: init, render: render, person: person, pose: pose, face: face, horse: horse, gallop: gallop, chariot: chariot,
+    palm: palm, mat: mat, sh: sh, rnd: rnd, fabric: fabric };
 })();
