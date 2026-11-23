@@ -1,0 +1,146 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(FreeSerifBold.ttf)}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+
+.sc{display:inline-block;padding:18px 32px;border-radius:18px;background:linear-gradient(#fbf3ff,#e6d2f2);color:#2a0f3d;box-shadow:0 12px 40px rgba(0,0,0,.6);border:3px solid #a77bd0;max-width:620px}
+.sc .r{font-family:P;font-size:21px;letter-spacing:4px;color:#7a3fa8;font-weight:700}
+.sc .v{font-family:L;font-size:44px;font-weight:700;line-height:1.15}
+.sc .s{font-family:P;font-size:24px;color:#4a2a63;margin-top:6px}
+.cd{top:140px}
+.dot{display:inline-block;width:30px;height:30px;border-radius:50%;vertical-align:-4px;margin-right:10px;border:3px solid rgba(0,0,0,.25)}
+.two{display:flex;gap:14px;justify-content:center;margin-top:10px}
+.two div{font-family:P;font-size:25px;font-weight:700;padding:10px 16px;border-radius:12px;line-height:1.2}
+#q{top:170px;left:60px;width:600px;font-family:L;font-size:52px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:20px;font-family:P;font-size:34px;color:#e6c3ff}
+#q .btn{display:inline-block;margin-top:20px;padding:16px 44px;border-radius:50px;background:#e8344e;font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:885px;left:40px;width:580px;text-align:center;opacity:1}
+#cap span{display:inline-block;padding:8px 22px;border-radius:16px;background:rgba(20,5,30,.84);border:2px solid rgba(230,195,255,.4);font-size:44px;font-weight:700;line-height:1.18;text-shadow:0 3px 0 #000}
+#cap b{color:#e6c3ff}
+</style></head><body>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="c1" class="lay cd"><div class="sc"><div class="r">NA IGREJA CATÓLICA</div><div class="v">Cada cor da missa<br>é um recado</div></div></div>
+<div id="c2" class="lay cd"><div class="sc"><div class="r">ANO LITÚRGICO</div><div class="v" style="font-size:38px">o calendário que conta<br>a vida de Jesus</div></div></div>
+<div id="c3" class="lay cd"><div class="sc"><div class="r"><span class="dot" style="background:#2e8b57"></span>VERDE · TEMPO COMUM</div><div class="v">esperança,<br>crescer na fé</div></div></div>
+<div id="c4" class="lay cd"><div class="sc"><div class="r"><span class="dot" style="background:#6a2c91"></span>ROXO · ADVENTO E QUARESMA</div><div class="v">preparação e<br>mudança de vida</div><div class="s">Advento 2026 começa em 29 de novembro</div></div></div>
+<div id="c5" class="lay cd"><div class="sc"><div class="r">FESTA × SANGUE E FOGO</div><div class="two"><div style="background:#fffaf0;border:2px solid #d9b45a">BRANCO<br>Natal · Páscoa<br>Maria · santos</div><div style="background:#b3202a;color:#fff">VERMELHO<br>mártires · Paixão<br>Pentecostes</div></div></div></div>
+<div id="c6" class="lay cd"><div class="sc"><div class="r"><span class="dot" style="background:#e58fb0"></span>ROSA · SÓ 2 DOMINGOS</div><div class="v" style="font-size:38px">3º do Advento<br>e 4º da Quaresma</div><div class="s">alegria no meio da espera</div></div></div>
+<div id="c7" class="lay cd"><div class="sc"><div class="r">HISTÓRIA</div><div class="v" style="font-size:36px">~1198 · Inocêncio III<br>explica as cores</div><div class="s">1570 · Missal de São Pio V organiza tudo e inclui o rosa</div></div></div>
+<div id="q" class="lay">Você sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),x=cv.getContext('2d');
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=21;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+
+var LINES=[['L1','Neste domingo, dia vinte e nove, o padre vai trocar o <b>verde</b> pelo <b>roxo</b>. Você sabe por quê? Não é moda: <b>cada cor da missa é um recado</b>.'],
+['L2','Essas cores têm nome: <b>cores litúrgicas</b>. Elas seguem um calendário, o <b>ano litúrgico</b>, que conta a vida de Jesus, do nascimento até a ressurreição.'],
+['L3','O <b>verde</b> é o <b>Tempo Comum</b>, a maior parte do ano. É a cor da <b>esperança</b>, de quem está crescendo na fé, como uma planta.'],
+['L4','O <b>roxo</b> aparece no <b>Advento</b> e na <b>Quaresma</b>. É cor de preparação e de mudança de vida. E domingo começa o Advento: <b>quatro semanas</b> esperando o Natal.'],
+['L5','O <b>branco</b> é festa: Natal, Páscoa, Nossa Senhora e os santos. E o <b>vermelho</b> lembra sangue e fogo: os mártires, a Sexta-feira da Paixão e <b>Pentecostes</b>, quando o Espírito Santo desceu como línguas de fogo.'],
+['L6','Agora, o detalhe que quase ninguém percebe: duas vezes por ano, o padre pode usar <b>rosa</b>! No terceiro domingo do Advento e no quarto da Quaresma. É a <b>alegria no meio da espera</b>.'],
+['L7','E isso é antigo. Pouco antes do ano mil e duzentos, o futuro papa <b>Inocêncio Terceiro</b> já explicava essas cores. Em mil quinhentos e setenta, o <b>Missal de São Pio Quinto</b> organizou tudo e incluiu o rosa.'],
+['L8','Então, no domingo, <b>repare na cor</b>: ela já te conta o que a Igreja está vivendo. Você sabia? <b>Comenta e segue</b> pra mais segredos!']];
+var T={},TL={lines:[]};
+window.__retime=function(d){var t=.3;TL.lines=[];LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;buildChunks();};
+window.__timeline=function(){return TL;};
+// legenda em blocos de poucas palavras, sincronizados com a fala (proporcional ao nº de letras)
+var CH=[];function buildChunks(){CH=[];TL.lines.forEach(function(l,i){var toks=[],bold=false;LINES[i][1].split(/(<b>|<\/b>)/).forEach(function(p){if(p=='<b>'){bold=true;return;}if(p=='</b>'){bold=false;return;}p.split(/\s+/).forEach(function(w){if(!w)return;if(/^[.,!?:;]+$/.test(w)&&toks.length){toks[toks.length-1][0]+=w;return;}toks.push([w,bold]);});});
+ var groups=[],cur=[],len=0;toks.forEach(function(tk,k){cur.push(tk);len+=tk[0].length+1;var end=/[.,!?:]$/.test(tk[0]);if(len>=20||(end&&len>=9)||k==toks.length-1){groups.push(cur);cur=[];len=0;}});
+ var tot=0;groups.forEach(function(g){g.n=g.reduce(function(a,b){return a+b[0].length+1;},0);tot+=g.n;});var t0=l.t0;
+ groups.forEach(function(g){var d=l.dur*g.n/tot;CH.push({t0:t0,t1:t0+d,html:g.map(function(tk){return tk[1]?'<b>'+tk[0]+'</b>':tk[0];}).join(' ')});t0+=d;});});}
+// paleta PÚRPURA REAL
+var DUST=[];for(var i=0;i<120;i++)DUST.push([rnd()*W,rnd()*H,rnd()*2+.6,rnd()*6,rnd()*.6+.2]);
+var bg=document.createElement('canvas');bg.width=W;bg.height=H;var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.36,40,W/2,H*.5,H*.85);g.addColorStop(0,'#3a1656');g.addColorStop(.55,'#2a0f3d');g.addColorStop(1,'#0c0414');b.fillStyle=g;b.fillRect(0,0,W,H);
+for(var i=0;i<6000;i++){b.fillStyle='rgba('+(rnd()>.5?'230,195,255':'0,0,0')+','+(rnd()*.04)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}
+// chão de pedra da igreja (o suporte da casula fica APOIADO nele)
+var FLOOR=850;b.fillStyle='#1a0828';b.fillRect(0,FLOOR,W,H-FLOOR);
+for(var r=0;r<6;r++){var yy=FLOOR+r*26+r*r*4,hh=26+r*8;for(var c=-1;c<12;c++){var xx=c*70+(r%2)*35;b.fillStyle='rgba(120,70,160,'+(.10+((c+r)%3)*.03)+')';b.beginPath();b.moveTo(W/2+(xx-W/2)*(1+r*.25),yy);b.lineTo(W/2+(xx+64-W/2)*(1+r*.25),yy);b.lineTo(W/2+(xx+64-W/2)*(1+(r+1)*.25),yy+hh-3);b.lineTo(W/2+(xx-W/2)*(1+(r+1)*.25),yy+hh-3);b.fill();}}
+b.fillStyle='rgba(230,195,255,.15)';b.fillRect(0,FLOOR,W,3);
+var COL={g:'#2e8b57',p:'#6a2c91',w:'#f4efe6',r:'#b3202a',ro:'#e58fb0'};
+function hx(c){return [parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16)];}
+function mix(a,c,u){var A=hx(a),C=hx(c);return 'rgb('+Math.round(lerp(A[0],C[0],u))+','+Math.round(lerp(A[1],C[1],u))+','+Math.round(lerp(A[2],C[2],u))+')';}
+function shade(rgb,k){var m=rgb.match(/\d+/g).map(Number);return 'rgb('+m.map(function(v){return Math.round(clamp(v*k,0,255));}).join(',')+')';}
+function glow(X,Y,r,col,a){var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
+// suporte de madeira apoiado no chão + casula pendurada
+function stand(X){x.save();x.translate(X,FLOOR);x.scale(1,1.32);x.translate(-X,-FLOOR);x.fillStyle='#5a3a22';x.fillRect(X-8,560,16,FLOOR-560);x.fillStyle='#3e2716';x.beginPath();x.ellipse(X,FLOOR,70,14,0,0,7);x.fill();x.fillStyle='#6b4a2a';x.fillRect(X-62,FLOOR-14,124,14);
+ x.strokeStyle='#d9b45a';x.lineWidth=6;x.beginPath();x.moveTo(X-120,540);x.quadraticCurveTo(X,505,X+120,540);x.stroke();x.fillStyle='#d9b45a';x.beginPath();x.arc(X,512,9,0,7);x.fill();x.restore();}
+function casula(X,col,a,sw){if(a<=0)return;x.save();x.globalAlpha=a;x.translate(X,830);x.scale(1.12,1.32);x.translate(-X,-830);var top=520,bot=830;x.translate(X,top);x.rotate(Math.sin(sw||0)*.02);x.translate(-X,-top);
+ var gr=x.createLinearGradient(X-190,0,X+190,0);gr.addColorStop(0,shade(col,.62));gr.addColorStop(.5,col);gr.addColorStop(1,shade(col,.62));x.fillStyle=gr;
+ x.beginPath();x.moveTo(X-48,top);x.quadraticCurveTo(X-150,top+10,X-185,top+90);x.quadraticCurveTo(X-200,top+230,X-120,bot);x.quadraticCurveTo(X,bot+30,X+120,bot);x.quadraticCurveTo(X+200,top+230,X+185,top+90);x.quadraticCurveTo(X+150,top+10,X+48,top);x.quadraticCurveTo(X,top+38,X-48,top);x.fill();
+ x.strokeStyle='rgba(0,0,0,.18)';x.lineWidth=3;[-100,-55,55,100].forEach(function(o){x.beginPath();x.moveTo(X+o*.6,top+60);x.quadraticCurveTo(X+o,top+180,X+o*1.05,bot-10);x.stroke();});
+ x.fillStyle='#d9b45a';x.fillRect(X-20,top+30,40,bot-top-14);x.beginPath();x.moveTo(X-20,top+150);x.lineTo(X-130,top+60);x.lineTo(X-112,top+40);x.lineTo(X-20,top+118);x.fill();x.beginPath();x.moveTo(X+20,top+150);x.lineTo(X+130,top+60);x.lineTo(X+112,top+40);x.lineTo(X+20,top+118);x.fill();
+ x.strokeStyle='#8a6a20';x.lineWidth=2;x.strokeRect(X-20,top+30,40,bot-top-14);
+ x.fillStyle='#fff7dc';x.font='700 34px L';x.textAlign='center';x.fillText('✝',X,top+250);
+ x.fillStyle='#120618';x.beginPath();x.ellipse(X,top+4,46,16,0,0,7);x.fill();x.restore();}
+function curCol(t){var L=T;if(t>L.L8+.6){var cs=[COL.g,COL.p,COL.w,COL.r,COL.ro],q=(t-L.L8-.6)/1.3,k=Math.floor(q)%5,u=clamp((q%1)/.35,0,1);return mix(cs[(k+4)%5],cs[k],ez(u));}var seq=[[0,COL.g],[L.L1+3.2,COL.p],[L.L2,COL.p],[L.L3-.2,COL.g],[L.L4-.2,COL.p],[L.L5-.2,COL.w],[L.L5+5.2,COL.r],[L.L6-.2,COL.ro],[L.L7-.2,COL.p]];
+ var c=seq[0][1],k=0;for(var i=0;i<seq.length;i++)if(t>=seq[i][0])k=i;var u=clamp((t-seq[k][0])/.8,0,1);var prev=k?seq[k-1][1]:seq[0][1];return mix(prev,seq[k][1],ez(u));}
+// roda do ano litúrgico
+var SEG=[['Advento',COL.p,4],['Natal',COL.w,3],['Tempo Comum',COL.g,7],['Quaresma',COL.p,6],['Páscoa',COL.w,7],['Tempo Comum',COL.g,25]];
+function wheel(X,Y,R,a,rot){if(a<=0)return;x.save();x.globalAlpha=a;var tot=52,an=-Math.PI/2+rot;SEG.forEach(function(s){var da=s[2]/tot*Math.PI*2;x.fillStyle=s[1];x.beginPath();x.moveTo(X,Y);x.arc(X,Y,R,an,an+da);x.closePath();x.fill();
+  x.strokeStyle='#120618';x.lineWidth=4;x.stroke();if(s[2]>3){x.save();x.translate(X,Y);x.rotate(an+da/2);x.fillStyle=s[1]==COL.w?'#2a0f3d':'#fff';x.font='700 19px P';x.textAlign='center';x.translate(R*.68,0);x.rotate(Math.PI/2);x.fillText(s[0],0,7);x.restore();}an+=da;});
+ x.fillStyle='#120618';x.beginPath();x.arc(X,Y,R*.34,0,7);x.fill();x.fillStyle='#d9b45a';x.font='700 26px L';x.textAlign='center';x.fillText('52',X,Y-2);x.font='700 18px P';x.fillText('semanas',X,Y+22);
+ x.fillStyle='#d9b45a';x.beginPath();x.moveTo(X,Y-R-6);x.lineTo(X-16,Y-R-34);x.lineTo(X+16,Y-R-34);x.fill();x.restore();}
+// planta brotando num vaso APOIADO no chão
+function plant(X,a,gr){if(a<=0)return;x.save();x.globalAlpha=a;x.fillStyle='#8a4a2a';x.beginPath();x.moveTo(X-50,FLOOR-80);x.lineTo(X+50,FLOOR-80);x.lineTo(X+36,FLOOR);x.lineTo(X-36,FLOOR);x.fill();x.fillStyle='#a85a32';x.fillRect(X-56,FLOOR-92,112,16);
+ var h=180*gr;x.strokeStyle='#3e8a4a';x.lineWidth=8;x.beginPath();x.moveTo(X,FLOOR-92);x.quadraticCurveTo(X+10,FLOOR-92-h*.5,X,FLOOR-92-h);x.stroke();
+ for(var i=0;i<4;i++){var k=clamp(gr*4-i,0,1);if(k<=0)continue;var yy=FLOOR-92-h*(.3+i*.2),s=i%2?1:-1;x.fillStyle=i%2?'#4caf62':'#3e9a54';x.beginPath();x.ellipse(X+s*30*k,yy,34*k,14*k,s*-.5,0,7);x.fill();}x.restore();}
+// coroa do Advento sobre uma mesinha APOIADA no chão: 3 velas roxas + 1 rosa
+function wreath(X,a,lit,all){if(a<=0)return;x.save();x.globalAlpha=a;x.fillStyle='#5a3a22';x.fillRect(X-90,FLOOR-110,180,16);x.fillRect(X-80,FLOOR-94,14,94);x.fillRect(X+66,FLOOR-94,14,94);
+ var Y=FLOOR-118;x.fillStyle='#2e6a3a';x.beginPath();x.ellipse(X,Y,110,30,0,0,7);x.fill();x.fillStyle='#1a0828';x.beginPath();x.ellipse(X,Y-4,64,14,0,0,7);x.fill();
+ for(var i=0;i<26;i++){var an=i/26*6.283;x.fillStyle=i%2?'#3e8a4a':'#2a5e33';x.beginPath();x.ellipse(X+Math.cos(an)*92,Y+Math.sin(an)*24,16,8,an,0,7);x.fill();}
+ [[-70,COL.p],[-24,COL.p],[24,COL.ro],[70,COL.p]].forEach(function(c,i){var cy=Y-(i==1||i==2?6:0),hh=70;x.fillStyle=c[1];x.fillRect(X+c[0]-9,cy-hh,18,hh);x.fillStyle='rgba(255,255,255,.25)';x.fillRect(X+c[0]-9,cy-hh,5,hh);
+  var on=(i==0&&lit>0)||(all>0);if(on){glow(X+c[0],cy-hh-12,40,'rgba(255,200,120,A)',.6);x.fillStyle='#ffd27a';x.beginPath();x.ellipse(X+c[0],cy-hh-12,6,13,0,0,7);x.fill();}});x.restore();}
+// estrela (branco) e línguas de fogo (vermelho)
+function star(X,Y,r,a){if(a<=0)return;x.save();x.globalAlpha=a;glow(X,Y,r*2.4,'rgba(255,240,200,A)',.5);x.fillStyle='#fff6d8';x.beginPath();for(var i=0;i<10;i++){var rr=i%2?r*.42:r,an=-Math.PI/2+i*Math.PI/5;x.lineTo(X+Math.cos(an)*rr,Y+Math.sin(an)*rr);}x.closePath();x.fill();x.restore();}
+function tongues(X,Y,a,t){if(a<=0)return;x.save();x.globalAlpha=a;x.translate(X,Y);x.scale(1.7,1.7);x.translate(-X,-Y);for(var i=0;i<5;i++){var xx=X+(i-2)*46,yy=Y+Math.abs(i-2)*14,f=1+.12*Math.sin(t*9+i);x.fillStyle=i%2?'#ff7a2a':'#ffb24a';x.beginPath();x.moveTo(xx,yy-60*f);x.quadraticCurveTo(xx+24,yy-20,xx,yy);x.quadraticCurveTo(xx-24,yy-20,xx,yy-60*f);x.fill();}x.restore();}
+function petals(t,a){if(a<=0)return;x.save();x.globalAlpha=a;for(var i=0;i<26;i++){var px=(i*97)%W,py=((i*53+t*60)%600)+380,an=t*2+i;x.fillStyle=i%2?'#f2a8c4':'#e58fb0';x.save();x.translate(px+Math.sin(t+i)*20,py);x.rotate(an);x.beginPath();x.ellipse(0,0,9,5,0,0,7);x.fill();x.restore();}x.restore();}
+// livro antigo apoiado numa estante que fica NO chão
+function book(X,a,t){if(a<=0)return;x.save();x.globalAlpha=a;x.translate(X,FLOOR);x.scale(1.55,1.55);x.translate(-X,-FLOOR);x.fillStyle='#5a3a22';x.fillRect(X-10,FLOOR-260,20,260);x.fillStyle='#3e2716';x.beginPath();x.ellipse(X,FLOOR,60,12,0,0,7);x.fill();
+ x.save();x.translate(X,FLOOR-270);x.rotate(-.18);x.fillStyle='#4a2a14';x.fillRect(-170,-14,340,28);x.restore();
+ x.save();x.translate(X,FLOOR-300);x.rotate(-.18);x.fillStyle='#efe2c4';x.beginPath();x.moveTo(-160,0);x.quadraticCurveTo(-80,-24,0,-6);x.quadraticCurveTo(80,-24,160,0);x.lineTo(160,60);x.quadraticCurveTo(80,40,0,58);x.quadraticCurveTo(-80,40,-160,60);x.closePath();x.fill();
+ x.strokeStyle='rgba(90,60,30,.5)';x.lineWidth=3;for(var i=0;i<5;i++){x.beginPath();x.moveTo(-140,10+i*9);x.lineTo(-20,8+i*9);x.moveTo(20,8+i*9);x.lineTo(140,10+i*9);x.stroke();}
+ x.fillStyle='#b3202a';x.fillRect(-140,6,14,14);x.fillStyle='#6a2c91';x.fillRect(24,6,14,14);x.restore();x.restore();}
+function frame(t){x.drawImage(bg,0,0);var L=T;
+ DUST.forEach(function(d){var yy=(d[1]-t*10*d[4]+H)%H;x.fillStyle='rgba(230,195,255,'+(.16+.18*Math.sin(t*1.5+d[3]))+')';x.beginPath();x.arc(d[0]+Math.sin(t*.5+d[3])*10,yy,d[2],0,7);x.fill();});
+ // feixe de luz
+ x.save();x.globalAlpha=.10+.04*Math.sin(t*.6);var lg=x.createLinearGradient(0,0,0,FLOOR);lg.addColorStop(0,'rgba(255,230,200,.9)');lg.addColorStop(1,'rgba(255,230,200,0)');x.fillStyle=lg;x.beginPath();x.moveTo(250,0);x.lineTo(470,0);x.lineTo(560,FLOOR);x.lineTo(160,FLOOR);x.fill();x.restore();
+ var col=curCol(t);
+ // casula no suporte: centro (falas 1,5,6,8) ou à direita quando há outro objeto
+ var side=(t>L.L3-.3&&t<L.L4e+.3)||(t>L.L5-.3&&t<L.L5e+.3)?1:0,CX=lerp(360,470,ez(clamp(side,0,1)));
+ var showC=!(t>L.L2-.2&&t<L.L2e+.2)&&!(t>L.L7-.2&&t<L.L7e+.2);
+ if(showC){stand(CX);casula(CX,col,1,t*1.3);glow(CX,660,260,'rgba(255,230,200,A)',.12);}
+ // fala 2: roda
+ var a2=fade(t,L.L2-.1,L.L2e+.2);wheel(360,610,230,a2,-t*.15);
+ // fala 3: planta
+ plant(170,fade(t,L.L3-.1,L.L3e+.2),ez(lin(t,L.L3+1,L.L3+6)));
+ // fala 4: coroa do Advento
+ wreath(190,fade(t,L.L4-.1,L.L4e+.2),lin(t,L.L4+6,L.L4+6.5),0);
+ // fala 5: estrela (branco) e fogo (vermelho)
+ star(170,520,56,fade(t,L.L5+.2,L.L5+5.2));tongues(190,640,fade(t,L.L5+5.2,L.L5e+.2),t);
+ // fala 6: pétalas rosa
+ petals(t,fade(t,L.L6+.5,L.L6e+.2)*.8);
+ // fala 7: livro antigo
+ book(360,fade(t,L.L7-.1,L.L7e+.2),t);
+ // fala 8: casula troca por todas as cores
+ if(t>L.L8){var cs=[COL.g,COL.p,COL.w,COL.r,COL.ro],k=Math.floor((t-L.L8)/1.1)%5;}
+ pop($('c1'),fade(t,L.L1+3.4,L.L1e+.2));pop($('c2'),fade(t,L.L2+.4,L.L2e+.2));pop($('c3'),fade(t,L.L3+.3,L.L3e+.2));pop($('c4'),fade(t,L.L4+.3,L.L4e+.2));
+ pop($('c5'),fade(t,L.L5+.3,L.L5e+.2));pop($('c6'),fade(t,L.L6+3.5,L.L6e+.2));pop($('c7'),fade(t,L.L7+.3,L.L7e+.2));pop($('q'),fade(t,L.L8+3.8,L.END+2));
+ var vg=x.createRadialGradient(W/2,H/2,H*.3,W/2,H/2,H*.75);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.55)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ var cap='',co=0,sc=1;CH.forEach(function(c){if(t>=c.t0-.05&&t<c.t1+.12){cap=c.html;co=1;sc=1+.12*(1-ez(lin(t,c.t0-.05,c.t0+.12)));}});$('cap').innerHTML=cap?'<span>'+cap+'</span>':'';$('cap').style.opacity=co;$('cap').style.transform='scale('+sc+')';}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>
