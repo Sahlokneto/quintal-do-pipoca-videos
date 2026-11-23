@@ -1,0 +1,133 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(FreeSerifBold.ttf)}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.sc{display:inline-block;padding:20px 34px;border-radius:18px;background:linear-gradient(#f3e3bf,#e2c993);color:#3b2412;box-shadow:0 12px 40px rgba(0,0,0,.6);border:3px solid #a57a3a}
+.sc .r{font-family:P;font-size:22px;letter-spacing:4px;color:#8a5a22;font-weight:700}
+.sc .v{font-family:L;font-size:46px;font-weight:700;line-height:1.15}
+.sc .s{font-family:P;font-size:25px;color:#5a3a1a;margin-top:6px}
+.cd{top:170px}
+#ttl{top:180px;font-family:L;font-size:64px;font-weight:700;line-height:1.1;color:#ffd98a;text-shadow:0 0 30px rgba(255,190,90,.5)}
+#ttl small{display:block;font-family:P;font-size:26px;color:#e8d2a8;letter-spacing:3px;margin-top:12px}
+#heb{top:250px}
+.hw{display:inline-block;width:300px}
+.hw .h{font-family:HB;font-size:120px;color:#ffd98a;text-shadow:0 0 30px rgba(255,190,90,.6);line-height:1.1}
+.hw .t{font-family:L;font-size:44px;font-weight:700;color:#fff}
+.hw .m{font-family:P;font-size:28px;color:#e8d2a8}
+#sab{top:210px}
+#sab .d{font-family:L;font-size:88px;font-weight:700;color:#ffd98a}
+#sab .st{display:inline-block;margin-top:24px;border:7px solid #e0443a;color:#ff6a5e;border-radius:14px;padding:10px 24px;font-size:40px;font-weight:700;transform:rotate(-6deg)}
+#sab .s{font-size:24px;color:#e8d2a8;margin-top:14px}
+#silo{top:200px}
+#silo .h{font-family:HB;font-size:110px;color:#9fd8ff;text-shadow:0 0 30px rgba(120,200,255,.6)}
+#silo .t{font-family:L;font-size:48px;font-weight:700}
+#silo .s{font-size:26px;color:#cfe7ff}
+#y04{top:180px}
+#y04 .n{font-family:L;font-size:150px;font-weight:700;color:#ffd98a;line-height:1}
+#y04 .s{font-size:28px;color:#e8d2a8}
+#q{top:190px;left:60px;width:600px;font-family:L;font-size:52px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:20px;font-family:P;font-size:34px;color:#ffd166}
+#q .btn{display:inline-block;margin-top:20px;padding:16px 44px;border-radius:50px;background:#e8344e;font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:1020px;left:44px;width:632px;font-size:37px;font-weight:700;line-height:1.25;opacity:1;text-shadow:0 3px 0 #000,0 0 14px rgba(0,0,0,.95)}
+#cap b{color:#ffd166}
+</style></head><body>
+<style>
+.wd{display:inline-block;width:210px;vertical-align:top}
+.wd .h{font-family:HB;font-size:76px;color:#ffd98a;text-shadow:0 0 24px rgba(255,190,90,.6)}
+.wd .t{font-family:L;font-size:38px;font-weight:700}
+.wd .m{font-family:P;font-size:26px;color:#e8d2a8}
+#aram{top:130px;font-family:HB;font-size:50px;color:#ffd98a;text-shadow:0 0 30px rgba(255,190,90,.6)}
+#aram small{display:block;font-family:L;font-size:36px;color:#fff;font-weight:700;margin-top:4px}
+#words{top:230px}
+#lab{top:150px;font-size:24px;letter-spacing:6px;color:#e8d2a8;font-weight:700}
+#elias{top:220px}
+#y68{top:160px}
+#y68 .n{font-family:L;font-size:140px;font-weight:700;color:#ffd98a;line-height:1}
+#y68 .s{font-size:27px;color:#e8d2a8}
+</style>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="aram" class="lay">אֵלִי אֵלִי לְמָה שְׁבַקְתַּנִי<small>“Eli, Eli, lamá sabactâni”</small></div>
+<div id="lab" class="lay">ARAMAICO · MATEUS 27:46</div>
+<div id="words" class="lay"><div class="wd" id="w1"><div class="h">אֵלִי</div><div class="t">Eli</div><div class="m">meu Deus</div></div><div class="wd" id="w2"><div class="h">לְמָה</div><div class="t">lamá</div><div class="m">por quê</div></div><div class="wd" id="w3"><div class="h">שְׁבַקְתַּנִי</div><div class="t">sabactâni</div><div class="m">me abandonaste</div></div></div>
+<div id="c3" class="lay cd"><div class="sc"><div class="r">SALMO 22:1 · SÉCULOS ANTES</div><div class="v">“Deus meu, Deus meu,<br>por que me<br>abandonaste?”</div></div></div>
+<div id="c4" class="lay cd"><div class="sc"><div class="r">NÃO EXISTIAM NÚMEROS DE VERSÍCULO</div><div class="v">1ª frase =<br>o salmo inteiro</div><div class="s">assim se “chamava” um salmo de cor</div></div></div>
+<div id="c5" class="lay cd"><div class="sc"><div class="r">SALMO 22:18 → JOÃO 19:24</div><div class="v" style="font-size:40px">“Repartem entre si as minhas vestes e lançam sortes sobre a minha túnica”</div><div class="s">e o salmo termina em vitória ✨</div></div></div>
+<div id="elias" class="lay"><div class="wd" style="width:300px"><div class="h">אֵלִי</div><div class="t">Eli</div><div class="m">meu Deus</div></div><div class="wd" style="width:300px"><div class="h">אֵלִיָּהוּ</div><div class="t">Eliyahu</div><div class="m">Elias</div></div><div style="font-family:P;font-size:26px;color:#e8d2a8;margin-top:18px">“Ele está chamando Elias!” · Mateus 27:47</div></div>
+<div id="y68" class="lay"><div class="n">1968</div><div class="s">Jerusalém · caixa de ossos de <b style="color:#ffd98a">Yehohanan</b><br>prego de ferro cravado no calcanhar · século I</div></div>
+<div id="q" class="lay">Você já sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),x=cv.getContext('2d');
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=9;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var DUST=[];for(var i=0;i<120;i++)DUST.push([rnd()*W,rnd()*H,rnd()*2+.6,rnd()*6,rnd()*.6+.2]);
+// textura de pergaminho escuro
+var bg=document.createElement('canvas');bg.width=W;bg.height=H;var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.42,50,W/2,H*.5,H*.8);g.addColorStop(0,'#3a2615');g.addColorStop(1,'#120a05');b.fillStyle=g;b.fillRect(0,0,W,H);
+for(var i=0;i<9000;i++){b.fillStyle='rgba('+(rnd()>.5?'255,220,160':'0,0,0')+','+(rnd()*.05)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}
+var LINES=[['L1','Na cruz, Jesus gritou: <b>“Eli, Eli, lamá sabactâni”</b>. Muita gente acha que foi <b>desespero</b>. Mas existe um <b>segredo</b> nessa frase.'],
+['L2','Ele falou em <b>aramaico</b>, a língua do povo. <b>Eli</b>: meu Deus. <b>Lamá</b>: por quê. <b>Sabactâni</b>: me abandonaste.'],
+['L3','Só que essa frase não foi inventada na hora: é a <b>primeira linha do Salmo 22</b>, escrito <b>séculos antes</b>.'],
+['L4','Naquela época não existiam <b>números de versículo</b>. Pra lembrar um salmo inteiro, bastava dizer a <b>primeira frase</b>.'],
+['L5','E o salmo diz: <b>“repartem entre si as minhas vestes e lançam sortes”</b>. Foi o que os soldados fizeram ao pé da cruz. E ele termina em <b>vitória</b>.'],
+['L6','Teve gente que não entendeu: <b>Eli</b> soa como <b>Eliyahu</b>, o nome de <b>Elias</b>. E disseram: “ele está chamando Elias!”'],
+['L7','Em <b>1968</b>, em Jerusalém, acharam a caixa de ossos de <b>Yehohanan</b>, da mesma época, com um <b>prego de ferro</b> ainda cravado no calcanhar.'],
+['L8','O grito que parece derrota era uma <b>profecia se cumprindo</b>. Você já sabia? <b>Comenta e segue!</b>']];
+var T={},TL={lines:[]};
+window.__retime=function(d){var t=.3;TL.lines=[];LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;};
+window.__timeline=function(){return TL;};
+function glowCircle(X,Y,r,col,a){var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
+function cross(X,Y,s,a,glowA){if(a<=0)return;x.save();x.globalAlpha=a;if(glowA>0)glowCircle(X,Y-120*s,380*s,'rgba(255,210,130,A)',glowA);
+ x.fillStyle='#120a05';x.beginPath();x.ellipse(X,Y+260*s,360*s,90*s,0,Math.PI,0);x.fill();
+ x.fillStyle='#1d120a';x.strokeStyle='rgba(255,217,138,.55)';x.lineWidth=3;x.fillRect(X-16*s,Y-300*s,32*s,560*s);x.strokeRect(X-16*s,Y-300*s,32*s,560*s);
+ x.fillRect(X-140*s,Y-200*s,280*s,30*s);x.strokeRect(X-140*s,Y-200*s,280*s,30*s);x.restore();}
+function waves(t,X,Y,a){if(a<=0)return;x.save();for(var i=0;i<5;i++){var r=((t*90+i*70)%350);x.globalAlpha=a*(1-r/350)*.7;x.strokeStyle='#ffd98a';x.lineWidth=4;x.beginPath();x.arc(X,Y,r+20,-2.6,-.55);x.stroke();}x.restore();}
+function scroll(t,a,hl){if(a<=0)return;var X=110,Y=560,w=500,h=380;x.save();x.globalAlpha=a;
+ var gg=x.createLinearGradient(0,Y,0,Y+h);gg.addColorStop(0,'#ecd9ae');gg.addColorStop(1,'#d7bb83');x.fillStyle=gg;x.fillRect(X,Y,w,h);
+ x.fillStyle='#a57a3a';x.fillRect(X-14,Y-14,w+28,22);x.fillRect(X-14,Y+h-8,w+28,22);
+ for(var i=0;i<9;i++){var on=i==0?1:clamp(hl*9-i,0,1);x.fillStyle=i==0?'rgba(200,120,20,.95)':'rgba(90,58,26,'+(.35+.5*on)+')';var lw=w-80-((i*53)%120);x.fillRect(X+40,Y+34+i*38,lw,i==0?16:12);
+  if(on>0&&i>0){x.fillStyle='rgba(255,200,90,'+(.35*on)+')';x.fillRect(X+36,Y+28+i*38,lw+8,24);}}
+ x.restore();}
+function dice(t,a){if(a<=0)return;x.save();x.globalAlpha=a;x.translate(W/2,800);x.rotate(Math.sin(t*2)*.3);x.fillStyle='#f3e3bf';x.strokeStyle='#a57a3a';x.lineWidth=4;
+ x.beginPath();x.rect(-60,-60,120,120);x.fill();x.stroke();x.fillStyle='#3b2412';[[-30,-30],[30,30],[0,0],[30,-30],[-30,30]].forEach(function(p){x.beginPath();x.arc(p[0],p[1],10,0,7);x.fill();});x.restore();
+ var tu=fade(t,T.L5+1.5,T.L5e+.2);if(tu>0){x.save();x.globalAlpha=tu*.9;x.fillStyle='#8a5a30';x.beginPath();x.moveTo(W/2-200,690);x.lineTo(W/2-120,640);x.lineTo(W/2-60,700);x.lineTo(W/2-90,900);x.lineTo(W/2-230,900);x.closePath();x.fill();
+  x.beginPath();x.moveTo(W/2+200,690);x.lineTo(W/2+120,640);x.lineTo(W/2+60,700);x.lineTo(W/2+90,900);x.lineTo(W/2+230,900);x.closePath();x.fill();x.restore();}}
+function ossuary(t,a){if(a<=0)return;var u=ez(lin(t,T.L7+1,T.L7+3));x.save();x.globalAlpha=a;var X=W/2,Y=760;
+ x.fillStyle='#c8b089';x.strokeStyle='#7a5a30';x.lineWidth=4;x.beginPath();x.rect(X-220,Y-80,440,220);x.fill();x.stroke();
+ x.fillStyle='#b39a72';x.beginPath();x.rect(X-235,Y-120-90*u,470,44);x.fill();x.stroke();
+ x.strokeStyle='#8a6a3a';x.lineWidth=3;for(var i=0;i<2;i++){x.beginPath();x.arc(X-110+i*220,Y+30,55,0,7);x.stroke();for(var k=0;k<6;k++){var an=k/6*6.283;x.beginPath();x.moveTo(X-110+i*220,Y+30);x.lineTo(X-110+i*220+Math.cos(an)*55,Y+30+Math.sin(an)*55);x.stroke();}}
+ var b=ez(lin(t,T.L7+3,T.L7+5));if(b>0){x.globalAlpha=a*b;x.fillStyle='#efe3c8';x.beginPath();x.ellipse(X,Y-150-60*b,90,42,0,0,7);x.fill();
+  x.strokeStyle='#6b6f78';x.lineWidth=10;x.beginPath();x.moveTo(X-150,Y-165-60*b);x.lineTo(X+110,Y-140-60*b);x.stroke();x.fillStyle='#5a5e66';x.beginPath();x.arc(X-150,Y-165-60*b,14,0,7);x.fill();
+  glowCircle(X-20,Y-150-60*b,160,'rgba(255,90,60,A)',.25*b);}
+ x.restore();}
+function frame(t){x.drawImage(bg,0,0);
+ DUST.forEach(function(d){var yy=(d[1]-t*12*d[4]+H)%H;x.fillStyle='rgba(255,214,140,'+(.25+.25*Math.sin(t*1.5+d[3]))+')';x.beginPath();x.arc(d[0]+Math.sin(t*.5+d[3])*10,yy,d[2],0,7);x.fill();});
+ var a1=fade(t,0,T.L1e+.3);cross(W/2,700,1,a1,0);waves(t,W/2,420,a1*lin(t,T.L1+.5,T.L1+1.5));pop($('aram'),fade(t,T.L1+.3,T.L2+2.8));
+ var a2=fade(t,T.L2-.1,T.L2e+.2);pop($('lab'),fade(t,T.L2+2.8,T.L2e+.2));$('words').style.opacity=a2;
+ [['w1',T.L2+3.0],['w2',T.L2+5.0],['w3',T.L2+6.6]].forEach(function(w){pop($(w[0]),fade(t,w[1],T.L2e+.2,.35));});
+ if(a2>0)cross(W/2,880,.6,a2*.5,0);
+ pop($('c3'),fade(t,T.L3+.3,T.L3e+.2));scroll(t,fade(t,T.L3+.3,T.L4e+.2),lin(t,T.L4+2,T.L4e-.5));
+ pop($('c4'),fade(t,T.L4+.3,T.L4e+.2));
+ var a5=fade(t,T.L5+.2,T.L5e+.2);pop($('c5'),a5);dice(t,a5);
+ if(t>T.L5+6&&a5>0)glowCircle(W/2,800,300,'rgba(255,217,138,A)',.35*a5*lin(t,T.L5+6,T.L5+8));
+ var a6=fade(t,T.L6+.3,T.L6e+.2);pop($('elias'),a6);if(a6>0){x.save();x.globalAlpha=a6;x.font='150px serif';x.textAlign='center';x.fillText('👂',W/2-120,800);x.font='700 120px L';x.fillStyle='#ffd98a';x.fillText('?',W/2+110,790);x.restore();waves(t,W/2-60,760,a6*.8);}
+ var a7=fade(t,T.L7+.2,T.L7e+.2);pop($('y68'),a7);ossuary(t,a7);
+ var a8=fade(t,T.L8-.2,T.END+2);if(a8>0){var g8=ez(lin(t,T.L8,T.L8+4));cross(W/2,760,.9,a8,.55*g8);}
+ pop($('q'),fade(t,T.L8+4,T.END+2));
+ var vg=x.createRadialGradient(W/2,H/2,H*.3,W/2,H/2,H*.75);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.55)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ var cap='',co=0;TL.lines.forEach(function(l,i){if(t>=l.t0-.1&&t<l.t0+l.dur+.2){cap=LINES[i][1];co=fade(t,l.t0-.1,l.t0+l.dur+.2,.15);}});$('cap').innerHTML=cap;$('cap').style.opacity=co;}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>
