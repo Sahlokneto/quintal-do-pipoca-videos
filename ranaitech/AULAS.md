@@ -17,7 +17,7 @@ na frente da lousa ilustram o exemplo. Legenda (fala atual) embaixo. Música lo-
 ## Personagens e vozes (ElevenLabs, conector do usuário — plano Creator, ~121 mil caracteres/mês)
 - Professor: voz **Will - Deep, Smooth and Affectionate** `CstacWqMhJQlnfLPxRG4`, modelo `eleven_v4`.
 - Cubinho: voz **Lotus - Educational & Engaging** `hzcQtaL2e6Qrqg03np6e`, modelo `eleven_v4` (ver VOZES.md).
-- Orçamento: 2 aulas/dia ≈ 850 caracteres cada ≈ 51 mil/mês. Mantenha o roteiro entre 700 e 900 caracteres.
+- Orçamento: **1 aula/dia** (mudança do dono em 23/11) ≈ 850 caracteres ≈ 26 mil/mês. Mantenha o roteiro entre 700 e 900 caracteres.
 - Gere **1 take** por fala (`generations_count: 1`), nunca repita a geração para "tentar de novo" (cobra de novo).
 
 ## Passo a passo (dentro de `ranaitech/`)
@@ -61,6 +61,6 @@ Próxima aula: <tema>! Curte, compartilha com um amigo e segue o canal pra não 
 
 ## Publicação (vidIQ, Instagram @ranaitech, platformAccountId `29301075916192797`)
 1. `vidiq_video_upload` com a URL raw: `https://raw.githubusercontent.com/Sahlokneto/quintal-do-pipoca-videos/main/ranaitech/aulas/aula-N/<arquivo>.mp4`
-2. `vidiq_social_post_draft_create`: destino INSTAGRAM 29301075916192797, media = vídeo, text = legenda, publishAt 12:00 (1ª aula)
-   e 18:00 (2ª aula) de hoje, horário de Brasília (-03:00). Se o horário já passou, use o próximo (18:00 ou 12:00 do dia seguinte).
+2. `vidiq_social_post_draft_create`: destino INSTAGRAM 29301075916192797, media = vídeo, text = legenda, publishAt **18:00** de hoje,
+   horário de Brasília (-03:00) — **1 aula por dia** (desde 23/11). Se o horário já passou, use 18:00 do dia seguinte.
 3. **Só publicar (`vidiq_social_post_publish`) depois que o Rubens aprovar** ("pode publicar"). Nunca usar as contas do Quintal do Pipoca.

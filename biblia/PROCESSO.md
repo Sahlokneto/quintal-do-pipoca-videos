@@ -83,3 +83,12 @@ NUNCA usar o conector vidIQ antigo (é do Pipoca/RanaiTech) para este canal.
 | TikTok | Segredos da Escritura Bíblica | _000BrE_LvCDnZf0LdK-00hFq_NtMVunMm0M |
 | YouTube | @segredosescritura | UCquG2Dl9xeQEk5_uvwJaAAg |
 Fluxo: `vidiq_video_upload` (URL raw do GitHub) → `vidiq_social_post_draft_create` com os 3 destinos → publicar só após aprovação do dono.
+
+## 7. Rotina diária (tarefa agendada, desde 23/11)
+- **2 vídeos por dia**, publicação às **12:00** e **19:00** (Brasília, -03:00), nos 3 destinos da seção 6.
+- Orçamento ElevenLabs (plano Creator, ~121 mil caracteres/mês, dividido com o RanaiTech que usa ~26 mil):
+  cada vídeo entre 900 e 1.100 caracteres. Antes de gerar, confira o saldo (`account_get_usage`); se faltar
+  menos de 3.000 caracteres para o limite, faça só 1 vídeo e avise o dono.
+- Os 2 vídeos do dia: temas diferentes do banco (de categorias diferentes) e **paletas diferentes entre si e do último vídeo**.
+- Arquivos: `biblia/videos/AAAA-MM-DD-<slug>/` com `<slug>.mp4`, `legenda.txt` (com a paleta usada), `fontes.txt`, a página .html.
+  Apague frames/, aud/, mp3/ antes do commit. Marque o tema como ✅ no banco (seção 2).
