@@ -36,9 +36,9 @@ Como viver a fé, História do cristianismo) e no máximo 1 dos outros tipos. No
 Ainda assim, não repetir o mesmo subtipo no mesmo dia (ex.: 2 de "ritos da missa"):
 - **Por trás da história** (assunto pouco discutido, com virada): Elias não subiu "na carruagem" (subiu no redemoinho) ✅ ·
   por que Jesus falava em parábolas (Mt 13:10-17) · a Arca de Noé: leitura literal × leitura simbólica · por que Jonas fugiu
-  para Társis · quem eram os magos · por que Deus mudou o nome de Abrão, Sarai, Jacó · o que era o maná · Enoque "andou com Deus".
+  para Társis · quem eram os magos · por que Deus mudou o nome de Abrão, Sarai, Jacó ✅ · o que era o maná · Enoque "andou com Deus".
 - **Ritos e costumes da Igreja** (de onde veio, quando surgiu, como mudou): por que o padre muda a cor da roupa (cores litúrgicas)
-  · por que se faz o sinal da cruz · água benta na entrada · por que se ajoelha · origem do terço/rosário · o Advento e a coroa ·
+  · por que se faz o sinal da cruz ✅ · água benta na entrada · por que se ajoelha · origem do terço/rosário · o Advento e a coroa ·
   por que domingo é o dia do Senhor · por que a missa era em latim · origem do Pai-Nosso · como surgiram os sacramentos ·
   cores da missa ✅ · por que o padre não casa (celibato: quando virou regra) · o que é a hóstia e por que é redonda ·
   por que o sino toca na consagração · incenso: de onde vem · por que a Quaresma tem 40 dias · Quarta-feira de Cinzas ·
@@ -47,7 +47,7 @@ Ainda assim, não repetir o mesmo subtipo no mesmo dia (ex.: 2 de "ritos da miss
   o que significa "Amém" no fim da oração · por que se bate no peito no "Senhor, tende piedade" · velas no altar.
 - **Como viver a fé (prático)**: como se comportar na missa (postura, celular, comunhão) · como rezar melhor (método simples,
   com base em Mt 6:5-13) · o que significa cada parte da missa · como ler a Bíblia pela primeira vez.
-- **História do cristianismo**: quando e por que surgiu · por que "cristãos" (At 11:26, Antioquia) · o peixe (ΙΧΘΥΣ) como
+- **História do cristianismo**: quando e por que surgiu · por que "cristãos" (At 11:26, Antioquia) ✅ · o peixe (ΙΧΘΥΣ) como
   símbolo secreto ✅ · catacumbas · como a Bíblia foi montada · por que existem Bíblias católica e protestante com nº de livros diferente.
 - **Palavras originais e arqueologia** (a linha antiga continua, mas no máximo 1 por dia).
 **Fuja do batido:** antes de escolher, pense "isso já é muito postado?" (ex.: Davi e Golias, nascimento de Jesus, 10

@@ -1,0 +1,176 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(../../tools/Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(../../tools/Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(../../tools/Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(../../tools/FreeSerifBold.ttf)}
+:root{--c1:#fbfff2;--c2:#e9f5d0;--ink:#24361a;--r1:#4d7a1f;--r2:#8ab83a;--em:#c46a12;--sub:#4a5e30;--capbg:rgba(10,18,6,.86);--hl:#d9f2a2}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.sc{display:inline-block;padding:16px 30px 18px;border-radius:20px;background:linear-gradient(160deg,var(--c1),var(--c2));color:var(--ink);box-shadow:0 14px 40px rgba(0,0,0,.55),0 0 0 4px rgba(255,209,102,.85);max-width:620px}
+.sc .r{display:inline-block;font-family:P;font-size:20px;letter-spacing:3px;color:#fff;font-weight:700;background:linear-gradient(90deg,var(--r1),var(--r2));padding:4px 14px;border-radius:30px;margin-bottom:8px}
+.sc .v{font-family:L;font-size:42px;font-weight:700;line-height:1.15}
+.sc .v em{font-style:normal;color:var(--em)}
+.sc .s{font-family:P;font-size:23px;color:var(--sub);margin-top:6px}
+.sc .h{font-family:HB;font-size:66px;line-height:1.05;direction:rtl;unicode-bidi:bidi-override;color:var(--em)}
+.cd{top:132px}
+#q{top:160px;left:60px;width:600px;font-family:L;font-size:54px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:18px;font-family:P;font-size:34px;color:var(--hl)}
+#q .btn{display:inline-block;margin-top:18px;padding:16px 46px;border-radius:50px;background:linear-gradient(90deg,#ff5e62,#ff9966);font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:878px;left:36px;width:600px;text-align:center;opacity:1}
+#cap .box{display:inline-block;padding:10px 24px 12px;border-radius:18px;background:var(--capbg);border:2px solid rgba(255,209,102,.45);font-size:40px;font-weight:700;line-height:1.22;text-shadow:0 3px 0 #000;max-width:560px}
+#cap i{font-style:normal}
+#cap i.f{opacity:.45}
+#cap i.b{color:#ffd166}
+</style></head><body>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="c1" class="lay cd"><div class="sc"><div class="r">ATOS 11,26</div><div class="v">“Cristão”:<br>um nome que <em>veio de fora</em></div></div></div>
+<div id="c2" class="lay cd"><div class="sc"><div class="r">ATOS 24,5</div><div class="v">para os adversários:<br><em>“nazarenos”</em></div></div></div>
+<div id="c3" class="lay cd"><div class="sc"><div class="r">ATOS 11,26</div><div class="v">“Em Antioquia, foram<br>chamados <em>cristãos</em>”</div></div></div>
+<div id="c4" class="lay cd"><div class="sc"><div class="r">ATOS 11,25-26</div><div class="v">um ano inteiro,<br><em>judeus e não judeus</em></div></div></div>
+<div id="c5" class="lay cd"><div class="sc"><div class="r">GREGO</div><div class="v" style="font-family:HB;font-size:58px;letter-spacing:3px">ΧΡΙΣΤ<span style="color:#c46a12">ΙΑΝΟΙ</span></div><div class="s">christianoí = “o pessoal do Cristo”</div></div></div>
+<div id="c6" class="lay cd"><div class="sc"><div class="r">MUITOS ESTUDIOSOS</div><div class="v">apelido… ou <em>zombaria</em>?</div><div class="s">outros acham que era só um rótulo</div></div></div>
+<div id="c7a" class="lay cd"><div class="sc"><div class="r">ATOS 26,28 · REI AGRIPA</div><div class="v">“Por pouco<br>não me fazes <em>cristão</em>”</div></div></div>
+<div id="c7b" class="lay cd"><div class="sc"><div class="r">1 PEDRO 4,16</div><div class="v">sofrer como cristão:<br><em>não se envergonhe</em></div></div></div>
+<div id="c8" class="lay cd"><div class="sc"><div class="r">S. INÁCIO DE ANTIOQUIA · ~110</div><div class="v">o apelido <em>virou bandeira</em></div></div></div>
+<div id="q" class="lay">Você sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>/*CAPS*/window.CAPS={"L1": [{"w": "Sabia", "b": false, "t": 0.0}, {"w": "que", "b": false, "t": 0.377}, {"w": "os", "b": false, "t": 0.646}, {"w": "seguidores", "b": false, "t": 0.861}, {"w": "de", "b": false, "t": 1.507}, {"w": "Jesus", "b": false, "t": 1.723}, {"w": "não", "b": true, "t": 2.1}, {"w": "se", "b": true, "t": 2.369}, {"w": "chamavam", "b": true, "t": 2.584}, {"w": "de", "b": true, "t": 3.122}, {"w": "cristãos?", "b": true, "t": 3.338}, {"w": "Esse", "b": false, "t": 4.05}, {"w": "nome,", "b": false, "t": 4.472}, {"w": "provavelmente,", "b": false, "t": 5.085}, {"w": "veio", "b": false, "t": 7.035}, {"w": "de", "b": false, "t": 7.279}, {"w": "fora.", "b": false, "t": 7.441}, {"w": "Talvez", "b": false, "t": 7.845}, {"w": "até", "b": false, "t": 8.131}, {"w": "como", "b": false, "t": 8.31}, {"w": "apelido.", "b": true, "t": 8.525}], "L2": [{"w": "No", "b": false, "t": 0.0}, {"w": "começo,", "b": false, "t": 0.232}, {"w": "eles", "b": false, "t": 0.875}, {"w": "se", "b": false, "t": 1.202}, {"w": "chamavam", "b": false, "t": 1.42}, {"w": "de", "b": false, "t": 1.966}, {"w": "irmãos,", "b": true, "t": 2.184}, {"w": "discípulos,", "b": true, "t": 2.795}, {"w": "santos,", "b": false, "t": 3.78}, {"w": "ou", "b": false, "t": 4.665}, {"w": "os", "b": true, "t": 4.957}, {"w": "do", "b": true, "t": 5.249}, {"w": "Caminho.", "b": true, "t": 5.54}, {"w": "E", "b": false, "t": 6.39}, {"w": "os", "b": false, "t": 6.586}, {"w": "adversários", "b": false, "t": 6.846}, {"w": "os", "b": false, "t": 7.694}, {"w": "chamavam", "b": false, "t": 7.955}, {"w": "de", "b": false, "t": 8.607}, {"w": "nazarenos.", "b": true, "t": 8.868}], "L3": [{"w": "Aí", "b": false, "t": 0.0}, {"w": "vem", "b": false, "t": 0.11}, {"w": "Atos,", "b": true, "t": 0.248}, {"w": "capítulo", "b": false, "t": 0.56}, {"w": "onze,", "b": false, "t": 2.354}, {"w": "versículo", "b": false, "t": 3.73}, {"w": "vinte", "b": false, "t": 4.19}, {"w": "e", "b": false, "t": 4.482}, {"w": "seis:", "b": false, "t": 4.607}, {"w": "em", "b": false, "t": 5.02}, {"w": "Antioquia,", "b": true, "t": 5.321}, {"w": "os", "b": false, "t": 6.345}, {"w": "discípulos,", "b": false, "t": 6.591}, {"w": "pela", "b": false, "t": 7.51}, {"w": "primeira", "b": false, "t": 7.886}, {"w": "vez,", "b": false, "t": 8.514}, {"w": "foram", "b": true, "t": 9.01}, {"w": "chamados", "b": true, "t": 9.081}, {"w": "cristãos.", "b": true, "t": 9.182}], "L4": [{"w": "Antioquia,", "b": false, "t": 0.0}, {"w": "na", "b": false, "t": 0.895}, {"w": "Síria,", "b": false, "t": 1.16}, {"w": "era", "b": false, "t": 1.81}, {"w": "uma", "b": false, "t": 2.149}, {"w": "cidade", "b": false, "t": 2.488}, {"w": "enorme", "b": true, "t": 3.03}, {"w": "e", "b": true, "t": 3.572}, {"w": "rica.", "b": true, "t": 3.776}, {"w": "Barnabé", "b": true, "t": 4.37}, {"w": "foi", "b": false, "t": 4.914}, {"w": "buscar", "b": false, "t": 5.217}, {"w": "Saulo", "b": true, "t": 5.701}, {"w": "em", "b": false, "t": 6.124}, {"w": "Tarso,", "b": false, "t": 6.366}, {"w": "e", "b": false, "t": 6.97}, {"w": "os", "b": false, "t": 7.143}, {"w": "dois", "b": false, "t": 7.373}, {"w": "ensinaram", "b": false, "t": 7.719}, {"w": "ali", "b": false, "t": 8.353}, {"w": "um", "b": false, "t": 8.641}, {"w": "ano", "b": false, "t": 8.871}, {"w": "inteiro,", "b": false, "t": 9.159}, {"w": "para", "b": false, "t": 9.855}, {"w": "judeus", "b": false, "t": 10.195}, {"w": "e", "b": false, "t": 10.648}, {"w": "não", "b": false, "t": 10.818}, {"w": "judeus", "b": false, "t": 11.102}, {"w": "juntos.", "b": true, "t": 11.555}], "L5": [{"w": "Agora,", "b": false, "t": 0.0}, {"w": "a", "b": false, "t": 1.445}, {"w": "chave:", "b": false, "t": 1.696}, {"w": "em", "b": false, "t": 2.485}, {"w": "grego,", "b": false, "t": 2.88}, {"w": "christianoí.", "b": true, "t": 3.79}, {"w": "Mas", "b": false, "t": 5.44}, {"w": "essa", "b": false, "t": 5.589}, {"w": "terminação,", "b": false, "t": 5.768}, {"w": "ianos,", "b": false, "t": 6.275}, {"w": "é", "b": false, "t": 7.16}, {"w": "latina,", "b": true, "t": 7.551}, {"w": "como", "b": false, "t": 8.845}, {"w": "cesarianos,", "b": false, "t": 9.244}, {"w": "o", "b": false, "t": 10.23}, {"w": "partido", "b": false, "t": 10.338}, {"w": "de", "b": false, "t": 10.663}, {"w": "César.", "b": false, "t": 10.807}, {"w": "Quer", "b": false, "t": 11.215}, {"w": "dizer:", "b": false, "t": 11.311}, {"w": "o", "b": true, "t": 11.56}, {"w": "pessoal", "b": true, "t": 11.718}, {"w": "do", "b": true, "t": 12.191}, {"w": "Cristo.", "b": true, "t": 12.401}], "L6": [{"w": "E", "b": false, "t": 0.0}, {"w": "Antioquia", "b": false, "t": 0.184}, {"w": "era", "b": false, "t": 0.858}, {"w": "famosa", "b": false, "t": 1.165}, {"w": "por", "b": false, "t": 1.656}, {"w": "inventar", "b": true, "t": 1.962}, {"w": "apelidos.", "b": true, "t": 2.575}, {"w": "Por", "b": false, "t": 3.37}, {"w": "isso,", "b": false, "t": 3.689}, {"w": "muitos", "b": false, "t": 4.255}, {"w": "estudiosos", "b": false, "t": 4.688}, {"w": "acham", "b": false, "t": 5.337}, {"w": "que", "b": false, "t": 5.716}, {"w": "o", "b": false, "t": 5.987}, {"w": "nome", "b": false, "t": 6.149}, {"w": "nasceu", "b": false, "t": 6.473}, {"w": "na", "b": false, "t": 6.906}, {"w": "boca", "b": false, "t": 7.123}, {"w": "dos", "b": false, "t": 7.447}, {"w": "pagãos,", "b": false, "t": 7.718}, {"w": "talvez", "b": false, "t": 8.325}, {"w": "como", "b": false, "t": 8.925}, {"w": "zombaria.", "b": true, "t": 9.375}, {"w": "Outros", "b": false, "t": 10.32}, {"w": "acham", "b": false, "t": 10.814}, {"w": "que", "b": false, "t": 11.246}, {"w": "era", "b": false, "t": 11.554}, {"w": "só", "b": false, "t": 11.863}, {"w": "um", "b": false, "t": 12.11}, {"w": "rótulo.", "b": false, "t": 12.357}], "L7": [{"w": "Nas", "b": false, "t": 0.0}, {"w": "outras", "b": false, "t": 0.233}, {"w": "duas", "b": false, "t": 0.607}, {"w": "vezes", "b": false, "t": 0.887}, {"w": "em", "b": false, "t": 1.213}, {"w": "que", "b": false, "t": 1.4}, {"w": "aparece", "b": false, "t": 1.633}, {"w": "na", "b": false, "t": 2.053}, {"w": "Bíblia,", "b": false, "t": 2.24}, {"w": "o", "b": false, "t": 2.78}, {"w": "nome", "b": false, "t": 2.968}, {"w": "ainda", "b": false, "t": 3.344}, {"w": "soa", "b": false, "t": 3.783}, {"w": "como", "b": false, "t": 4.096}, {"w": "coisa", "b": false, "t": 4.472}, {"w": "de", "b": false, "t": 4.911}, {"w": "fora.", "b": false, "t": 5.161}, {"w": "O", "b": false, "t": 5.72}, {"w": "rei", "b": false, "t": 5.909}, {"w": "Agripa", "b": true, "t": 6.225}, {"w": "diz", "b": false, "t": 6.73}, {"w": "a", "b": false, "t": 7.046}, {"w": "Paulo:", "b": false, "t": 7.235}, {"w": "por", "b": false, "t": 7.86}, {"w": "pouco", "b": false, "t": 8.171}, {"w": "não", "b": false, "t": 8.605}, {"w": "me", "b": false, "t": 8.916}, {"w": "fazes", "b": false, "t": 9.164}, {"w": "cristão.", "b": false, "t": 9.599}, {"w": "E", "b": false, "t": 10.34}, {"w": "Pedro", "b": true, "t": 10.531}, {"w": "escreve:", "b": false, "t": 10.977}, {"w": "se", "b": false, "t": 11.735}, {"w": "alguém", "b": false, "t": 11.97}, {"w": "sofre", "b": false, "t": 12.44}, {"w": "como", "b": false, "t": 12.851}, {"w": "cristão,", "b": false, "t": 13.203}, {"w": "não", "b": true, "t": 13.91}, {"w": "se", "b": true, "t": 14.158}, {"w": "envergonhe.", "b": true, "t": 14.357}], "L8": [{"w": "Ou", "b": false, "t": 0.0}, {"w": "seja:", "b": false, "t": 0.224}, {"w": "o", "b": false, "t": 0.735}, {"w": "apelido", "b": false, "t": 0.939}, {"w": "virou", "b": true, "t": 1.549}, {"w": "bandeira.", "b": true, "t": 2.024}, {"w": "E", "b": false, "t": 2.89}, {"w": "Santo", "b": false, "t": 3.066}, {"w": "Inácio,", "b": true, "t": 3.477}, {"w": "bispo", "b": false, "t": 4.125}, {"w": "de", "b": false, "t": 4.475}, {"w": "Antioquia,", "b": false, "t": 4.675}, {"w": "usou", "b": false, "t": 5.395}, {"w": "esse", "b": false, "t": 5.755}, {"w": "nome", "b": false, "t": 6.115}, {"w": "com", "b": false, "t": 6.475}, {"w": "orgulho.", "b": false, "t": 6.775}, {"w": "Você", "b": false, "t": 7.495}, {"w": "sabia?", "b": false, "t": 7.936}, {"w": "Comenta", "b": true, "t": 8.645}, {"w": "e", "b": true, "t": 9.153}, {"w": "segue", "b": true, "t": 9.322}, {"w": "pra", "b": false, "t": 9.717}, {"w": "mais", "b": false, "t": 9.999}, {"w": "segredos", "b": false, "t": 10.337}, {"w": "da", "b": false, "t": 10.901}, {"w": "fé!", "b": false, "t": 11.127}]};/*CAPS_END*/
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),MAIN=cv.getContext('2d'),x=MAIN,PI=Math.PI;
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){u=clamp(u,0,1);return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){if(!el)return;el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=97;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var LINES=[['L1','Sabia que os seguidores de Jesus <b>não se chamavam de cristãos</b>? Esse nome, provavelmente, veio de fora. Talvez até como <b>apelido</b>.'],
+['L2','No começo, eles se chamavam de <b>irmãos</b>, <b>discípulos</b>, santos, ou <b>os do Caminho</b>. E os adversários os chamavam de <b>nazarenos</b>.'],
+['L3','Aí vem <b>Atos</b>, capítulo onze, versículo vinte e seis: em <b>Antioquia</b>, os discípulos, pela primeira vez, <b>foram chamados cristãos</b>.'],
+['L4','Antioquia, na Síria, era uma cidade <b>enorme e rica</b>. <b>Barnabé</b> foi buscar <b>Saulo</b> em Tarso, e os dois ensinaram ali um ano inteiro, para judeus e não judeus <b>juntos</b>.'],
+['L5','Agora, a chave: em grego, <b>christianoí</b>. Mas essa terminação, ianos, é <b>latina</b>, como cesarianos, o partido de César. Quer dizer: <b>o pessoal do Cristo</b>.'],
+['L6','E Antioquia era famosa por <b>inventar apelidos</b>. Por isso, muitos estudiosos acham que o nome nasceu na boca dos pagãos, talvez como <b>zombaria</b>. Outros acham que era só um rótulo.'],
+['L7','Nas outras duas vezes em que aparece na Bíblia, o nome ainda soa como coisa de fora. O rei <b>Agripa</b> diz a Paulo: por pouco não me fazes cristão. E <b>Pedro</b> escreve: se alguém sofre como cristão, <b>não se envergonhe</b>.'],
+['L8','Ou seja: o apelido <b>virou bandeira</b>. E Santo <b>Inácio</b>, bispo de Antioquia, usou esse nome com orgulho. Você sabia? <b>Comenta e segue</b> pra mais segredos da fé!']];
+var T={},TL={lines:[]},CHK=[],WC={};
+window.__retime=function(d){var t=.3;TL.lines=[];WC={};LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;buildCaps();};
+window.__timeline=function(){return TL;};
+function buildCaps(){CHK=[];var C=window.CAPS||{};TL.lines.forEach(function(l){var ws=C[l.id];if(!ws)return;var cur=[],len=0;
+ function flush(){if(cur.length)CHK.push({ws:cur.map(function(w){return {w:w.w,b:w.b,t:l.t0+w.t};})});cur=[];len=0;}
+ ws.forEach(function(w,i){if(len+w.w.length>34&&cur.length)flush();cur.push(w);len+=w.w.length+1;var end=/[.!?:;]$/.test(w.w)||(/,$/.test(w.w)&&len>=18);if(end)flush();});flush();
+ CHK.filter(function(c){return c.l===undefined;}).forEach(function(c){c.l=l.id;c.end=l.t0+l.dur+.25;});});
+ for(var i=0;i<CHK.length;i++){CHK[i].t0=CHK[i].ws[0].t-.12;var nx=CHK[i+1];CHK[i].t1=(nx&&nx.l===CHK[i].l)?nx.ws[0].t-.12:CHK[i].end;}}
+// tempo (absoluto) da palavra falada: WT('L2','tertuliano') — sincroniza animações com caps.json
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');}
+function WT(id,w,k){var key=id+w+(k||1);if(WC[key]!==undefined)return WC[key];var ws=(window.CAPS||{})[id],r=T[id],n=0;if(ws)for(var i=0;i<ws.length;i++){if(norm(ws[i].w).indexOf(norm(w))===0){n++;if(n>=(k||1)){r=T[id]+ws[i].t;break;}}}WC[key]=r;return r;}
+function LW(id,w,k){return WT(id,w,k)-T[id];}
+function glow(X,Y,r,col,a){if(a<=0)return;var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
+function rr(X,Y,w,h,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath();}
+function txt(s,X,Y,font,col,al,sh){x.save();x.font=font;x.textAlign=al||'center';x.fillStyle=col;if(sh){x.shadowColor=sh;x.shadowBlur=18;}x.fillText(s,X,Y);x.restore();}
+function star(X,Y,r,a){x.save();x.globalAlpha*=a;x.fillStyle='#fff8e0';x.beginPath();for(var i=0;i<8;i++){var rr2=i%2?r*.35:r,an=i*PI/4-PI/2;x.lineTo(X+Math.cos(an)*rr2,Y+Math.sin(an)*rr2);}x.fill();x.restore();}
+var FLOOR=860;
+// fundo da paleta
+var bg=document.createElement('canvas');bg.width=W;bg.height=H;(function(){var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.35,40,W/2,H*.5,H*.9);g.addColorStop(0,'#3f5a24');g.addColorStop(.45,'#1f2e14');g.addColorStop(1,'#070b04');b.fillStyle=g;b.fillRect(0,0,W,H);
+ for(var i=0;i<7000;i++){b.fillStyle='rgba('+(rnd()>.5?'217,242,162':'0,0,0')+','+(rnd()*.05)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}})();
+var PRT=[];for(var i=0;i<70;i++)PRT.push([rnd()*W,rnd()*H,1.5+rnd()*4,rnd()*6,.3+rnd()*.8,rnd()<.35]);
+function rays(t){x.save();x.globalCompositeOperation='lighter';for(var k=0;k<6;k++){var a0=-.5+k*.2+Math.sin(t*.3+k)*.04;x.fillStyle='rgba(217,242,162,0.035)';x.beginPath();x.moveTo(360,-80);x.lineTo(360+Math.tan(a0)*1500,1400);x.lineTo(360+Math.tan(a0+.07)*1500,1400);x.fill();}x.restore();}
+function particles(t){PRT.forEach(function(p){var yy=(p[1]-t*-14*p[4]+H*2)%H;var xx=p[0]+Math.sin(t*.8+p[3])*14;
+ if(p[5])glow(xx,yy,p[2]*3.2,'rgba(255,209,102,A)',.5);else{x.fillStyle='rgba(217,242,162,.45)';x.beginPath();x.arc(xx,yy,p[2]*.6,0,7);x.fill();}});}
+function popS(lt,t0){return back(lin(lt,t0,t0+.45));}
+function ground(c1,c2,y){var g=x.createLinearGradient(0,y||FLOOR-40,0,H);g.addColorStop(0,c1);g.addColorStop(1,c2);x.fillStyle=g;x.fillRect(0,y||FLOOR-40,W,H);}
+function olive(X,Y,s,t){x.save();x.translate(X,Y);x.scale(s,s);x.fillStyle='#5a3a1e';x.beginPath();x.moveTo(-10,0);x.quadraticCurveTo(-18,-50,-4,-90);x.lineTo(8,-90);x.quadraticCurveTo(2,-50,12,0);x.fill();
+ var sw=Math.sin(t*1.2+X)*3;[[-40,-110,52],[30,-118,56],[-5,-150,50],[45,-80,36],[-48,-78,34]].forEach(function(c,i){x.fillStyle=i%2?'#7a9a3a':'#5e7f2a';x.beginPath();x.ellipse(c[0]+sw,c[1],c[2],c[2]*.62,0,0,7);x.fill();});
+ x.fillStyle='rgba(200,230,140,.35)';x.beginPath();x.ellipse(-20+sw,-140,26,10,0,0,7);x.fill();x.fillStyle='#2e3a12';for(var i=0;i<7;i++){x.beginPath();x.arc(-40+i*14+sw,-100+(i%3)*14,4,0,7);x.fill();}x.restore();}
+function robe(X,Y,s,col){x.save();x.translate(X,Y);x.scale(s,s);x.fillStyle=col;x.beginPath();x.moveTo(-30,0);x.lineTo(-22,-90);x.quadraticCurveTo(0,-104,22,-90);x.lineTo(30,0);x.fill();x.beginPath();x.arc(0,-112,17,0,7);x.fill();x.restore();}
+// ---------- cena 1: amanhecer num olival; grupo de seguidores (silhuetas) e uma placa com "?" ----------
+function sc1(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#2a4a5a');sky.addColorStop(.55,'#f0a35a');sky.addColorStop(1,'#ffe1a0');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ glow(360,700,240,'rgba(255,230,160,A)',.9);x.fillStyle='#fff3cf';x.beginPath();x.arc(360,710,56,0,7);x.fill();
+ x.fillStyle='#6f8a46';x.beginPath();x.moveTo(0,720);x.quadraticCurveTo(200,650,380,720);x.quadraticCurveTo(560,670,W,710);x.lineTo(W,FLOOR);x.lineTo(0,FLOOR);x.fill();
+ ground('#4e6a2a','#1a2410');olive(110,FLOOR-30,1.1,t);olive(620,FLOOR-30,1.2,t);
+ [[300,'#2e2414'],[350,'#3a2a18'],[400,'#2a2012'],[450,'#3a2a18']].forEach(function(p,i){robe(p[0],FLOOR-28,.9+.06*(i%2),p[1]);});
+ var q=popS(lt,LW('L1','cristaos')-.1);if(q>0){x.save();x.translate(530,FLOOR-30);x.fillStyle='#6b4423';x.fillRect(-6,-150,12,150);x.scale(q,q);x.fillStyle='#e9d6a8';rr(-70,-230,140,80,12);x.fill();x.strokeStyle='#6b4423';x.lineWidth=5;x.stroke();txt('?',0,-170,'700 58px L','#c46a12');x.restore();}
+ var ap=lin(lt,LW('L1','apelido')-.1,LW('L1','apelido')+.4);if(ap>0){x.save();x.globalAlpha=ap;x.fillStyle='#fffbe9';rr(250,520,220,70,30);x.fill();x.beginPath();x.moveTo(330,588);x.lineTo(350,620);x.lineTo(365,588);x.fill();txt('“apelido”?',360,566,'700 30px P','#24361a');x.restore();}}
+// ---------- cena 2: estrada (o Caminho) e quatro pedras gravadas ----------
+function stone(X,Y,label,u,col){if(u<=0)return;x.save();x.translate(X,Y);x.scale(u,u);x.fillStyle='#b9b09a';x.beginPath();x.moveTo(-70,0);x.lineTo(-66,-80);x.quadraticCurveTo(0,-110,66,-80);x.lineTo(70,0);x.fill();x.fillStyle='rgba(0,0,0,.15)';x.fillRect(40,-80,26,80);
+ txt(label,0,-40,'700 22px P',col||'#3a2a10');x.restore();}
+function sc2(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#7fc6d9');sky.addColorStop(1,'#f6e7b0');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ x.fillStyle='#8aa856';x.beginPath();x.moveTo(0,620);x.quadraticCurveTo(250,560,480,610);x.quadraticCurveTo(620,580,W,600);x.lineTo(W,FLOOR);x.lineTo(0,FLOOR);x.fill();
+ x.fillStyle='#d9b77a';x.beginPath();x.moveTo(330,FLOOR);x.quadraticCurveTo(300,720,370,660);x.quadraticCurveTo(420,620,385,600);x.lineTo(395,600);x.quadraticCurveTo(440,625,400,670);x.quadraticCurveTo(350,730,420,FLOOR);x.fill();
+ olive(80,700,.6,t);olive(640,690,.55,t);ground('#6f8a3a','#1a2410');
+ var cam=lin(lt,LW('L2','caminho')-.2,LW('L2','caminho')+.6);if(cam>0)glow(375,700,120,'rgba(255,240,170,A)',.6*cam);
+ stone(110,FLOOR-14,'IRMÃOS',popS(lt,LW('L2','irmaos')-.1));stone(250,FLOOR+4,'DISCÍPULOS',popS(lt,LW('L2','discipulos')-.1));stone(480,FLOOR+4,'SANTOS',popS(lt,LW('L2','santos')-.1));stone(615,FLOOR-14,'O CAMINHO',popS(lt,LW('L2','caminho')-.1),'#4d7a1f');}
+// ---------- cena 3: Antioquia — cidade, monte e rio ----------
+function sc3(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#2f5d6e');sky.addColorStop(1,'#f3c27a');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);glow(600,450,120,'rgba(255,240,190,A)',.6);
+ x.fillStyle='#55703a';x.beginPath();x.moveTo(0,640);x.lineTo(120,470);x.lineTo(240,560);x.lineTo(380,430);x.lineTo(540,580);x.lineTo(W,520);x.lineTo(W,720);x.lineTo(0,720);x.fill();
+ x.strokeStyle='#8a7a5a';x.lineWidth=6;x.beginPath();x.moveTo(60,640);for(var i=0;i<=10;i++)x.lineTo(60+i*60,600-Math.sin(i*.7)*60);x.stroke();
+ for(var i=0;i<26;i++){var bx=30+(i*29)%660,by=650+(i*13)%70,bw=40+(i*7)%30,bh=30+(i*11)%40;x.fillStyle=['#f1e3c4','#e6cfa3','#d9b98a'][i%3];x.fillRect(bx,by-bh,bw,bh);x.fillStyle='#b5573a';x.beginPath();x.moveTo(bx-4,by-bh);x.lineTo(bx+bw/2,by-bh-14);x.lineTo(bx+bw+4,by-bh);x.fill();x.fillStyle='rgba(60,40,20,.5)';x.fillRect(bx+8,by-bh+10,8,10);}
+ x.fillStyle='#f1e3c4';for(var i=0;i<10;i++)x.fillRect(80+i*60,690,12,60);x.fillRect(70,682,600,10);
+ var rv=x.createLinearGradient(0,760,0,FLOOR);rv.addColorStop(0,'#5fb3c4');rv.addColorStop(1,'#2a6f7a');x.fillStyle=rv;x.beginPath();x.moveTo(0,770);x.quadraticCurveTo(360,740,W,775);x.lineTo(W,820);x.quadraticCurveTo(360,800,0,830);x.fill();
+ for(var i=0;i<8;i++){x.fillStyle='rgba(255,255,255,.35)';x.fillRect((i*97+t*30)%W,785+(i%3)*10,40,3);}
+ ground('#4e6a2a','#1a2410');var c=lin(lt,LW('L3','cristaos')-.2,LW('L3','cristaos')+.5);if(c>0)glow(360,650,260,'rgba(255,215,120,A)',.4*c);}
+// ---------- cena 4: mapa Tarso → Antioquia; pontos que se misturam ----------
+function sc4(t,lt){x.fillStyle='#7cc3d6';x.fillRect(0,300,W,FLOOR-300);for(var i=0;i<12;i++){x.strokeStyle='rgba(255,255,255,.25)';x.lineWidth=2;x.beginPath();x.arc(150+(i*61)%360,600+(i*37)%180,10+i%3*6,PI*1.1,PI*1.9);x.stroke();}
+ x.fillStyle='#e7d29a';x.beginPath();x.moveTo(0,300);x.lineTo(W,300);x.lineTo(W,FLOOR);x.lineTo(520,FLOOR);x.quadraticCurveTo(480,700,560,600);x.quadraticCurveTo(600,540,520,480);x.quadraticCurveTo(380,470,260,500);x.quadraticCurveTo(120,520,0,470);x.fill();
+ x.fillStyle='rgba(120,150,70,.5)';for(var i=0;i<16;i++){x.beginPath();x.moveTo(40+i*42,420+(i%3)*20);x.lineTo(60+i*42,390+(i%3)*20);x.lineTo(80+i*42,420+(i%3)*20);x.fill();}
+ var TA=[230,470],AN=[600,560];[[TA,'TARSO'],[AN,'ANTIOQUIA']].forEach(function(p){x.fillStyle='#8a2a10';x.beginPath();x.arc(p[0][0],p[0][1],12,0,7);x.fill();x.strokeStyle='#fff';x.lineWidth=3;x.stroke();txt(p[1],p[0][0],p[0][1]-24,'700 26px P','#3a2a10');});
+ var u=ez(lin(lt,LW('L4','barnabe')-.2,LW('L4','tarso')+.8));if(u>0){x.save();x.setLineDash([10,10]);x.strokeStyle='#c46a12';x.lineWidth=6;x.beginPath();var n=40;for(var i=0;i<=n*u;i++){var k=i/n,px=lerp(TA[0],AN[0],k),py=lerp(TA[1],AN[1],k)-Math.sin(k*PI)*60;i?x.lineTo(px,py):x.moveTo(px,py);}x.stroke();x.restore();}
+ var m=ez(lin(lt,LW('L4','judeus')-.3,LW('L4','juntos')+.3));for(var i=0;i<16;i++){var a=i/16*PI*2+t*.6,side=i%2?1:-1,cx=AN[0]+side*70*(1-m),cy=AN[1]+120;var r=(14+(i%4)*9)*(m*.7+.3);var px=cx+Math.cos(a)*r,py=cy+Math.sin(a)*r*.6;
+  if(lt>LW('L4','judeus')-.6){x.fillStyle=i%2?'#c46a12':'#4d7a1f';x.beginPath();x.arc(px,py,8,0,7);x.fill();x.strokeStyle='#fff';x.lineWidth=2;x.stroke();}}
+ if(m>.9)glow(AN[0],AN[1]+120,90,'rgba(255,215,120,A)',.5);}
+// ---------- cena 5: lápide romana de mármore com CAESARIANI → CHRISTIANI ----------
+function sc5(t,lt){x.fillStyle='#24361a';x.fillRect(0,300,W,FLOOR-300);for(var i=0;i<5;i++){x.fillStyle='rgba(255,255,255,.05)';x.fillRect(60+i*140,330,60,FLOOR-330);}glow(360,620,330,'rgba(217,242,162,A)',.2);
+ x.fillStyle='#ece6da';x.fillRect(110,540,500,250);x.fillStyle='#d8d0c0';x.fillRect(90,520,540,24);x.fillRect(90,790,540,30);x.fillStyle='#bfb6a4';x.fillRect(130,820,460,FLOOR-820);
+ x.strokeStyle='rgba(120,110,90,.35)';x.lineWidth=2;x.beginPath();x.moveTo(140,600);x.lineTo(200,640);x.lineTo(180,700);x.stroke();
+ var a=lin(lt,LW('L5','cesarianos')-.3,LW('L5','cesarianos')+.3);if(a>0){x.save();x.globalAlpha=a;txt('CAESAR',300,640,'700 46px L','#6a5a40','right');txt('IANI',300,640,'700 46px L','#c46a12','left');x.restore();}
+ var b=lin(lt,LW('L5','pessoal')-.3,LW('L5','pessoal')+.3);if(b>0){x.save();x.globalAlpha=b;txt('CHRIST',300,730,'700 46px L','#24361a','right');txt('IANI',300,730,'700 46px L','#c46a12','left');x.restore();glow(360,710,160,'rgba(255,215,120,A)',.3*b);}
+ var l=lin(lt,LW('L5','latina')-.2,LW('L5','latina')+.4);if(l>0)txt('LATIM',360,592,'700 24px P','rgba(77,122,31,'+l+')');
+ ground('#2a3a18','#070b04');}
+// ---------- cena 6: praça com colunas; balões de fala com risadas ----------
+function bubble(X,Y,s,u){if(u<=0)return;x.save();x.translate(X,Y);x.scale(u,u);x.fillStyle='#fffbe9';rr(-70,-46,140,62,24);x.fill();x.beginPath();x.moveTo(-10,14);x.lineTo(-24,40);x.lineTo(10,14);x.fill();txt(s,0,-4,'700 28px P','#c46a12');x.restore();}
+function sc6(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#86c9d8');sky.addColorStop(1,'#fbe6b2');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ x.fillStyle='#efe2c2';x.fillRect(0,470,W,26);for(var i=0;i<8;i++){x.fillStyle='#f6ecd2';x.fillRect(20+i*96,496,30,FLOOR-536);x.fillStyle='rgba(0,0,0,.08)';x.fillRect(40+i*96,496,10,FLOOR-536);x.fillStyle='#e6d6b0';x.fillRect(12+i*96,FLOOR-56,46,16);}
+ x.fillStyle='#c46a12';for(var i=0;i<7;i++){x.beginPath();x.moveTo(i*110,496);x.lineTo(i*110+55,540);x.lineTo(i*110+110,496);x.fill();}
+ ground('#cdb98a','#3a3018');
+ [[150,'#7a4a2a'],[230,'#4a5a8a'],[480,'#8a3a3a'],[560,'#5a6a2a'],[640,'#6a4a7a']].forEach(function(p,i){robe(p[0],FLOOR-34,.95,p[1]);});
+ bubble(170,600,'ha ha!',popS(lt,LW('L6','apelidos')));bubble(540,580,'“cristãos”!',popS(lt,LW('L6','zombaria')-.2));bubble(620,690,'?',popS(lt,LW('L6','rotulo')-.2));}
+// ---------- cena 7: salão do rei (Agripa) → carta de Pedro ----------
+function sc7(t,lt){var pd=ez(lin(lt,LW('L7','pedro')-.3,LW('L7','pedro')+.3));
+ if(pd<1){x.save();x.globalAlpha=1-pd;x.fillStyle='#3a1a3a';x.fillRect(0,300,W,FLOOR-300);for(var i=0;i<4;i++){x.fillStyle='#e6d6b0';x.fillRect(60+i*180,380,40,FLOOR-420);x.fillRect(50+i*180,370,60,16);}
+  x.fillStyle='#7a2a6a';x.beginPath();x.moveTo(140,330);x.quadraticCurveTo(200,520,140,FLOOR);x.lineTo(0,FLOOR);x.lineTo(0,330);x.fill();x.beginPath();x.moveTo(580,330);x.quadraticCurveTo(520,520,580,FLOOR);x.lineTo(W,FLOOR);x.lineTo(W,330);x.fill();
+  glow(360,640,200,'rgba(255,215,120,A)',.4);x.fillStyle='#c9a24a';x.fillRect(300,560,120,200);x.fillStyle='#8a2a5a';x.fillRect(312,610,96,120);x.fillStyle='#c9a24a';x.fillRect(285,740,150,24);x.beginPath();x.moveTo(300,560);x.lineTo(360,520);x.lineTo(420,560);x.fill();
+  x.fillStyle='#8a6a3a';x.fillRect(240,764,240,FLOOR-764);ground('#5a3a2a','#120806');x.restore();}
+ if(pd>0){x.save();x.globalAlpha=pd;x.fillStyle='#2a3a18';x.fillRect(0,300,W,FLOOR-300);glow(470,560,260,'rgba(255,190,100,A)',.5);
+  x.fillStyle='#6b4423';x.fillRect(60,720,600,30);x.fillRect(90,750,30,FLOOR-750);x.fillRect(600,750,30,FLOOR-750);
+  x.fillStyle='#f1dfb5';x.beginPath();x.moveTo(150,560);x.lineTo(470,560);x.lineTo(500,716);x.lineTo(120,716);x.fill();x.fillStyle='rgba(90,60,30,.5)';for(var i=0;i<7;i++)x.fillRect(170+i*3,585+i*18,280-i*6,4);
+  x.strokeStyle='#e9e2d0';x.lineWidth=4;x.beginPath();x.moveTo(430,690);x.quadraticCurveTo(470,600,520,540);x.stroke();x.fillStyle='#e9e2d0';x.beginPath();x.ellipse(505,570,12,40,.6,0,7);x.fill();
+  x.fillStyle='#a0522d';x.beginPath();x.ellipse(580,706,30,12,0,0,7);x.fill();var f=1+.12*Math.sin(t*10);glow(600,680,80,'rgba(255,190,90,A)',.7);x.fillStyle='#ffd27a';x.beginPath();x.ellipse(600,684,7,15*f,0,0,7);x.fill();
+  ground('#3a2a18','#0a0804');x.restore();}}
+// ---------- cena 8: estandarte com a cruz, fincado no chão do olival ----------
+function sc8(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#2a4a5a');sky.addColorStop(1,'#ffcf7a');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);glow(360,800,300,'rgba(255,220,150,A)',.7);
+ x.fillStyle='#6f8a46';x.beginPath();x.moveTo(0,780);x.quadraticCurveTo(360,730,W,780);x.lineTo(W,FLOOR);x.lineTo(0,FLOOR);x.fill();olive(90,FLOOR-30,.9,t);olive(640,FLOOR-30,.95,t);ground('#4e6a2a','#1a2410');
+ var u=ez(lin(lt,LW('L8','bandeira')-.6,LW('L8','bandeira')+.3));x.fillStyle='#5a3a1e';x.fillRect(356,FLOOR-30-300*u,10,300*u);
+ if(u>0){x.save();x.translate(366,FLOOR-330*u+30);x.beginPath();x.moveTo(0,0);for(var i=0;i<=20;i++){var k=i/20;x.lineTo(k*190,Math.sin(k*5-t*4)*10*k);}for(var i=20;i>=0;i--){var k=i/20;x.lineTo(k*190,120+Math.sin(k*5-t*4)*10*k);}x.closePath();
+  var gg=x.createLinearGradient(0,0,190,0);gg.addColorStop(0,'#fff6dc');gg.addColorStop(1,'#f0dca0');x.fillStyle=gg;x.fill();x.strokeStyle='#c46a12';x.lineWidth=4;x.stroke();
+  var cy=60+Math.sin(.5*5-t*4)*5;x.strokeStyle='#c0392b';x.lineWidth=10;x.lineCap='round';x.beginPath();x.moveTo(95,cy-36);x.lineTo(95,cy+38);x.moveTo(70,cy-10);x.lineTo(120,cy-10);x.stroke();x.restore();}}
+var SC=[sc1,sc2,sc3,sc4,sc5,sc6,sc7,sc8];
+function OV(t,L){pop($('c1'),fade(t,WT('L1','esse')-.1,L.L1e+.2));pop($('c2'),fade(t,WT('L2','nazarenos')-.4,L.L2e+.2));pop($('c3'),fade(t,WT('L3','antioquia')-.1,L.L3e+.2));
+ pop($('c4'),fade(t,WT('L4','ano')-.2,L.L4e+.2));pop($('c5'),fade(t,WT('L5','grego')-.1,L.L5e+.2));pop($('c6'),fade(t,WT('L6','muitos')-.1,L.L6e+.2));
+ pop($('c7a'),fade(t,WT('L7','agripa')-.1,WT('L7','pedro')-.2));pop($('c7b'),fade(t,WT('L7','pedro'),L.L7e+.2));pop($('c8'),fade(t,WT('L8','inacio')-.2,WT('L8','voce')-.2));}
+
+var OFF=document.createElement('canvas');OFF.width=W;OFF.height=H;var ox=OFF.getContext('2d');
+function frame(t){var L=T;x=MAIN;x.drawImage(bg,0,0);rays(t);
+ for(var i=0;i<8;i++){var id='L'+(i+1),a=(i<7)?fade(t,L[id]-.25,L[id+'e']+.3,.35):fade(t,L.L8-.25,L.END+2,.35);if(a<=0)continue;
+  ox.clearRect(0,0,W,H);x=ox;SC[i](t,t-L[id],L);x=MAIN;ox.save();ox.globalCompositeOperation='destination-in';var mg=ox.createLinearGradient(0,290,0,H);mg.addColorStop(0,'rgba(0,0,0,0)');mg.addColorStop(.09,'rgba(0,0,0,1)');mg.addColorStop(.62,'rgba(0,0,0,1)');mg.addColorStop(1,'rgba(0,0,0,0)');ox.fillStyle=mg;ox.fillRect(0,0,W,H);ox.restore();
+  MAIN.save();MAIN.globalAlpha=a;MAIN.drawImage(OFF,0,0);MAIN.restore();}
+ particles(t);OV(t,L);pop($('q'),fade(t,WT('L8','voce'),L.END+2));
+ var vg=x.createRadialGradient(W/2,H/2,H*.32,W/2,H/2,H*.78);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.5)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ var cur=null;for(var i=0;i<CHK.length;i++)if(t>=CHK[i].t0&&t<CHK[i].t1){cur=CHK[i];break;}
+ if(cur){$('cap').innerHTML='<span class="box">'+cur.ws.map(function(w){return '<i class="'+(w.b?'b ':'')+(t<w.t-.05?'f':'')+'">'+w.w+'</i>';}).join(' ')+'</span>';var u=lin(t,cur.t0,cur.t0+.18);$('cap').style.opacity=u;$('cap').style.transform='translateY('+((1-u)*10)+'px)';}
+ else $('cap').innerHTML='';}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>

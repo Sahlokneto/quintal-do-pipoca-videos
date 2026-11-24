@@ -1,0 +1,177 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(../../tools/Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(../../tools/Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(../../tools/Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(../../tools/FreeSerifBold.ttf)}
+:root{--c1:#fffaf0;--c2:#fbe9c4;--ink:#4a2e10;--r1:#a8641c;--r2:#e0952e;--em:#c2410c;--sub:#6b4a24;--capbg:rgba(28,18,8,.86);--hl:#fff0c9}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.sc{display:inline-block;padding:16px 30px 18px;border-radius:20px;background:linear-gradient(160deg,var(--c1),var(--c2));color:var(--ink);box-shadow:0 14px 40px rgba(0,0,0,.55),0 0 0 4px rgba(255,209,102,.85);max-width:620px}
+.sc .r{display:inline-block;font-family:P;font-size:20px;letter-spacing:3px;color:#fff;font-weight:700;background:linear-gradient(90deg,var(--r1),var(--r2));padding:4px 14px;border-radius:30px;margin-bottom:8px}
+.sc .v{font-family:L;font-size:42px;font-weight:700;line-height:1.15}
+.sc .v em{font-style:normal;color:var(--em)}
+.sc .s{font-family:P;font-size:23px;color:var(--sub);margin-top:6px}
+.sc .h{font-family:HB;font-size:66px;line-height:1.05;direction:rtl;unicode-bidi:bidi-override;color:var(--em)}
+.cd{top:132px}
+#q{top:160px;left:60px;width:600px;font-family:L;font-size:54px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:18px;font-family:P;font-size:34px;color:var(--hl)}
+#q .btn{display:inline-block;margin-top:18px;padding:16px 46px;border-radius:50px;background:linear-gradient(90deg,#ff5e62,#ff9966);font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:878px;left:36px;width:600px;text-align:center;opacity:1}
+#cap .box{display:inline-block;padding:10px 24px 12px;border-radius:18px;background:var(--capbg);border:2px solid rgba(255,209,102,.45);font-size:40px;font-weight:700;line-height:1.22;text-shadow:0 3px 0 #000;max-width:560px}
+#cap i{font-style:normal}
+#cap i.f{opacity:.45}
+#cap i.b{color:#ffd166}
+</style></head><body>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="c1" class="lay cd"><div class="sc"><div class="r">UMA LETRA A MAIS?</div><div class="v">Abrão → <em>Abraão</em></div></div></div>
+<div id="c2" class="lay cd"><div class="sc"><div class="r">GÊNESIS 17,1-5</div><div class="v"><em>99 anos</em> e uma aliança</div></div></div>
+<div id="c3a" class="lay cd"><div class="sc"><div class="r">HEBRAICO</div><div class="h">אברם</div><div class="s">Avrám = “pai exaltado”</div></div></div>
+<div id="c3b" class="lay cd"><div class="sc"><div class="r">GÊNESIS 17,5</div><div class="h">אברהם</div><div class="s">Avrahám = “pai de uma multidão”</div></div></div>
+<div id="c4" class="lay cd"><div class="sc"><div class="r">TALMUDE · BERAKHOT 13a</div><div class="v">Sarai → <em>Sara</em></div><div class="s">princesa do seu povo → princesa do mundo</div></div></div>
+<div id="c5" class="lay cd"><div class="sc"><div class="r">A LETRA</div><div class="h">ה</div><div class="s">hê</div></div></div>
+<div id="c6" class="lay cd"><div class="sc"><div class="r">GÊNESIS RABÁ 47,1 (MIDRASH)</div><div class="v">o <em>yod</em> foi para Josué</div><div class="s">Números 13,16: Oseias passa a se chamar Josué</div></div></div>
+<div id="c7a" class="lay cd"><div class="sc"><div class="r">GÊNESIS 32,28</div><div class="v">Jacó → <em>Israel</em></div></div></div>
+<div id="c7b" class="lay cd"><div class="sc"><div class="r">JOÃO 1,42</div><div class="v">Simão → <em>Cefas</em></div><div class="s">Cefas = pedra</div></div></div>
+<div id="q" class="lay">Você sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>/*CAPS*/window.CAPS={"L1": [{"w": "Por", "b": false, "t": 0.0}, {"w": "que", "b": false, "t": 0.235}, {"w": "Deus", "b": false, "t": 0.469}, {"w": "mudou", "b": true, "t": 0.751}, {"w": "o", "b": true, "t": 1.079}, {"w": "nome", "b": true, "t": 1.22}, {"w": "de", "b": false, "t": 1.502}, {"w": "Abrão?", "b": false, "t": 1.69}, {"w": "Parece", "b": false, "t": 2.185}, {"w": "só", "b": false, "t": 2.665}, {"w": "uma", "b": false, "t": 2.905}, {"w": "letra", "b": false, "t": 3.205}, {"w": "a", "b": false, "t": 3.625}, {"w": "mais.", "b": false, "t": 3.805}, {"w": "Mas,", "b": false, "t": 4.345}, {"w": "na", "b": false, "t": 5.865}, {"w": "Bíblia,", "b": false, "t": 6.203}, {"w": "mudar", "b": false, "t": 7.085}, {"w": "o", "b": false, "t": 7.312}, {"w": "nome", "b": false, "t": 7.41}, {"w": "é", "b": false, "t": 7.605}, {"w": "mudar", "b": true, "t": 7.702}, {"w": "a", "b": true, "t": 7.929}, {"w": "missão.", "b": true, "t": 8.027}], "L2": [{"w": "Abrão", "b": false, "t": 0.0}, {"w": "já", "b": false, "t": 0.195}, {"w": "tinha", "b": false, "t": 0.306}, {"w": "noventa", "b": true, "t": 0.5}, {"w": "e", "b": true, "t": 0.751}, {"w": "nove", "b": true, "t": 0.834}, {"w": "anos", "b": true, "t": 1.001}, {"w": "e", "b": false, "t": 1.167}, {"w": "ainda", "b": false, "t": 1.251}, {"w": "esperava", "b": false, "t": 1.445}, {"w": "o", "b": false, "t": 1.723}, {"w": "filho", "b": false, "t": 1.807}, {"w": "prometido,", "b": false, "t": 2.001}, {"w": "quando", "b": false, "t": 2.455}, {"w": "Deus", "b": false, "t": 2.867}, {"w": "fez", "b": false, "t": 3.176}, {"w": "com", "b": false, "t": 3.433}, {"w": "ele", "b": false, "t": 3.69}, {"w": "uma", "b": false, "t": 3.948}, {"w": "aliança,", "b": true, "t": 4.205}, {"w": "em", "b": false, "t": 4.84}, {"w": "Gênesis,", "b": false, "t": 5.536}, {"w": "capítulo", "b": false, "t": 7.395}, {"w": "dezessete.", "b": false, "t": 8.425}], "L3": [{"w": "Em", "b": false, "t": 0.0}, {"w": "hebraico,", "b": false, "t": 0.217}, {"w": "Avrám", "b": true, "t": 0.935}, {"w": "quer", "b": false, "t": 1.472}, {"w": "dizer", "b": false, "t": 1.932}, {"w": "pai", "b": true, "t": 2.468}, {"w": "exaltado.", "b": true, "t": 2.852}, {"w": "E", "b": false, "t": 3.815}, {"w": "Avrahám", "b": true, "t": 3.875}, {"w": "é", "b": false, "t": 4.054}, {"w": "entendido", "b": false, "t": 4.114}, {"w": "como", "b": false, "t": 4.333}, {"w": "pai", "b": true, "t": 4.453}, {"w": "de", "b": true, "t": 4.552}, {"w": "uma", "b": true, "t": 4.632}, {"w": "multidão", "b": true, "t": 4.732}, {"w": "de", "b": false, "t": 4.931}, {"w": "povos.", "b": false, "t": 5.011}, {"w": "Não", "b": false, "t": 5.29}, {"w": "te", "b": false, "t": 5.807}, {"w": "chamarás", "b": false, "t": 6.221}, {"w": "mais", "b": false, "t": 7.256}, {"w": "Abrão,", "b": false, "t": 7.877}, {"w": "diz", "b": false, "t": 8.825}, {"w": "o", "b": false, "t": 9.511}, {"w": "versículo", "b": false, "t": 9.922}, {"w": "cinco.", "b": false, "t": 11.431}], "L4": [{"w": "Sarai", "b": false, "t": 0.0}, {"w": "também", "b": false, "t": 0.393}, {"w": "mudou:", "b": false, "t": 0.841}, {"w": "virou", "b": false, "t": 1.41}, {"w": "Sara.", "b": true, "t": 2.067}, {"w": "Os", "b": false, "t": 2.845}, {"w": "dois", "b": false, "t": 3.086}, {"w": "nomes", "b": false, "t": 3.448}, {"w": "vêm", "b": false, "t": 3.87}, {"w": "de", "b": false, "t": 4.172}, {"w": "sar,", "b": true, "t": 4.413}, {"w": "que", "b": false, "t": 4.895}, {"w": "é", "b": false, "t": 5.212}, {"w": "príncipe.", "b": false, "t": 5.402}, {"w": "Uma", "b": false, "t": 6.22}, {"w": "explicação", "b": false, "t": 6.542}, {"w": "do", "b": false, "t": 7.313}, {"w": "Talmude", "b": false, "t": 7.57}, {"w": "diz:", "b": false, "t": 8.149}, {"w": "Sarai", "b": false, "t": 8.655}, {"w": "era", "b": false, "t": 9.122}, {"w": "princesa", "b": false, "t": 9.456}, {"w": "do", "b": false, "t": 10.123}, {"w": "seu", "b": false, "t": 10.389}, {"w": "povo;", "b": false, "t": 10.723}, {"w": "Sara,", "b": false, "t": 11.31}, {"w": "princesa", "b": true, "t": 12.245}, {"w": "do", "b": true, "t": 12.807}, {"w": "mundo", "b": true, "t": 13.032}, {"w": "inteiro.", "b": true, "t": 13.426}], "L5": [{"w": "E", "b": false, "t": 0.0}, {"w": "repara:", "b": false, "t": 0.19}, {"w": "nos", "b": false, "t": 0.88}, {"w": "dois", "b": false, "t": 1.202}, {"w": "nomes", "b": false, "t": 1.587}, {"w": "entra", "b": false, "t": 2.037}, {"w": "a", "b": false, "t": 2.488}, {"w": "mesma", "b": false, "t": 2.68}, {"w": "letra,", "b": false, "t": 3.131}, {"w": "o", "b": false, "t": 3.765}, {"w": "hê.", "b": true, "t": 4.001}, {"w": "A", "b": false, "t": 4.515}, {"w": "Bíblia", "b": false, "t": 4.682}, {"w": "não", "b": false, "t": 5.127}, {"w": "explica", "b": false, "t": 5.406}, {"w": "o", "b": false, "t": 5.907}, {"w": "porquê.", "b": false, "t": 6.074}, {"w": "Mas", "b": false, "t": 6.695}, {"w": "uma", "b": false, "t": 6.991}, {"w": "tradição", "b": true, "t": 7.287}, {"w": "judaica", "b": true, "t": 7.88}, {"w": "conta", "b": false, "t": 8.413}, {"w": "uma", "b": false, "t": 8.828}, {"w": "história", "b": false, "t": 9.124}, {"w": "curiosa.", "b": false, "t": 9.716}], "L6": [{"w": "Conta", "b": false, "t": 0.0}, {"w": "o", "b": false, "t": 0.421}, {"w": "antigo", "b": false, "t": 0.602}, {"w": "midrash", "b": false, "t": 1.083}, {"w": "Gênesis", "b": true, "t": 1.625}, {"w": "Rabá", "b": true, "t": 2.166}, {"w": "que", "b": false, "t": 2.527}, {"w": "o", "b": false, "t": 2.828}, {"w": "yod,", "b": true, "t": 3.009}, {"w": "a", "b": false, "t": 3.49}, {"w": "letra", "b": false, "t": 3.641}, {"w": "que", "b": false, "t": 3.993}, {"w": "saiu", "b": false, "t": 4.245}, {"w": "de", "b": false, "t": 4.546}, {"w": "Sarai,", "b": false, "t": 4.748}, {"w": "reclamou", "b": false, "t": 5.27}, {"w": "por", "b": false, "t": 5.866}, {"w": "ser", "b": false, "t": 6.165}, {"w": "a", "b": false, "t": 6.463}, {"w": "menor", "b": false, "t": 6.642}, {"w": "de", "b": false, "t": 7.059}, {"w": "todas.", "b": false, "t": 7.298}, {"w": "E", "b": false, "t": 7.895}, {"w": "Deus", "b": false, "t": 8.068}, {"w": "a", "b": false, "t": 8.414}, {"w": "colocou", "b": false, "t": 8.587}, {"w": "no", "b": false, "t": 9.106}, {"w": "começo", "b": false, "t": 9.337}, {"w": "do", "b": false, "t": 9.798}, {"w": "nome", "b": false, "t": 10.029}, {"w": "de", "b": false, "t": 10.375}, {"w": "Josué.", "b": true, "t": 10.606}], "L7": [{"w": "E", "b": false, "t": 0.0}, {"w": "a", "b": false, "t": 0.16}, {"w": "Bíblia", "b": false, "t": 0.321}, {"w": "repete", "b": false, "t": 0.749}, {"w": "esse", "b": false, "t": 1.176}, {"w": "gesto:", "b": false, "t": 1.497}, {"w": "Jacó", "b": true, "t": 2.045}, {"w": "virou", "b": false, "t": 2.633}, {"w": "Israel.", "b": true, "t": 3.318}, {"w": "E", "b": false, "t": 4.32}, {"w": "Jesus", "b": false, "t": 4.514}, {"w": "olhou", "b": false, "t": 4.966}, {"w": "para", "b": false, "t": 5.419}, {"w": "Simão", "b": false, "t": 5.807}, {"w": "e", "b": false, "t": 6.259}, {"w": "disse:", "b": false, "t": 6.453}, {"w": "tu", "b": false, "t": 7.09}, {"w": "te", "b": false, "t": 7.378}, {"w": "chamarás", "b": false, "t": 7.665}, {"w": "Cefas,", "b": true, "t": 8.385}, {"w": "que", "b": false, "t": 9.08}, {"w": "quer", "b": false, "t": 9.372}, {"w": "dizer", "b": false, "t": 9.722}, {"w": "pedra.", "b": true, "t": 10.13}], "L8": [{"w": "Deus", "b": false, "t": 0.0}, {"w": "não", "b": false, "t": 0.335}, {"w": "só", "b": false, "t": 0.613}, {"w": "conhece", "b": false, "t": 0.837}, {"w": "o", "b": false, "t": 1.338}, {"w": "seu", "b": false, "t": 1.506}, {"w": "nome.", "b": false, "t": 1.785}, {"w": "Ele", "b": false, "t": 2.295}, {"w": "sabe", "b": false, "t": 2.656}, {"w": "quem", "b": true, "t": 3.09}, {"w": "você", "b": true, "t": 3.524}, {"w": "pode", "b": true, "t": 3.958}, {"w": "ser.", "b": true, "t": 4.391}, {"w": "Você", "b": false, "t": 4.945}, {"w": "sabia", "b": false, "t": 5.312}, {"w": "disso?", "b": false, "t": 5.74}, {"w": "Comenta", "b": true, "t": 6.35}, {"w": "e", "b": true, "t": 6.889}, {"w": "segue", "b": true, "t": 7.069}, {"w": "pra", "b": false, "t": 7.488}, {"w": "mais", "b": false, "t": 7.787}, {"w": "segredos", "b": false, "t": 8.146}, {"w": "da", "b": false, "t": 8.745}, {"w": "fé!", "b": false, "t": 8.985}]};/*CAPS_END*/
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),MAIN=cv.getContext('2d'),x=MAIN,PI=Math.PI;
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){u=clamp(u,0,1);return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){if(!el)return;el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=53;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var LINES=[['L1','Por que Deus <b>mudou o nome</b> de Abrão? Parece só uma letra a mais. Mas, na Bíblia, mudar o nome é <b>mudar a missão</b>.'],
+['L2','Abrão já tinha <b>noventa e nove anos</b> e ainda esperava o filho prometido, quando Deus fez com ele uma <b>aliança</b>, em Gênesis, capítulo dezessete.'],
+['L3','Em hebraico, <b>Avrám</b> quer dizer <b>pai exaltado</b>. E <b>Avrahám</b> é entendido como <b>pai de uma multidão</b> de povos. Não te chamarás mais Abrão, diz o versículo cinco.'],
+['L4','Sarai também mudou: virou <b>Sara</b>. Os dois nomes vêm de <b>sar</b>, que é príncipe. Uma explicação do Talmude diz: Sarai era princesa do seu povo; Sara, <b>princesa do mundo inteiro</b>.'],
+['L5','E repara: nos dois nomes entra a mesma letra, o <b>hê</b>. A Bíblia não explica o porquê. Mas uma <b>tradição judaica</b> conta uma história curiosa.'],
+['L6','Conta o antigo midrash <b>Gênesis Rabá</b> que o <b>yod</b>, a letra que saiu de Sarai, reclamou por ser a menor de todas. E Deus a colocou no começo do nome de <b>Josué</b>.'],
+['L7','E a Bíblia repete esse gesto: <b>Jacó</b> virou <b>Israel</b>. E Jesus olhou para Simão e disse: tu te chamarás <b>Cefas</b>, que quer dizer <b>pedra</b>.'],
+['L8','Deus não só conhece o seu nome. Ele sabe <b>quem você pode ser</b>. Você sabia disso? <b>Comenta e segue</b> pra mais segredos da fé!']];
+var T={},TL={lines:[]},CHK=[],WC={};
+window.__retime=function(d){var t=.3;TL.lines=[];WC={};LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;buildCaps();};
+window.__timeline=function(){return TL;};
+function buildCaps(){CHK=[];var C=window.CAPS||{};TL.lines.forEach(function(l){var ws=C[l.id];if(!ws)return;var cur=[],len=0;
+ function flush(){if(cur.length)CHK.push({ws:cur.map(function(w){return {w:w.w,b:w.b,t:l.t0+w.t};})});cur=[];len=0;}
+ ws.forEach(function(w,i){if(len+w.w.length>34&&cur.length)flush();cur.push(w);len+=w.w.length+1;var end=/[.!?:;]$/.test(w.w)||(/,$/.test(w.w)&&len>=18);if(end)flush();});flush();
+ CHK.filter(function(c){return c.l===undefined;}).forEach(function(c){c.l=l.id;c.end=l.t0+l.dur+.25;});});
+ for(var i=0;i<CHK.length;i++){CHK[i].t0=CHK[i].ws[0].t-.12;var nx=CHK[i+1];CHK[i].t1=(nx&&nx.l===CHK[i].l)?nx.ws[0].t-.12:CHK[i].end;}}
+// tempo (absoluto) da palavra falada: WT('L2','tertuliano') — sincroniza animações com caps.json
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');}
+function WT(id,w,k){var key=id+w+(k||1);if(WC[key]!==undefined)return WC[key];var ws=(window.CAPS||{})[id],r=T[id],n=0;if(ws)for(var i=0;i<ws.length;i++){if(norm(ws[i].w).indexOf(norm(w))===0){n++;if(n>=(k||1)){r=T[id]+ws[i].t;break;}}}WC[key]=r;return r;}
+function LW(id,w,k){return WT(id,w,k)-T[id];}
+function glow(X,Y,r,col,a){if(a<=0)return;var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
+function rr(X,Y,w,h,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath();}
+function txt(s,X,Y,font,col,al,sh){x.save();x.font=font;x.textAlign=al||'center';x.fillStyle=col;if(sh){x.shadowColor=sh;x.shadowBlur=18;}x.fillText(s,X,Y);x.restore();}
+function star(X,Y,r,a){x.save();x.globalAlpha*=a;x.fillStyle='#fff8e0';x.beginPath();for(var i=0;i<8;i++){var rr2=i%2?r*.35:r,an=i*PI/4-PI/2;x.lineTo(X+Math.cos(an)*rr2,Y+Math.sin(an)*rr2);}x.fill();x.restore();}
+var FLOOR=860;
+// fundo da paleta
+var bg=document.createElement('canvas');bg.width=W;bg.height=H;(function(){var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.35,40,W/2,H*.5,H*.9);g.addColorStop(0,'#8a6230');g.addColorStop(.45,'#4a3218');g.addColorStop(1,'#1c1208');b.fillStyle=g;b.fillRect(0,0,W,H);
+ for(var i=0;i<7000;i++){b.fillStyle='rgba('+(rnd()>.5?'255,240,201':'0,0,0')+','+(rnd()*.05)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}})();
+var PRT=[];for(var i=0;i<70;i++)PRT.push([rnd()*W,rnd()*H,1.5+rnd()*4,rnd()*6,.3+rnd()*.8,rnd()<.35]);
+function rays(t){x.save();x.globalCompositeOperation='lighter';for(var k=0;k<6;k++){var a0=-.5+k*.2+Math.sin(t*.3+k)*.04;x.fillStyle='rgba(255,240,201,0.035)';x.beginPath();x.moveTo(360,-80);x.lineTo(360+Math.tan(a0)*1500,1400);x.lineTo(360+Math.tan(a0+.07)*1500,1400);x.fill();}x.restore();}
+function particles(t){PRT.forEach(function(p){var yy=(p[1]-t*8*p[4]+H*2)%H;var xx=p[0]+Math.sin(t*.8+p[3])*14;
+ if(p[5])glow(xx,yy,p[2]*3.2,'rgba(255,209,102,A)',.5);else{x.fillStyle='rgba(255,240,201,.45)';x.beginPath();x.arc(xx,yy,p[2]*.6,0,7);x.fill();}});}
+function popS(lt,t0){return back(lin(lt,t0,t0+.45));}
+function sand(c1,c2,y){var g=x.createLinearGradient(0,y,0,H);g.addColorStop(0,c1);g.addColorStop(1,c2);x.fillStyle=g;x.fillRect(0,y,W,H-y);x.fillStyle='rgba(255,240,200,.12)';for(var i=0;i<60;i++)x.fillRect((i*137)%W,y+10+(i*53)%120,3,2);}
+function dune(y0,amp,col,ph){x.fillStyle=col;x.beginPath();x.moveTo(0,FLOOR);for(var i=0;i<=24;i++){var xx=i*30;x.lineTo(xx,y0-Math.sin(i*.35+ph)*amp-Math.sin(i*.13+ph*2)*amp*.6);}x.lineTo(W,FLOOR);x.fill();}
+function tent(X,Y,s,lit){x.save();x.translate(X,Y);x.scale(s,s);x.fillStyle='#5a3418';x.beginPath();x.moveTo(-150,0);x.lineTo(-90,-120);x.lineTo(90,-120);x.lineTo(150,0);x.fill();
+ x.fillStyle='#7a4a22';x.beginPath();x.moveTo(-90,-120);x.lineTo(0,-150);x.lineTo(90,-120);x.fill();x.strokeStyle='rgba(255,220,160,.25)';x.lineWidth=3;for(var i=-2;i<=2;i++){x.beginPath();x.moveTo(i*30,-120);x.lineTo(i*50,0);x.stroke();}
+ x.fillStyle=lit?'#ffb347':'#2a160a';x.beginPath();x.moveTo(-30,0);x.lineTo(0,-80);x.lineTo(30,0);x.fill();if(lit)glow(0,-30,90,'rgba(255,190,90,A)',.5);
+ x.strokeStyle='#3a2210';x.lineWidth=3;x.beginPath();x.moveTo(-150,0);x.lineTo(-190,-60);x.moveTo(150,0);x.lineTo(190,-60);x.stroke();x.restore();}
+function camel(X,Y,s){x.save();x.translate(X,Y);x.scale(s,s);x.fillStyle='#3a2210';x.beginPath();x.ellipse(0,-30,60,26,0,0,7);x.fill();x.beginPath();x.ellipse(-8,-52,26,18,0,0,7);x.fill();
+ x.beginPath();x.moveTo(44,-36);x.quadraticCurveTo(70,-70,66,-96);x.lineTo(80,-100);x.quadraticCurveTo(92,-96,90,-88);x.lineTo(76,-86);x.quadraticCurveTo(82,-60,58,-24);x.fill();x.fillRect(-56,-12,112,12);x.restore();}
+function stars(t,n,y1){for(var i=0;i<n;i++){var sx=(i*97.3)%W,sy=320+(i*61.7)%(y1-320);star(sx,sy,1.5+(i%4),.35+.35*Math.sin(t*2+i*1.3));}}
+function heb(chars,X,Y,size,cols,gap){/* desenha da direita para a esquerda */x.save();x.font='700 '+size+'px HB';x.textAlign='center';var px=X;for(var i=0;i<chars.length;i++){x.fillStyle=cols[i]||'#4a2e10';if(cols[i]&&cols[i]!=='#4a2e10'){x.shadowColor=cols[i];x.shadowBlur=20;}else x.shadowBlur=0;x.fillText(chars[i],px,Y);px-=gap;}x.restore();}
+// ---------- cena 1: noite no deserto, tenda iluminada ----------
+function sc1(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#0e1030');sky.addColorStop(1,'#5a3a50');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);stars(t,60,640);
+ glow(160,420,80,'rgba(255,245,220,A)',.5);x.fillStyle='#fff6e0';x.beginPath();x.arc(160,420,28,0,7);x.fill();x.fillStyle='#141432';x.beginPath();x.arc(174,410,25,0,7);x.fill();
+ dune(690,30,'#4a3020',0);dune(760,24,'#6b4a24',2);sand('#8a6230','#1c1208',FLOOR-40);tent(400,FLOOR-30,1,true);
+ var fx=170,fy=FLOOR-20;x.fillStyle='#3a2210';x.fillRect(fx-30,fy-4,60,8);var f=1+.2*Math.sin(t*12);glow(fx,fy-24,90,'rgba(255,160,60,A)',.7);x.fillStyle='#ff9a3c';x.beginPath();x.moveTo(fx-16,fy-4);x.quadraticCurveTo(fx,fy-60*f,fx+16,fy-4);x.fill();x.fillStyle='#ffe08a';x.beginPath();x.moveTo(fx-7,fy-4);x.quadraticCurveTo(fx,fy-32*f,fx+7,fy-4);x.fill();
+ var m=ez(lin(lt,LW('L1','missao')-.3,LW('L1','missao')+.5));if(m>0){glow(400,FLOOR-110,220,'rgba(255,220,140,A)',.45*m);}}
+// ---------- cena 2: pôr do sol, camelos, cajado ----------
+function sc2(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#3a2a5a');sky.addColorStop(.55,'#ff7a4a');sky.addColorStop(1,'#ffd07a');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ glow(520,690,230,'rgba(255,230,150,A)',.9);x.fillStyle='#fff0c0';x.beginPath();x.arc(520,690,64,0,7);x.fill();
+ dune(720,26,'#b06a3a',1);dune(780,20,'#c9884a',3);sand('#d9a25a','#3a2410',FLOOR-40);tent(210,FLOOR-30,.9,false);camel(470,FLOOR-30,1);camel(610,FLOOR-24,.8);
+ x.strokeStyle='#4a2a10';x.lineWidth=8;x.lineCap='round';x.beginPath();x.moveTo(370,FLOOR-30);x.lineTo(352,FLOOR-210);x.quadraticCurveTo(346,FLOOR-240,330,FLOOR-232);x.stroke();
+ var a=lin(lt,LW('L2','alianca')-.3,LW('L2','alianca')+.6);if(a>0){x.save();x.globalCompositeOperation='lighter';for(var k=0;k<7;k++){var an=-PI/2+(k-3)*.22;x.strokeStyle='rgba(255,240,190,'+(.25*a)+')';x.lineWidth=18;x.beginPath();x.moveTo(360,330);x.lineTo(360+Math.cos(an)*600,330+Math.sin(an)*-600);x.stroke();}x.restore();}}
+// ---------- cena 3: céu se enchendo de estrelas (multidão) ----------
+function sc3(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#070a24');sky.addColorStop(1,'#3a2a50');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ var m=lin(lt,LW('L3','multidao')-.3,LW('L3','multidao')+1.6);stars(t,25+Math.floor(160*m),760);if(m>0)glow(360,480,320,'rgba(200,200,255,A)',.15*m);
+ dune(770,18,'#3a2818',1);sand('#5a3e22','#120a04',FLOOR-40);tent(560,FLOOR-30,.7,true);
+ x.fillStyle='#120a04';x.save();x.translate(300,FLOOR-30);x.beginPath();x.moveTo(-26,0);x.lineTo(-20,-110);x.quadraticCurveTo(0,-124,20,-110);x.lineTo(26,0);x.fill();x.beginPath();x.arc(4,-130,17,0,7);x.fill();x.strokeStyle='#120a04';x.lineWidth=6;x.beginPath();x.moveTo(30,0);x.lineTo(46,-150);x.stroke();x.restore();}
+// ---------- cena 4: duas coroas em almofadas ----------
+function crown(X,Y,s,col,gl){x.save();x.translate(X,Y);x.scale(s,s);if(gl)glow(0,-40,140,'rgba(255,220,140,A)',gl);x.fillStyle=col;x.beginPath();x.moveTo(-60,0);x.lineTo(-70,-70);x.lineTo(-35,-35);x.lineTo(0,-85);x.lineTo(35,-35);x.lineTo(70,-70);x.lineTo(60,0);x.fill();
+ x.fillStyle='#c0392b';x.beginPath();x.arc(0,-18,9,0,7);x.fill();x.fillStyle='#2a8a8a';x.beginPath();x.arc(-34,-14,7,0,7);x.arc(34,-14,7,0,7);x.fill();x.fillStyle='rgba(255,255,255,.4)';x.fillRect(-55,-8,110,5);x.restore();}
+function cushion(X,Y,w,col){x.fillStyle=col;rr(X-w/2,Y-34,w,40,16);x.fill();x.fillStyle='rgba(255,255,255,.15)';rr(X-w/2+10,Y-30,w-20,10,6);x.fill();x.fillStyle='#e0952e';[-1,1].forEach(function(d){x.beginPath();x.arc(X+d*w/2,Y-14,7,0,7);x.fill();});}
+function sc4(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#3a2412');g.addColorStop(1,'#8a5a2a');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ x.fillStyle='#6b3a5a';x.beginPath();x.moveTo(0,320);x.quadraticCurveTo(120,480,60,FLOOR);x.lineTo(0,FLOOR);x.fill();x.beginPath();x.moveTo(W,320);x.quadraticCurveTo(600,480,660,FLOOR);x.lineTo(W,FLOOR);x.fill();
+ sand('#6b4a24','#1c1208',FLOOR-40);
+ x.fillStyle='#4a2e14';x.fillRect(110,760,170,FLOOR-760);x.fillRect(400,730,220,FLOOR-730);
+ cushion(195,760,180,'#7a2a4a');crown(195,722,.8,'#d9a640',0);
+ var w=ez(lin(lt,LW('L4','mundo')-.6,LW('L4','mundo')+.4));cushion(510,730,240,'#8a3a1a');crown(510,692,1+.15*w,'#ffd166',.3+.6*w);
+ if(w>0){x.save();x.globalAlpha=w;for(var i=0;i<12;i++){var an=i/12*PI*2+t*.3;x.strokeStyle='rgba(255,230,150,.5)';x.lineWidth=4;x.beginPath();x.moveTo(510+Math.cos(an)*110,650+Math.sin(an)*110);x.lineTo(510+Math.cos(an)*150,650+Math.sin(an)*150);x.stroke();}x.restore();}
+ var s1=lin(lt,LW('L4','povo')-.3,LW('L4','povo')+.3);if(s1>0)txt('do seu povo',195,820,'700 24px P','rgba(255,240,201,'+s1+')');if(w>0)txt('do mundo inteiro',510,820,'700 24px P','rgba(255,209,102,'+w+')');}
+// ---------- cena 5: tábua de pedra com os nomes e o ה brilhando ----------
+function sc5(t,lt){var g=x.createRadialGradient(360,620,30,360,620,420);g.addColorStop(0,'#c9884a');g.addColorStop(1,'#3a2412');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ x.fillStyle='#e9d6b0';rr(120,460,480,330,26);x.fill();x.strokeStyle='#a8641c';x.lineWidth=8;x.stroke();x.fillStyle='rgba(120,80,40,.15)';for(var i=0;i<60;i++)x.fillRect(140+(i*67)%440,480+(i*41)%290,4,4);
+ sand('#8a6230','#1c1208',FLOOR-40);x.fillStyle='#7a5228';x.fillRect(150,790,420,FLOOR-790);
+ var h=lin(lt,LW('L5','he')-.2,LW('L5','he')+.6),gc=h>0?'#e0610c':'#4a2e10';
+ var a=lin(lt,LW('L5','dois')-.3,LW('L5','dois')+.3);if(a>0){x.save();x.globalAlpha=a;heb(['א','ב','ר','ה','ם'],480,600,86,['#4a2e10','#4a2e10','#4a2e10',gc,'#4a2e10'],60);heb(['ש','ר','ה'],420,740,86,['#4a2e10','#4a2e10',gc],60);x.restore();}
+ if(h>0){glow(300,570,80,'rgba(255,180,80,A)',.6*h);glow(300,710,80,'rgba(255,180,80,A)',.6*h);}}
+// ---------- cena 6: o yod que sai de Sarai e vai para o começo de Josué ----------
+function sc6(t,lt){x.fillStyle='#3a2412';x.fillRect(0,300,W,FLOOR-300);glow(360,620,360,'rgba(255,210,140,A)',.3);
+ x.fillStyle='#5a3216';x.fillRect(40,730,640,24);x.fillRect(70,754,26,FLOOR-754);x.fillRect(624,754,26,FLOOR-754);
+ x.fillStyle='#f1dfb5';x.beginPath();x.moveTo(90,520);x.lineTo(630,520);x.lineTo(650,726);x.lineTo(70,726);x.fill();x.fillStyle='#c9a56b';x.beginPath();x.ellipse(72,623,22,104,-.12,0,7);x.fill();x.beginPath();x.ellipse(648,623,22,104,.12,0,7);x.fill();
+ sand('#5a3e22','#120a04',FLOOR-30);
+ // שרי à direita; הושע à esquerda
+ heb(['ש','ר'],590,640,72,['#4a2e10','#4a2e10'],50);heb(['ה','ו','ש','ע'],320,640,72,[],50);
+ var go=ez(lin(lt,LW('L6','colocou')-.6,LW('L6','josue')+.2));var sx=490,sy=640,ex=370,ey=640;var px=lerp(sx,ex,go),py=lerp(sy,ey,go)-Math.sin(go*PI)*120;
+ var cmp=lin(lt,LW('L6','reclamou')-.2,LW('L6','reclamou')+.3);x.save();x.translate(px,py+(go===0?Math.sin(t*14)*3*cmp:0));x.font='700 72px HB';x.textAlign='center';x.fillStyle='#e0610c';x.shadowColor='#ffb347';x.shadowBlur=24;x.fillText('י',0,0);x.restore();
+ if(go>=1){glow(320,620,160,'rgba(255,215,120,A)',.4);txt('Josué',250,700,'700 26px P','#a8641c');}
+ var s=lin(lt,0,.6);txt('Sarai',560,700,'700 26px P','rgba(168,100,28,'+s+')');}
+// ---------- cena 7: o vau do rio (Jacó) → a grande pedra à beira do lago (Cefas) ----------
+function sc7(t,lt){var pd=ez(lin(lt,LW('L7','jesus')-.3,LW('L7','jesus')+.3));
+ if(pd<1){x.save();x.globalAlpha=1-pd;var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#1a1a3a');sky.addColorStop(1,'#d98a5a');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+  x.fillStyle='#5a4a3a';x.beginPath();x.moveTo(0,650);x.lineTo(200,560);x.lineTo(380,640);x.lineTo(560,570);x.lineTo(W,640);x.lineTo(W,720);x.lineTo(0,720);x.fill();
+  var rv=x.createLinearGradient(0,700,0,FLOOR);rv.addColorStop(0,'#4fa3b8');rv.addColorStop(1,'#1f5a6a');x.fillStyle=rv;x.beginPath();x.moveTo(0,720);x.quadraticCurveTo(360,690,W,720);x.lineTo(W,800);x.quadraticCurveTo(360,770,0,800);x.fill();
+  for(var i=0;i<6;i++){x.fillStyle='#8a7a6a';x.beginPath();x.ellipse(120+i*95,752+(i%2)*10,30,14,0,0,7);x.fill();}for(var i=0;i<8;i++){x.fillStyle='rgba(255,255,255,.35)';x.fillRect((i*97+t*40)%W,730+(i%3)*18,36,3);}
+  sand('#6b5a3a','#1c1208',800);glow(360,420,160,'rgba(255,240,200,A)',.35*lin(lt,LW('L7','israel')-.2,LW('L7','israel')+.4));x.restore();}
+ if(pd>0){x.save();x.globalAlpha=pd;var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#5ec8e8');sky.addColorStop(1,'#ffe1a0');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+  x.fillStyle='#8a9a6a';x.beginPath();x.moveTo(0,600);x.quadraticCurveTo(300,540,W,600);x.lineTo(W,640);x.lineTo(0,640);x.fill();
+  var lk=x.createLinearGradient(0,630,0,780);lk.addColorStop(0,'#3fa3b8');lk.addColorStop(1,'#1f6a7a');x.fillStyle=lk;x.fillRect(0,630,W,150);for(var i=0;i<8;i++){x.fillStyle='rgba(255,255,255,.4)';x.fillRect((i*89+t*25)%W,650+(i%4)*28,44,3);}
+  sand('#d9b77a','#3a2410',770);x.fillStyle='#7a6a5a';x.beginPath();x.moveTo(250,FLOOR);x.quadraticCurveTo(240,640,370,600);x.quadraticCurveTo(500,610,500,FLOOR);x.fill();x.fillStyle='rgba(255,255,255,.18)';x.beginPath();x.moveTo(280,FLOOR-20);x.quadraticCurveTo(270,680,360,630);x.lineTo(370,650);x.quadraticCurveTo(300,700,300,FLOOR-20);x.fill();
+  var p=lin(lt,LW('L7','pedra')-.2,LW('L7','pedra')+.5);if(p>0)glow(375,700,200,'rgba(255,220,140,A)',.5*p);
+  x.fillStyle='#6b4423';x.beginPath();x.moveTo(520,FLOOR-10);x.lineTo(660,FLOOR-10);x.lineTo(640,FLOOR-50);x.lineTo(540,FLOOR-50);x.fill();x.fillRect(588,FLOOR-130,6,80);x.fillStyle='#f5ead6';x.beginPath();x.moveTo(596,FLOOR-126);x.lineTo(640,FLOOR-60);x.lineTo(596,FLOOR-58);x.fill();x.restore();}}
+// ---------- cena 8: nascer do sol no deserto, pegadas até o horizonte ----------
+function sc8(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#2a2a5a');sky.addColorStop(.5,'#ff8a5a');sky.addColorStop(1,'#ffe1a0');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ var u=ez(lin(lt,0,4));glow(360,700,300,'rgba(255,235,170,A)',.9);x.fillStyle='#fff4cf';x.beginPath();x.arc(360,720-60*u,70,0,7);x.fill();
+ dune(720,20,'#c9884a',.5);sand('#e0ad6a','#3a2410',730);
+ for(var i=0;i<12;i++){var k=i/12,yy=FLOOR-10-k*120,xx=360+Math.sin(k*5)*60*(1-k)+(i%2?14:-14)*(1-k*.7),s=1-k*.75;var ap=lin(lt,i*.25,i*.25+.3);if(ap<=0)continue;x.fillStyle='rgba(120,70,30,'+(.6*ap)+')';x.beginPath();x.ellipse(xx,yy,9*s,15*s,0,0,7);x.fill();}}
+var SC=[sc1,sc2,sc3,sc4,sc5,sc6,sc7,sc8];
+function OV(t,L){pop($('c1'),fade(t,WT('L1','letra')-.2,L.L1e+.2));pop($('c2'),fade(t,WT('L2','noventa')-.1,L.L2e+.2));
+ pop($('c3a'),fade(t,WT('L3','avram')-.2,WT('L3','avraham')-.25));pop($('c3b'),fade(t,WT('L3','avraham')-.1,L.L3e+.2));
+ pop($('c4'),fade(t,WT('L4','sara')-.2,L.L4e+.2));pop($('c5'),fade(t,WT('L5','he')-.2,L.L5e+.2));pop($('c6'),fade(t,WT('L6','midrash')-.1,L.L6e+.2));
+ pop($('c7a'),fade(t,WT('L7','jaco')-.2,WT('L7','jesus')-.2));pop($('c7b'),fade(t,WT('L7','cefas')-.2,L.L7e+.2));}
+
+var OFF=document.createElement('canvas');OFF.width=W;OFF.height=H;var ox=OFF.getContext('2d');
+function frame(t){var L=T;x=MAIN;x.drawImage(bg,0,0);rays(t);
+ for(var i=0;i<8;i++){var id='L'+(i+1),a=(i<7)?fade(t,L[id]-.25,L[id+'e']+.3,.35):fade(t,L.L8-.25,L.END+2,.35);if(a<=0)continue;
+  ox.clearRect(0,0,W,H);x=ox;SC[i](t,t-L[id],L);x=MAIN;ox.save();ox.globalCompositeOperation='destination-in';var mg=ox.createLinearGradient(0,290,0,H);mg.addColorStop(0,'rgba(0,0,0,0)');mg.addColorStop(.09,'rgba(0,0,0,1)');mg.addColorStop(.62,'rgba(0,0,0,1)');mg.addColorStop(1,'rgba(0,0,0,0)');ox.fillStyle=mg;ox.fillRect(0,0,W,H);ox.restore();
+  MAIN.save();MAIN.globalAlpha=a;MAIN.drawImage(OFF,0,0);MAIN.restore();}
+ particles(t);OV(t,L);pop($('q'),fade(t,WT('L8','voce'),L.END+2));
+ var vg=x.createRadialGradient(W/2,H/2,H*.32,W/2,H/2,H*.78);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.5)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ var cur=null;for(var i=0;i<CHK.length;i++)if(t>=CHK[i].t0&&t<CHK[i].t1){cur=CHK[i];break;}
+ if(cur){$('cap').innerHTML='<span class="box">'+cur.ws.map(function(w){return '<i class="'+(w.b?'b ':'')+(t<w.t-.05?'f':'')+'">'+w.w+'</i>';}).join(' ')+'</span>';var u=lin(t,cur.t0,cur.t0+.18);$('cap').style.opacity=u;$('cap').style.transform='translateY('+((1-u)*10)+'px)';}
+ else $('cap').innerHTML='';}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>
