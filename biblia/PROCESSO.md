@@ -33,6 +33,10 @@ hebraico/grego mostrada na tela; (3) prova externa (arqueologia, historiadores, 
 visualizações em poucas horas — o melhor do canal. Por dia: **pelo menos 2 vídeos de Igreja/fé** (Ritos e costumes,
 Como viver a fé, História do cristianismo) e no máximo 1 dos outros tipos. Nos dias de 2 vídeos: 1 de Igreja + 1 livre
 (ou 2 de Igreja). Revise essa proporção quando houver números de mais vídeos (compare as visualizações no vidIQ).
+**TESTE (dono, 24/11): pelo menos 2 vídeos por dia de RITOS E COSTUMES DA IGREJA** (gestos, objetos, cores, tempos
+litúrgicos, partes da missa: água benta, incenso, ajoelhar, Advento/coroa, sino na consagração, velas, cinzas…). Nos dias
+de 3 vídeos: 2 de ritos/costumes + 1 livre; nos dias de 2 vídeos: os 2 de ritos/costumes. Os 2 de ritos no mesmo dia devem
+tratar de coisas diferentes (ex.: um gesto + um objeto/tempo litúrgico, não 2 sobre a mesma parte da missa).
 Ainda assim, não repetir o mesmo subtipo no mesmo dia (ex.: 2 de "ritos da missa"):
 - **Por trás da história** (assunto pouco discutido, com virada): Elias não subiu "na carruagem" (subiu no redemoinho) ✅ ·
   por que Jesus falava em parábolas (Mt 13:10-17) · a Arca de Noé: leitura literal × leitura simbólica · por que Jonas fugiu
@@ -141,7 +145,7 @@ Fluxo: `vidiq_video_upload` (URL raw do GitHub) → `vidiq_social_post_draft_cre
 - Orçamento ElevenLabs (Creator, ~121 mil caracteres/mês; RanaiTech usa ~13 mil/mês em dias alternados): cada vídeo
   ≈1.000–1.200 caracteres. Confira o saldo (`account_get_usage`) antes; se faltar menos de 1.300 × (vídeos de hoje)
   até o limite, faça só o que couber e avise o dono.
-- Os vídeos do dia: seguir a PRIORIDADE da seção 2.1 (maioria de Igreja/fé), subtipos diferentes, **paletas diferentes
+- Os vídeos do dia: seguir a PRIORIDADE e o TESTE da seção 2.1 (pelo menos 2 de ritos e costumes da Igreja), subtipos diferentes, **paletas diferentes
   entre si e do último vídeo**. Tudo em 2D.
 - Arquivos: `biblia/videos/AAAA-MM-DD-<slug>/` com `<slug>.mp4`, `legenda.txt` (com a paleta e "2D"/"3D"), `fontes.txt`,
   a página .html, durs.json, timeline.json. Apague frames/, aud/, mp3/ e cópias de fontes/ferramentas antes do commit.
