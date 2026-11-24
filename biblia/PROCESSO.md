@@ -29,17 +29,26 @@ hebraico/grego mostrada na tela; (3) prova externa (arqueologia, historiadores, 
 - Mapas: lugares da Bíblia hoje (Babilônia = Iraque, Ninive = Mossul, Éfeso = Turquia…).
 
 ### 2.1 Linha editorial ampliada (pedido do dono, 23/11): NÃO só hebraico/grego
-Misture os tipos ao longo da semana (nunca 2 do mesmo tipo no mesmo dia):
+**PRIORIDADE (dono, 23/11): curiosidades da Igreja e da religião.** O vídeo das cores da missa passou de 1.000
+visualizações em poucas horas — o melhor do canal. Por dia: **pelo menos 2 vídeos de Igreja/fé** (Ritos e costumes,
+Como viver a fé, História do cristianismo) e no máximo 1 dos outros tipos. Nos dias de 2 vídeos: 1 de Igreja + 1 livre
+(ou 2 de Igreja). Revise essa proporção quando houver números de mais vídeos (compare as visualizações no vidIQ).
+Ainda assim, não repetir o mesmo subtipo no mesmo dia (ex.: 2 de "ritos da missa"):
 - **Por trás da história** (assunto pouco discutido, com virada): Elias não subiu "na carruagem" (subiu no redemoinho) ✅ ·
   por que Jesus falava em parábolas (Mt 13:10-17) · a Arca de Noé: leitura literal × leitura simbólica · por que Jonas fugiu
   para Társis · quem eram os magos · por que Deus mudou o nome de Abrão, Sarai, Jacó · o que era o maná · Enoque "andou com Deus".
 - **Ritos e costumes da Igreja** (de onde veio, quando surgiu, como mudou): por que o padre muda a cor da roupa (cores litúrgicas)
   · por que se faz o sinal da cruz · água benta na entrada · por que se ajoelha · origem do terço/rosário · o Advento e a coroa ·
-  por que domingo é o dia do Senhor · por que a missa era em latim · origem do Pai-Nosso · como surgiram os sacramentos.
+  por que domingo é o dia do Senhor · por que a missa era em latim · origem do Pai-Nosso · como surgiram os sacramentos ·
+  cores da missa ✅ · por que o padre não casa (celibato: quando virou regra) · o que é a hóstia e por que é redonda ·
+  por que o sino toca na consagração · incenso: de onde vem · por que a Quaresma tem 40 dias · Quarta-feira de Cinzas ·
+  por que o Natal é em 25 de dezembro · o presépio (São Francisco, 1223) · por que o Papa usa branco · como é escolhido
+  um Papa (conclave, fumaça) · o que é um santo e como alguém vira santo · por que as igrejas apontam para o leste ·
+  o que significa "Amém" no fim da oração · por que se bate no peito no "Senhor, tende piedade" · velas no altar.
 - **Como viver a fé (prático)**: como se comportar na missa (postura, celular, comunhão) · como rezar melhor (método simples,
   com base em Mt 6:5-13) · o que significa cada parte da missa · como ler a Bíblia pela primeira vez.
 - **História do cristianismo**: quando e por que surgiu · por que "cristãos" (At 11:26, Antioquia) · o peixe (ΙΧΘΥΣ) como
-  símbolo secreto · catacumbas · como a Bíblia foi montada · por que existem Bíblias católica e protestante com nº de livros diferente.
+  símbolo secreto ✅ · catacumbas · como a Bíblia foi montada · por que existem Bíblias católica e protestante com nº de livros diferente.
 - **Palavras originais e arqueologia** (a linha antiga continua, mas no máximo 1 por dia).
 **Fuja do batido:** antes de escolher, pense "isso já é muito postado?" (ex.: Davi e Golias, nascimento de Jesus, 10
 pragas, Sansão). Prefira o detalhe que quase ninguém conhece. Busque também `curiosidades bíblicas pouco conhecidas` e
@@ -89,7 +98,7 @@ Linguagem de leigo, termos explicados na mesma frase, números por extenso na fa
 ## 5. Produção
 - Voz ElevenLabs **O Viajante** `urHXVUOxm0ZDI0ypEYDd`, `eleven_v4`, 1 take por fala; baixar mp3 → `mp3/L1.mp3…`.
 - `python3 ../ranaitech/tools/prep_audio.py <pasta>` → aud/ + durs.json.
-- Página: copiar **`videos/2026-11-23-camelo-agulha/bib.html`** (modelo atual, com a legenda nova) — os antigos `exemplos/01-saliva-cego/bib.html` (2D, pergaminho escuro, poeira dourada, letras hebraicas com a
+- Página: copiar **`videos/2026-11-23-peixe-ichthys/bib.html`** (modelo atual: cenas ricas + legenda karaokê) — os antigos `exemplos/01-saliva-cego/bib.html` (2D, pergaminho escuro, poeira dourada, letras hebraicas com a
   fonte FreeSerifBold, títulos em Lora) e trocar LINES, cartões e desenhos de cada cena. Sem faixa/data na tela.
 - **Legenda da fala (pedido do dono, 23/11, revisado):** blocos de ATÉ 2 LINHAS (~34 letras), que ficam na tela o tempo da
   frase e trocam acompanhando a voz; as palavras "acendem" conforme são faladas (karaokê: ainda não faladas a 45% de
@@ -132,8 +141,8 @@ Fluxo: `vidiq_video_upload` (URL raw do GitHub) → `vidiq_social_post_draft_cre
 - Orçamento ElevenLabs (Creator, ~121 mil caracteres/mês; RanaiTech usa ~13 mil/mês em dias alternados): cada vídeo
   ≈1.000–1.200 caracteres. Confira o saldo (`account_get_usage`) antes; se faltar menos de 1.300 × (vídeos de hoje)
   até o limite, faça só o que couber e avise o dono.
-- Os vídeos do dia: tipos diferentes (seção 2.1), **paletas diferentes entre si e do último vídeo**, e pelo menos 1 em 3D
-  quando o tema pedir.
+- Os vídeos do dia: seguir a PRIORIDADE da seção 2.1 (maioria de Igreja/fé), subtipos diferentes, **paletas diferentes
+  entre si e do último vídeo**. Tudo em 2D.
 - Arquivos: `biblia/videos/AAAA-MM-DD-<slug>/` com `<slug>.mp4`, `legenda.txt` (com a paleta e "2D"/"3D"), `fontes.txt`,
   a página .html, durs.json, timeline.json. Apague frames/, aud/, mp3/ e cópias de fontes/ferramentas antes do commit.
   Marque o tema como ✅ na seção 2/2.1.
