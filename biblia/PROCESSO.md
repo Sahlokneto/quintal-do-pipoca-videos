@@ -42,7 +42,7 @@ Ainda assim, não repetir o mesmo subtipo no mesmo dia (ex.: 2 de "ritos da miss
   por que Jesus falava em parábolas (Mt 13:10-17) · a Arca de Noé: leitura literal × leitura simbólica · por que Jonas fugiu
   para Társis · quem eram os magos · por que Deus mudou o nome de Abrão, Sarai, Jacó ✅ · o que era o maná · Enoque "andou com Deus".
 - **Ritos e costumes da Igreja** (de onde veio, quando surgiu, como mudou): por que o padre muda a cor da roupa (cores litúrgicas)
-  · por que se faz o sinal da cruz ✅ · água benta na entrada · por que se ajoelha · origem do terço/rosário · o Advento e a coroa ·
+  · por que se faz o sinal da cruz ✅ · água benta na entrada ✅ · por que se ajoelha · origem do terço/rosário · o Advento e a coroa ✅ ·
   por que domingo é o dia do Senhor · por que a missa era em latim · origem do Pai-Nosso · como surgiram os sacramentos ·
   cores da missa ✅ · por que o padre não casa (celibato: quando virou regra) · o que é a hóstia e por que é redonda ·
   por que o sino toca na consagração · incenso: de onde vem · por que a Quaresma tem 40 dias · Quarta-feira de Cinzas ·

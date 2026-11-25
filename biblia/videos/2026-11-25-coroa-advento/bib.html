@@ -1,0 +1,199 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(../../tools/Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(../../tools/Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(../../tools/Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(../../tools/FreeSerifBold.ttf)}
+:root{--c1:#fbf5ff;--c2:#ecdcff;--ink:#2a0f3d;--r1:#6a1b9a;--r2:#c2185b;--em:#8e24aa;--sub:#5a3a6e;--capbg:rgba(14,4,24,.86);--hl:#e6c3ff;--b1:#8e24aa;--b2:#ec407a}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.sc{display:inline-block;padding:16px 30px 18px;border-radius:20px;background:linear-gradient(160deg,var(--c1),var(--c2));color:var(--ink);box-shadow:0 14px 40px rgba(0,0,0,.55),0 0 0 4px rgba(255,209,102,.85);max-width:620px}
+.sc .r{display:inline-block;font-family:P;font-size:20px;letter-spacing:3px;color:#fff;font-weight:700;background:linear-gradient(90deg,var(--r1),var(--r2));padding:4px 14px;border-radius:30px;margin-bottom:8px}
+.sc .v{font-family:L;font-size:42px;font-weight:700;line-height:1.15}
+.sc .v em{font-style:normal;color:var(--em)}
+.sc .s{font-family:P;font-size:23px;color:var(--sub);margin-top:6px}
+.sc .g{font-family:HB;font-size:62px;line-height:1.05;color:var(--em)}
+.cd{top:132px}
+#q{top:160px;left:60px;width:600px;font-family:L;font-size:54px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:18px;font-family:P;font-size:34px;color:var(--hl)}
+#q .btn{display:inline-block;margin-top:18px;padding:16px 46px;border-radius:50px;background:linear-gradient(90deg,var(--b1),var(--b2));font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:878px;left:36px;width:600px;text-align:center;opacity:1}
+#cap .box{display:inline-block;padding:10px 24px 12px;border-radius:18px;background:var(--capbg);border:2px solid rgba(255,209,102,.45);font-size:40px;font-weight:700;line-height:1.22;text-shadow:0 3px 0 #000;max-width:560px}
+#cap i{font-style:normal}
+#cap i.f{opacity:.45}
+#cap i.b{color:#ffd166}
+</style></head><body>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="c1" class="lay cd"><div class="sc"><div class="r">COROA DO ADVENTO</div><div class="v">já teve <em>24 velas</em></div><div class="s">e nasceu numa casa de meninos pobres</div></div></div>
+<div id="c2" class="lay cd"><div class="sc"><div class="r">ADVENTO = “CHEGADA”</div><div class="v"><em>4 semanas</em> antes do Natal</div><div class="s">Idade Média: jejum e espera</div></div></div>
+<div id="c3" class="lay cd"><div class="sc"><div class="r">HAMBURGO · ALEMANHA · 1839</div><div class="v">o pastor <em>Johann Wichern</em></div><div class="s">uma casa de acolhida para meninos de rua</div></div></div>
+<div id="c4" class="lay cd"><div class="sc"><div class="r">“JÁ É NATAL?”</div><div class="v">uma <em>vela</em> por dia</div><div class="s">numa grande roda de madeira</div></div></div>
+<div id="c5" class="lay cd"><div class="sc"><div class="r">NAS CASAS</div><div class="v">sobraram <em>4 velas</em></div><div class="s">uma para cada domingo</div></div></div>
+<div id="c6" class="lay cd"><div class="sc"><div class="r">COLÔNIA · 1925</div><div class="v">os <em>católicos</em> adotam</div><div class="s">e o costume ganha o mundo</div></div></div>
+<div id="c7" class="lay cd"><div class="sc"><div class="r">OS SÍMBOLOS</div><div class="v"><em>círculo</em> · verde · <em>rosa</em></div><div class="s">amor sem fim · esperança · alegria (Gaudete)</div></div></div>
+<div id="c8" class="lay cd"><div class="sc"><div class="r">1 CORÍNTIOS 16,22 · APOCALIPSE 22,20</div><div class="g">μαρανα θα</div><div class="v"><em>Vem</em>, Senhor Jesus!</div></div></div>
+<div id="q" class="lay">Você sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>/*CAPS*/window.CAPS={"L1": [{"w": "Você", "b": false, "t": 0.0}, {"w": "sabia", "b": false, "t": 0.317}, {"w": "que", "b": false, "t": 0.687}, {"w": "a", "b": false, "t": 0.952}, {"w": "coroa", "b": true, "t": 1.11}, {"w": "do", "b": true, "t": 1.48}, {"w": "Advento", "b": true, "t": 1.692}, {"w": "já", "b": false, "t": 2.167}, {"w": "teve", "b": false, "t": 2.379}, {"w": "até", "b": false, "t": 2.696}, {"w": "vinte", "b": true, "t": 2.96}, {"w": "e", "b": true, "t": 3.331}, {"w": "quatro", "b": true, "t": 3.489}, {"w": "velas?", "b": true, "t": 3.912}, {"w": "E", "b": false, "t": 4.455}, {"w": "que", "b": false, "t": 4.603}, {"w": "ela", "b": false, "t": 4.85}, {"w": "não", "b": false, "t": 5.097}, {"w": "nasceu", "b": false, "t": 5.345}, {"w": "numa", "b": false, "t": 5.74}, {"w": "catedral,", "b": false, "t": 6.036}, {"w": "mas", "b": false, "t": 6.7}, {"w": "numa", "b": false, "t": 6.963}, {"w": "casa", "b": true, "t": 7.278}, {"w": "de", "b": true, "t": 7.593}, {"w": "meninos", "b": true, "t": 7.803}, {"w": "pobres?", "b": true, "t": 8.275}], "L2": [{"w": "O", "b": false, "t": 0.0}, {"w": "Advento", "b": false, "t": 0.181}, {"w": "são", "b": false, "t": 0.722}, {"w": "as", "b": false, "t": 1.023}, {"w": "quatro", "b": false, "t": 1.264}, {"w": "semanas", "b": false, "t": 1.745}, {"w": "antes", "b": false, "t": 2.287}, {"w": "do", "b": false, "t": 2.708}, {"w": "Natal.", "b": false, "t": 2.949}, {"w": "Na", "b": false, "t": 3.55}, {"w": "Idade", "b": false, "t": 3.791}, {"w": "Média,", "b": false, "t": 4.213}, {"w": "era", "b": false, "t": 4.815}, {"w": "um", "b": false, "t": 5.105}, {"w": "tempo", "b": false, "t": 5.337}, {"w": "de", "b": false, "t": 5.742}, {"w": "jejum", "b": true, "t": 5.974}, {"w": "e", "b": true, "t": 6.38}, {"w": "espera,", "b": true, "t": 6.553}, {"w": "olhando", "b": false, "t": 7.195}, {"w": "também", "b": false, "t": 7.621}, {"w": "para", "b": false, "t": 8.0}, {"w": "a", "b": false, "t": 8.284}, {"w": "volta", "b": false, "t": 8.426}, {"w": "de", "b": false, "t": 8.757}, {"w": "Cristo.", "b": false, "t": 8.946}], "L3": [{"w": "Em", "b": false, "t": 0.0}, {"w": "mil", "b": false, "t": 0.185}, {"w": "oitocentos", "b": false, "t": 0.417}, {"w": "e", "b": false, "t": 0.972}, {"w": "trinta", "b": false, "t": 1.111}, {"w": "e", "b": false, "t": 1.482}, {"w": "nove,", "b": false, "t": 1.621}, {"w": "em", "b": false, "t": 2.065}, {"w": "Hamburgo,", "b": true, "t": 2.534}, {"w": "na", "b": false, "t": 3.945}, {"w": "Alemanha,", "b": false, "t": 4.441}, {"w": "o", "b": false, "t": 5.925}, {"w": "pastor", "b": false, "t": 6.026}, {"w": "Johann", "b": true, "t": 6.297}, {"w": "Wichern", "b": true, "t": 6.567}, {"w": "cuidava", "b": false, "t": 6.871}, {"w": "de", "b": false, "t": 7.175}, {"w": "meninos", "b": false, "t": 7.31}, {"w": "de", "b": false, "t": 7.614}, {"w": "rua", "b": false, "t": 7.749}, {"w": "numa", "b": false, "t": 7.918}, {"w": "casa", "b": false, "t": 8.121}, {"w": "de", "b": false, "t": 8.324}, {"w": "acolhida.", "b": false, "t": 8.459}], "L4": [{"w": "As", "b": false, "t": 0.0}, {"w": "crianças", "b": false, "t": 0.218}, {"w": "perguntavam", "b": false, "t": 0.765}, {"w": "todo", "b": false, "t": 1.475}, {"w": "dia:", "b": false, "t": 1.802}, {"w": "já", "b": true, "t": 2.25}, {"w": "é", "b": true, "t": 2.577}, {"w": "Natal?", "b": true, "t": 2.822}, {"w": "Então", "b": false, "t": 3.595}, {"w": "ele", "b": false, "t": 4.018}, {"w": "pegou", "b": false, "t": 4.321}, {"w": "uma", "b": false, "t": 4.744}, {"w": "grande", "b": false, "t": 5.046}, {"w": "roda", "b": true, "t": 5.53}, {"w": "de", "b": true, "t": 5.893}, {"w": "madeira", "b": true, "t": 6.134}, {"w": "e", "b": false, "t": 6.679}, {"w": "colocou", "b": false, "t": 6.86}, {"w": "uma", "b": false, "t": 7.404}, {"w": "vela", "b": false, "t": 7.706}, {"w": "para", "b": false, "t": 8.069}, {"w": "cada", "b": false, "t": 8.432}, {"w": "dia", "b": false, "t": 8.795}, {"w": "até", "b": false, "t": 9.097}, {"w": "o", "b": false, "t": 9.399}, {"w": "Natal.", "b": false, "t": 9.581}], "L5": [{"w": "A", "b": false, "t": 0.0}, {"w": "cada", "b": false, "t": 0.5}, {"w": "dia,", "b": false, "t": 1.5}, {"w": "acendia", "b": false, "t": 2.62}, {"w": "mais", "b": false, "t": 3.066}, {"w": "uma.", "b": false, "t": 3.363}, {"w": "Com", "b": false, "t": 3.78}, {"w": "o", "b": false, "t": 4.611}, {"w": "tempo,", "b": false, "t": 5.11}, {"w": "a", "b": false, "t": 6.56}, {"w": "roda", "b": false, "t": 6.624}, {"w": "ficou", "b": false, "t": 6.751}, {"w": "grande", "b": false, "t": 6.899}, {"w": "demais", "b": false, "t": 7.069}, {"w": "para", "b": false, "t": 7.238}, {"w": "as", "b": false, "t": 7.366}, {"w": "casas,", "b": false, "t": 7.45}, {"w": "e", "b": false, "t": 7.74}, {"w": "sobraram", "b": false, "t": 7.832}, {"w": "só", "b": false, "t": 8.14}, {"w": "quatro", "b": true, "t": 8.263}, {"w": "velas,", "b": true, "t": 8.509}, {"w": "uma", "b": false, "t": 8.875}, {"w": "para", "b": false, "t": 9.168}, {"w": "cada", "b": false, "t": 9.519}, {"w": "domingo.", "b": false, "t": 9.871}], "L6": [{"w": "Os", "b": false, "t": 0.0}, {"w": "católicos", "b": false, "t": 0.219}, {"w": "da", "b": false, "t": 0.821}, {"w": "Alemanha", "b": false, "t": 1.04}, {"w": "adotaram", "b": false, "t": 1.587}, {"w": "o", "b": false, "t": 2.134}, {"w": "costume:", "b": false, "t": 2.298}, {"w": "uma", "b": false, "t": 2.965}, {"w": "das", "b": false, "t": 3.228}, {"w": "primeiras", "b": false, "t": 3.492}, {"w": "igrejas", "b": false, "t": 4.071}, {"w": "foi", "b": false, "t": 4.545}, {"w": "em", "b": false, "t": 4.808}, {"w": "Colônia,", "b": true, "t": 5.018}, {"w": "em", "b": false, "t": 5.665}, {"w": "mil", "b": false, "t": 5.852}, {"w": "novecentos", "b": false, "t": 6.086}, {"w": "e", "b": false, "t": 6.647}, {"w": "vinte", "b": false, "t": 6.788}, {"w": "e", "b": false, "t": 7.115}, {"w": "cinco.", "b": false, "t": 7.256}, {"w": "Depois,", "b": false, "t": 7.75}, {"w": "o", "b": false, "t": 8.735}, {"w": "mundo", "b": true, "t": 8.911}, {"w": "inteiro.", "b": true, "t": 9.321}], "L7": [{"w": "O", "b": false, "t": 0.0}, {"w": "círculo", "b": false, "t": 0.159}, {"w": "lembra", "b": false, "t": 0.636}, {"w": "o", "b": false, "t": 1.06}, {"w": "amor", "b": true, "t": 1.219}, {"w": "de", "b": true, "t": 1.537}, {"w": "Deus,", "b": true, "t": 1.749}, {"w": "que", "b": false, "t": 2.24}, {"w": "não", "b": false, "t": 2.404}, {"w": "tem", "b": false, "t": 2.569}, {"w": "fim.", "b": false, "t": 2.733}, {"w": "O", "b": false, "t": 3.05}, {"w": "verde,", "b": false, "t": 3.147}, {"w": "a", "b": false, "t": 3.525}, {"w": "esperança.", "b": true, "t": 3.709}, {"w": "As", "b": false, "t": 4.565}, {"w": "velas", "b": false, "t": 4.686}, {"w": "roxas", "b": false, "t": 4.898}, {"w": "pedem", "b": false, "t": 5.11}, {"w": "conversão,", "b": false, "t": 5.322}, {"w": "e", "b": false, "t": 5.805}, {"w": "a", "b": false, "t": 6.186}, {"w": "vela", "b": false, "t": 6.568}, {"w": "rosa,", "b": true, "t": 7.33}, {"w": "do", "b": false, "t": 8.34}, {"w": "terceiro", "b": false, "t": 8.715}, {"w": "domingo,", "b": false, "t": 9.653}, {"w": "é", "b": false, "t": 10.71}, {"w": "o", "b": false, "t": 10.858}, {"w": "domingo", "b": false, "t": 11.007}, {"w": "da", "b": false, "t": 11.452}, {"w": "alegria.", "b": true, "t": 11.649}], "L8": [{"w": "Neste", "b": false, "t": 0.0}, {"w": "domingo", "b": false, "t": 0.406}, {"w": "começa", "b": false, "t": 0.928}, {"w": "o", "b": false, "t": 1.391}, {"w": "Advento.", "b": false, "t": 1.565}, {"w": "Reze", "b": false, "t": 2.265}, {"w": "como", "b": false, "t": 2.615}, {"w": "os", "b": false, "t": 2.964}, {"w": "primeiros", "b": false, "t": 3.198}, {"w": "cristãos:", "b": false, "t": 3.839}, {"w": "Maranatá,", "b": true, "t": 4.6}, {"w": "vem,", "b": false, "t": 5.38}, {"w": "Senhor", "b": false, "t": 5.795}, {"w": "Jesus!", "b": false, "t": 6.598}, {"w": "Você", "b": false, "t": 7.52}, {"w": "sabia", "b": false, "t": 7.876}, {"w": "disso?", "b": false, "t": 8.291}, {"w": "Comenta", "b": true, "t": 8.885}, {"w": "e", "b": true, "t": 9.376}, {"w": "segue", "b": true, "t": 9.539}, {"w": "pra", "b": false, "t": 9.921}, {"w": "mais", "b": false, "t": 10.194}, {"w": "segredos", "b": false, "t": 10.521}, {"w": "da", "b": false, "t": 11.067}, {"w": "fé!", "b": false, "t": 11.285}]};/*CAPS_END*/
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),MAIN=cv.getContext('2d'),x=MAIN,PI=Math.PI;
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){u=clamp(u,0,1);return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){if(!el)return;el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=71;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var LINES=[['L1','Você sabia que a <b>coroa do Advento</b> já teve até <b>vinte e quatro velas</b>? E que ela não nasceu numa catedral, mas numa <b>casa de meninos pobres</b>?'],
+['L2','O Advento são as quatro semanas antes do Natal. Na Idade Média, era um tempo de <b>jejum e espera</b>, olhando também para a volta de Cristo.'],
+['L3','Em mil oitocentos e trinta e nove, em <b>Hamburgo</b>, na Alemanha, o pastor <b>Johann Wichern</b> cuidava de meninos de rua numa casa de acolhida.'],
+['L4','As crianças perguntavam todo dia: <b>já é Natal?</b> Então ele pegou uma grande <b>roda de madeira</b> e colocou uma vela para cada dia até o Natal.'],
+['L5','A cada dia, acendia mais uma. Com o tempo, a roda ficou grande demais para as casas, e sobraram só <b>quatro velas</b>, uma para cada domingo.'],
+['L6','Os católicos da Alemanha adotaram o costume: uma das primeiras igrejas foi em <b>Colônia</b>, em mil novecentos e vinte e cinco. Depois, o <b>mundo inteiro</b>.'],
+['L7','O círculo lembra o <b>amor de Deus</b>, que não tem fim. O verde, a <b>esperança</b>. As velas roxas pedem conversão, e a vela <b>rosa</b>, do terceiro domingo, é o domingo da <b>alegria</b>.'],
+['L8','Neste domingo começa o Advento. Reze como os primeiros cristãos: <b>Maranatá</b>, vem, Senhor Jesus! Você sabia disso? <b>Comenta e segue</b> pra mais segredos da fé!']];
+var T={},TL={lines:[]},CHK=[],WC={};
+window.__retime=function(d){var t=.3;TL.lines=[];WC={};LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;buildCaps();};
+window.__timeline=function(){return TL;};
+function buildCaps(){CHK=[];var C=window.CAPS||{};TL.lines.forEach(function(l){var ws=C[l.id];if(!ws)return;var cur=[],len=0;
+ function flush(){if(cur.length)CHK.push({ws:cur.map(function(w){return {w:w.w,b:w.b,t:l.t0+w.t};})});cur=[];len=0;}
+ ws.forEach(function(w,i){if(len+w.w.length>34&&cur.length)flush();cur.push(w);len+=w.w.length+1;var end=/[.!?:;]$/.test(w.w)||(/,$/.test(w.w)&&len>=18);if(end)flush();});flush();
+ CHK.filter(function(c){return c.l===undefined;}).forEach(function(c){c.l=l.id;c.end=l.t0+l.dur+.25;});});
+ for(var i=0;i<CHK.length;i++){CHK[i].t0=CHK[i].ws[0].t-.12;var nx=CHK[i+1];CHK[i].t1=(nx&&nx.l===CHK[i].l)?nx.ws[0].t-.12:CHK[i].end;}}
+// tempo (absoluto) da palavra falada: WT('L2','tertuliano') — sincroniza animações com caps.json
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');}
+function WT(id,w,k){var key=id+w+(k||1);if(WC[key]!==undefined)return WC[key];var ws=(window.CAPS||{})[id],r=T[id],n=0;if(ws)for(var i=0;i<ws.length;i++){if(norm(ws[i].w).indexOf(norm(w))===0){n++;if(n>=(k||1)){r=T[id]+ws[i].t;break;}}}WC[key]=r;return r;}
+function LW(id,w,k){return WT(id,w,k)-T[id];}
+function glow(X,Y,r,col,a){if(a<=0)return;var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
+function rr(X,Y,w,h,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath();}
+function txt(s,X,Y,font,col,al,sh){x.save();x.font=font;x.textAlign=al||'center';x.fillStyle=col;if(sh){x.shadowColor=sh;x.shadowBlur=18;}x.fillText(s,X,Y);x.restore();}
+function star(X,Y,r,a){x.save();x.globalAlpha*=a;x.fillStyle='#fff8e0';x.beginPath();for(var i=0;i<8;i++){var rr2=i%2?r*.35:r,an=i*PI/4-PI/2;x.lineTo(X+Math.cos(an)*rr2,Y+Math.sin(an)*rr2);}x.fill();x.restore();}
+var FLOOR=860;
+// fundo: Púrpura real
+var bg=document.createElement('canvas');bg.width=W;bg.height=H;(function(){var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.35,40,W/2,H*.5,H*.9);g.addColorStop(0,'#5a2580');g.addColorStop(.45,'#2a0f3d');g.addColorStop(1,'#0c0414');b.fillStyle=g;b.fillRect(0,0,W,H);
+ for(var i=0;i<7000;i++){b.fillStyle='rgba('+(rnd()>.5?'230,195,255':'0,0,0')+','+(rnd()*.05)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}})();
+var PRT=[];for(var i=0;i<70;i++)PRT.push([rnd()*W,rnd()*H,1.5+rnd()*4,rnd()*6,.3+rnd()*.8,rnd()<.4]);
+function rays(t){x.save();x.globalCompositeOperation='lighter';for(var k=0;k<6;k++){var a0=-.5+k*.2+Math.sin(t*.3+k)*.04;x.fillStyle='rgba(230,195,255,0.035)';x.beginPath();x.moveTo(360,-80);x.lineTo(360+Math.tan(a0)*1500,1400);x.lineTo(360+Math.tan(a0+.07)*1500,1400);x.fill();}x.restore();}
+// neve/brilhos caindo devagar
+function particles(t){PRT.forEach(function(p){var yy=(p[1]+t*16*p[4])%H;var xx=p[0]+Math.sin(t*.8+p[3])*14;
+ if(p[5])glow(xx,yy,p[2]*3,'rgba(255,209,102,A)',.45);else{x.fillStyle='rgba(255,255,255,.5)';x.beginPath();x.arc(xx,yy,p[2]*.6,0,7);x.fill();}});}
+function popS(lt,t0){return back(lin(lt,t0,t0+.45));}
+function floorWood(c1,c2){var g=x.createLinearGradient(0,FLOOR-40,0,H);g.addColorStop(0,c1);g.addColorStop(1,c2);x.fillStyle=g;x.fillRect(0,FLOOR-40,W,H-FLOOR+40);x.strokeStyle='rgba(0,0,0,.25)';x.lineWidth=2;for(var i=0;i<6;i++){x.beginPath();x.moveTo(0,FLOOR-40+i*i*12);x.lineTo(W,FLOOR-40+i*i*12);x.stroke();}}
+function flame(X,Y,s,t,k,a){if(a<=0)return;var f=1+.14*Math.sin(t*9+k*1.7);glow(X,Y-6*s,46*s,'rgba(255,200,100,A)',.75*a);x.save();x.globalAlpha*=a;x.fillStyle='#ffb347';x.beginPath();x.ellipse(X,Y-8*s,7*s,16*s*f,0,0,7);x.fill();x.fillStyle='#fff3c4';x.beginPath();x.ellipse(X,Y-5*s,3.5*s,8*s*f,0,0,7);x.fill();x.restore();}
+function candle(X,Y,h,w,col,lit,t,k){var g=x.createLinearGradient(X-w/2,0,X+w/2,0);g.addColorStop(0,col[1]);g.addColorStop(.45,col[0]);g.addColorStop(1,col[1]);x.fillStyle=g;x.fillRect(X-w/2,Y-h,w,h);x.fillStyle='rgba(255,255,255,.25)';x.beginPath();x.ellipse(X,Y-h,w/2,w/6,0,0,7);x.fill();x.strokeStyle='#2a1a10';x.lineWidth=2;x.beginPath();x.moveTo(X,Y-h);x.lineTo(X,Y-h-6);x.stroke();flame(X,Y-h-4,w/22,t,k,lit);}
+var PUR=['#8e44ad','#5b2370'],ROSE=['#f48fb1','#c2557f'];
+// coroa: anel de folhas em perspectiva + velas
+function wreath(X,Y,R,t,cs,leafA){var ry=R*.32;x.fillStyle='rgba(0,0,0,.35)';x.beginPath();x.ellipse(X,Y+10,R+30,ry+16,0,0,7);x.fill();
+ var L=[];for(var i=0;i<46;i++){var a=i/46*PI*2;L.push([X+Math.cos(a)*R,Y+Math.sin(a)*ry,a,i]);}
+ var C=cs.map(function(c){var a=c.a;return [X+Math.cos(a)*R,Y+Math.sin(a)*ry,c];});
+ function leaves(back){L.forEach(function(p){if((Math.sin(p[2])<0)!==back)return;for(var k=0;k<3;k++){x.fillStyle=['#1f6b34','#2e8b47','#145226'][(p[3]+k)%3];x.beginPath();x.ellipse(p[0]+(k-1)*8,p[1]+(k-1)*4-6,24,9,p[2]+k,0,7);x.fill();}
+  if(p[3]%5==0){x.fillStyle='#d32f2f';x.beginPath();x.arc(p[0]+6,p[1]-12,5,0,7);x.fill();}});}
+ leaves(true);C.filter(function(c){return Math.sin(c[2].a)<0;}).sort(function(a,b){return a[1]-b[1];}).forEach(function(c){candle(c[0],c[1],c[2].h,c[2].w,c[2].col,c[2].lit,t,c[2].k||0);});
+ leaves(false);C.filter(function(c){return Math.sin(c[2].a)>=0;}).sort(function(a,b){return a[1]-b[1];}).forEach(function(c){candle(c[0],c[1],c[2].h,c[2].w,c[2].col,c[2].lit,t,c[2].k||0);});}
+function four(lits){var A=[-PI*.8,-PI*.3,PI*.2,PI*.7],cols=[PUR,PUR,ROSE,PUR];return A.map(function(a,i){return {a:a,h:120,w:30,col:cols[i],lit:lits[i],k:i};});}
+function windowSnow(X,Y,w,h,t,sky){x.fillStyle='#3a1f12';x.fillRect(X-12,Y-12,w+24,h+24);var g=x.createLinearGradient(0,Y,0,Y+h);g.addColorStop(0,sky[0]);g.addColorStop(1,sky[1]);x.fillStyle=g;x.fillRect(X,Y,w,h);
+ x.save();x.beginPath();x.rect(X,Y,w,h);x.clip();for(var i=0;i<40;i++){var sx=X+((i*53+t*12*(1+i%3))%w),sy=Y+((i*37+t*40*(1+i%2))%h);x.fillStyle='rgba(255,255,255,.8)';x.beginPath();x.arc(sx,sy,1.5+(i%3),0,7);x.fill();}x.fillStyle='#e8eef8';x.beginPath();x.moveTo(X,Y+h);x.quadraticCurveTo(X+w*.3,Y+h-30,X+w*.6,Y+h-14);x.quadraticCurveTo(X+w*.8,Y+h-24,X+w,Y+h-8);x.lineTo(X+w,Y+h);x.fill();x.restore();
+ x.fillStyle='#3a1f12';x.fillRect(X+w/2-5,Y,10,h);x.fillRect(X,Y+h/2-5,w,10);}
+function table(Y){x.fillStyle='#6b3a1e';x.fillRect(60,Y,600,24);x.fillStyle='#4a2410';x.fillRect(90,Y+24,28,FLOOR-40-Y-24);x.fillRect(602,Y+24,28,FLOOR-40-Y-24);x.fillStyle='#8e44ad';x.beginPath();x.moveTo(150,Y);x.lineTo(570,Y);x.lineTo(590,Y+60);x.lineTo(130,Y+60);x.fill();x.fillStyle='#ffd166';x.fillRect(130,Y+54,460,6);}
+// ---------- cena 1: coroa com 24 velinhas que acendem; casa de meninos no fundo ----------
+function sc1(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#2a0f3d');g.addColorStop(1,'#6a2c8a');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ windowSnow(220,350,280,230,t,['#101a40','#3b4f8a']);
+ var hs=lin(lt,LW('L1','casa')-.3,LW('L1','casa')+.5);if(hs>0){x.save();x.beginPath();x.rect(220,350,280,230);x.clip();x.globalAlpha=hs;x.fillStyle='#1a1020';x.fillRect(290,470,140,100);x.beginPath();x.moveTo(280,472);x.lineTo(360,410);x.lineTo(440,472);x.fill();x.fillStyle='#ffcf6b';for(var k=0;k<3;k++)x.fillRect(306+k*42,496,22,26);glow(360,510,90,'rgba(255,200,100,A)',.5*hs);x.restore();}
+ floorWood('#4a2410','#1a0a04');table(700);
+ var n=24,on=lin(lt,LW('L1','vinte')-.3,LW('L1','velas')+.8),cs=[];
+ for(var i=0;i<n;i++){var big=i%6==0;cs.push({a:i/n*PI*2+.13,h:big?64:40,w:big?18:11,col:big?['#fffaf0','#d8d0c0']:['#e53935','#9a1c1c'],lit:clamp(on*n-i,0,1),k:i});}
+ wreath(360,724,190,t,cs);}
+// ---------- cena 2: mosteiro à noite, 4 semanas, aurora (volta de Cristo) ----------
+function sc2(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#14062a');g.addColorStop(1,'#4a1d6a');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ for(var i=0;i<40;i++)star((i*97)%W,320+(i*61)%240,2+(i%3),.35+.4*Math.sin(t*2+i));
+ var d=ez(lin(lt,LW('L2','volta')-.4,LW('L2','cristo')+.6));if(d>0){var gg=x.createLinearGradient(0,820,0,560);gg.addColorStop(0,'rgba(255,190,110,'+(.9*d)+')');gg.addColorStop(1,'rgba(255,190,110,0)');x.fillStyle=gg;x.fillRect(0,560,W,260);glow(360,800,260,'rgba(255,230,170,A)',.7*d);}
+ // mosteiro
+ x.fillStyle='#1a0a24';x.fillRect(80,600,560,FLOOR-640);x.beginPath();x.moveTo(60,604);x.lineTo(360,520);x.lineTo(660,604);x.fill();x.fillRect(470,470,70,150);x.beginPath();x.moveTo(460,474);x.lineTo(505,410);x.lineTo(550,474);x.fill();
+ x.fillStyle='#ffcf6b';for(var k=0;k<6;k++){x.globalAlpha=.6+.3*Math.sin(t*2+k);x.beginPath();x.moveTo(120+k*80,720);x.lineTo(120+k*80,680);x.arc(134+k*80,680,14,PI,0);x.lineTo(148+k*80,720);x.fill();}x.globalAlpha=1;
+ floorWood('#2a1238','#0c0414');
+ // 4 semanas (4 cartões no chão)
+ var w4=lin(lt,LW('L2','quatro')-.2,LW('L2','semanas')+.6);for(var k=0;k<4;k++){var u=back(clamp(w4*4-k,0,1));if(u<=0)continue;x.save();x.translate(150+k*140,800);x.scale(u,u);x.fillStyle='#f6ecff';rr(-52,-44,104,70,12);x.fill();x.fillStyle=k==2?'#e91e63':'#7b1fa2';rr(-52,-44,104,20,10);x.fill();x.fillRect(-52,-30,104,8);txt(String(k+1),0,16,'700 34px P','#3a1050');x.restore();}
+ var j=lin(lt,LW('L2','jejum')-.2,LW('L2','jejum')+.4);if(j>0){x.save();x.globalAlpha=j;x.fillStyle='rgba(20,6,40,.85)';rr(220,410,280,60,14);x.fill();txt('jejum e espera',360,450,'700 30px P','#e6c3ff');x.restore();}}
+// ---------- cena 3: Hamburgo 1839, casas de telhado pontudo, neve, casa de acolhida ----------
+function sc3(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#1a1440');g.addColorStop(1,'#7a5aa8');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ glow(600,380,60,'rgba(255,250,230,A)',.5);x.fillStyle='#fff8e6';x.beginPath();x.arc(600,380,26,0,7);x.fill();
+ // torre de igreja e casas
+ x.fillStyle='#2a1838';x.fillRect(90,420,50,260);x.beginPath();x.moveTo(84,424);x.lineTo(115,330);x.lineTo(146,424);x.fill();
+ var cols=['#6a3a5a','#4a3a6a','#7a4a3a','#3a4a6a','#5a3a7a'];for(var i=0;i<6;i++){var X=150+i*95,h=140+(i*37)%60;x.fillStyle=cols[i%5];x.fillRect(X,680-h,80,h);x.beginPath();x.moveTo(X-4,684-h);x.lineTo(X+40,620-h);x.lineTo(X+84,684-h);x.fill();x.fillStyle='#f0f4ff';x.beginPath();x.moveTo(X-4,684-h);x.lineTo(X+40,620-h);x.lineTo(X+50,632-h);x.lineTo(X+6,690-h);x.fill();
+  x.fillStyle='#ffcf6b';x.fillRect(X+14,700-h,18,22);x.fillRect(X+48,700-h,18,22);}
+ x.fillStyle='#c9cfe6';x.fillRect(0,680,W,FLOOR-720);x.fillStyle='rgba(90,70,130,.35)';x.fillRect(0,700,W,FLOOR-740);
+ // casa de acolhida (casa de fazenda com telhado de palha)
+ var hs=popS(lt,LW('L3','meninos')-.2);
+ floorWood('#5a5678','#140c24');
+ if(hs>0){x.save();x.translate(360,FLOOR-40);x.scale(hs,hs);glow(0,-80,200,'rgba(255,200,110,A)',.5);x.fillStyle='#8a5a3a';x.fillRect(-150,-130,300,130);x.fillStyle='#c9a24a';x.beginPath();x.moveTo(-180,-120);x.lineTo(0,-230);x.lineTo(180,-120);x.fill();x.fillStyle='#f0f4ff';x.beginPath();x.moveTo(-180,-120);x.lineTo(0,-230);x.lineTo(20,-218);x.lineTo(-160,-110);x.fill();
+  x.fillStyle='#3a2010';x.fillRect(-26,-80,52,80);x.fillStyle='#ffcf6b';x.fillRect(-120,-100,50,40);x.fillRect(70,-100,50,40);x.restore();}
+ var p=lin(lt,LW('L3','hamburgo')-.2,LW('L3','hamburgo')+.4);if(p>0){x.save();x.globalAlpha=p;x.fillStyle='rgba(20,6,40,.85)';rr(230,350,260,58,14);x.fill();txt('Hamburgo · 1839',360,389,'700 28px P','#ffd166');x.restore();}}
+// ---------- cena 4: a grande roda de madeira presa ao teto, velas por dia; "já é Natal?" ----------
+function wheel(X,Y,R,t,n,lit,sc){var ry=R*.3;x.strokeStyle='#5a3418';x.lineWidth=4;[[-1,-1],[1,-1],[0,1]].forEach(function(c){x.beginPath();x.moveTo(X,300);x.lineTo(X+c[0]*R*.9,Y+c[1]*ry*.5);x.stroke();});
+ x.strokeStyle='#8b5a2b';x.lineWidth=18;x.beginPath();x.ellipse(X,Y,R,ry,0,0,7);x.stroke();x.strokeStyle='#a06a3a';x.lineWidth=6;for(var k=0;k<8;k++){var a=k*PI/4;x.beginPath();x.moveTo(X,Y);x.lineTo(X+Math.cos(a)*R,Y+Math.sin(a)*ry);x.stroke();}x.fillStyle='#6b3a1e';x.beginPath();x.ellipse(X,Y,28,10,0,0,7);x.fill();
+ var C=[];for(var i=0;i<n;i++){var a=i/n*PI*2+.1;C.push([X+Math.cos(a)*R,Y+Math.sin(a)*ry-8,i]);}C.sort(function(a,b){return a[1]-b[1];}).forEach(function(c){var big=c[2]%6==0;candle(c[0],c[1],big?56:38,big?16:11,['#fffaf0','#d8d0c0'],clamp(lit*n-c[2],0,1),t,c[2]);});}
+function kid(X,s,col){x.save();x.translate(X,FLOOR-40);x.scale(s,s);x.fillStyle=col;x.beginPath();x.moveTo(-34,0);x.quadraticCurveTo(-38,-90,-20,-110);x.lineTo(20,-110);x.quadraticCurveTo(38,-90,34,0);x.fill();x.beginPath();x.arc(0,-132,26,0,7);x.fill();x.restore();}
+function sc4(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#3a1a2a');g.addColorStop(1,'#7a3a3a');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ x.fillStyle='#4a2410';x.fillRect(0,300,W,22);for(var k=0;k<6;k++){x.fillStyle='rgba(90,40,20,.35)';x.fillRect(k*130,322,8,FLOOR-362);}
+ var lit=lin(lt,LW('L4','vela')-.3,LW('L4','natal',2)+.3);glow(360,560,320,'rgba(255,180,90,A)',.15+.5*lit);
+ wheel(360,560,230,t,22,lit);
+ floorWood('#5a2e16','#1a0a04');
+ kid(150,1,'#1a0a14');kid(560,.9,'#1a0a14');kid(640,.8,'#1a0a14');
+ var q=fade(lt,LW('L4','natal')-.3,LW('L4','entao')+.2,.3);if(q>0){x.save();x.globalAlpha=q;x.fillStyle='#fff8ee';rr(70,640,200,70,30);x.fill();x.beginPath();x.moveTo(140,706);x.lineTo(150,730);x.lineTo(166,706);x.fill();txt('Já é Natal?',170,686,'700 30px P','#5b2370');x.restore();}}
+// ---------- cena 5: roda vira coroa de 4 velas na mesa da casa ----------
+function sc5(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#2a0f3d');g.addColorStop(1,'#7a3a8a');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ windowSnow(80,360,180,200,t,['#101a40','#3b4f8a']);windowSnow(460,360,180,200,t,['#101a40','#3b4f8a']);
+ floorWood('#4a2410','#1a0a04');table(700);
+ var sh=ez(lin(lt,LW('L5','grande')-.3,LW('L5','quatro')-.1));
+ var lits=[0,0,0,0];var t4=LW('L5','quatro');for(var k=0;k<4;k++)lits[k]=lin(lt,t4+k*.35,t4+k*.35+.25);
+ if(sh<1){x.save();x.globalAlpha=1-sh;var cs=[];for(var i=0;i<20;i++){var big=i%5==0;cs.push({a:i/20*PI*2,h:big?60:38,w:big?16:10,col:['#fffaf0','#d8d0c0'],lit:clamp(lin(lt,0,LW('L5','mais')+.6)*20-i,0,1),k:i});}wreath(360,724,lerp(210,150,sh),t,cs);x.restore();}
+ if(sh>0){x.save();x.globalAlpha=sh;wreath(360,724,150,t,four(lits));x.restore();}}
+// ---------- cena 6: catedral de Colônia (duas torres) e o mundo ----------
+function globe(X,Y,R,t,a){x.save();x.globalAlpha=a;glow(X,Y,R*1.6,'rgba(230,195,255,A)',.5);var g=x.createRadialGradient(X-R*.3,Y-R*.3,R*.1,X,Y,R);g.addColorStop(0,'#64b5f6');g.addColorStop(1,'#0d3a7a');x.fillStyle=g;x.beginPath();x.arc(X,Y,R,0,7);x.fill();
+ x.beginPath();x.arc(X,Y,R,0,7);x.clip();x.fillStyle='#3a9a4a';var o=R*2+Math.sin(t*.5)*R*.15;[[-.4,-.3,.35,.25],[.3,-.1,.3,.4],[-.1,.4,.25,.15],[.6,.5,.2,.15]].forEach(function(c){for(var k=-1;k<=1;k++){x.beginPath();x.ellipse(X+c[0]*R+o+k*R*4-R*2,Y+c[1]*R,c[2]*R,c[3]*R,0,0,7);x.fill();}});
+ for(var k=0;k<9;k++){star(X+Math.cos(k*2.1)*R*.6,Y+Math.sin(k*1.7)*R*.55,5,.6+.4*Math.sin(t*3+k));}x.restore();}
+function sc6(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#140628');g.addColorStop(1,'#5a2a7a');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ for(var i=0;i<30;i++)star((i*131)%W,320+(i*71)%200,2+(i%3),.3+.3*Math.sin(t*2+i));
+ var w=ez(lin(lt,LW('L6','mundo')-.4,LW('L6','mundo')+.6));
+ // catedral
+ x.save();x.globalAlpha=1-w*.85;x.fillStyle='#24102e';x.fillRect(170,560,380,FLOOR-600);[[210,300],[440,300]].forEach(function(p){x.fillRect(p[0],460,70,140);x.beginPath();x.moveTo(p[0]-4,464);x.lineTo(p[0]+35,p[1]+60);x.lineTo(p[0]+74,464);x.fill();});
+ x.fillStyle='#ffcf6b';for(var k=0;k<5;k++){x.globalAlpha=(1-w*.85)*(.6+.3*Math.sin(t*2+k));x.beginPath();x.moveTo(270+k*45,720);x.lineTo(270+k*45,660);x.arc(284+k*45,660,14,PI,0);x.lineTo(298+k*45,720);x.fill();}x.restore();
+ floorWood('#2a1238','#0c0414');
+ var c=lin(lt,LW('L6','colonia')-.2,LW('L6','colonia')+.4);if(c>0){var cs=four([1,0,0,0]);x.save();x.globalAlpha=c*(1-w);wreath(360,790,110,t,cs.map(function(o){o.h=70;o.w=20;return o;}));x.restore();}
+ if(w>0)globe(360,600,170*w,t,w);}
+// ---------- cena 7: os símbolos: círculo, verde, roxo, rosa ----------
+function sc7(t,lt){var g=x.createRadialGradient(360,620,30,360,620,460);g.addColorStop(0,'#7a3aa8');g.addColorStop(1,'#1c0830');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ for(var i=0;i<12;i++){var a=i/12*PI*2+t*.12;x.strokeStyle='rgba(230,195,255,.06)';x.lineWidth=28;x.beginPath();x.moveTo(360,640);x.lineTo(360+Math.cos(a)*520,640+Math.sin(a)*520);x.stroke();}
+ floorWood('#4a2410','#1a0a04');table(740);
+ var tr=LW('L7','roxas'),tz=LW('L7','rosa');var lits=[lin(lt,tr-.2,tr+.2),lin(lt,tr,tr+.4),lin(lt,tz-.2,tz+.3),lin(lt,tr+.2,tr+.6)];
+ wreath(360,766,170,t,four(lits));
+ var c=lin(lt,LW('L7','circulo')-.2,LW('L7','fim')+.3);if(c>0&&c<1||lt<LW('L7','verde')){if(c>0){x.save();x.strokeStyle='rgba(255,209,102,.9)';x.lineWidth=6;x.shadowColor='#ffd166';x.shadowBlur=18;x.beginPath();x.ellipse(360,766,200,70,0,-PI/2,-PI/2+PI*2*c);x.stroke();x.restore();}}
+ var v=fade(lt,LW('L7','verde')-.2,LW('L7','velas')+.1,.3);if(v>0)glow(360,760,240,'rgba(80,220,120,A)',.45*v);
+ var a=lin(lt,LW('L7','alegria')-.2,LW('L7','alegria')+.6);if(a>0){for(var k=0;k<14;k++){var an=k*PI/7+t*.6;star(360+Math.cos(an)*250*a,600+Math.sin(an)*120*a,6,a);}glow(360+170*Math.cos(PI*.25),766+54,120,'rgba(244,143,177,A)',.6*a);}}
+// ---------- cena 8: primeira vela acesa, janela com neve ----------
+function sc8(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#1c0830');g.addColorStop(1,'#5a2a7a');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ windowSnow(230,350,260,220,t,['#0a1030','#2a3f7a']);
+ floorWood('#4a2410','#1a0a04');table(720);
+ var l=lin(lt,LW('L8','advento')-.3,LW('L8','advento')+.3);
+ wreath(360,744,160,t,four([l,0,0,0]));glow(360,700,260,'rgba(255,200,110,A)',.3*l);}
+var SC=[sc1,sc2,sc3,sc4,sc5,sc6,sc7,sc8];
+function OV(t,L){pop($('c1'),fade(t,WT('L1','coroa')-.2,L.L1e+.2));pop($('c2'),fade(t,WT('L2','advento')-.1,L.L2e+.2));
+ pop($('c3'),fade(t,WT('L3','pastor')-.2,L.L3e+.2));pop($('c4'),fade(t,WT('L4','entao')-.1,L.L4e+.2));pop($('c5'),fade(t,WT('L5','tempo')-.2,L.L5e+.2));
+ pop($('c6'),fade(t,WT('L6','catolicos')-.2,L.L6e+.2));pop($('c7'),fade(t,WT('L7','circulo')-.2,L.L7e+.2));pop($('c8'),fade(t,WT('L8','maranata')-.2,WT('L8','voce')-.2));}
+
+var OFF=document.createElement('canvas');OFF.width=W;OFF.height=H;var ox=OFF.getContext('2d');
+function frame(t){var L=T;x=MAIN;x.drawImage(bg,0,0);rays(t);
+ for(var i=0;i<8;i++){var id='L'+(i+1),a=(i<7)?fade(t,L[id]-.25,L[id+'e']+.3,.35):fade(t,L.L8-.25,L.END+2,.35);if(a<=0)continue;
+  ox.clearRect(0,0,W,H);x=ox;SC[i](t,t-L[id],L);x=MAIN;ox.save();ox.globalCompositeOperation='destination-in';var mg=ox.createLinearGradient(0,290,0,H);mg.addColorStop(0,'rgba(0,0,0,0)');mg.addColorStop(.09,'rgba(0,0,0,1)');mg.addColorStop(.62,'rgba(0,0,0,1)');mg.addColorStop(1,'rgba(0,0,0,0)');ox.fillStyle=mg;ox.fillRect(0,0,W,H);ox.restore();
+  MAIN.save();MAIN.globalAlpha=a;MAIN.drawImage(OFF,0,0);MAIN.restore();}
+ particles(t);OV(t,L);pop($('q'),fade(t,WT('L8','voce'),L.END+2));
+ var vg=x.createRadialGradient(W/2,H/2,H*.32,W/2,H/2,H*.78);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.5)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ var cur=null;for(var i=0;i<CHK.length;i++)if(t>=CHK[i].t0&&t<CHK[i].t1){cur=CHK[i];break;}
+ if(cur){$('cap').innerHTML='<span class="box">'+cur.ws.map(function(w){return '<i class="'+(w.b?'b ':'')+(t<w.t-.05?'f':'')+'">'+w.w+'</i>';}).join(' ')+'</span>';var u=lin(t,cur.t0,cur.t0+.18);$('cap').style.opacity=u;$('cap').style.transform='translateY('+((1-u)*10)+'px)';}
+ else $('cap').innerHTML='';}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>

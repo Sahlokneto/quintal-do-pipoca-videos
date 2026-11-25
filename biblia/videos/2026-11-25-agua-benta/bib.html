@@ -1,0 +1,233 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(../../tools/Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(../../tools/Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(../../tools/Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(../../tools/FreeSerifBold.ttf)}
+:root{--c1:#f3faff;--c2:#d6ebff;--ink:#0b1f3a;--r1:#0d47a1;--r2:#29b6f6;--em:#1565c0;--sub:#34506e;--capbg:rgba(3,8,20,.86);--hl:#9fd8ff;--b1:#1e88e5;--b2:#4fc3f7}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.sc{display:inline-block;padding:16px 30px 18px;border-radius:20px;background:linear-gradient(160deg,var(--c1),var(--c2));color:var(--ink);box-shadow:0 14px 40px rgba(0,0,0,.55),0 0 0 4px rgba(255,209,102,.85);max-width:620px}
+.sc .r{display:inline-block;font-family:P;font-size:20px;letter-spacing:3px;color:#fff;font-weight:700;background:linear-gradient(90deg,var(--r1),var(--r2));padding:4px 14px;border-radius:30px;margin-bottom:8px}
+.sc .v{font-family:L;font-size:42px;font-weight:700;line-height:1.15}
+.sc .v em{font-style:normal;color:var(--em)}
+.sc .s{font-family:P;font-size:23px;color:var(--sub);margin-top:6px}
+.sc .g{font-family:HB;font-size:62px;line-height:1.05;color:var(--em)}
+.cd{top:132px}
+#q{top:160px;left:60px;width:600px;font-family:L;font-size:54px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:18px;font-family:P;font-size:34px;color:var(--hl)}
+#q .btn{display:inline-block;margin-top:18px;padding:16px 46px;border-radius:50px;background:linear-gradient(90deg,var(--b1),var(--b2));font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:878px;left:36px;width:600px;text-align:center;opacity:1}
+#cap .box{display:inline-block;padding:10px 24px 12px;border-radius:18px;background:var(--capbg);border:2px solid rgba(255,209,102,.45);font-size:40px;font-weight:700;line-height:1.22;text-shadow:0 3px 0 #000;max-width:560px}
+#cap i{font-style:normal}
+#cap i.f{opacity:.45}
+#cap i.b{color:#ffd166}
+</style></head><body>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="c1" class="lay cd"><div class="sc"><div class="r">NA PORTA DA IGREJA</div><div class="v">Não é <em>enfeite</em></div><div class="s">nasceu de uma fonte no pátio</div></div></div>
+<div id="c2" class="lay cd"><div class="sc"><div class="r">ÊXODO 30,17-21</div><div class="v">a bacia de <em>bronze</em></div><div class="s">mãos e pés lavados antes do altar</div></div></div>
+<div id="c3" class="lay cd"><div class="sc"><div class="r">DEPOIS DE CONSTANTINO · séc. IV</div><div class="v">o <em>cântaro</em> no pátio</div><div class="s">fonte para lavar as mãos antes de entrar</div></div></div>
+<div id="c4" class="lay cd"><div class="sc"><div class="r">SERAPIÃO · EGITO · séc. IV</div><div class="v">bênção da <em>água</em><br>e do óleo</div></div></div>
+<div id="c5" class="lay cd"><div class="sc"><div class="r">CONSTITUIÇÕES APOSTÓLICAS · ~400</div><div class="v">“foi <em>S. Mateus</em>”?</div><div class="s">historiadores: é uma tradição</div></div></div>
+<div id="c6" class="lay cd"><div class="sc"><div class="r">PAPA LEÃO IV · séc. IX</div><div class="v">água benta<br><em>todo domingo</em></div><div class="s">pias de pedra na porta: depois do ano 1000</div></div></div>
+<div id="c7" class="lay cd"><div class="sc"><div class="r">IGREJA CATÓLICA · CATECISMO 1668</div><div class="v">um <em>sacramental</em></div><div class="s">a água benta lembra o nosso batismo</div></div></div>
+<div id="q" class="lay">Você sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>/*CAPS*/window.CAPS={"L1": [{"w": "Por", "b": false, "t": 0.0}, {"w": "que", "b": false, "t": 0.231}, {"w": "tem", "b": false, "t": 0.463}, {"w": "uma", "b": false, "t": 0.694}, {"w": "pia", "b": true, "t": 0.926}, {"w": "de", "b": true, "t": 1.157}, {"w": "água", "b": true, "t": 1.342}, {"w": "benta", "b": true, "t": 1.62}, {"w": "na", "b": false, "t": 1.944}, {"w": "porta", "b": false, "t": 2.129}, {"w": "da", "b": false, "t": 2.453}, {"w": "igreja?", "b": false, "t": 2.638}, {"w": "Não", "b": false, "t": 3.175}, {"w": "é", "b": false, "t": 3.543}, {"w": "enfeite.", "b": false, "t": 3.764}, {"w": "Esse", "b": false, "t": 4.62}, {"w": "costume", "b": false, "t": 4.957}, {"w": "nasceu", "b": false, "t": 5.463}, {"w": "de", "b": false, "t": 5.913}, {"w": "uma", "b": false, "t": 6.138}, {"w": "fonte", "b": true, "t": 6.419}, {"w": "no", "b": true, "t": 6.812}, {"w": "pátio", "b": true, "t": 7.037}, {"w": "das", "b": false, "t": 7.431}, {"w": "igrejas", "b": false, "t": 7.712}, {"w": "antigas.", "b": false, "t": 8.218}], "L2": [{"w": "No", "b": false, "t": 0.0}, {"w": "templo", "b": false, "t": 0.196}, {"w": "de", "b": false, "t": 0.588}, {"w": "Israel,", "b": false, "t": 0.784}, {"w": "os", "b": false, "t": 1.345}, {"w": "sacerdotes", "b": false, "t": 1.438}, {"w": "lavavam", "b": false, "t": 1.717}, {"w": "as", "b": false, "t": 1.926}, {"w": "mãos", "b": true, "t": 2.019}, {"w": "e", "b": true, "t": 2.159}, {"w": "os", "b": true, "t": 2.229}, {"w": "pés", "b": true, "t": 2.322}, {"w": "numa", "b": false, "t": 2.438}, {"w": "bacia", "b": false, "t": 2.577}, {"w": "de", "b": false, "t": 2.74}, {"w": "bronze", "b": false, "t": 2.833}, {"w": "antes", "b": false, "t": 3.019}, {"w": "de", "b": false, "t": 3.182}, {"w": "chegar", "b": false, "t": 3.275}, {"w": "ao", "b": false, "t": 3.461}, {"w": "altar.", "b": false, "t": 3.554}, {"w": "Está", "b": false, "t": 3.86}, {"w": "em", "b": false, "t": 5.045}, {"w": "Êxodo,", "b": true, "t": 5.835}, {"w": "capítulo", "b": true, "t": 7.535}, {"w": "trinta.", "b": true, "t": 8.761}], "L3": [{"w": "Os", "b": false, "t": 0.0}, {"w": "primeiros", "b": false, "t": 0.228}, {"w": "cristãos", "b": false, "t": 0.856}, {"w": "herdaram", "b": false, "t": 1.427}, {"w": "o", "b": false, "t": 1.997}, {"w": "gesto.", "b": false, "t": 2.168}, {"w": "Depois", "b": false, "t": 2.745}, {"w": "do", "b": false, "t": 3.185}, {"w": "imperador", "b": false, "t": 3.405}, {"w": "Constantino,", "b": false, "t": 4.01}, {"w": "as", "b": false, "t": 4.9}, {"w": "grandes", "b": false, "t": 5.123}, {"w": "igrejas", "b": false, "t": 5.624}, {"w": "ganharam", "b": false, "t": 6.124}, {"w": "um", "b": false, "t": 6.681}, {"w": "pátio", "b": false, "t": 6.904}, {"w": "com", "b": false, "t": 7.293}, {"w": "uma", "b": false, "t": 7.571}, {"w": "fonte,", "b": false, "t": 7.85}, {"w": "o", "b": false, "t": 8.415}, {"w": "cântaro,", "b": true, "t": 8.615}, {"w": "para", "b": false, "t": 9.4}, {"w": "lavar", "b": false, "t": 9.699}, {"w": "as", "b": false, "t": 10.049}, {"w": "mãos", "b": false, "t": 10.248}, {"w": "antes", "b": false, "t": 10.548}, {"w": "de", "b": false, "t": 10.897}, {"w": "entrar.", "b": false, "t": 11.096}], "L4": [{"w": "E", "b": false, "t": 0.0}, {"w": "a", "b": false, "t": 0.184}, {"w": "água", "b": false, "t": 0.367}, {"w": "já", "b": false, "t": 0.735}, {"w": "era", "b": false, "t": 0.979}, {"w": "abençoada.", "b": false, "t": 1.285}, {"w": "No", "b": false, "t": 2.14}, {"w": "século", "b": false, "t": 2.387}, {"w": "quatro,", "b": false, "t": 2.88}, {"w": "o", "b": false, "t": 3.555}, {"w": "bispo", "b": false, "t": 3.673}, {"w": "Serapião,", "b": true, "t": 3.948}, {"w": "no", "b": false, "t": 4.5}, {"w": "Egito,", "b": false, "t": 4.853}, {"w": "deixou", "b": false, "t": 5.68}, {"w": "escrita", "b": false, "t": 6.136}, {"w": "uma", "b": false, "t": 6.649}, {"w": "oração", "b": false, "t": 6.935}, {"w": "para", "b": false, "t": 7.391}, {"w": "abençoar", "b": true, "t": 7.733}, {"w": "a", "b": true, "t": 8.303}, {"w": "água", "b": true, "t": 8.474}, {"w": "e", "b": false, "t": 8.816}, {"w": "o", "b": false, "t": 8.987}, {"w": "óleo.", "b": false, "t": 9.158}], "L5": [{"w": "Por", "b": false, "t": 0.0}, {"w": "volta", "b": false, "t": 0.701}, {"w": "do", "b": false, "t": 1.682}, {"w": "ano", "b": false, "t": 2.242}, {"w": "quatrocentos,", "b": false, "t": 2.943}, {"w": "um", "b": false, "t": 5.165}, {"w": "livro", "b": false, "t": 5.295}, {"w": "chamado", "b": false, "t": 5.524}, {"w": "Constituições", "b": false, "t": 5.817}, {"w": "Apostólicas", "b": false, "t": 6.306}, {"w": "atribuía", "b": false, "t": 6.73}, {"w": "esse", "b": false, "t": 7.056}, {"w": "costume", "b": false, "t": 7.252}, {"w": "ao", "b": false, "t": 7.545}, {"w": "apóstolo", "b": true, "t": 7.676}, {"w": "Mateus.", "b": true, "t": 8.002}, {"w": "Mas", "b": false, "t": 8.415}, {"w": "os", "b": false, "t": 8.705}, {"w": "historiadores", "b": false, "t": 8.936}, {"w": "dizem", "b": false, "t": 9.805}, {"w": "que", "b": false, "t": 10.211}, {"w": "isso", "b": false, "t": 10.5}, {"w": "é", "b": false, "t": 10.848}, {"w": "só", "b": false, "t": 11.022}, {"w": "uma", "b": false, "t": 11.253}, {"w": "tradição.", "b": false, "t": 11.543}], "L6": [{"w": "No", "b": false, "t": 0.0}, {"w": "século", "b": false, "t": 0.224}, {"w": "nove,", "b": false, "t": 0.673}, {"w": "o", "b": false, "t": 1.185}, {"w": "papa", "b": false, "t": 1.369}, {"w": "Leão", "b": true, "t": 1.736}, {"w": "quarto", "b": true, "t": 2.103}, {"w": "mandou", "b": false, "t": 2.592}, {"w": "abençoar", "b": false, "t": 3.081}, {"w": "água", "b": false, "t": 3.693}, {"w": "todo", "b": true, "t": 4.06}, {"w": "domingo", "b": true, "t": 4.427}, {"w": "em", "b": false, "t": 4.978}, {"w": "cada", "b": false, "t": 5.222}, {"w": "igreja.", "b": false, "t": 5.589}, {"w": "E", "b": false, "t": 6.26}, {"w": "as", "b": false, "t": 6.421}, {"w": "pequenas", "b": false, "t": 6.636}, {"w": "pias", "b": false, "t": 7.173}, {"w": "de", "b": false, "t": 7.495}, {"w": "pedra", "b": false, "t": 7.71}, {"w": "na", "b": false, "t": 8.086}, {"w": "porta", "b": false, "t": 8.301}, {"w": "se", "b": false, "t": 8.677}, {"w": "espalham", "b": false, "t": 8.892}, {"w": "depois", "b": true, "t": 9.429}, {"w": "do", "b": true, "t": 9.858}, {"w": "ano", "b": true, "t": 10.073}, {"w": "mil.", "b": true, "t": 10.342}], "L7": [{"w": "E", "b": false, "t": 0.0}, {"w": "o", "b": false, "t": 0.169}, {"w": "sentido?", "b": false, "t": 0.338}, {"w": "Na", "b": false, "t": 1.02}, {"w": "Igreja", "b": false, "t": 1.66}, {"w": "Católica,", "b": false, "t": 2.94}, {"w": "a", "b": false, "t": 4.82}, {"w": "água", "b": false, "t": 4.991}, {"w": "benta", "b": false, "t": 5.332}, {"w": "é", "b": false, "t": 5.73}, {"w": "um", "b": false, "t": 5.901}, {"w": "sacramental:", "b": true, "t": 6.129}, {"w": "ela", "b": false, "t": 7.045}, {"w": "lembra", "b": false, "t": 7.473}, {"w": "o", "b": false, "t": 8.158}, {"w": "nosso", "b": true, "t": 8.415}, {"w": "batismo.", "b": true, "t": 9.014}, {"w": "Quem", "b": false, "t": 9.99}, {"w": "molha", "b": false, "t": 10.132}, {"w": "os", "b": false, "t": 10.299}, {"w": "dedos", "b": false, "t": 10.394}, {"w": "e", "b": false, "t": 10.56}, {"w": "faz", "b": false, "t": 10.631}, {"w": "o", "b": false, "t": 10.75}, {"w": "sinal", "b": false, "t": 10.821}, {"w": "da", "b": false, "t": 10.987}, {"w": "cruz", "b": false, "t": 11.082}, {"w": "renova", "b": false, "t": 11.224}, {"w": "a", "b": false, "t": 11.414}, {"w": "sua", "b": false, "t": 11.486}, {"w": "entrega", "b": false, "t": 11.604}, {"w": "a", "b": false, "t": 11.818}, {"w": "Deus.", "b": false, "t": 11.889}], "L8": [{"w": "Então,", "b": false, "t": 0.0}, {"w": "da", "b": false, "t": 0.59}, {"w": "próxima", "b": false, "t": 0.822}, {"w": "vez,", "b": false, "t": 1.343}, {"w": "não", "b": false, "t": 1.81}, {"w": "passe", "b": false, "t": 2.086}, {"w": "correndo", "b": false, "t": 2.474}, {"w": "pela", "b": false, "t": 3.026}, {"w": "pia.", "b": false, "t": 3.358}, {"w": "Lembre:", "b": false, "t": 3.81}, {"w": "você", "b": false, "t": 4.67}, {"w": "foi", "b": false, "t": 5.062}, {"w": "lavado", "b": true, "t": 5.388}, {"w": "em", "b": true, "t": 5.911}, {"w": "Cristo.", "b": true, "t": 6.172}, {"w": "Você", "b": false, "t": 6.88}, {"w": "sabia", "b": false, "t": 7.239}, {"w": "disso?", "b": false, "t": 7.657}, {"w": "Comenta", "b": true, "t": 8.255}, {"w": "e", "b": true, "t": 8.76}, {"w": "segue", "b": true, "t": 8.928}, {"w": "pra", "b": false, "t": 9.321}, {"w": "mais", "b": false, "t": 9.601}, {"w": "segredos", "b": false, "t": 9.938}, {"w": "da", "b": false, "t": 10.499}, {"w": "fé!", "b": false, "t": 10.723}]};/*CAPS_END*/
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),MAIN=cv.getContext('2d'),x=MAIN,PI=Math.PI;
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){u=clamp(u,0,1);return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){if(!el)return;el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=71;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var LINES=[['L1','Por que tem uma <b>pia de água benta</b> na porta da igreja? Não é enfeite. Esse costume nasceu de uma <b>fonte no pátio</b> das igrejas antigas.'],
+['L2','No templo de Israel, os sacerdotes lavavam as <b>mãos e os pés</b> numa bacia de bronze antes de chegar ao altar. Está em <b>Êxodo, capítulo trinta</b>.'],
+['L3','Os primeiros cristãos herdaram o gesto. Depois do imperador Constantino, as grandes igrejas ganharam um pátio com uma fonte, o <b>cântaro</b>, para lavar as mãos antes de entrar.'],
+['L4','E a água já era abençoada. No século quatro, o bispo <b>Serapião</b>, no Egito, deixou escrita uma oração para <b>abençoar a água</b> e o óleo.'],
+['L5','Por volta do ano quatrocentos, um livro chamado Constituições Apostólicas atribuía esse costume ao <b>apóstolo Mateus</b>. Mas os historiadores dizem que isso é só uma tradição.'],
+['L6','No século nove, o papa <b>Leão quarto</b> mandou abençoar água <b>todo domingo</b> em cada igreja. E as pequenas pias de pedra na porta se espalham <b>depois do ano mil</b>.'],
+['L7','E o sentido? Na Igreja Católica, a água benta é um <b>sacramental</b>: ela lembra o <b>nosso batismo</b>. Quem molha os dedos e faz o sinal da cruz renova a sua entrega a Deus.'],
+['L8','Então, da próxima vez, não passe correndo pela pia. Lembre: você foi <b>lavado em Cristo</b>. Você sabia disso? <b>Comenta e segue</b> pra mais segredos da fé!']];
+var T={},TL={lines:[]},CHK=[],WC={};
+window.__retime=function(d){var t=.3;TL.lines=[];WC={};LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;buildCaps();};
+window.__timeline=function(){return TL;};
+function buildCaps(){CHK=[];var C=window.CAPS||{};TL.lines.forEach(function(l){var ws=C[l.id];if(!ws)return;var cur=[],len=0;
+ function flush(){if(cur.length)CHK.push({ws:cur.map(function(w){return {w:w.w,b:w.b,t:l.t0+w.t};})});cur=[];len=0;}
+ ws.forEach(function(w,i){if(len+w.w.length>34&&cur.length)flush();cur.push(w);len+=w.w.length+1;var end=/[.!?:;]$/.test(w.w)||(/,$/.test(w.w)&&len>=18);if(end)flush();});flush();
+ CHK.filter(function(c){return c.l===undefined;}).forEach(function(c){c.l=l.id;c.end=l.t0+l.dur+.25;});});
+ for(var i=0;i<CHK.length;i++){CHK[i].t0=CHK[i].ws[0].t-.12;var nx=CHK[i+1];CHK[i].t1=(nx&&nx.l===CHK[i].l)?nx.ws[0].t-.12:CHK[i].end;}}
+// tempo (absoluto) da palavra falada: WT('L2','tertuliano') — sincroniza animações com caps.json
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');}
+function WT(id,w,k){var key=id+w+(k||1);if(WC[key]!==undefined)return WC[key];var ws=(window.CAPS||{})[id],r=T[id],n=0;if(ws)for(var i=0;i<ws.length;i++){if(norm(ws[i].w).indexOf(norm(w))===0){n++;if(n>=(k||1)){r=T[id]+ws[i].t;break;}}}WC[key]=r;return r;}
+function LW(id,w,k){return WT(id,w,k)-T[id];}
+function glow(X,Y,r,col,a){if(a<=0)return;var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
+function rr(X,Y,w,h,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath();}
+function txt(s,X,Y,font,col,al,sh){x.save();x.font=font;x.textAlign=al||'center';x.fillStyle=col;if(sh){x.shadowColor=sh;x.shadowBlur=18;}x.fillText(s,X,Y);x.restore();}
+function star(X,Y,r,a){x.save();x.globalAlpha*=a;x.fillStyle='#fff8e0';x.beginPath();for(var i=0;i<8;i++){var rr2=i%2?r*.35:r,an=i*PI/4-PI/2;x.lineTo(X+Math.cos(an)*rr2,Y+Math.sin(an)*rr2);}x.fill();x.restore();}
+var FLOOR=860;
+// fundo: Azul noite
+var bg=document.createElement('canvas');bg.width=W;bg.height=H;(function(){var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.35,40,W/2,H*.5,H*.9);g.addColorStop(0,'#1d3f80');g.addColorStop(.45,'#0b1a3a');g.addColorStop(1,'#03060f');b.fillStyle=g;b.fillRect(0,0,W,H);
+ for(var i=0;i<7000;i++){b.fillStyle='rgba('+(rnd()>.5?'159,216,255':'0,0,0')+','+(rnd()*.05)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}})();
+var PRT=[];for(var i=0;i<70;i++)PRT.push([rnd()*W,rnd()*H,1.5+rnd()*4,rnd()*6,.3+rnd()*.8,rnd()<.35]);
+function rays(t){x.save();x.globalCompositeOperation='lighter';for(var k=0;k<6;k++){var a0=-.5+k*.2+Math.sin(t*.3+k)*.04;x.fillStyle='rgba(159,216,255,0.035)';x.beginPath();x.moveTo(360,-80);x.lineTo(360+Math.tan(a0)*1500,1400);x.lineTo(360+Math.tan(a0+.07)*1500,1400);x.fill();}x.restore();}
+function particles(t){PRT.forEach(function(p){var yy=(p[1]-t*20*p[4]+H*2)%H;var xx=p[0]+Math.sin(t*.8+p[3])*14;
+ if(p[5])glow(xx,yy,p[2]*3.2,'rgba(159,216,255,A)',.45);else{x.strokeStyle='rgba(200,235,255,.35)';x.lineWidth=1.5;x.beginPath();x.arc(xx,yy,p[2]*.9,0,7);x.stroke();}});}
+function crossShape(X,Y,s,col,lw,u){x.save();x.strokeStyle=col;x.lineWidth=lw;x.lineCap='round';x.shadowColor=col;x.shadowBlur=22;var u1=clamp(u*2,0,1),u2=clamp(u*2-1,0,1);
+ if(u1>0){x.beginPath();x.moveTo(X,Y-s);x.lineTo(X,Y-s+2*s*u1);x.stroke();}if(u2>0){x.beginPath();x.moveTo(X-s*.7,Y-s*.25);x.lineTo(X-s*.7+1.4*s*u2,Y-s*.25);x.stroke();}x.restore();}
+function floorStone(c1,c2){var g=x.createLinearGradient(0,FLOOR-40,0,H);g.addColorStop(0,c1);g.addColorStop(1,c2);x.fillStyle=g;x.fillRect(0,FLOOR-40,W,H-FLOOR+40);x.strokeStyle='rgba(0,0,0,.25)';x.lineWidth=2;for(var i=0;i<8;i++){x.beginPath();x.moveTo(i*110-20,FLOOR-40);x.lineTo(i*130-160,H);x.stroke();}
+ x.strokeStyle='rgba(159,216,255,.12)';x.beginPath();x.moveTo(0,FLOOR-40);x.lineTo(W,FLOOR-40);x.stroke();}
+function popS(lt,t0){return back(lin(lt,t0,t0+.45));}
+// água com brilho (superfície elíptica)
+function waterSurf(X,Y,rx,ry,t,a){x.save();x.globalAlpha*=(a===undefined?1:a);var g=x.createLinearGradient(X-rx,Y,X+rx,Y);g.addColorStop(0,'#1e88e5');g.addColorStop(.5,'#81d4fa');g.addColorStop(1,'#1565c0');x.fillStyle=g;x.beginPath();x.ellipse(X,Y,rx,ry,0,0,7);x.fill();
+ x.strokeStyle='rgba(255,255,255,.55)';x.lineWidth=2;for(var k=0;k<2;k++){var r=((t*.6+k*.5)%1);x.globalAlpha=(1-r)*.7;x.beginPath();x.ellipse(X,Y,rx*r,ry*r,0,0,7);x.stroke();}x.restore();}
+function drop(X,Y,s,col){x.fillStyle=col||'#bfe8ff';x.beginPath();x.moveTo(X,Y-12*s);x.quadraticCurveTo(X+8*s,Y,X,Y+6*s);x.quadraticCurveTo(X-8*s,Y,X,Y-12*s);x.fill();}
+// pia de pedra (concha) presa à parede
+function stoup(X,Y,s,t,lit){x.save();x.translate(X,Y);x.scale(s,s);
+ x.fillStyle='#8a94a8';x.beginPath();x.moveTo(-26,40);x.lineTo(26,40);x.lineTo(16,90);x.lineTo(-16,90);x.fill();x.fillStyle='#6b7488';x.fillRect(-30,86,60,14);
+ var g=x.createLinearGradient(0,-10,0,44);g.addColorStop(0,'#c9d2e2');g.addColorStop(1,'#7c869a');x.fillStyle=g;x.beginPath();x.moveTo(-70,0);x.quadraticCurveTo(-66,46,0,48);x.quadraticCurveTo(66,46,70,0);x.closePath();x.fill();
+ x.strokeStyle='rgba(90,100,120,.6)';x.lineWidth=2;for(var i=-3;i<=3;i++){x.beginPath();x.moveTo(i*18,2);x.lineTo(i*6,44);x.stroke();}
+ x.restore();waterSurf(X,Y,62*s,9*s,t);if(lit>0)glow(X,Y,110*s,'rgba(159,216,255,A)',.7*lit);}
+// ---------- cena 1: fachada da igreja à noite, porta de madeira e a pia ao lado ----------
+function sc1(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#0b1a3a');sky.addColorStop(1,'#2a5fa8');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ for(var i=0;i<30;i++)star((i*97)%W,320+(i*53)%160,2+(i%3),.3+.4*Math.sin(t*2+i));
+ // parede de pedra
+ x.fillStyle='#55607a';x.fillRect(40,420,640,FLOOR-460);for(var r=0;r<8;r++)for(var c=0;c<7;c++){x.fillStyle='rgba('+((r+c)%2?'120,132,160':'90,100,128')+',.55)';x.fillRect(44+c*92+(r%2)*40-(r%2?46:0),424+r*52,88,48);}
+ x.fillStyle='#3d465c';x.beginPath();x.moveTo(20,430);x.lineTo(360,330);x.lineTo(700,430);x.fill();
+ // rosácea
+ glow(360,400,60,'rgba(255,210,120,A)',.5);x.fillStyle='#ffcf6b';x.beginPath();x.arc(360,400,26,0,7);x.fill();x.strokeStyle='#3d465c';x.lineWidth=3;for(var k=0;k<8;k++){x.beginPath();x.moveTo(360,400);x.lineTo(360+Math.cos(k*PI/4)*26,400+Math.sin(k*PI/4)*26);x.stroke();}
+ // porta em arco com luz quente
+ x.fillStyle='#2b1a10';x.beginPath();x.moveTo(250,FLOOR-40);x.lineTo(250,590);x.arc(360,590,110,PI,0);x.lineTo(470,FLOOR-40);x.fill();
+ var op=ez(lin(lt,0.3,1.6));x.fillStyle='rgba(255,200,110,'+(.25+.5*op)+')';x.beginPath();x.moveTo(275,FLOOR-40);x.lineTo(275,595);x.arc(360,595,85,PI,0);x.lineTo(445,FLOOR-40);x.fill();
+ x.fillStyle='#7a4a24';x.fillRect(275,600,40*(1-op)+8,FLOOR-640);x.fillRect(445-40*(1-op)-8,600,40*(1-op)+8,FLOOR-640);
+ floorStone('#2c3550','#0a0f1e');
+ // pia ao lado da porta
+ var u=popS(lt,LW('L1','pia')-.1);if(u>0){x.save();x.globalAlpha=clamp(u,0,1);stoup(580,690,1.05*Math.min(u,1.08),t,fade(lt,LW('L1','pia'),LW('L1','enfeite')+.6,.4));x.restore();}
+ var f=lin(lt,LW('L1','fonte')-.2,LW('L1','fonte')+.6);if(f>0){for(var k=0;k<3;k++){var yy=600+((t*1.4+k*.33)%1)*80;x.globalAlpha=f;drop(580,yy,1);x.globalAlpha=1;}glow(580,690,150,'rgba(159,216,255,A)',.6*f);}}
+// ---------- cena 2: pátio do templo: bacia de bronze, altar com fumaça ----------
+function priest(X,s,col){x.save();x.translate(X,FLOOR-40);x.scale(s,s);x.fillStyle=col;x.beginPath();x.moveTo(-50,0);x.quadraticCurveTo(-56,-150,-28,-200);x.lineTo(28,-200);x.quadraticCurveTo(56,-150,50,0);x.fill();x.beginPath();x.arc(0,-226,30,0,7);x.fill();
+ x.fillStyle='#f5f0e0';x.beginPath();x.moveTo(-32,-250);x.quadraticCurveTo(0,-275,32,-250);x.lineTo(30,-238);x.lineTo(-30,-238);x.fill();x.fillStyle='#1e88e5';x.fillRect(-46,-110,92,12);x.restore();}
+function sc2(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#123266');sky.addColorStop(.7,'#e0a060');sky.addColorStop(1,'#f3c98a');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ // colunas do templo
+ x.fillStyle='#c9a46a';for(var i=0;i<5;i++){x.fillRect(30+i*160,420,40,FLOOR-460);x.fillRect(22+i*160,410,56,14);}x.fillStyle='#b08850';x.fillRect(0,394,W,20);
+ // altar com fumaça
+ x.fillStyle='#8a6a44';x.fillRect(520,640,150,FLOOR-680);x.fillStyle='#a07c50';x.fillRect(510,628,170,16);[[518,628],[662,628]].forEach(function(p){x.beginPath();x.moveTo(p[0]-6,628);x.lineTo(p[0]+4,612);x.lineTo(p[0]+14,628);x.fill();});
+ for(var k=0;k<6;k++){var r=(t*.35+k/6)%1;x.fillStyle='rgba(240,240,250,'+(.35*(1-r))+')';x.beginPath();x.arc(595+Math.sin(t+k)*20*r,620-r*240,14+30*r,0,7);x.fill();}
+ glow(595,615,60,'rgba(255,170,60,A)',.7);
+ floorStone('#b48a58','#4a3218');
+ // bacia de bronze sobre o suporte
+ x.fillStyle='#9c6b28';x.fillRect(250,700,24,FLOOR-740);x.fillRect(370,700,24,FLOOR-740);x.fillRect(236,FLOOR-52,172,14);
+ var g=x.createLinearGradient(200,0,450,0);g.addColorStop(0,'#7a4a12');g.addColorStop(.5,'#f0b450');g.addColorStop(1,'#7a4a12');x.fillStyle=g;x.beginPath();x.moveTo(190,640);x.quadraticCurveTo(200,712,322,712);x.quadraticCurveTo(444,712,454,640);x.closePath();x.fill();
+ waterSurf(322,640,128,14,t);
+ // sacerdote (de costas, sem rosto) e água escorrendo nas mãos
+ priest(130,1,'#e8e2d0');
+ var m=lin(lt,LW('L2','maos')-.2,LW('L2','maos')+.3)*(1-lin(lt,LW('L2','exodo'),LW('L2','exodo')+.8));if(m>0){x.fillStyle='#e8e2d0';x.beginPath();x.ellipse(205,628,22,12,0,0,7);x.fill();for(var k=0;k<4;k++){x.globalAlpha=m;drop(215,600+((t*1.6+k*.25)%1)*34,.9);}x.globalAlpha=1;glow(215,630,70,'rgba(159,216,255,A)',.5*m);}
+ var s=popS(lt,LW('L2','exodo')-.1);if(s>0){x.save();x.translate(322,560);x.scale(s,s);x.fillStyle='#f6e7c1';rr(-90,-34,180,62,10);x.fill();x.fillStyle='#c9a56b';x.beginPath();x.ellipse(-90,-3,12,34,0,0,7);x.fill();x.beginPath();x.ellipse(90,-3,12,34,0,0,7);x.fill();txt('Êx 30,18',0,10,'700 30px L','#5a3a12');x.restore();}}
+// ---------- cena 3: átrio da basílica com o cântaro ----------
+function sc3(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#0e2a5c');sky.addColorStop(1,'#5fa8e8');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ // basílica ao fundo
+ x.fillStyle='#d8c8a8';x.fillRect(170,420,380,240);x.fillStyle='#b8a888';x.beginPath();x.moveTo(150,425);x.lineTo(360,330);x.lineTo(570,425);x.fill();
+ x.fillStyle='#7a5a3a';for(var i=0;i<3;i++){x.beginPath();x.moveTo(225+i*110,660);x.lineTo(225+i*110,560);x.arc(250+i*110,560,25,PI,0);x.lineTo(275+i*110,660);x.fill();}
+ glow(360,380,40,'rgba(255,220,140,A)',.5);crossShape(360,365,18,'#ffd166',5,1);
+ // pórtico do átrio
+ x.fillStyle='#e9dcc0';x.fillRect(0,610,W,18);for(var i=0;i<9;i++){x.fillRect(10+i*88,628,16,FLOOR-668);}x.fillStyle='rgba(30,40,70,.35)';x.fillRect(0,628,W,FLOOR-668);
+ floorStone('#cdbb98','#4a3e2c');
+ // fonte (cântaro) no centro
+ var u=lin(lt,LW('L3','cantaro')-.4,LW('L3','cantaro')+.4);
+ x.fillStyle='#bfc6d4';x.beginPath();x.ellipse(360,780,170,30,0,0,7);x.fill();x.fillStyle='#8f98ac';x.fillRect(190,780,340,34);x.beginPath();x.ellipse(360,814,170,30,0,0,PI);x.fill();
+ waterSurf(360,778,150,22,t);
+ x.fillStyle='#d9dfe9';x.fillRect(350,690,20,88);x.beginPath();x.ellipse(360,690,46,12,0,0,7);x.fill();
+ // pinha de bronze no topo
+ x.fillStyle='#b07a2a';x.beginPath();x.ellipse(360,660,22,32,0,0,7);x.fill();x.strokeStyle='#6a4410';x.lineWidth=2;for(var k=0;k<5;k++){x.beginPath();x.moveTo(340,640+k*9);x.lineTo(380,646+k*9);x.stroke();}
+ var jet=.35+.65*u;for(var k=0;k<14;k++){var a=-PI/2+(k-6.5)*.18,ph=(t*1.2+k*.13)%1;var px=360+Math.cos(a)*120*ph*jet,py=640+Math.sin(a)*30*ph*jet+ph*ph*140;x.globalAlpha=1-ph*.6;drop(px,py,.7);}x.globalAlpha=1;
+ glow(360,700,200,'rgba(159,216,255,A)',.25+.45*u);
+ // mãos sobre a água (silhueta, de longe)
+ var h=lin(lt,LW('L3','lavar')-.2,LW('L3','lavar')+.4);if(h>0){x.save();x.globalAlpha=h;x.fillStyle='#3a2a20';[[230,760],[490,760]].forEach(function(p,i){x.beginPath();x.ellipse(p[0],p[1],20,11,i?.3:-.3,0,7);x.fill();});x.restore();}}
+// ---------- cena 4: Egito, Nilo; jarro de água e óleo sendo abençoados ----------
+function sc4(t,lt){var sky=x.createLinearGradient(0,300,0,FLOOR);sky.addColorStop(0,'#16306a');sky.addColorStop(.6,'#ff9a5a');sky.addColorStop(1,'#ffd08a');x.fillStyle=sky;x.fillRect(0,300,W,FLOOR-300);
+ glow(560,560,140,'rgba(255,220,150,A)',.6);x.fillStyle='#fff0c0';x.beginPath();x.arc(560,560,44,0,7);x.fill();
+ x.fillStyle='#b8783a';x.beginPath();x.moveTo(380,640);x.lineTo(470,520);x.lineTo(560,640);x.fill();x.fillStyle='#9a5e2a';x.beginPath();x.moveTo(470,520);x.lineTo(560,640);x.lineTo(500,640);x.fill();
+ // Nilo
+ var g=x.createLinearGradient(0,640,0,720);g.addColorStop(0,'#3a8ad8');g.addColorStop(1,'#1a4a90');x.fillStyle=g;x.fillRect(0,640,W,70);x.strokeStyle='rgba(255,230,180,.5)';x.lineWidth=2;for(var k=0;k<6;k++){var xx=(k*140+t*30)%800-60;x.beginPath();x.moveTo(xx,660+k%3*14);x.lineTo(xx+50,660+k%3*14);x.stroke();}
+ // palmeiras
+ [[90,700],[200,705]].forEach(function(p,i){x.strokeStyle='#4a3018';x.lineWidth=12;x.beginPath();x.moveTo(p[0],p[1]);x.quadraticCurveTo(p[0]+10,p[1]-80,p[0]-6,p[1]-170);x.stroke();x.fillStyle='#1f5a2a';for(var k=0;k<6;k++){var a=k*PI/3+Math.sin(t+i)*.05;x.beginPath();x.ellipse(p[0]-6+Math.cos(a)*40,p[1]-170+Math.sin(a)*14,46,10,a,0,7);x.fill();}});
+ floorStone('#c49a5a','#4a3216');
+ // mesa de pedra com jarro e ânfora de óleo
+ x.fillStyle='#8a7a66';x.fillRect(300,770,320,22);x.fillRect(320,792,24,FLOOR-832);x.fillRect(576,792,24,FLOOR-832);
+ x.fillStyle='#4f8fd0';x.beginPath();x.moveTo(380,770);x.quadraticCurveTo(350,720,385,690);x.lineTo(415,690);x.quadraticCurveTo(450,720,420,770);x.fill();x.fillStyle='#3a6fb0';x.fillRect(388,676,24,16);
+ x.fillStyle='#c8902a';x.beginPath();x.moveTo(510,770);x.quadraticCurveTo(480,730,505,705);x.lineTo(535,705);x.quadraticCurveTo(560,730,530,770);x.fill();x.fillStyle='#a8701a';x.fillRect(510,692,20,14);
+ var b2=ez(lin(lt,LW('L4','abencoar')-.3,LW('L4','abencoar')+.7));if(b2>0){glow(460,690,170,'rgba(255,240,200,A)',.75*b2);crossShape(460,620,34,'#fff6d0',8,b2);
+  for(var k=0;k<10;k++){var a=k*PI/5+t;star(460+Math.cos(a)*90*b2,700+Math.sin(a)*40*b2,4,b2*.8);}}
+ var s=popS(lt,LW('L4','serapiao')-.1);if(s>0){x.save();x.translate(170,800);x.scale(s,s);x.fillStyle='#f6e7c1';rr(-80,-30,160,56,8);x.fill();x.fillStyle='#7a5a2a';for(var k=0;k<3;k++)x.fillRect(-62,-16+k*14,124-k*30,4);x.restore();}}
+// ---------- cena 5: livro antigo no atril; selo "S. Mateus" e carimbo "tradição" ----------
+function sc5(t,lt){var g=x.createRadialGradient(360,620,30,360,620,460);g.addColorStop(0,'#2f5fa8');g.addColorStop(1,'#081830');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ // estante com livros ao fundo
+ x.fillStyle='#3a2414';x.fillRect(40,360,640,300);var cols=['#8a2a2a','#2a5a8a','#6a4a1a','#2a6a4a','#5a2a6a','#9a7a2a'];for(var r=0;r<3;r++){x.fillStyle='#2a180c';x.fillRect(40,450+r*100,640,10);for(var i=0;i<20;i++){x.fillStyle=cols[(i*7+r*3)%6];x.fillRect(52+i*31,372+r*100,26,78-(i*13+r*5)%18);}}
+ // vela à esquerda (apoiada na mesa)
+ floorStone('#2a3550','#0a0f1e');
+ // atril com livro
+ x.fillStyle='#5a3a1e';x.fillRect(340,770,40,FLOOR-810);x.fillRect(290,FLOOR-56,140,16);x.fillStyle='#6b4524';x.beginPath();x.moveTo(170,770);x.lineTo(550,770);x.lineTo(520,700);x.lineTo(200,700);x.fill();
+ x.fillStyle='#f4e6c4';x.beginPath();x.moveTo(210,700);x.quadraticCurveTo(280,672,358,690);x.lineTo(358,762);x.quadraticCurveTo(280,744,186,766);x.fill();x.beginPath();x.moveTo(362,690);x.quadraticCurveTo(440,672,510,700);x.lineTo(534,766);x.quadraticCurveTo(440,744,362,762);x.fill();
+ x.fillStyle='rgba(90,60,30,.45)';for(var k=0;k<5;k++){x.fillRect(222,705+k*11,120,3);x.fillRect(380,705+k*11,120,3);}
+ x.fillStyle='#ffe9b0';x.fillRect(600,690,16,80);x.fillStyle='#8a6a2a';x.fillRect(590,766,36,10);var fl=1+.12*Math.sin(t*9);glow(608,676,70,'rgba(255,200,100,A)',.7);x.fillStyle='#ffd27a';x.beginPath();x.ellipse(608,678,6,14*fl,0,0,7);x.fill();
+ var m=popS(lt,LW('L5','mateus')-.1);if(m>0){x.save();x.translate(290,600);x.scale(m,m);glow(0,0,80,'rgba(255,215,120,A)',.5);x.fillStyle='#c0392b';x.beginPath();x.arc(0,0,54,0,7);x.fill();x.strokeStyle='#ffd166';x.lineWidth=4;x.stroke();txt('S. MATEUS',0,8,'700 20px P','#fff3d6');x.restore();}
+ var tr=lin(lt,LW('L5','tradicao')-.3,LW('L5','tradicao')+.1);if(tr>0){x.save();x.translate(450,600);x.rotate(-.18);x.scale(1.6-.6*tr,1.6-.6*tr);x.globalAlpha=tr;x.strokeStyle='#ffd166';x.lineWidth=5;rr(-108,-32,216,60,10);x.stroke();txt('TRADIÇÃO',0,12,'700 34px P','#ffd166');x.restore();}}
+// ---------- cena 6: semana com domingos brilhando + pia de pedra junto à porta ----------
+function sc6(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#0e244c');g.addColorStop(1,'#3b6fb8');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ // calendário: 4 semanas, domingos acendem
+ var u=lin(lt,LW('L6','domingo')-.6,LW('L6','domingo')+.8);
+ x.fillStyle='rgba(255,255,255,.92)';rr(70,420,420,250,18);x.fill();x.fillStyle='#1565c0';rr(70,420,420,46,18);x.fill();x.fillRect(70,446,420,20);txt('SÉCULO IX',280,454,'700 26px P','#fff');
+ for(var r=0;r<4;r++)for(var c=0;c<7;c++){var X=96+c*56,Y=488+r*44;var sun=c==0;var on=sun?clamp(u*4-r,0,1):0;x.fillStyle=sun?'rgba(255,209,102,'+(.25+.75*on)+')':'#d8e6f6';rr(X,Y,46,36,8);x.fill();if(sun&&on>0){drop(X+23,Y+20,.9,'#1e88e5');}}
+ txt('D',119,482,'700 18px P','#c0392b');
+ // porta e pia de pedra à direita
+ x.fillStyle='#5a6478';x.fillRect(520,380,200,FLOOR-420);x.fillStyle='#2b1a10';x.beginPath();x.moveTo(560,FLOOR-40);x.lineTo(560,520);x.arc(640,520,80,PI,0);x.lineTo(720,FLOOR-40);x.fill();
+ floorStone('#2c3550','#0a0f1e');
+ var s=popS(lt,LW('L6','pedra')-.1);if(s>0){x.save();x.globalAlpha=clamp(s,0,1);stoup(470,722,.95*Math.min(s,1.06),t,fade(lt,LW('L6','pedra'),LW('L6','mil')+1,.4));x.restore();}
+ var m=lin(lt,LW('L6','mil')-.2,LW('L6','mil')+.4);if(m>0){x.save();x.globalAlpha=m;x.fillStyle='rgba(8,20,48,.8)';rr(130,700,230,64,14);x.fill();txt('ano 1000 +',245,744,'700 34px P','#9fd8ff');x.restore();}}
+// ---------- cena 7: pia batismal e a mão que se molha; cruz de luz ----------
+function hand(X,Y,s){x.save();x.translate(X,Y);x.scale(s,s);x.fillStyle='#e0b48a';x.beginPath();x.moveTo(-26,-140);x.lineTo(26,-140);x.lineTo(30,-30);x.quadraticCurveTo(34,0,14,10);x.lineTo(14,44);x.quadraticCurveTo(10,56,4,44);x.lineTo(4,12);x.lineTo(-4,12);x.lineTo(-4,50);x.quadraticCurveTo(-10,62,-16,50);x.lineTo(-16,8);x.quadraticCurveTo(-32,0,-30,-30);x.closePath();x.fill();
+ x.fillStyle='#1d3f80';x.fillRect(-36,-520,72,390);x.fillStyle='#9fd8ff';x.fillRect(-36,-140,72,8);x.restore();}
+function dove(X,Y,s,t){x.save();x.translate(X,Y);x.scale(s,s);glow(0,0,90,'rgba(255,255,255,A)',.35);x.fillStyle='#ffffff';x.beginPath();x.ellipse(0,0,34,14,0,0,7);x.fill();x.beginPath();x.arc(30,-8,10,0,7);x.fill();x.fillStyle='#ffd166';x.beginPath();x.moveTo(39,-8);x.lineTo(50,-5);x.lineTo(39,-3);x.fill();x.fillStyle='#fff';var w=Math.sin(t*5)*18;x.beginPath();x.moveTo(-6,-6);x.quadraticCurveTo(-20,-50-w,-56,-40-w);x.quadraticCurveTo(-30,-20,-10,0);x.fill();x.beginPath();x.moveTo(-30,0);x.lineTo(-58,-10);x.lineTo(-52,8);x.fill();x.restore();}
+function sc7(t,lt){var g=x.createRadialGradient(360,560,20,360,560,460);g.addColorStop(0,'#3d7bd0');g.addColorStop(1,'#0b1a3a');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ for(var i=0;i<12;i++){var a=i/12*PI*2+t*.12;x.strokeStyle='rgba(200,235,255,.07)';x.lineWidth=28;x.beginPath();x.moveTo(360,520);x.lineTo(360+Math.cos(a)*520,520+Math.sin(a)*520);x.stroke();}
+ floorStone('#2c3550','#0a0f1e');
+ // pia batismal octogonal
+ x.fillStyle='#d6dbe6';x.beginPath();x.moveTo(200,740);x.lineTo(520,740);x.lineTo(490,FLOOR-40);x.lineTo(230,FLOOR-40);x.fill();x.fillStyle='#b4bccc';for(var k=0;k<4;k++)x.fillRect(240+k*72,752,52,FLOOR-804);
+ x.fillStyle='#e9edf5';x.beginPath();x.ellipse(360,740,170,28,0,0,7);x.fill();waterSurf(360,738,150,20,t);
+ var d=ez(lin(lt,LW('L7','molha')-.6,LW('L7','molha')+.1))*(1-ez(lin(lt,LW('L7','cruz')-.3,LW('L7','cruz')+.4)));if(d>0)hand(330,560+150*d,1);
+ dove(360+Math.sin(t*.8)*20,450+Math.sin(t*1.3)*8,1,t);var b=lin(lt,LW('L7','batismo')-.3,LW('L7','batismo')+.5);if(b>0){glow(360,738,220,'rgba(159,216,255,A)',.6*b);for(var k=0;k<8;k++){var r=(t*.5+k/8)%1;x.globalAlpha=b*(1-r);star(260+k*28,738-r*200,4,1);}x.globalAlpha=1;}
+ var c=ez(lin(lt,LW('L7','cruz')-.3,LW('L7','cruz')+.6));if(c>0){glow(360,540,160,'rgba(255,230,160,A)',.7*c);crossShape(360,560,80,'#fff3c4',14,c);}}
+// ---------- cena 8: nave da igreja, pia acesa na entrada, velas ----------
+function sc8(t,lt){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,'#081430');g.addColorStop(1,'#24508e');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ // arcos da nave em perspectiva
+ for(var k=0;k<5;k++){var s=1-k*.16,w=520*s,X=360-w/2,Y=FLOOR-40-460*s;x.strokeStyle='rgba(180,200,230,'+(.55-k*.08)+')';x.lineWidth=16*s;x.beginPath();x.moveTo(X,FLOOR-40);x.lineTo(X,Y+w/2);x.arc(360,Y+w/2,w/2,PI,0);x.lineTo(X+w,FLOOR-40);x.stroke();}
+ glow(360,520,140,'rgba(255,215,140,A)',.55);crossShape(360,540,46,'#ffd166',10,1);
+ floorStone('#2c3550','#0a0f1e');
+ // velas no altar
+ x.fillStyle='#e8ecf4';x.fillRect(290,690,140,20);[310,410].forEach(function(cx,i){x.fillStyle='#fffaf0';x.fillRect(cx-6,640,12,50);var f=1+.12*Math.sin(t*9+i*2);glow(cx,628,50,'rgba(255,200,100,A)',.7);x.fillStyle='#ffd27a';x.beginPath();x.ellipse(cx,630,5,11*f,0,0,7);x.fill();});
+ // pias nas duas entradas (primeiro plano)
+ stoup(110,740,.9,t,.4+.4*Math.sin(t*2)*.5+.3);stoup(610,740,.9,t,.4+.4*Math.cos(t*2)*.5+.3);
+ var l=lin(lt,LW('L8','lavado')-.2,LW('L8','lavado')+.6);if(l>0){for(var k=0;k<12;k++){var a=k*PI/6+t*.5;star(360+Math.cos(a)*220*l,600+Math.sin(a)*90*l,5,l);}}}
+var SC=[sc1,sc2,sc3,sc4,sc5,sc6,sc7,sc8];
+function OV(t,L){pop($('c1'),fade(t,WT('L1','enfeite')-.2,L.L1e+.2));pop($('c2'),fade(t,WT('L2','bacia')-.2,L.L2e+.2));
+ pop($('c3'),fade(t,WT('L3','constantino')-.2,L.L3e+.2));pop($('c4'),fade(t,WT('L4','serapiao')-.2,L.L4e+.2));pop($('c5'),fade(t,WT('L5','constituicoes')-.2,L.L5e+.2));
+ pop($('c6'),fade(t,WT('L6','leao')-.2,L.L6e+.2));pop($('c7'),fade(t,WT('L7','sacramental')-.3,L.L7e+.2));}
+
+var OFF=document.createElement('canvas');OFF.width=W;OFF.height=H;var ox=OFF.getContext('2d');
+function frame(t){var L=T;x=MAIN;x.drawImage(bg,0,0);rays(t);
+ for(var i=0;i<8;i++){var id='L'+(i+1),a=(i<7)?fade(t,L[id]-.25,L[id+'e']+.3,.35):fade(t,L.L8-.25,L.END+2,.35);if(a<=0)continue;
+  ox.clearRect(0,0,W,H);x=ox;SC[i](t,t-L[id],L);x=MAIN;ox.save();ox.globalCompositeOperation='destination-in';var mg=ox.createLinearGradient(0,290,0,H);mg.addColorStop(0,'rgba(0,0,0,0)');mg.addColorStop(.09,'rgba(0,0,0,1)');mg.addColorStop(.62,'rgba(0,0,0,1)');mg.addColorStop(1,'rgba(0,0,0,0)');ox.fillStyle=mg;ox.fillRect(0,0,W,H);ox.restore();
+  MAIN.save();MAIN.globalAlpha=a;MAIN.drawImage(OFF,0,0);MAIN.restore();}
+ particles(t);OV(t,L);pop($('q'),fade(t,WT('L8','voce'),L.END+2));
+ var vg=x.createRadialGradient(W/2,H/2,H*.32,W/2,H/2,H*.78);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.5)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ var cur=null;for(var i=0;i<CHK.length;i++)if(t>=CHK[i].t0&&t<CHK[i].t1){cur=CHK[i];break;}
+ if(cur){$('cap').innerHTML='<span class="box">'+cur.ws.map(function(w){return '<i class="'+(w.b?'b ':'')+(t<w.t-.05?'f':'')+'">'+w.w+'</i>';}).join(' ')+'</span>';var u=lin(t,cur.t0,cur.t0+.18);$('cap').style.opacity=u;$('cap').style.transform='translateY('+((1-u)*10)+'px)';}
+ else $('cap').innerHTML='';}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>
