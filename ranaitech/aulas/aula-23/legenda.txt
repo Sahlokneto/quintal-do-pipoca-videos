@@ -1,0 +1,10 @@
+Com try e except, o seu programa não quebra quando acontece um erro: ele avisa e continua funcionando. Nesta aula o Cubinho escreve "duas" por extenso, o int não entende e a pizzaria fecha. 😅
+
+🍕 try: qtd = int(input('Pizzas? ')) except ValueError: print('Digite um número!')
+👉 try: coloque ali o código que pode dar erro
+👉 except: o que fazer se o erro acontecer
+👉 o programa continua rodando, sem parar
+
+Próxima aula: módulos (import)! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #tryexcept #aprenderprogramação #python #lógicadeprogramação
