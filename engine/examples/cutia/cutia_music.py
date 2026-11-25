@@ -1,0 +1,25 @@
+import sys,os,json;sys.path.insert(0,os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..'))
+from qp_music import *
+D=json.load(open(sys.argv[1]))['TL'];T=D['T'];EV=D['EV']
+jingle(0,T['DROP1'],bpm=118,semi=0,g=0.7)
+for k in range(int((T['DROP1']-T['SONG'])/(60/118))):add(T['SONG']+k*60/118,clap(),0.35)
+jingle(T['DROP1']+0.3,T['R2'],bpm=136,semi=2,g=0.6,full=False)
+jingle(T['R2'],T['DROP2'],bpm=118,semi=5,g=0.7)
+for k in range(int((T['DROP2']-T['R2'])/(60/118))):add(T['R2']+k*60/118,clap(),0.35)
+jingle(T['DROP2']+0.3,T['ASK'],bpm=140,semi=2,g=0.6,full=False)
+jingle(T['TRAIN'],T['YAY'],bpm=146,semi=0,g=0.85,claps=True)
+for t,ty in EV:
+  if ty=='bark':bark(t,0.3);bark(t+0.25,0.25)
+  if ty=='ta':fanfare(t,0.2)
+  if ty=='drop':plop(t+0.3,70,0.3);slide(t,900,500,0.3,0.06)
+  if ty=='run':whoosh(t,0.5,0.25)
+  if ty=='zoom':whoosh(t,0.7,0.35);slide(t,600,1400,0.5,0.06)
+  if ty=='plop':plop(t,58,0.25)
+  if ty=='gulp':plop(t,62,0.3)
+  if ty=='laugh':giggle(t,0.13,8)
+  if ty=='whoosh':whoosh(t,0.5,0.3)
+  if ty=='confetti':fanfare(t,0.32);add(t,clap(),1.0)
+jingle(T['YAY']+0.4,T['END'],bpm=118,semi=2,g=1.0,claps=True)
+e=T['END']-1.6
+add(e,bell(62,1.5),0.3);add(e,bell(66,1.5),0.25);add(e,bell(69,1.5),0.25);add(e,bell(74,1.5),0.3)
+save(sys.argv[2])
