@@ -1,0 +1,1 @@
+var KS=0.6,PI=Math.PI,GROUND_Y=-0.55,BPM=118;
