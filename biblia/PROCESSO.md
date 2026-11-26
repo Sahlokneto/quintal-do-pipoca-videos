@@ -20,7 +20,7 @@ hebraico/grego mostrada na tela; (3) prova externa (arqueologia, historiadores, 
 2D animado, voz calma + música épica/orquestral; (5) 70–180 s funcionam bem no TikTok.
 
 ## 2. Banco de temas (escolha 1 por vídeo; não repetir; marque os feitos)
-- Milagres/gestos "estranhos": saliva no cego ✅ · "Eli, Eli, lamá sabactâni" ✅ · Jesus escreveu no chão (Jo 8) · figueira amaldiçoada · água em vinho (talhas de purificação) · "Talitá cumi".
+- Milagres/gestos "estranhos": saliva no cego ✅ · "Eli, Eli, lamá sabactâni" ✅ · Jesus escreveu no chão (Jo 8) ✅ · figueira amaldiçoada · água em vinho (talhas de purificação) · "Talitá cumi".
 - Palavras originais: Yeshua · Aleluia · Amém · Shalom · Emanuel · "Eli, Eli, lamá sabactâni" · Bereshit (1ª palavra) · YHWH · Maranata · Ágape × Philia (grego).
 - Costumes/objetos: camelo e agulha ✅ · cores da missa ✅ · véu do templo · INRI · coroa de espinhos · por que 30 moedas · sandália na rua (Rute) · lavar os pés · pão sem fermento.
 - Parábolas explicadas: filho pródigo (o pai correndo era vergonha) · bom samaritano (quem eram os samaritanos) · dez virgens (lâmpadas e óleo) · semeador · ovelha perdida.
@@ -45,10 +45,10 @@ Ainda assim, não repetir o mesmo subtipo no mesmo dia (ex.: 2 de "ritos da miss
   · por que se faz o sinal da cruz ✅ · água benta na entrada ✅ · por que se ajoelha · origem do terço/rosário · o Advento e a coroa ✅ ·
   por que domingo é o dia do Senhor · por que a missa era em latim · origem do Pai-Nosso · como surgiram os sacramentos ·
   cores da missa ✅ · por que o padre não casa (celibato: quando virou regra) · o que é a hóstia e por que é redonda ·
-  por que o sino toca na consagração · incenso: de onde vem · por que a Quaresma tem 40 dias · Quarta-feira de Cinzas ·
+  por que o sino toca na consagração · incenso: de onde vem ✅ · por que a Quaresma tem 40 dias · Quarta-feira de Cinzas ·
   por que o Natal é em 25 de dezembro · o presépio (São Francisco, 1223) · por que o Papa usa branco · como é escolhido
   um Papa (conclave, fumaça) · o que é um santo e como alguém vira santo · por que as igrejas apontam para o leste ·
-  o que significa "Amém" no fim da oração · por que se bate no peito no "Senhor, tende piedade" · velas no altar.
+  o que significa "Amém" no fim da oração · por que se bate no peito no "Confesso a Deus" ✅ · velas no altar.
 - **Como viver a fé (prático)**: como se comportar na missa (postura, celular, comunhão) · como rezar melhor (método simples,
   com base em Mt 6:5-13) · o que significa cada parte da missa · como ler a Bíblia pela primeira vez.
 - **História do cristianismo**: quando e por que surgiu · por que "cristãos" (At 11:26, Antioquia) ✅ · o peixe (ΙΧΘΥΣ) como

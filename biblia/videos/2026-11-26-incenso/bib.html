@@ -1,0 +1,218 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(../../tools/Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(../../tools/Poppins-Regular.ttf);font-weight:400}
+@font-face{font-family:L;src:url(../../tools/Lora-Variable.ttf)}
+@font-face{font-family:HB;src:url(../../tools/FreeSerifBold.ttf)}
+:root{--c1:#fffaf0;--c2:#ffe7bd;--ink:#3a2615;--r1:#a0521a;--r2:#e08a2a;--em:#b5521b;--sub:#6b4a2a;--capbg:rgba(24,12,4,.86);--hl:#ffd98a;--b1:#c0601a;--b2:#f0a030}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:720px;height:1280px;overflow:hidden;font-family:P,sans-serif;color:#fff}
+#cv{position:absolute;left:0;top:0}
+.lay{position:absolute;left:0;width:720px;text-align:center;opacity:0}
+.sc{display:inline-block;padding:16px 30px 18px;border-radius:20px;background:linear-gradient(160deg,var(--c1),var(--c2));color:var(--ink);box-shadow:0 14px 40px rgba(0,0,0,.55),0 0 0 4px rgba(255,209,102,.85);max-width:620px}
+.sc .r{display:inline-block;font-family:P;font-size:20px;letter-spacing:3px;color:#fff;font-weight:700;background:linear-gradient(90deg,var(--r1),var(--r2));padding:4px 14px;border-radius:30px;margin-bottom:8px}
+.sc .v{font-family:L;font-size:42px;font-weight:700;line-height:1.15}
+.sc .v em{font-style:normal;color:var(--em)}
+.sc .s{font-family:P;font-size:23px;color:var(--sub);margin-top:6px}
+.sc .g{font-family:HB;font-size:62px;line-height:1.05;color:var(--em)}
+.cd{top:132px}
+#q{top:160px;left:60px;width:600px;font-family:L;font-size:54px;font-weight:700;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#q .c{display:block;margin-top:18px;font-family:P;font-size:34px;color:var(--hl)}
+#q .btn{display:inline-block;margin-top:18px;padding:16px 46px;border-radius:50px;background:linear-gradient(90deg,var(--b1),var(--b2));font-family:P;font-size:38px;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+#cap{top:878px;left:36px;width:600px;text-align:center;opacity:1}
+#cap .box{display:inline-block;padding:10px 24px 12px;border-radius:18px;background:var(--capbg);border:2px solid rgba(255,209,102,.45);font-size:40px;font-weight:700;line-height:1.22;text-shadow:0 3px 0 #000;max-width:560px}
+#cap i{font-style:normal}
+#cap i.f{opacity:.45}
+#cap i.b{color:#ffd166}
+</style></head><body>
+<div id="stage">
+<canvas id="cv" width="720" height="1280"></canvas>
+<div id="c1" class="lay cd"><div class="sc"><div class="r">INCENSO NA MISSA</div><div class="v">eles preferiam <em>morrer</em></div><div class="s">a queimar uma pitada de incenso</div></div></div>
+<div id="c2" class="lay cd"><div class="sc"><div class="r">IMPÉRIO ROMANO</div><div class="v">o <em>teste</em> do incenso</div><div class="s">incenso e vinho diante da imagem do imperador</div></div></div>
+<div id="c3" class="lay cd"><div class="sc"><div class="r">CARTA 10.96 · ANO 112</div><div class="v">Plínio escreve a <em>Trajano</em></div><div class="s">“os cristãos de verdade não podem ser forçados”</div></div></div>
+<div id="c4" class="lay cd"><div class="sc"><div class="r">TERTULIANO · SÉC. II–III</div><div class="v">“nada a ver com <em>incenso</em>”</div><div class="s">para eles, lembrava os ídolos</div></div></div>
+<div id="c5" class="lay cd"><div class="sc"><div class="r">ÊXODO 30 · MATEUS 2,11</div><div class="v">o <em>altar do incenso</em></div><div class="s">e o presente dos magos</div></div></div>
+<div id="c6" class="lay cd"><div class="sc"><div class="r">DEPOIS DAS PERSEGUIÇÕES</div><div class="v">o incenso <em>volta</em></div><div class="s">agora só para Deus (séc. IV em diante)</div></div></div>
+<div id="c7" class="lay cd"><div class="sc"><div class="r">SALMO 141,2 · APOCALIPSE 8,3-4</div><div class="g">θυμίαμα</div><div class="v">a <em>oração</em> que sobe</div></div></div>
+<div id="c8" class="lay cd"><div class="sc"><div class="r">NA PRÓXIMA MISSA</div><div class="v">mande a sua <em>oração</em> junto</div><div class="s">com a fumaça que sobe</div></div></div>
+<div id="q" class="lay">Você sabia disso?<span class="c">💬 Comenta aí</span><span class="btn">+ SEGUIR</span></div>
+<div id="cap" class="lay"></div>
+</div>
+<script>/*CAPS*/window.CAPS={"L1": [{"w": "Você", "b": false, "t": 0.0}, {"w": "sabia", "b": false, "t": 0.318}, {"w": "que", "b": false, "t": 0.689}, {"w": "os", "b": false, "t": 0.954}, {"w": "primeiros", "b": true, "t": 1.166}, {"w": "cristãos", "b": true, "t": 1.75}, {"w": "preferiam", "b": false, "t": 2.28}, {"w": "morrer", "b": true, "t": 2.863}, {"w": "a", "b": false, "t": 3.287}, {"w": "queimar", "b": false, "t": 3.446}, {"w": "uma", "b": false, "t": 3.923}, {"w": "pitada", "b": false, "t": 4.189}, {"w": "de", "b": false, "t": 4.613}, {"w": "incenso?", "b": true, "t": 4.825}, {"w": "E", "b": false, "t": 5.475}, {"w": "hoje", "b": false, "t": 5.639}, {"w": "o", "b": false, "t": 5.968}, {"w": "incenso", "b": false, "t": 6.132}, {"w": "está", "b": false, "t": 6.625}, {"w": "na", "b": false, "t": 6.953}, {"w": "missa.", "b": false, "t": 7.172}, {"w": "Como", "b": false, "t": 7.73}, {"w": "pode?", "b": false, "t": 8.136}], "L2": [{"w": "No", "b": false, "t": 0.0}, {"w": "Império", "b": false, "t": 0.189}, {"w": "Romano,", "b": false, "t": 0.615}, {"w": "quem", "b": false, "t": 1.16}, {"w": "era", "b": false, "t": 1.495}, {"w": "acusado", "b": false, "t": 1.774}, {"w": "de", "b": false, "t": 2.276}, {"w": "ser", "b": false, "t": 2.499}, {"w": "cristão", "b": false, "t": 2.778}, {"w": "passava", "b": false, "t": 3.28}, {"w": "por", "b": false, "t": 3.782}, {"w": "um", "b": false, "t": 4.061}, {"w": "teste:", "b": false, "t": 4.284}, {"w": "queimar", "b": false, "t": 4.85}, {"w": "incenso", "b": false, "t": 5.373}, {"w": "e", "b": false, "t": 5.895}, {"w": "oferecer", "b": false, "t": 6.069}, {"w": "vinho", "b": false, "t": 6.65}, {"w": "diante", "b": false, "t": 7.056}, {"w": "da", "b": false, "t": 7.521}, {"w": "imagem", "b": true, "t": 7.753}, {"w": "do", "b": true, "t": 8.218}, {"w": "imperador.", "b": true, "t": 8.45}], "L3": [{"w": "Por", "b": false, "t": 0.0}, {"w": "volta", "b": false, "t": 0.245}, {"w": "do", "b": false, "t": 0.589}, {"w": "ano", "b": false, "t": 0.785}, {"w": "cento", "b": false, "t": 1.031}, {"w": "e", "b": false, "t": 1.374}, {"w": "doze,", "b": false, "t": 1.521}, {"w": "o", "b": false, "t": 1.985}, {"w": "governador", "b": false, "t": 2.167}, {"w": "Plínio", "b": true, "t": 2.895}, {"w": "escreveu", "b": false, "t": 3.381}, {"w": "ao", "b": false, "t": 3.988}, {"w": "imperador", "b": false, "t": 4.231}, {"w": "Trajano:", "b": false, "t": 4.898}, {"w": "os", "b": false, "t": 5.625}, {"w": "cristãos", "b": false, "t": 5.869}, {"w": "de", "b": false, "t": 6.48}, {"w": "verdade,", "b": false, "t": 6.724}, {"w": "dizem,", "b": false, "t": 7.455}, {"w": "não", "b": true, "t": 8.2}, {"w": "podem", "b": true, "t": 8.486}, {"w": "ser", "b": true, "t": 8.887}, {"w": "forçados", "b": true, "t": 9.173}, {"w": "a", "b": false, "t": 9.745}, {"w": "fazer", "b": false, "t": 9.916}, {"w": "isso.", "b": false, "t": 10.317}], "L4": [{"w": "Por", "b": false, "t": 0.0}, {"w": "isso,", "b": false, "t": 0.223}, {"w": "nos", "b": false, "t": 0.655}, {"w": "primeiros", "b": false, "t": 0.822}, {"w": "séculos,", "b": false, "t": 1.19}, {"w": "Tertuliano", "b": true, "t": 1.645}, {"w": "escreveu:", "b": false, "t": 2.48}, {"w": "nós", "b": false, "t": 3.365}, {"w": "não", "b": false, "t": 3.678}, {"w": "temos", "b": false, "t": 3.991}, {"w": "nada", "b": false, "t": 4.429}, {"w": "a", "b": false, "t": 4.805}, {"w": "ver", "b": false, "t": 4.993}, {"w": "com", "b": false, "t": 5.306}, {"w": "incenso.", "b": false, "t": 5.619}, {"w": "Para", "b": false, "t": 6.365}, {"w": "eles,", "b": false, "t": 6.773}, {"w": "o", "b": false, "t": 7.37}, {"w": "incenso", "b": false, "t": 7.537}, {"w": "lembrava", "b": false, "t": 8.037}, {"w": "os", "b": false, "t": 8.594}, {"w": "ídolos.", "b": true, "t": 8.816}], "L5": [{"w": "Mas", "b": false, "t": 0.0}, {"w": "o", "b": false, "t": 0.277}, {"w": "incenso", "b": false, "t": 0.444}, {"w": "já", "b": false, "t": 0.943}, {"w": "estava", "b": false, "t": 1.164}, {"w": "na", "b": false, "t": 1.608}, {"w": "Bíblia", "b": false, "t": 1.83}, {"w": "muito", "b": false, "t": 2.273}, {"w": "antes:", "b": false, "t": 2.661}, {"w": "Deus", "b": false, "t": 3.225}, {"w": "mandou", "b": false, "t": 3.538}, {"w": "fazer", "b": false, "t": 3.956}, {"w": "um", "b": false, "t": 4.321}, {"w": "altar", "b": true, "t": 4.53}, {"w": "do", "b": true, "t": 4.896}, {"w": "incenso", "b": true, "t": 5.105}, {"w": "no", "b": false, "t": 5.575}, {"w": "santuário,", "b": false, "t": 5.783}, {"w": "e", "b": false, "t": 6.53}, {"w": "os", "b": false, "t": 6.702}, {"w": "magos", "b": true, "t": 6.931}, {"w": "levaram", "b": false, "t": 7.332}, {"w": "incenso", "b": false, "t": 7.848}, {"w": "ao", "b": false, "t": 8.364}, {"w": "Menino", "b": false, "t": 8.593}, {"w": "Jesus.", "b": false, "t": 9.052}], "L6": [{"w": "Quando", "b": false, "t": 0.0}, {"w": "as", "b": false, "t": 0.357}, {"w": "perseguições", "b": false, "t": 0.535}, {"w": "acabaram,", "b": false, "t": 1.159}, {"w": "a", "b": false, "t": 1.77}, {"w": "partir", "b": false, "t": 1.929}, {"w": "do", "b": false, "t": 2.353}, {"w": "século", "b": false, "t": 2.565}, {"w": "quatro,", "b": false, "t": 2.988}, {"w": "o", "b": false, "t": 3.585}, {"w": "incenso", "b": false, "t": 3.781}, {"w": "voltou,", "b": true, "t": 4.371}, {"w": "agora", "b": false, "t": 5.08}, {"w": "só", "b": false, "t": 5.663}, {"w": "para", "b": false, "t": 5.997}, {"w": "Deus.", "b": false, "t": 6.497}, {"w": "A", "b": false, "t": 7.2}, {"w": "peregrina", "b": false, "t": 7.376}, {"w": "Egéria", "b": true, "t": 8.023}, {"w": "contou", "b": false, "t": 8.494}, {"w": "que", "b": false, "t": 8.964}, {"w": "viu", "b": false, "t": 9.258}, {"w": "incenso", "b": false, "t": 9.552}, {"w": "na", "b": false, "t": 10.081}, {"w": "igreja", "b": false, "t": 10.316}, {"w": "de", "b": false, "t": 10.787}, {"w": "Jerusalém.", "b": false, "t": 11.022}], "L7": [{"w": "E", "b": false, "t": 0.0}, {"w": "o", "b": false, "t": 0.158}, {"w": "que", "b": false, "t": 0.316}, {"w": "ele", "b": false, "t": 0.579}, {"w": "significa?", "b": false, "t": 0.843}, {"w": "O", "b": false, "t": 1.595}, {"w": "Salmo", "b": false, "t": 1.818}, {"w": "diz:", "b": false, "t": 2.339}, {"w": "suba", "b": true, "t": 2.905}, {"w": "a", "b": true, "t": 3.3}, {"w": "minha", "b": true, "t": 3.497}, {"w": "oração", "b": true, "t": 3.958}, {"w": "como", "b": true, "t": 4.484}, {"w": "incenso", "b": true, "t": 4.879}, {"w": "diante", "b": false, "t": 5.471}, {"w": "de", "b": false, "t": 5.998}, {"w": "ti.", "b": false, "t": 6.261}, {"w": "E", "b": false, "t": 6.71}, {"w": "no", "b": false, "t": 6.897}, {"w": "Apocalipse,", "b": false, "t": 7.147}, {"w": "a", "b": false, "t": 8.08}, {"w": "fumaça", "b": false, "t": 8.259}, {"w": "sobe", "b": false, "t": 8.735}, {"w": "junto", "b": false, "t": 9.093}, {"w": "com", "b": false, "t": 9.51}, {"w": "as", "b": false, "t": 9.808}, {"w": "orações", "b": true, "t": 10.046}, {"w": "dos", "b": true, "t": 10.583}, {"w": "santos.", "b": true, "t": 10.881}], "L8": [{"w": "Na", "b": false, "t": 0.0}, {"w": "próxima", "b": false, "t": 0.209}, {"w": "missa", "b": false, "t": 0.68}, {"w": "com", "b": false, "t": 1.046}, {"w": "incenso,", "b": false, "t": 1.307}, {"w": "olhe", "b": false, "t": 1.95}, {"w": "a", "b": false, "t": 2.302}, {"w": "fumaça", "b": false, "t": 2.478}, {"w": "subir", "b": false, "t": 2.948}, {"w": "e", "b": false, "t": 3.359}, {"w": "mande", "b": false, "t": 3.535}, {"w": "a", "b": false, "t": 3.946}, {"w": "sua", "b": false, "t": 4.122}, {"w": "oração", "b": false, "t": 4.416}, {"w": "junto.", "b": false, "t": 4.885}, {"w": "Você", "b": false, "t": 5.475}, {"w": "sabia", "b": false, "t": 5.849}, {"w": "disso?", "b": false, "t": 6.286}, {"w": "Comenta", "b": true, "t": 6.905}, {"w": "e", "b": true, "t": 7.442}, {"w": "segue", "b": true, "t": 7.621}, {"w": "pra", "b": false, "t": 8.038}, {"w": "mais", "b": false, "t": 8.337}, {"w": "segredos", "b": false, "t": 8.695}, {"w": "da", "b": false, "t": 9.291}, {"w": "fé!", "b": false, "t": 9.53}]};/*CAPS_END*/
+(function(){
+var W=720,H=1280,cv=document.getElementById('cv'),MAIN=cv.getContext('2d'),x=MAIN,PI=Math.PI;
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}function lin(t,a,b){return clamp((t-a)/(b-a),0,1);}function ez(u){u=clamp(u,0,1);return u*u*(3-2*u);}function lerp(a,b,u){return a+(b-a)*u;}
+function back(u){u=clamp(u,0,1);var c1=1.70158,c3=c1+1;return 1+c3*Math.pow(u-1,3)+c1*Math.pow(u-1,2);}
+var $=function(i){return document.getElementById(i);};
+function fade(t,a,b,f){f=f||.4;return clamp(Math.min((t-a)/f,(b-t)/f),0,1);}
+function pop(el,o){if(!el)return;el.style.opacity=o;el.style.transform='translateY('+((1-o)*30)+'px) scale('+(.9+.1*back(o))+')';}
+var seed=71;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+var LINES=[['L1','Você sabia que os <b>primeiros cristãos</b> preferiam <b>morrer</b> a queimar uma pitada de <b>incenso</b>? E hoje o incenso está na missa. Como pode?'],
+['L2','No Império Romano, quem era acusado de ser cristão passava por um teste: queimar incenso e oferecer vinho diante da <b>imagem do imperador</b>.'],
+['L3','Por volta do ano cento e doze, o governador <b>Plínio</b> escreveu ao imperador Trajano: os cristãos de verdade, dizem, <b>não podem ser forçados</b> a fazer isso.'],
+['L4','Por isso, nos primeiros séculos, <b>Tertuliano</b> escreveu: nós não temos nada a ver com incenso. Para eles, o incenso lembrava os <b>ídolos</b>.'],
+['L5','Mas o incenso já estava na Bíblia muito antes: Deus mandou fazer um <b>altar do incenso</b> no santuário, e os <b>magos</b> levaram incenso ao Menino Jesus.'],
+['L6','Quando as perseguições acabaram, a partir do século quatro, o incenso <b>voltou</b>, agora só para Deus. A peregrina <b>Egéria</b> contou que viu incenso na igreja de Jerusalém.'],
+['L7','E o que ele significa? O Salmo diz: <b>suba a minha oração como incenso</b> diante de ti. E no Apocalipse, a fumaça sobe junto com as <b>orações dos santos</b>.'],
+['L8','Na próxima missa com incenso, olhe a fumaça subir e mande a sua oração junto. Você sabia disso? <b>Comenta e segue</b> pra mais segredos da fé!']];
+var T={},TL={lines:[]},CHK=[],WC={};
+window.__retime=function(d){var t=.3;TL.lines=[];WC={};LINES.forEach(function(l){T[l[0]]=t;TL.lines.push({id:l[0],t0:t,dur:d[l[0]]});T[l[0]+'e']=t+d[l[0]];t+=d[l[0]]+.3;});T.END=t+1.8;TL.end=T.END;window.TOTAL=T.END;buildCaps();};
+window.__timeline=function(){return TL;};
+function buildCaps(){CHK=[];var C=window.CAPS||{};TL.lines.forEach(function(l){var ws=C[l.id];if(!ws)return;var cur=[],len=0;
+ function flush(){if(cur.length)CHK.push({ws:cur.map(function(w){return {w:w.w,b:w.b,t:l.t0+w.t};})});cur=[];len=0;}
+ ws.forEach(function(w,i){if(len+w.w.length>34&&cur.length)flush();cur.push(w);len+=w.w.length+1;var end=/[.!?:;]$/.test(w.w)||(/,$/.test(w.w)&&len>=18);if(end)flush();});flush();
+ CHK.filter(function(c){return c.l===undefined;}).forEach(function(c){c.l=l.id;c.end=l.t0+l.dur+.25;});});
+ for(var i=0;i<CHK.length;i++){CHK[i].t0=CHK[i].ws[0].t-.12;var nx=CHK[i+1];CHK[i].t1=(nx&&nx.l===CHK[i].l)?nx.ws[0].t-.12:CHK[i].end;}}
+// tempo (absoluto) da palavra falada: WT('L2','tertuliano') — sincroniza animações com caps.json
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');}
+function WT(id,w,k){var key=id+w+(k||1);if(WC[key]!==undefined)return WC[key];var ws=(window.CAPS||{})[id],r=T[id],n=0;if(ws)for(var i=0;i<ws.length;i++){if(norm(ws[i].w).indexOf(norm(w))===0){n++;if(n>=(k||1)){r=T[id]+ws[i].t;break;}}}WC[key]=r;return r;}
+function LW(id,w,k){return WT(id,w,k)-T[id];}
+function glow(X,Y,r,col,a){if(a<=0)return;var gg=x.createRadialGradient(X,Y,0,X,Y,r);gg.addColorStop(0,col.replace('A',a));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(X,Y,r,0,7);x.fill();}
+function rr(X,Y,w,h,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+w,Y,X+w,Y+h,r);x.arcTo(X+w,Y+h,X,Y+h,r);x.arcTo(X,Y+h,X,Y,r);x.arcTo(X,Y,X+w,Y,r);x.closePath();}
+function txt(s,X,Y,font,col,al,sh){x.save();x.font=font;x.textAlign=al||'center';x.fillStyle=col;if(sh){x.shadowColor=sh;x.shadowBlur=18;}x.fillText(s,X,Y);x.restore();}
+function star(X,Y,r,a){x.save();x.globalAlpha*=a;x.fillStyle='#fff8e0';x.beginPath();for(var i=0;i<8;i++){var rr2=i%2?r*.35:r,an=i*PI/4-PI/2;x.lineTo(X+Math.cos(an)*rr2,Y+Math.sin(an)*rr2);}x.fill();x.restore();}
+var FLOOR=860;
+function popS(lt,t0){return back(lin(lt,t0,t0+.45));}
+function mkBg(c0,c1,c2,dust){var b=bg.getContext('2d');var g=b.createRadialGradient(W/2,H*.35,40,W/2,H*.5,H*.9);g.addColorStop(0,c0);g.addColorStop(.45,c1);g.addColorStop(1,c2);b.fillStyle=g;b.fillRect(0,0,W,H);
+ for(var i=0;i<7000;i++){b.fillStyle='rgba('+(rnd()>.5?dust:'0,0,0')+','+(rnd()*.05)+')';b.fillRect(rnd()*W,rnd()*H,1+rnd()*2,1+rnd()*2);}}
+var bg=document.createElement('canvas');bg.width=W;bg.height=H;
+var PRT=[];for(var i=0;i<70;i++)PRT.push([rnd()*W,rnd()*H,1.5+rnd()*4,rnd()*6,.3+rnd()*.8,rnd()<.4]);
+var RAYC='rgba(255,220,160,0.035)',GLD='rgba(255,209,102,A)';
+function rays(t){x.save();x.globalCompositeOperation='lighter';for(var k=0;k<6;k++){var a0=-.5+k*.2+Math.sin(t*.3+k)*.04;x.fillStyle=RAYC;x.beginPath();x.moveTo(360,-80);x.lineTo(360+Math.tan(a0)*1500,1400);x.lineTo(360+Math.tan(a0+.07)*1500,1400);x.fill();}x.restore();}
+// poeira subindo devagar
+function particles(t){PRT.forEach(function(p){var yy=H-((H-p[1]+t*12*p[4])%H);var xx=p[0]+Math.sin(t*.7+p[3])*16;
+ if(p[5])glow(xx,yy,p[2]*3,GLD,.4);else{x.fillStyle='rgba(255,255,255,.4)';x.beginPath();x.arc(xx,yy,p[2]*.6,0,7);x.fill();}});}
+function sky(c1,c2){var g=x.createLinearGradient(0,300,0,FLOOR);g.addColorStop(0,c1);g.addColorStop(1,c2);x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);}
+function ground(c1,c2,lines){var g=x.createLinearGradient(0,FLOOR-40,0,H);g.addColorStop(0,c1);g.addColorStop(1,c2);x.fillStyle=g;x.fillRect(0,FLOOR-40,W,H-FLOOR+40);
+ if(lines){x.strokeStyle='rgba(0,0,0,.22)';x.lineWidth=2;for(var i=0;i<6;i++){x.beginPath();x.moveTo(0,FLOOR-40+i*i*12);x.lineTo(W,FLOOR-40+i*i*12);x.stroke();}}
+ else{for(var i=0;i<160;i++){x.fillStyle='rgba(0,0,0,'+(.05+(i%5)*.03)+')';x.beginPath();x.ellipse((i*97)%W,FLOOR-30+(i*53)%200,2+(i%4),1+(i%3)*.6,0,0,7);x.fill();}}}
+// pessoa em silhueta (sem rosto): túnica + cabeça + véu opcional
+function person(X,Y,s,col,o){o=o||{};x.save();x.translate(X,Y);x.scale(o.flip?-s:s,s);if(o.bow){x.rotate(o.bow);}
+ x.fillStyle=col;x.beginPath();x.moveTo(-34,0);x.quadraticCurveTo(-40,-80,-24,-120);x.quadraticCurveTo(0,-132,24,-120);x.quadraticCurveTo(40,-80,34,0);x.fill();
+ x.beginPath();x.arc(o.headX||0,-146,22,0,7);x.fill();
+ if(o.veil){x.fillStyle=o.veil;x.beginPath();x.moveTo(-26,-140);x.quadraticCurveTo(0,-182,26,-140);x.lineTo(34,-96);x.quadraticCurveTo(0,-110,-34,-96);x.fill();}
+ if(o.belt){x.fillStyle=o.belt;x.fillRect(-28,-72,56,7);}
+ if(o.arm!==undefined){x.strokeStyle=col;x.lineCap='round';x.lineWidth=14;x.beginPath();x.moveTo(14,-110);var ax=o.arm[0],ay=o.arm[1];x.quadraticCurveTo(ax+10,(ay-110)/2-20,ax,ay);x.stroke();if(o.stone){x.fillStyle=o.stone;x.beginPath();x.ellipse(ax,ay-6,12,10,.3,0,7);x.fill();}}
+ x.restore();}
+function column(X,Y0,Y1,w,c1,c2){var g=x.createLinearGradient(X-w/2,0,X+w/2,0);g.addColorStop(0,c2);g.addColorStop(.4,c1);g.addColorStop(1,c2);x.fillStyle=g;x.fillRect(X-w/2,Y0,w,Y1-Y0);x.fillStyle=c1;x.fillRect(X-w/2-10,Y0-14,w+20,16);x.fillRect(X-w/2-10,Y1-6,w+20,12);x.strokeStyle='rgba(0,0,0,.12)';x.lineWidth=2;for(var k=1;k<4;k++){x.beginPath();x.moveTo(X-w/2+k*w/4,Y0);x.lineTo(X-w/2+k*w/4,Y1);x.stroke();}}
+function smoke(X,Y,t,h,col,a,sp){if(a<=0)return;sp=sp||1;x.save();for(var i=0;i<26;i++){var u=((t*.22*sp+i/26)%1),yy=Y-u*h,xx=X+Math.sin(u*7+t*.8+i)*(10+u*50),r=8+u*46;var gg=x.createRadialGradient(xx,yy,0,xx,yy,r);gg.addColorStop(0,col.replace('A',(a*.55*(1-u)*Math.min(1,u*6)).toFixed(3)));gg.addColorStop(1,col.replace('A',0));x.fillStyle=gg;x.beginPath();x.arc(xx,yy,r,0,7);x.fill();}x.restore();}
+function flame(X,Y,s,t,k,a){if(a<=0)return;var f=1+.14*Math.sin(t*9+k*1.7);glow(X,Y-6*s,46*s,'rgba(255,200,100,A)',.75*a);x.save();x.globalAlpha*=a;x.fillStyle='#ffb347';x.beginPath();x.ellipse(X,Y-8*s,7*s,16*s*f,0,0,7);x.fill();x.fillStyle='#fff3c4';x.beginPath();x.ellipse(X,Y-5*s,3.5*s,8*s*f,0,0,7);x.fill();x.restore();}
+function candle(X,Y,h,w,col,lit,t,k){var g=x.createLinearGradient(X-w/2,0,X+w/2,0);g.addColorStop(0,col[1]);g.addColorStop(.45,col[0]);g.addColorStop(1,col[1]);x.fillStyle=g;x.fillRect(X-w/2,Y-h,w,h);x.strokeStyle='#2a1a10';x.lineWidth=2;x.beginPath();x.moveTo(X,Y-h);x.lineTo(X,Y-h-6);x.stroke();flame(X,Y-h-4,w/22,t,k,lit);}
+// rolo / pergaminho aberto
+function scroll(X,Y,w,h,u,col){if(u<=0)return;var ww=w*u;x.fillStyle='rgba(0,0,0,.3)';rr(X-ww/2+6,Y-h/2+10,ww,h,8);x.fill();var g=x.createLinearGradient(0,Y-h/2,0,Y+h/2);g.addColorStop(0,col||'#f7e7c2');g.addColorStop(1,'#d9bd86');x.fillStyle=g;x.fillRect(X-ww/2,Y-h/2,ww,h);
+ [-1,1].forEach(function(s){var gx=X+s*ww/2;var g2=x.createLinearGradient(gx-14,0,gx+14,0);g2.addColorStop(0,'#7a4a1e');g2.addColorStop(.5,'#c08a4a');g2.addColorStop(1,'#6a3a12');x.fillStyle=g2;rr(gx-14,Y-h/2-16,28,h+32,12);x.fill();});}
+// livro aberto
+function book(X,Y,w,h,a){x.save();x.globalAlpha*=a;x.fillStyle='#5a1e10';rr(X-w/2-12,Y-h/2-8,w+24,h+20,10);x.fill();['#fbf1dc','#f3e3c0'].forEach(function(c,i){x.fillStyle=c;x.beginPath();var s=i?1:-1;x.moveTo(X,Y-h/2+6);x.quadraticCurveTo(X+s*w*.25,Y-h/2-6,X+s*w/2,Y-h/2);x.lineTo(X+s*w/2,Y+h/2);x.quadraticCurveTo(X+s*w*.25,Y+h/2-10,X,Y+h/2);x.fill();});x.strokeStyle='rgba(90,40,10,.35)';x.lineWidth=2;x.beginPath();x.moveTo(X,Y-h/2+6);x.lineTo(X,Y+h/2);x.stroke();x.restore();}
+function lab(s,X,Y,u,col,bgc){if(u<=0)return;x.save();x.globalAlpha*=u;x.font='700 28px P';var w=x.measureText(s).width+44;x.fillStyle=bgc||'rgba(10,4,4,.82)';rr(X-w/2,Y-40,w,58,14);x.fill();txt(s,X,Y-2,'700 28px P',col||'#ffd166');x.restore();}
+function stone(X,Y,r,c){x.fillStyle='rgba(0,0,0,.3)';x.beginPath();x.ellipse(X+3,Y+r*.55,r*1.1,r*.35,0,0,7);x.fill();var g=x.createRadialGradient(X-r*.3,Y-r*.3,1,X,Y,r*1.2);g.addColorStop(0,c||'#cfc6b8');g.addColorStop(1,'#6e665a');x.fillStyle=g;x.beginPath();x.ellipse(X,Y,r*1.15,r*.8,.2,0,7);x.fill();}
+function heart(X,Y,s,col,a){if(a<=0)return;x.save();x.globalAlpha*=a;x.translate(X,Y);x.scale(s,s);x.fillStyle=col;x.beginPath();x.moveTo(0,30);x.bezierCurveTo(-60,-10,-40,-60,0,-30);x.bezierCurveTo(40,-60,60,-10,0,30);x.fill();x.restore();}
+// paleta: Pergaminho/âmbar
+mkBg('#7a4a1e','#3a2615','#120a05','255,217,138');RAYC='rgba(255,217,138,0.04)';
+var SMK='rgba(255,240,220,A)';
+function censer(X,Y,L,ang,t,a,smk){x.save();x.globalAlpha*=a;x.translate(X,Y);x.rotate(ang);
+ x.strokeStyle='#d9a441';x.lineWidth=3;[-14,0,14].forEach(function(o){x.beginPath();x.moveTo(0,0);x.lineTo(o,L);x.stroke();});
+ x.translate(0,L);glow(0,30,90,'rgba(255,190,90,A)',.5);
+ var g=x.createLinearGradient(-36,0,36,0);g.addColorStop(0,'#8a5a14');g.addColorStop(.4,'#ffd56b');g.addColorStop(1,'#7a4a10');x.fillStyle=g;
+ x.beginPath();x.moveTo(-30,4);x.quadraticCurveTo(-20,-34,0,-40);x.quadraticCurveTo(20,-34,30,4);x.closePath();x.fill();
+ x.beginPath();x.moveTo(-36,6);x.lineTo(36,6);x.quadraticCurveTo(34,46,0,52);x.quadraticCurveTo(-34,46,-36,6);x.fill();
+ x.fillStyle='#5a3008';for(var k=-2;k<=2;k++){x.beginPath();x.arc(k*10,-14,3,0,7);x.fill();}
+ x.fillStyle='#c9902a';x.fillRect(-10,52,20,10);x.beginPath();x.arc(0,-42,6,0,7);x.fill();x.restore();
+ if(smk){var px=X+Math.sin(ang)*-L,py=Y+Math.cos(ang)*L;smoke(px,py-20,t,360,SMK,smk);}}
+function arches(c,n,y0){x.fillStyle=c;for(var k=0;k<n;k++){var X=k*W/(n-1);x.fillRect(X-22,y0,44,FLOOR-40-y0);}x.beginPath();x.moveTo(0,300);x.lineTo(W,300);x.lineTo(W,y0);for(var k=n-1;k>0;k--){var X1=k*W/(n-1),X0=(k-1)*W/(n-1);x.lineTo(X1-22,y0);x.arc((X0+X1)/2,y0,(X1-X0)/2-22,0,PI,true);}x.lineTo(0,y0);x.fill();}
+function brazier(X,Y,s,t,lit){x.save();x.translate(X,Y);x.scale(s,s);x.fillStyle='#5a3a1a';x.fillRect(-10,-70,20,70);x.fillRect(-36,-6,72,10);var g=x.createLinearGradient(-50,0,50,0);g.addColorStop(0,'#6a4416');g.addColorStop(.5,'#d9a441');g.addColorStop(1,'#6a4416');x.fillStyle=g;x.beginPath();x.moveTo(-50,-90);x.lineTo(50,-90);x.quadraticCurveTo(40,-62,0,-62);x.quadraticCurveTo(-40,-62,-50,-90);x.fill();x.restore();
+ if(lit>0){flame(X,Y-92*s,1.4*s,t,1,lit);flame(X-18*s,Y-90*s,1*s,t,2,lit);flame(X+18*s,Y-90*s,1*s,t,3,lit);}}
+function bust(X,Y,s,col,gl){x.save();x.translate(X,Y);x.scale(s,s);x.fillStyle='#8a7a66';x.fillRect(-50,-110,100,110);x.fillRect(-60,-118,120,12);x.fillRect(-60,-6,120,12);
+ if(gl>0)glow(0,-200,150,'rgba(255,215,140,A)',.6*gl);x.fillStyle=col;x.beginPath();x.moveTo(-60,-118);x.quadraticCurveTo(-56,-170,-24,-180);x.lineTo(24,-180);x.quadraticCurveTo(56,-170,60,-118);x.fill();x.beginPath();x.ellipse(0,-214,30,38,0,0,7);x.fill();
+ x.strokeStyle='#4f7a2a';x.lineWidth=7;x.beginPath();x.arc(0,-218,32,PI*1.05,PI*1.95);x.stroke();x.restore();}
+// 1: igreja, turíbulo balançando; grãos de incenso caindo
+function sc1(t,lt){sky('#4a2a12','#a8642a');arches('#2a1608',5,470);
+ glow(360,520,300,'rgba(255,200,120,A)',.35);
+ for(var k=0;k<3;k++){x.fillStyle='#3a2210';x.fillRect(200+k*120,700,30,FLOOR-740);}
+ x.fillStyle='#f5ead6';x.fillRect(150,690,420,26);x.fillStyle='#b5521b';x.fillRect(150,716,420,14);
+ candle(190,690,90,20,['#fffaf0','#d8d0c0'],1,t,1);candle(530,690,90,20,['#fffaf0','#d8d0c0'],1,t,2);
+ ground('#5a3418','#1a0c04',true);
+ censer(360,300,250,Math.sin(t*1.6)*.32,t,1,lin(lt,0,1));
+ var p=lin(lt,LW('L1','pitada')-.2,LW('L1','pitada')+1.4);if(p>0&&p<1){for(var k=0;k<9;k++){var u=clamp(p*1.6-k*.06,0,1);x.fillStyle='#e8c77a';x.beginPath();x.arc(560+(k%3)*8-k,380+u*300,4,0,7);x.fill();}}}
+// 2: templo romano, busto do imperador, braseiro e taça de vinho
+function sc2(t,lt){sky('#5a1a10','#d07a3a');glow(560,420,120,'rgba(255,230,170,A)',.6);x.fillStyle='#ffe2a8';x.beginPath();x.arc(560,420,40,0,7);x.fill();
+ x.fillStyle='#e8d8b8';x.beginPath();x.moveTo(40,440);x.lineTo(360,360);x.lineTo(680,440);x.fill();x.fillRect(50,440,620,20);
+ for(var k=0;k<6;k++)column(80+k*112,460,FLOOR-40,40,'#efe2c8','#a8987a');
+ ground('#a8885a','#3a2810',true);
+ var e=lin(lt,LW('L2','imperador')-.3,LW('L2','imperador')+.4);bust(360,FLOOR-40,1,'#c8b89a',e);
+ var b=lin(lt,LW('L2','queimar')-.3,LW('L2','queimar')+.3);brazier(190,FLOOR-40,1.1,t,b);smoke(190,FLOOR-150,t,300,SMK,b);
+ var v=popS(lt,LW('L2','vinho')-.2);if(v>0){x.save();x.translate(540,FLOOR-40);x.scale(v,v);x.fillStyle='#d9a441';x.beginPath();x.moveTo(-30,-90);x.lineTo(30,-90);x.quadraticCurveTo(26,-50,4,-46);x.lineTo(4,-14);x.lineTo(22,-4);x.lineTo(-22,-4);x.lineTo(-4,-14);x.lineTo(-4,-46);x.quadraticCurveTo(-26,-50,-30,-90);x.fill();x.fillStyle='#7a0f22';x.beginPath();x.ellipse(0,-88,28,7,0,0,7);x.fill();x.fillStyle='#8a6a40';x.fillRect(-40,-4,80,4);x.restore();}
+ var c=lin(lt,LW('L2','cristao')-.2,LW('L2','cristao')+.4);person(620,FLOOR-40,.9*c+.001,'#2a1006',{veil:'#5a2a12'});}
+// 3: a carta de Plínio, selo e "112"
+function sc3(t,lt){sky('#3a2210','#8a5a2a');
+ x.fillStyle='#2a1608';x.fillRect(0,640,W,30);
+ ground('#4a2a12','#120a04',true);
+ x.fillStyle='#6a3a18';rr(80,700,560,30,8);x.fill();
+ var u=ez(lin(lt,LW('L3','plinio')-.6,LW('L3','plinio')+.4));scroll(360,540,420,240,u);
+ if(u>.9){x.save();x.globalAlpha=lin(u,.9,1);x.font='700 30px L';x.fillStyle='#4a2a0a';x.textAlign='left';x.fillText('C. PLINIVS TRAIANO',190,470);x.font='24px L';
+  var tw=lin(lt,LW('L3','plinio'),LW('L3','fazer'));var ls=['…qui negabant esse se christianos,','…ture ac vino supplicarent','imagini tuae… quorum nihil','cogi posse dicuntur qui sunt','re vera christiani.'];
+  ls.forEach(function(s,i){var k=clamp(tw*ls.length-i,0,1);if(k>0){x.globalAlpha=k*lin(u,.9,1);x.fillText(s,190,510+i*32);}});x.restore();}
+ var n=lin(lt,LW('L3','cento')-.2,LW('L3','doze')+.3);lab('ano 112',150,380,n);
+ var f=popS(lt,LW('L3','forcados')-.2);if(f>0){x.save();x.translate(540,640);x.scale(f,f);glow(0,0,70,'rgba(200,30,30,A)',.5);x.fillStyle='#a8181c';x.beginPath();x.arc(0,0,40,0,7);x.fill();x.fillStyle='#e0484c';x.beginPath();x.arc(0,0,28,0,7);x.fill();txt('✝',0,14,'700 38px P','#ffe0a0');x.restore();}}
+// 4: Tertuliano escreve; ídolos apagando
+function idol(X,Y,s,col){x.save();x.translate(X,Y);x.scale(s,s);x.fillStyle=col;x.fillRect(-18,-10,36,10);x.beginPath();x.moveTo(-14,-10);x.lineTo(-10,-70);x.lineTo(10,-70);x.lineTo(14,-10);x.fill();x.beginPath();x.arc(0,-84,14,0,7);x.fill();x.restore();}
+function sc4(t,lt){sky('#2a1608','#6a3e1a');x.fillStyle='#3a2210';x.fillRect(0,300,W,24);
+ x.fillStyle='#4a2a12';x.fillRect(420,420,240,14);var dm=lin(lt,LW('L4','idolos')-.4,LW('L4','idolos')+.6);
+ for(var k=0;k<4;k++){x.save();x.globalAlpha=1-.7*dm;idol(450+k*58,420,1,'#b8a888');x.restore();}
+ if(dm>0){x.save();x.globalAlpha=dm;x.strokeStyle='#e0484c';x.lineWidth=8;x.lineCap='round';x.beginPath();x.moveTo(430,320);x.lineTo(650,410);x.moveTo(650,320);x.lineTo(430,410);x.stroke();x.restore();}
+ ground('#4a2a12','#120a04',true);x.fillStyle='#6a3a18';rr(40,690,480,26,8);x.fill();x.fillRect(70,716,20,104);x.fillRect(470,716,20,104);
+ book(280,640,340,110,1);
+ var w=lin(lt,LW('L4','tertuliano'),LW('L4','incenso')+.5);x.save();x.beginPath();x.rect(292,590,10+150*w,90);x.clip();x.font='italic 23px L';x.fillStyle='#4a2a0a';x.textAlign='left';x.fillText('Nós não temos',300,622);x.fillText('nada a ver com',300,648);x.fillText('incenso…',300,674);x.restore();
+ var qx=300+w*140,qy=650-Math.abs(Math.sin(t*9))*6;x.strokeStyle='#f5ead6';x.lineWidth=4;x.beginPath();x.moveTo(qx,qy);x.quadraticCurveTo(qx+40,qy-80,qx+90,qy-130);x.stroke();x.fillStyle='#f5ead6';x.beginPath();x.ellipse(qx+70,qy-100,10,40,.7,0,7);x.fill();
+ candle(90,690,100,22,['#fffaf0','#d8d0c0'],1,t,3);}
+// 5: altar do incenso no santuário; os magos (3 presentes e a estrela)
+function sc5(t,lt){var m=ez(lin(lt,LW('L5','magos')-.5,LW('L5','magos')+.3));
+ sky('#3a2a40','#a8743a');
+ x.save();x.globalAlpha=1-m;x.fillStyle='#e8d4a8';x.beginPath();x.moveTo(100,500);x.lineTo(620,500);x.lineTo(620,FLOOR-40);x.lineTo(100,FLOOR-40);x.fill();x.fillStyle='#7a1a40';x.fillRect(100,500,520,30);x.fillStyle='#2a4a8a';for(var k=0;k<5;k++)x.fillRect(110+k*104,530,40,FLOOR-570);
+ var a=popS(lt,LW('L5','altar')-.3);if(a>0){x.save();x.translate(360,FLOOR-40);x.scale(a,a);glow(0,-120,180,'rgba(255,210,120,A)',.6);var g=x.createLinearGradient(-60,0,60,0);g.addColorStop(0,'#9a6a14');g.addColorStop(.45,'#ffd56b');g.addColorStop(1,'#8a5a10');x.fillStyle=g;x.fillRect(-55,-150,110,150);x.fillRect(-66,-160,132,14);[-58,58].forEach(function(s){x.beginPath();x.moveTo(s-8,-160);x.lineTo(s,-182);x.lineTo(s+8,-160);x.fill();});x.fillStyle='#ffe9a8';x.fillRect(-66,-90,132,8);x.restore();smoke(360,FLOOR-210,t,260,SMK,a);}
+ x.restore();
+ if(m>0){x.save();x.globalAlpha=m;star(360,380,26,1);glow(360,380,120,'rgba(255,240,200,A)',.6);for(var k=0;k<14;k++){x.strokeStyle='rgba(255,240,200,.25)';x.lineWidth=2;x.beginPath();x.moveTo(360,380);x.lineTo(360+Math.cos(k*.45)*120,380+Math.sin(k*.45)*120);x.stroke();}
+  x.fillStyle='#e8c88a';x.beginPath();for(var i=0;i<=8;i++)x.lineTo(i*90,640+Math.sin(i*1.7)*20);x.lineTo(W,FLOOR);x.lineTo(0,FLOOR);x.fill();x.restore();}
+ ground('#b88a4a','#3a2410',false);
+ if(m>0){x.save();x.globalAlpha=m;var C=[['#ffd56b','#9a6a14'],['#c0c8d8','#6a7488'],['#a0522d','#5a2a10']];C.forEach(function(c,i){var X=220+i*140,u=popS(lt,LW('L5','magos')+.2+i*.3);x.save();x.translate(X,FLOOR-40);x.scale(u,u);var g=x.createLinearGradient(-40,0,40,0);g.addColorStop(0,c[1]);g.addColorStop(.5,c[0]);g.addColorStop(1,c[1]);x.fillStyle=g;rr(-40,-60,80,60,8);x.fill();x.fillRect(-46,-76,92,18);x.fillStyle='#fff3c4';x.beginPath();x.arc(0,-82,8,0,7);x.fill();x.restore();});
+  smoke(360,FLOOR-130,t,200,SMK,m);x.restore();}}
+// 6: Jerusalém, igreja com cúpula (Anastasis); peregrina com cajado
+function sc6(t,lt){sky('#2a2a5a','#e89a5a');glow(360,640,300,'rgba(255,200,140,A)',.4);
+ x.fillStyle='#5a3a4a';for(var i=0;i<8;i++){x.fillRect(i*95,600-(i*37)%60,80,200);}
+ x.fillStyle='#e8d0a0';x.fillRect(220,560,280,FLOOR-600);x.beginPath();x.arc(360,560,110,PI,0);x.fill();x.fillStyle='#c9a24a';x.beginPath();x.arc(360,560,104,PI,0);x.fill();x.fillStyle='#e8d0a0';x.fillRect(354,430,12,30);x.fillRect(344,440,32,8);
+ x.fillStyle='#ffcf6b';for(var k=0;k<4;k++){x.beginPath();x.moveTo(250+k*62,700);x.lineTo(250+k*62,640);x.arc(265+k*62,640,15,PI,0);x.lineTo(280+k*62,700);x.fill();}
+ var r=lin(lt,LW('L6','voltou')-.4,LW('L6','deus')+.4);smoke(360,560,t,240,SMK,r);
+ ground('#b07a4a','#2a1408',false);
+ var p=lin(lt,LW('L6','egeria')-.6,LW('L6','jerusalem')+.6);if(p>0){var X=lerp(-60,170,ez(p));person(X,FLOOR-40,.95,'#2a1406',{veil:'#7a3a1a'});x.strokeStyle='#3a2008';x.lineWidth=6;x.beginPath();x.moveTo(X+44,FLOOR-40);x.lineTo(X+30,FLOOR-210);x.stroke();}
+ censer(560,300,300,Math.sin(t*1.4)*.25,t,lin(lt,0,.6),lin(lt,LW('L6','voltou')-.4,LW('L6','voltou')+.4));}
+// 7: a fumaça sobe e leva luzes (orações)
+function sc7(t,lt){var g=x.createRadialGradient(360,520,30,360,560,520);g.addColorStop(0,'#c88a3a');g.addColorStop(1,'#2a1408');x.fillStyle=g;x.fillRect(0,300,W,FLOOR-300);
+ for(var i=0;i<12;i++){var a=i/12*PI*2+t*.1;x.strokeStyle='rgba(255,230,170,.07)';x.lineWidth=30;x.beginPath();x.moveTo(360,380);x.lineTo(360+Math.cos(a)*600,380+Math.sin(a)*600);x.stroke();}
+ ground('#6a3a18','#1a0c04',true);x.fillStyle='#f5ead6';x.fillRect(180,740,360,22);x.fillStyle='#b5521b';x.fillRect(180,762,360,12);x.fillStyle='#3a2210';x.fillRect(200,774,26,46);x.fillRect(494,774,26,46);for(var k=0;k<4;k++)candle([205,270,450,515][k],740,60+(k%2)*30,18,['#fffaf0','#d8d0c0'],1,t,k);
+ var s=lin(lt,LW('L7','suba')-.3,LW('L7','incenso')+.3);censer(360,300,300,Math.sin(t*1.2)*.12,t,1,0);smoke(360+Math.sin(t*1.2)*-36,600,t,320,SMK,.7+.5*s,1.3);
+ var p=lin(lt,LW('L7','oracoes')-.5,LW('L7','santos')+.5);for(var k=0;k<16;k++){var u=((t*.18+k/16)%1);var a2=(.3+p*.7)*(1-u);if(lt<LW('L7','suba')-.3)a2*=0;var X=360+Math.sin(u*8+k)*(30+u*120),Y=640-u*360;glow(X,Y,18,'rgba(255,235,170,A)',a2);star(X,Y,5,a2);}}
+// 8: altar da missa, turíbulo e velas; fumaça com luz
+function sc8(t,lt){sky('#3a2210','#a8642a');arches('#2a1608',5,480);glow(360,420,260,'rgba(255,220,150,A)',.4);
+ x.fillStyle='#f5ead6';x.fillRect(150,700,420,26);x.fillStyle='#b5521b';x.fillRect(150,726,420,14);x.fillStyle='#3a2210';x.fillRect(170,740,30,80);x.fillRect(520,740,30,80);
+ txt('✝',360,620,'700 90px P','#ffd56b','center','#ffb347');
+ candle(210,700,100,22,['#fffaf0','#d8d0c0'],1,t,1);candle(510,700,100,22,['#fffaf0','#d8d0c0'],1,t,2);
+ ground('#5a3418','#1a0c04',true);
+ censer(250,300,260,Math.sin(t*1.5)*.28,t,1,1);
+ var p=lin(lt,LW('L8','oracao')-.3,LW('L8','junto')+.3);if(p>0)for(var k=0;k<10;k++){var u=((t*.2+k/10)%1);glow(250+Math.sin(u*6+k)*60,620-u*300,16,'rgba(255,235,170,A)',p*(1-u));}}
+var SC=[sc1,sc2,sc3,sc4,sc5,sc6,sc7,sc8];
+function OV(t,L){pop($('c1'),fade(t,WT('L1','incenso')-.2,L.L1e+.2));pop($('c2'),fade(t,WT('L2','teste')-.2,L.L2e+.2));
+ pop($('c3'),fade(t,WT('L3','governador')-.2,L.L3e+.2));pop($('c4'),fade(t,WT('L4','tertuliano')-.2,L.L4e+.2));pop($('c5'),fade(t,WT('L5','deus')-.2,L.L5e+.2));
+ pop($('c6'),fade(t,WT('L6','incenso')-.2,L.L6e+.2));pop($('c7'),fade(t,WT('L7','salmo')-.2,L.L7e+.2));pop($('c8'),fade(t,WT('L8','oracao')-.2,WT('L8','voce')-.2));}
+
+var OFF=document.createElement('canvas');OFF.width=W;OFF.height=H;var ox=OFF.getContext('2d');
+function frame(t){var L=T;x=MAIN;x.drawImage(bg,0,0);rays(t);
+ for(var i=0;i<8;i++){var id='L'+(i+1),a=(i<7)?fade(t,L[id]-.25,L[id+'e']+.3,.35):fade(t,L.L8-.25,L.END+2,.35);if(a<=0)continue;
+  ox.clearRect(0,0,W,H);x=ox;SC[i](t,t-L[id],L);x=MAIN;ox.save();ox.globalCompositeOperation='destination-in';var mg=ox.createLinearGradient(0,290,0,H);mg.addColorStop(0,'rgba(0,0,0,0)');mg.addColorStop(.09,'rgba(0,0,0,1)');mg.addColorStop(.62,'rgba(0,0,0,1)');mg.addColorStop(1,'rgba(0,0,0,0)');ox.fillStyle=mg;ox.fillRect(0,0,W,H);ox.restore();
+  MAIN.save();MAIN.globalAlpha=a;MAIN.drawImage(OFF,0,0);MAIN.restore();}
+ particles(t);OV(t,L);pop($('q'),fade(t,WT('L8','voce'),L.END+2));
+ var vg=x.createRadialGradient(W/2,H/2,H*.32,W/2,H/2,H*.78);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.5)');x.fillStyle=vg;x.fillRect(0,0,W,H);
+ var cur=null;for(var i=0;i<CHK.length;i++)if(t>=CHK[i].t0&&t<CHK[i].t1){cur=CHK[i];break;}
+ if(cur){$('cap').innerHTML='<span class="box">'+cur.ws.map(function(w){return '<i class="'+(w.b?'b ':'')+(t<w.t-.05?'f':'')+'">'+w.w+'</i>';}).join(' ')+'</span>';var u=lin(t,cur.t0,cur.t0+.18);$('cap').style.opacity=u;$('cap').style.transform='translateY('+((1-u)*10)+'px)';}
+ else $('cap').innerHTML='';}
+window.__seek=frame;window.frame=frame;
+})();
+</script></body></html>
