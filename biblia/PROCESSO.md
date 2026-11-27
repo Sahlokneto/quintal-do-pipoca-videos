@@ -64,7 +64,17 @@ igrejas. Prática/procedimento: confirme no Catecismo da Igreja Católica, na In
 em fonte oficial (vatican.va, CNBB).
 
 ### 2.2 Formato: SÓ 2D (decisão do dono, 23/11 — vídeos 3D cancelados)
-- **Modelo atual: `videos/2026-11-23-peixe-ichthys/bib.html`** (2D em canvas, aprovado como padrão de riqueza).
+- **Modelo atual (dono, 27/11: "é nesse estilo pra cima"): `videos/2026-11-27-sino-consagracao/bib.html` e
+  `videos/2026-11-27-primeiro-presepio/bib.html` (versão 2).** Desenhos reaproveitáveis em `tools/lib2.js` (figuras sem rosto
+  de costas/capuz/véu, em pé ou ajoelhadas; pedras, tijolos, palha, tochas, lanternas, estrelas fixas) e quadro em `tools/tail2.js`.
+  Regras do estilo aprovado:
+  - **1º quadro = capa:** a cena 1 já completa e o cartão-título visíveis no tempo 0 (as redes pegam o 1º quadro como capa).
+  - **Cenas ricas e PARADAS:** nada balança, flutua, pisca ou "pula" (sem pop/zoom nos cartões e objetos, sem poeira andando,
+    raios fixos). Só se move o que é AÇÃO: gente andando, padre elevando a hóstia, sino tocando, pessoas se ajoelhando.
+    Objetos novos entram com fade no lugar. Troca de cena por fade cruzado.
+  - Muitos detalhes: paredes com textura, vitrais, chão com piso/palha/pedras até embaixo, pessoas e animais apoiados no chão.
+  - **Inovação no estilo:** antes de mudar o estilo, perguntar ao dono (pedido dele).
+- Modelo antigo (só referência): `videos/2026-11-23-peixe-ichthys/bib.html`.
 - **Riqueza e cores vivas (pedido do dono):** cada fala tem uma CENA ilustrada própria e detalhada (céu em degradê, sol,
   silhuetas, texturas de pedra/areia, água com reflexo, brilhos, partículas, objetos com luz e sombra), cores saturadas
   (dourado, coral, turquesa, roxo, laranja), luz de água/poeira animada no fundo, bolhas/brilhos. Cenas entram com bordas
@@ -102,7 +112,7 @@ Linguagem de leigo, termos explicados na mesma frase, números por extenso na fa
 ## 5. Produção
 - Voz ElevenLabs **O Viajante** `urHXVUOxm0ZDI0ypEYDd`, `eleven_v4`, 1 take por fala; baixar mp3 → `mp3/L1.mp3…`.
 - `python3 ../ranaitech/tools/prep_audio.py <pasta>` → aud/ + durs.json.
-- Página: copiar **`videos/2026-11-23-peixe-ichthys/bib.html`** (modelo atual: cenas ricas + legenda karaokê) — os antigos `exemplos/01-saliva-cego/bib.html` (2D, pergaminho escuro, poeira dourada, letras hebraicas com a
+- Página: copiar **`videos/2026-11-27-sino-consagracao/bib.html`** (modelo atual v2, ver 2.2; legenda karaokê) — os antigos `exemplos/01-saliva-cego/bib.html` (2D, pergaminho escuro, poeira dourada, letras hebraicas com a
   fonte FreeSerifBold, títulos em Lora) e trocar LINES, cartões e desenhos de cada cena. Sem faixa/data na tela.
 - **Legenda da fala (pedido do dono, 23/11, revisado):** blocos de ATÉ 2 LINHAS (~34 letras), que ficam na tela o tempo da
   frase e trocam acompanhando a voz; as palavras "acendem" conforme são faladas (karaokê: ainda não faladas a 45% de
