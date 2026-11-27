@@ -45,8 +45,8 @@ Ainda assim, não repetir o mesmo subtipo no mesmo dia (ex.: 2 de "ritos da miss
   · por que se faz o sinal da cruz ✅ · água benta na entrada ✅ · por que se ajoelha · origem do terço/rosário · o Advento e a coroa ✅ ·
   por que domingo é o dia do Senhor · por que a missa era em latim · origem do Pai-Nosso · como surgiram os sacramentos ·
   cores da missa ✅ · por que o padre não casa (celibato: quando virou regra) · o que é a hóstia e por que é redonda ·
-  por que o sino toca na consagração · incenso: de onde vem ✅ · por que a Quaresma tem 40 dias · Quarta-feira de Cinzas ·
-  por que o Natal é em 25 de dezembro · o presépio (São Francisco, 1223) · por que o Papa usa branco · como é escolhido
+  por que o sino toca na consagração ✅ · incenso: de onde vem ✅ · por que a Quaresma tem 40 dias · Quarta-feira de Cinzas ·
+  por que o Natal é em 25 de dezembro · o presépio (São Francisco, 1223) ✅ · por que o Papa usa branco · como é escolhido
   um Papa (conclave, fumaça) · o que é um santo e como alguém vira santo · por que as igrejas apontam para o leste ·
   o que significa "Amém" no fim da oração · por que se bate no peito no "Confesso a Deus" ✅ · velas no altar.
 - **Como viver a fé (prático)**: como se comportar na missa (postura, celular, comunhão) · como rezar melhor (método simples,
