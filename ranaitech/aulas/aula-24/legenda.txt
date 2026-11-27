@@ -1,0 +1,10 @@
+Módulos são caixas de ferramentas prontas: com import você traz a caixa e usa tudo que tem dentro. Nesta aula o Cubinho tenta usar a raiz quadrada sem importar o math e leva um NameError. 😅
+
+🧰 import math → print(math.sqrt(16))  # 4.0
+👉 import: traz o módulo pro seu programa
+👉 o ponto (math.sqrt) pega a ferramenta de dentro
+👉 random também é um módulo!
+
+Próxima aula: fatiar listas! Curte, compartilha com um amigo e segue o canal pra não perder. 💛
+
+#programação #python #import #aprenderprogramação #lógicadeprogramação
