@@ -48,11 +48,12 @@ Ainda assim, não repetir o mesmo subtipo no mesmo dia (ex.: 2 de "ritos da miss
   por que o sino toca na consagração ✅ · incenso: de onde vem ✅ · por que a Quaresma tem 40 dias · Quarta-feira de Cinzas ·
   por que o Natal é em 25 de dezembro ✅ · o presépio (São Francisco, 1223) ✅ · por que o Papa usa branco · como é escolhido
   um Papa (conclave, fumaça) · o que é um santo e como alguém vira santo · por que as igrejas apontam para o leste ·
-  o que significa "Amém" no fim da oração · por que se bate no peito no "Confesso a Deus" ✅ · velas no altar.
+  o que significa "Amém" no fim da oração · por que se bate no peito no "Confesso a Deus" ✅ · velas no altar · por que o padre lava as mãos (lavabo) ✅ ·
+  o ano litúrgico começa no Advento ✅ · por que o padre beija o altar.
 - **Como viver a fé (prático)**: como se comportar na missa (postura, celular, comunhão) · como rezar melhor (método simples,
   com base em Mt 6:5-13) · o que significa cada parte da missa · como ler a Bíblia pela primeira vez.
 - **História do cristianismo**: quando e por que surgiu · por que "cristãos" (At 11:26, Antioquia) ✅ · o peixe (ΙΧΘΥΣ) como
-  símbolo secreto ✅ · catacumbas · como a Bíblia foi montada · por que existem Bíblias católica e protestante com nº de livros diferente.
+  símbolo secreto ✅ · catacumbas (não eram esconderijo) ✅ · como a Bíblia foi montada · por que existem Bíblias católica e protestante com nº de livros diferente.
 - **Palavras originais e arqueologia** (a linha antiga continua, mas no máximo 1 por dia).
 **Fuja do batido:** antes de escolher, pense "isso já é muito postado?" (ex.: Davi e Golias, nascimento de Jesus, 10
 pragas, Sansão). Prefira o detalhe que quase ninguém conhece. Busque também `curiosidades bíblicas pouco conhecidas` e
